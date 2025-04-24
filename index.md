@@ -7,20 +7,6 @@ title: Documentation Daznode
 
 Tout ce que tu dois savoir pour comprendre et utiliser la blockchain, Bitcoin et le Lightning Network, simplement.
 
-## Navigation
-
-- [Introduction](/getting-started/introduction/)
-- [Qu’est-ce que la blockchain ?](/getting-started/les-blockchains/)
-- [Comprendre Bitcoin](/getting-started/bitcoin/)
-- [Le Lightning Network](/lightning-network/)
-  - [Fonctionnement](/lightning-network/fonctionnement/)
-  - [Canaux et paiements](/lightning-network/canaux-et-paiements/)
-- [Wallets](/wallets/)
-  - [Choix de wallet et installation mobile](/wallets/)
-- [Sécurisation](/securisation/)
-- [Cas d’usage Daznode](/cas-dusage-daznode/)
-- [Glossaire](/glossary/)
-
 ## Démarrage rapide
 
 <div class="cards">
