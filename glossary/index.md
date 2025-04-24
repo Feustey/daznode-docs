@@ -5,7 +5,46 @@ title: Glossaire du Lightning Network - Daznode
 
 # Glossaire du Lightning Network
 
-Ce glossaire regroupe les termes techniques les plus importants utilisés dans la documentation de Daznode et dans l'écosystème du Lightning Network. Il est conçu pour aider à la compréhension des concepts, métriques et comportements spécifiques au réseau Lightning.
+Ce glossaire explique les mots et acronymes que tu vas rencontrer dans la documentation. Tout est expliqué simplement, avec des exemples.
+
+## Bitcoin
+Monnaie numérique, sans banque ni gouvernement. Exemple : tu peux envoyer de l'argent à un ami sans passer par une banque.
+
+## Blockchain
+Grand cahier partagé sur Internet où toutes les transactions sont inscrites. Personne ne peut tricher.
+
+## Lightning Network
+Réseau qui rend les paiements en bitcoin rapides et très peu chers. Fonctionne grâce à des canaux.
+
+## Canal Lightning
+Tirelire partagée entre deux personnes pour s'envoyer des bitcoins rapidement.
+
+## Wallet (portefeuille)
+Application pour stocker, envoyer et recevoir des bitcoins.
+
+## Satoshi (sat)
+La plus petite unité de bitcoin. 1 bitcoin = 100 000 000 satoshis.
+
+## 2FA (authentification à deux facteurs)
+Sécurité supplémentaire : tu dois entrer un code unique à chaque connexion.
+
+## Seed (phrase secrète)
+Suite de mots qui permet de récupérer ton wallet si tu perds ton téléphone.
+
+## Non-custodial
+Tu es le seul à avoir la clé de ton wallet. Plus sécurisé.
+
+## Custodial
+Une entreprise garde la clé pour toi. Plus simple, mais moins sécurisé.
+
+## Nœud
+Ordinateur qui vérifie et enregistre les transactions sur le réseau Bitcoin ou Lightning.
+
+## QR code
+Image carrée que tu scannes avec ton téléphone pour envoyer ou recevoir des bitcoins facilement.
+
+## Exemple concret
+Si tu ne comprends pas un mot, cherche-le ici !
 
 ## Centralité
 

@@ -1,10 +1,88 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="bg-background text-foreground">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ title }} - Daz Documentation</title>
-  <link rel="stylesheet" href="/assets/css/style.css">
+  <title>{{ title or 'Daz Documentation' }}</title>
+  <link rel="stylesheet" href="/assets/shadcn-ui.css">
+  <style>
+    body {
+      font-family: 'Inter', Arial, sans-serif;
+      font-size: 1rem;
+      line-height: 1.6;
+      background: var(--background);
+      color: var(--foreground);
+      margin: 0;
+      padding: 0;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: inherit;
+      font-weight: 700;
+      margin-top: 1.5em;
+      margin-bottom: 0.5em;
+      color: var(--heading, var(--foreground));
+    }
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.5rem; }
+    h3 { font-size: 1.2rem; }
+    a {
+      color: var(--primary, #2563eb);
+      text-decoration: underline;
+    }
+    a:focus {
+      outline: 2px solid var(--primary, #2563eb);
+      outline-offset: 2px;
+    }
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    .card {
+      background: var(--card, #fff);
+      color: var(--foreground);
+      border-radius: 0.75rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      padding: 1.25rem;
+      flex: 1 1 250px;
+      min-width: 220px;
+      max-width: 100%;
+      transition: background 0.2s;
+    }
+    @media (max-width: 700px) {
+      .cards {
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+      .card {
+        min-width: 0;
+      }
+    }
+    @media (max-width: 480px) {
+      body {
+        font-size: 0.98rem;
+      }
+      h1 { font-size: 1.4rem; }
+      h2 { font-size: 1.15rem; }
+      h3 { font-size: 1rem; }
+      .card { padding: 1rem; }
+    }
+    /* Mode sombre */
+    @media (prefers-color-scheme: dark) {
+      html, body {
+        background: #18181b;
+        color: #f4f4f5;
+      }
+      .card {
+        background: #232326;
+        color: #f4f4f5;
+      }
+      a {
+        color: #60a5fa;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
