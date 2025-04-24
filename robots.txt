@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Sitemap: https://docs.dazno.de/sitemap.xml
+
+# Optimisations spécifiques
+Disallow: /assets/
+Disallow: /*.js$
+Disallow: /*.css$
+Disallow: /*.json$ 

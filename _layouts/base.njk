@@ -3,7 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ title or 'Daz Documentation' }}</title>
+  
+  <!-- Métadonnées de base -->
+  <title>{{ title or 'Daz Documentation' }} | Documentation Bitcoin et Lightning Network</title>
+  <meta name="description" content="{{ description or 'Documentation complète sur Bitcoin, Lightning Network et la technologie blockchain. Apprenez à utiliser et comprendre les cryptomonnaies simplement avec Daznode.' }}">
+  <meta name="keywords" content="bitcoin, lightning network, blockchain, crypto, documentation, daznode, btc, ln, lightning, node, nœud bitcoin">
+  <meta name="author" content="Daznode">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://docs.dazno.de{{ page.url }}">
+  <meta property="og:title" content="{{ title or 'Daz Documentation' }} | Documentation Bitcoin et Lightning Network">
+  <meta property="og:description" content="{{ description or 'Documentation complète sur Bitcoin, Lightning Network et la technologie blockchain. Apprenez à utiliser et comprendre les cryptomonnaies simplement avec Daznode.' }}">
+  <meta property="og:image" content="https://docs.dazno.de/assets/images/daznode-docs-og.png">
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://docs.dazno.de{{ page.url }}">
+  <meta name="twitter:title" content="{{ title or 'Daz Documentation' }} | Documentation Bitcoin et Lightning Network">
+  <meta name="twitter:description" content="{{ description or 'Documentation complète sur Bitcoin, Lightning Network et la technologie blockchain. Apprenez à utiliser et comprendre les cryptomonnaies simplement avec Daznode.' }}">
+  <meta name="twitter:image" content="https://docs.dazno.de/assets/images/daznode-docs-og.png">
+  
+  <!-- Autres métadonnées -->
+  <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="index, follow">
+  <meta name="theme-color" content="#2563eb">
+  <link rel="canonical" href="https://docs.dazno.de{{ page.url }}">
+  
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/assets/images/favicon/site.webmanifest">
+  
+  <!-- Styles -->
   <link rel="stylesheet" href="/assets/css/style.css">
   <style>
     body {
