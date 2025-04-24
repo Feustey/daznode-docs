@@ -1,6 +1,6 @@
 ---
 layout: base.njk
-title: Daznode : Votre Nœud Lightning dans le Cloud
+title: "Daznode : Votre Nœud Lightning dans le Cloud"
 ---
 
 # Daznode : Votre Nœud Lightning dans le Cloud
