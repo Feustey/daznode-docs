@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }} - Documentation Daznode</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Documentation Daznode</h1>
+      <nav>
+        <ul>
+          <li><a href="/">Accueil</a></li>
+          <li><a href="/getting-started/">Démarrage</a></li>
+          <li><a href="/connect-data/">Connexion de données</a></li>
+          <li><a href="/manage-data/">Gestion des données</a></li>
+          <li><a href="/use-data/">Utiliser les données</a></li>
+          <li><a href="/administration/">Administration</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+  <main class="container">
+    <h1>{{ title }}</h1>
+    {{ content | safe }}
+  </main>
+  
+  <footer>
+    <div class="container">
+      <p>&copy; Daznode - {{ "" | date("yyyy") }}</p>
+    </div>
+  </footer>
+</body>
+</html> 

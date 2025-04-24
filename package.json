@@ -1,0 +1,21 @@
+{
+  "name": "daznode-docs",
+  "version": "1.0.0",
+  "description": "Documentation pour Daznode - nœud Lightning Network",
+  "main": "index.js",
+  "scripts": {
+    "build": "eleventy",
+    "dev": "eleventy --serve"
+  },
+  "keywords": [
+    "documentation",
+    "daznode",
+    "lightning",
+    "bitcoin"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@11ty/eleventy": "^2.0.1"
+  }
+} 

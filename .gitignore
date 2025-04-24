@@ -1,0 +1,30 @@
+# Dépendances
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# Répertoire de build
+public/
+dist/
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+
+# Fichiers d'éditeur
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+.project
+.settings/
+
+# Fichiers d'environnement
+.env
+.env.local
+.env.*.local
+
+# Netlify
+.netlify/ 

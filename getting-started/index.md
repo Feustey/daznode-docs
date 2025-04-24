@@ -1,3 +1,8 @@
+---
+layout: base.njk
+title: Daznode : Votre Nœud Lightning dans le Cloud
+---
+
 # Daznode : Votre Nœud Lightning dans le Cloud
 
 ## Présentation générale
@@ -45,6 +50,13 @@ Daznode est conçu pour être utilisé comme outil pédagogique. L'aide contextu
 #### 9. Suivez les opérations de longue durée ⏳
 
 De nombreuses opérations sur le Lightning Network ont une propriété déroutante : parfois elles sont super rapides, et parfois elles prennent une éternité. Cela rend difficile la création d'une expérience utilisateur cohérente et compréhensible. Daznode assure le suivi des "opérations en cours" d'une manière qui a du sens aussi bien pour les nouveaux utilisateurs que pour les opérateurs de nœuds expérimentés.
+
+## Ressources en ligne
+
+- [Guide de démarrage rapide](/getting-started/get-started/)
+- [Introduction aux Blockchains](/getting-started/introduction-blockchain/)
+- [Les Piliers de la Blockchain](/getting-started/les-blockchains/)
+- [Comprendre le Lightning Network](/manage-data/lightning-network/)
 
 ## Modèle de sécurité
 
