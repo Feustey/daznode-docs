@@ -33,9 +33,15 @@ Tout ce que vous devez savoir sur la plateforme Daznode pour gérer efficacement
 
 <div class="cards">
   <div class="card">
-    <h3>Connexion de données</h3>
-    <p>Configurer vos flux de données et connecter vos sources</p>
-    <a href="/connect-data/datastreams/">Flux de données →</a>
+    <h3>Lightning Network</h3>
+    <p>Découvrez tout sur le Lightning Network et son fonctionnement</p>
+    <a href="/lightning-network/">Explorer →</a>
+  </div>
+  
+  <div class="card">
+    <h3>Technologie RAG</h3>
+    <p>Comprendre le Retrieval-Augmented Generation</p>
+    <a href="/rag/">Explorer →</a>
   </div>
   
   <div class="card">
@@ -43,17 +49,17 @@ Tout ce que vous devez savoir sur la plateforme Daznode pour gérer efficacement
     <p>Gérer efficacement le réseau Lightning</p>
     <a href="/manage-data/lightning-network/">Réseau Lightning →</a>
   </div>
-  
-  <div class="card">
-    <h3>Utilisation des données</h3>
-    <p>Utiliser Nostr Wallet Connect avec Daznode</p>
-    <a href="/use-data/nostr-wallet-connect/">Nostr Wallet Connect →</a>
-  </div>
 </div>
 
 ## Explorer par catégorie
 
 <div class="cards">
+  <div class="card">
+    <h3>Lightning Network</h3>
+    <p>Tout sur le Lightning Network</p>
+    <a href="/lightning-network/">Explorer →</a>
+  </div>
+  
   <div class="card">
     <h3>Flux de données</h3>
     <p>Configurer la collecte de données</p>
@@ -61,20 +67,14 @@ Tout ce que vous devez savoir sur la plateforme Daznode pour gérer efficacement
   </div>
   
   <div class="card">
-    <h3>Réseau Lightning</h3>
-    <p>Gérer votre nœud Lightning Network</p>
-    <a href="/manage-data/lightning-network/">Explorer →</a>
+    <h3>RAG (IA générative)</h3>
+    <p>Technologie d'IA augmentée</p>
+    <a href="/rag/">Explorer →</a>
   </div>
   
   <div class="card">
     <h3>Nostr Wallet Connect</h3>
     <p>Intégrer NWC à vos applications</p>
     <a href="/use-data/nostr-wallet-connect/">Explorer →</a>
-  </div>
-  
-  <div class="card">
-    <h3>Administration</h3>
-    <p>Configurer la plateforme Daznode</p>
-    <a href="/administration/">Explorer →</a>
   </div>
 </div> 

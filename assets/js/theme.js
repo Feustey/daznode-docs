@@ -1,9 +1,17 @@
+// Application immédiate du thème pour éviter le flash de contenu
+(function() {
+  // Vérifie le localStorage dès le début
+  const savedTheme = localStorage.getItem('theme');
+  
+  // Applique le thème sauvegardé ou le thème par défaut
+  if (savedTheme === 'light') {
+    document.body.classList.add('light-theme');
+  }
+})();
+
 document.addEventListener('DOMContentLoaded', function() {
   const themeToggle = document.getElementById('theme-toggle');
   const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-  
-  // Le site est déjà en mode sombre par défaut,
-  // donc on doit juste gérer le basculement
   
   themeToggle.addEventListener('click', function() {
     document.body.classList.toggle('light-theme');
@@ -16,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
     updateThemeIcon(theme);
   });
   
-  // Vérifie le localStorage lors du chargement
+  // Vérifie le localStorage et met à jour l'icône
   const savedTheme = localStorage.getItem('theme');
   
   if (savedTheme === 'light') {
@@ -25,6 +33,23 @@ document.addEventListener('DOMContentLoaded', function() {
   } else {
     updateThemeIcon('dark');
   }
+  
+  // Écoute les changements de préférence système
+  prefersDarkScheme.addEventListener('change', function(e) {
+    const systemPrefersDark = e.matches;
+    const currentTheme = localStorage.getItem('theme');
+    
+    // Si l'utilisateur n'a pas explicitement choisi de thème, suivre le système
+    if (!currentTheme) {
+      if (systemPrefersDark) {
+        document.body.classList.remove('light-theme');
+        updateThemeIcon('dark');
+      } else {
+        document.body.classList.add('light-theme');
+        updateThemeIcon('light');
+      }
+    }
+  });
   
   function updateThemeIcon(theme) {
     if (theme === 'light') {

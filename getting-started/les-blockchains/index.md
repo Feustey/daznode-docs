@@ -5,6 +5,8 @@ title: Les Piliers de la Blockchain
 
 # Les Piliers de la Blockchain
 
+*Temps de lecture estimé : 12 minutes*
+
 ## Introduction à la Blockchain
 
 La blockchain est une technologie **novatrice, infaillible et révolutionnaire**. Il s'agit fondamentalement des lignes de code informatique qui permettent de faire fonctionner et de sécuriser un registre distribué, communément appelé blockchain. Ce code et son architecture sont les héritiers des technologies P2P (réseaux pair-à-pair) et de chiffrement.

@@ -1,4 +1,11 @@
+---
+layout: base.njk
+title: Guide de démarrage rapide pour Daznode
+---
+
 # Guide de démarrage rapide pour Daznode
+
+*Temps de lecture estimé : 5 minutes*
 
 Ce guide vous aidera à configurer rapidement votre nœud Lightning avec Daznode. Suivez ces étapes simples pour commencer à utiliser le Lightning Network en quelques minutes.
 

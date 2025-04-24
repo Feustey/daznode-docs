@@ -1,3 +1,8 @@
+---
+layout: base.njk
+title: "Nostr Wallet Connect avec Daznode"
+---
+
 # Guide d'utilisation de Nostr Wallet Connect avec Daznode
 
 Nostr Wallet Connect (NWC) est un protocole révolutionnaire qui permet de connecter votre nœud Lightning Daznode à des applications et sites web compatibles. Ce guide vous explique comment configurer et utiliser NWC de manière sécurisée et efficace.

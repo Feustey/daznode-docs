@@ -5,6 +5,8 @@ title: Introduction aux Blockchains
 
 # Introduction aux Blockchains
 
+*Temps de lecture estimé : 15 minutes*
+
 ## Introduction
 
 La blockchain, souvent présentée comme une technologie **novatrice, infaillible et révolutionnaire**, constitue un registre distribué et sécurisé dont l'architecture et le fonctionnement trouvent leurs racines dans les technologies **P2P (réseaux pair-à-pair) et de chiffrement**. Au-delà de sa nature technique, la blockchain représente un changement de paradigme dans la manière dont la valeur et l'information peuvent être échangées et conservées, remettant en question les modèles centralisés traditionnels. Elle renoue avec les **lois du marché** énoncées par les théoriciens néo-classiques à la fin du XIXe siècle et répond même aux cinq critères théoriquement indispensables à l'existence d'un marché idéal de **concurrence pure et parfaite**: **atomicité, homogénéité, fluidité, libre circulation et transparence de l'information**.
