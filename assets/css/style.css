@@ -1,18 +1,18 @@
 :root {
-  --color-primary: #1c76ff;
+  --color-primary: #00b1ff;
   --color-secondary: #ff9500;
-  --color-background: #f8f9fa;
-  --color-text: #333333;
-  --color-light: #f0f0f0;
-  --color-sidebar: #ffffff;
-  --color-header: #ffffff;
-  --color-header-text: #333333;
-  --color-border: #e4e4e4;
-  --color-link: #1c76ff;
-  --color-link-hover: #0056b3;
-  --color-nav-active: #ebf2ff;
-  --color-heading: #1c76ff;
-  --color-footer: #f8f9fa;
+  --color-background: #121212;
+  --color-text: #e0e0e0;
+  --color-light: #2a2a2a;
+  --color-sidebar: #1e1e1e;
+  --color-header: #1a1a1a;
+  --color-header-text: #ffffff;
+  --color-border: #333333;
+  --color-link: #00b1ff;
+  --color-link-hover: #4dccff;
+  --color-nav-active: rgba(0, 177, 255, 0.15);
+  --color-heading: #00b1ff;
+  --color-footer: #1a1a1a;
   --sidebar-width: 280px;
   --header-height: 64px;
   --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -89,6 +89,31 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+/* Theme toggle button */
+.theme-toggle {
+  background: transparent;
+  color: var(--color-header-text);
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 4px;
+  margin-left: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+
+.theme-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.theme-toggle svg {
+  width: 20px;
+  height: 20px;
 }
 
 /* Main layout */
@@ -256,16 +281,18 @@ blockquote {
 }
 
 .card {
-  background-color: white;
+  background-color: #1e1e1e;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
   padding: 24px;
   transition: transform 0.2s, box-shadow 0.2s;
+  border: 1px solid transparent;
 }
 
 .card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 4px 12px rgba(0, 177, 255, 0.2);
+  border: 1px solid var(--color-primary);
 }
 
 .card h3 {
@@ -324,4 +351,26 @@ footer {
   .search-input {
     width: 140px;
   }
+}
+
+/* Light theme */
+body.light-theme {
+  --color-background: #f8f9fa;
+  --color-text: #333333;
+  --color-light: #f0f0f0;
+  --color-sidebar: #ffffff;
+  --color-header: #ffffff;
+  --color-header-text: #333333;
+  --color-border: #e4e4e4;
+  --color-nav-active: rgba(0, 177, 255, 0.15);
+  --color-footer: #f8f9fa;
+}
+
+body.light-theme .card {
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+body.light-theme .theme-toggle:hover {
+  background-color: rgba(0, 0, 0, 0.05);
 } 
