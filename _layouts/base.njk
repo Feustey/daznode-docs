@@ -8,28 +8,74 @@
 </head>
 <body>
   <header>
-    <div class="container">
-      <h1>Documentation Daznode</h1>
-      <nav>
-        <ul>
-          <li><a href="/">Accueil</a></li>
-          <li><a href="/getting-started/">Démarrage</a></li>
-          <li><a href="/connect-data/">Connexion de données</a></li>
-          <li><a href="/manage-data/">Gestion des données</a></li>
-          <li><a href="/use-data/">Utiliser les données</a></li>
-          <li><a href="/administration/">Administration</a></li>
-        </ul>
-      </nav>
+    <div class="header-container">
+      <div class="logo-container">
+        <h1>Daznode Documentation</h1>
+      </div>
+      <div class="search-container">
+        <input type="text" placeholder="Rechercher" class="search-input">
+        <button class="search-button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+          </svg>
+        </button>
+      </div>
     </div>
   </header>
-  
-  <main class="container">
-    <h1>{{ title }}</h1>
-    {{ content | safe }}
-  </main>
+
+  <div class="main-container">
+    <aside class="sidebar">
+      <nav class="sidebar-nav">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="/" class="nav-link">Accueil</a>
+          </li>
+          <li class="nav-item">
+            <a href="/getting-started/" class="nav-link">Démarrage</a>
+            <ul class="nav-sublist">
+              <li><a href="/getting-started/get-started/">Guide de démarrage</a></li>
+              <li><a href="/getting-started/introduction-blockchain/">Introduction à la blockchain</a></li>
+              <li><a href="/getting-started/les-blockchains/">Les blockchains</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="/connect-data/" class="nav-link">Connexion de données</a>
+            <ul class="nav-sublist">
+              <li><a href="/connect-data/datastreams/">Flux de données</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="/manage-data/" class="nav-link">Gestion des données</a>
+            <ul class="nav-sublist">
+              <li><a href="/manage-data/lightning-network/">Réseau Lightning</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="/use-data/" class="nav-link">Utiliser les données</a>
+            <ul class="nav-sublist">
+              <li><a href="/use-data/nostr-wallet-connect/">Nostr Wallet Connect</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="/administration/" class="nav-link">Administration</a>
+            <ul class="nav-sublist">
+              <li><a href="/administration/education/">Formation</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+    
+    <main class="content">
+      <div class="content-container">
+        <h1 class="page-title">{{ title }}</h1>
+        {{ content | safe }}
+      </div>
+    </main>
+  </div>
   
   <footer>
-    <div class="container">
+    <div class="footer-container">
       <p>&copy; Daznode - {{ "" | date("yyyy") }}</p>
     </div>
   </footer>
