@@ -43,6 +43,30 @@ Ordinateur qui vérifie et enregistre les transactions sur le réseau Bitcoin ou
 ## QR code
 Image carrée que tu scannes avec ton téléphone pour envoyer ou recevoir des bitcoins facilement.
 
+## Halving
+Division par deux de la récompense des mineurs Bitcoin, programmée tous les 210 000 blocs (environ 4 ans). Exemple : En 2020, la récompense est passée de 12,5 à 6,25 bitcoins par bloc.
+
+## Mineur
+Participant du réseau Bitcoin qui utilise la puissance de calcul de son ordinateur pour valider les transactions. Exemple : Les mineurs reçoivent des bitcoins en récompense pour sécuriser le réseau.
+
+## Pool de minage
+Groupe de mineurs qui combinent leur puissance de calcul pour augmenter leurs chances de valider un bloc et partager les récompenses. Exemple : Un petit mineur seul aurait peu de chances de valider un bloc, mais en rejoignant un pool, il reçoit régulièrement de petites récompenses.
+
+## ASIC
+Application-Specific Integrated Circuit. Matériel informatique spécialement conçu pour le minage de Bitcoin, bien plus efficace que les ordinateurs classiques. Exemple : Un ASIC moderne peut être des centaines de fois plus puissant qu'un ordinateur gaming pour le minage.
+
+## Adresse Bitcoin
+Chaîne de caractères servant d'identifiant pour recevoir des bitcoins, comparable à un IBAN bancaire. Exemple : bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh
+
+## Clé privée
+Code secret qui permet de contrôler les bitcoins associés à une adresse. Ne doit jamais être partagée. Exemple : Perdre sa clé privée signifie perdre l'accès à ses bitcoins de façon permanente.
+
+## BTC
+Symbole utilisé pour désigner l'unité Bitcoin. Exemple : Le prix actuel est de 50 000 € par BTC.
+
+## Bloc Genesis
+Premier bloc de la blockchain Bitcoin, miné par Satoshi Nakamoto le 3 janvier 2009. Exemple : Le bloc genesis contient un message sur la crise financière de 2008.
+
 ## Exemple concret
 Si tu ne comprends pas un mot, cherche-le ici !
 

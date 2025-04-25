@@ -33,6 +33,12 @@ Tout ce que tu dois savoir pour comprendre et utiliser la blockchain, Bitcoin et
 
 <div class="cards">
   <div class="card">
+    <h3>Bitcoin</h3>
+    <p>Tout comprendre sur Bitcoin, de ses origines à son fonctionnement</p>
+    <a href="/bitcoin/">Explorer →</a>
+  </div>
+
+  <div class="card">
     <h3>Lightning Network</h3>
     <p>Découvrez tout sur le Lightning Network et son fonctionnement</p>
     <a href="/lightning-network/">Explorer →</a>
@@ -54,6 +60,12 @@ Tout ce que tu dois savoir pour comprendre et utiliser la blockchain, Bitcoin et
 ## Explorer par catégorie
 
 <div class="cards">
+  <div class="card">
+    <h3>Bitcoin</h3>
+    <p>La révolution monétaire numérique</p>
+    <a href="/bitcoin/">Explorer →</a>
+  </div>
+
   <div class="card">
     <h3>Lightning Network</h3>
     <p>Tout sur le Lightning Network</p>
