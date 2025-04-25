@@ -1,0 +1,52 @@
+{
+  "main": [
+    {
+      "title": "Accueil",
+      "url": "/"
+    },
+    {
+      "title": "Guide",
+      "url": "/getting-started/",
+      "children": [
+        {
+          "title": "Introduction",
+          "url": "/getting-started/introduction-blockchain/"
+        },
+        {
+          "title": "Démarrage",
+          "url": "/getting-started/get-started/"
+        },
+        {
+          "title": "Wallets",
+          "url": "/wallets/"
+        },
+        {
+          "title": "Sécurisation",
+          "url": "/securisation/"
+        }
+      ]
+    },
+    {
+      "title": "Lightning Network",
+      "url": "/lightning-network/",
+      "children": [
+        {
+          "title": "Bases",
+          "url": "/lightning-network/basics/"
+        },
+        {
+          "title": "Canaux",
+          "url": "/lightning-network/channels/"
+        },
+        {
+          "title": "Démarrage",
+          "url": "/lightning-network/getting-started/"
+        }
+      ]
+    },
+    {
+      "title": "Glossaire",
+      "url": "/glossary/"
+    }
+  ]
+} 

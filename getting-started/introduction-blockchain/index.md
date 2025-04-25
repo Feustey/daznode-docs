@@ -118,4 +118,53 @@ La blockchain est une technologie puissante et polyvalente qui offre un potentie
 
 Malgré les défis liés à la scalabilité, à l'immaturité du marché et à la complexité technique, l'écosystème blockchain continue d'évoluer et d'innover. Les efforts de recherche et de développement visent à surmonter ces limitations et à exploiter pleinement le potentiel de cette technologie. L'idéal de **partage du savoir au plus grand nombre cher aux cypherpunks** continue d'animer la communauté blockchain, favorisant la création de nombreuses ressources et solutions accessibles.
 
-Alors que le monde continue de se numériser, la blockchain apparaît comme une infrastructure fondamentale pour la prochaine génération d'Internet, offrant de nouvelles façons d'organiser, de collaborer et d'échanger de la valeur dans un environnement numérique de confiance. 
+Alors que le monde continue de se numériser, la blockchain apparaît comme une infrastructure fondamentale pour la prochaine génération d'Internet, offrant de nouvelles façons d'organiser, de collaborer et d'échanger de la valeur dans un environnement numérique de confiance.
+
+# Ethereum : Une Plateforme pour Applicatifs Décentralisés 🌐
+
+## Introduction à Ethereum 🚀
+
+Ethereum est une blockchain qui a été imaginée par Vitalik Buterin dans le but d'élargir le spectre couvert par la technologie blockchain au-delà du seul cas d'usage monétaire. Contrairement à Bitcoin, qui est principalement une monnaie numérique, Ethereum se veut une **plateforme généraliste et ouverte**, propice à l'innovation et permettant la création d'applications décentralisées (DApps).
+
+## Architecture Technique 🏗️
+
+L'architecture d'Ethereum repose sur l'**Ethereum Virtual Machine (EVM)**, une sorte d'ordinateur mondial décentralisé qui exécute le code des smart contracts. 
+
+Ethereum est organisé en plusieurs couches :
+- 🔷 La couche des nœuds (layer 1)
+- 🔶 La couche logicielle (layer 2) où s'exécutent les smart contracts codés en Solidity
+- 🔸 La couche des applications décentralisées (layer 3)
+
+## Documentation Officielle 📚
+
+Le **whitepaper** d'Ethereum est une œuvre de référence qui présente en détail l'architecture et la proposition de valeur de la plateforme. 
+
+Le **Yellowpaper** fournit une description formelle et technique du protocole.
+
+## Consensus et Sécurité 🔒
+
+Ethereum utilise initialement un algorithme de consensus de **preuve de travail (PoW)** basé sur l'ethash et un mécanisme appelé **DAG** pour la sécurisation. Cependant, l'objectif a toujours été de passer à la **preuve d'enjeu (PoS)** pour améliorer l'efficacité et la durabilité du réseau.
+
+## Types de Comptes 👥
+
+Les comptes Ethereum sont des adresses de 160 bits et peuvent être de deux types :
+- 💼 **External Owned Accounts (EOA)**, contrôlés par une clé privée
+- 📝 **Contract Accounts**, qui contiennent le code des smart contracts
+
+## Économie et Gas ⛽
+
+Le **gas** est une unité utilisée pour payer les coûts de transaction sur Ethereum et pour l'exécution des smart contracts.
+
+## Écosystème de Développement 🛠️
+
+L'écosystème Ethereum est riche en outils et librairies qui facilitent le développement :
+- 🔧 Web3.js
+- 🔨 Ethers.js
+- 📊 Solidity
+- 🎨 Remix
+
+Des standards comme l'**ERC-20** définissent les spécifications des jetons fongibles sur Ethereum.
+
+## Interopérabilité et Scalabilité 🔄
+
+L'interopérabilité entre différentes blockchains est un enjeu important pour l'évolution du web décentralisé. Les blockchains doivent pouvoir communiquer entre elles de manière efficace et sécurisée. 

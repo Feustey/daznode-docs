@@ -154,6 +154,18 @@ Ajustement des frais pour encourager les paiements dans une direction particuli�
 
 La somme de toutes les capacités des canaux d'un nœud, représentant la quantité totale de bitcoins verrouillés dans ses canaux Lightning.
 
+## Extension navigateur
+Application qui s'ajoute à ton navigateur web (Chrome, Firefox, etc.) pour ajouter des fonctionnalités. Exemple : Alby est une extension qui permet de faire des paiements Lightning directement depuis ton navigateur.
+
+## Facture Lightning (Lightning Invoice)
+Code qui contient toutes les informations pour un paiement Lightning : montant, destinataire, description. Exemple : lnbc1...
+
+## BOLT11
+Format standard des factures Lightning. BOLT signifie "Basis of Lightning Technology". Exemple : Une facture BOLT11 commence toujours par "lnbc" pour le réseau principal Bitcoin.
+
+## Store (magasin d'applications)
+Plateforme où tu peux télécharger des applications pour ton téléphone. Exemple : Google Play Store pour Android, App Store pour iPhone.
+
 ---
 
 Pour plus d'informations sur ces concepts, consultez nos guides détaillés ou contactez notre équipe technique. 
