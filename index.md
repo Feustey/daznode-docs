@@ -29,7 +29,7 @@ Tout ce que tu dois savoir pour comprendre et utiliser la blockchain, Bitcoin et
   </div>
 </div>
 
-## Points forts
+## Bitcoin
 
 <div class="cards">
   <div class="card">
@@ -37,7 +37,11 @@ Tout ce que tu dois savoir pour comprendre et utiliser la blockchain, Bitcoin et
     <p>Tout comprendre sur Bitcoin, de ses origines à son fonctionnement</p>
     <a href="/bitcoin/">Explorer →</a>
   </div>
+</div>
 
+## Points forts
+
+<div class="cards">
   <div class="card">
     <h3>Lightning Network</h3>
     <p>Découvrez tout sur le Lightning Network et son fonctionnement</p>
