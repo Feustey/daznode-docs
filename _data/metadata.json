@@ -1,0 +1,106 @@
+{
+  "site": {
+    "title": "Daz Documentation",
+    "description": "Documentation complète sur Bitcoin, Lightning Network et la technologie blockchain. Apprenez à utiliser et comprendre les cryptomonnaies simplement avec Daznode.",
+    "url": "https://docs.dazno.de",
+    "author": "Daznode",
+    "twitter": "@daznode",
+    "defaultImage": "/assets/images/daznode-docs-og.png",
+    "themeColor": "#2563eb",
+    "keywords": "bitcoin, lightning network, blockchain, crypto, documentation, daznode, btc, ln, lightning, node, nœud bitcoin"
+  },
+  "pages": {
+    "getting-started": {
+      "index": {
+        "title": "Guide de Démarrage | Documentation Bitcoin et Blockchain",
+        "description": "Commencez votre voyage dans l'univers Bitcoin et blockchain. Guide complet pour débutants avec des explications simples et pratiques.",
+        "keywords": "démarrage bitcoin, guide débutant, apprendre bitcoin, blockchain débutant"
+      },
+      "get-started": {
+        "title": "Premiers Pas avec Bitcoin | Guide Pratique",
+        "description": "Guide étape par étape pour débuter avec Bitcoin. Apprenez à créer un portefeuille, acheter et sécuriser vos premiers bitcoins.",
+        "keywords": "débuter bitcoin, wallet bitcoin, acheter bitcoin, sécurité bitcoin"
+      },
+      "introduction-blockchain": {
+        "title": "Introduction à la Blockchain | Technologies Décentralisées",
+        "description": "Les fondamentaux de la technologie blockchain expliqués simplement. Découvrez comment fonctionne cette innovation révolutionnaire.",
+        "keywords": "blockchain, technologie, décentralisation, cryptographie, consensus"
+      },
+      "les-blockchains": {
+        "title": "Les Différentes Blockchains | Guide Comparatif",
+        "description": "Comparaison détaillée des principales blockchains : Bitcoin, Ethereum et autres. Comprendre leurs différences et cas d'usage.",
+        "keywords": "types blockchain, comparaison blockchain, ethereum, bitcoin blockchain"
+      }
+    },
+    "bitcoin": {
+      "introduction": {
+        "title": "Introduction à Bitcoin | Guide Complet",
+        "description": "Découvrez les fondamentaux de Bitcoin, son fonctionnement et son importance dans l'économie moderne. Guide détaillé pour débutants et experts.",
+        "keywords": "bitcoin, crypto-monnaie, blockchain, btc, introduction bitcoin, comprendre bitcoin"
+      },
+      "minage": {
+        "title": "Le Minage Bitcoin Expliqué | Guide Technique",
+        "description": "Tout savoir sur le minage de Bitcoin : processus, matériel nécessaire, consommation énergétique et sécurité du réseau.",
+        "keywords": "minage bitcoin, mining, pow, proof of work, hashrate, mineur bitcoin"
+      },
+      "impact-environnemental": {
+        "title": "Impact Environnemental de Bitcoin | Analyse Détaillée",
+        "description": "Analyse approfondie de l'impact environnemental de Bitcoin : consommation énergétique, solutions vertes et perspectives d'avenir.",
+        "keywords": "bitcoin environnement, énergie bitcoin, mining vert, développement durable"
+      },
+      "evolution-prix": {
+        "title": "Évolution du Prix Bitcoin | Analyse Historique",
+        "description": "Historique complet du prix Bitcoin : analyse des tendances, événements majeurs et facteurs d'influence du marché.",
+        "keywords": "prix bitcoin, btc prix, analyse bitcoin, marché bitcoin"
+      }
+    },
+    "lightning-network": {
+      "basics": {
+        "title": "Les Bases du Lightning Network | Second Layer Bitcoin",
+        "description": "Comprendre le Lightning Network, la solution de scalabilité de Bitcoin. Guide complet sur les canaux de paiement et les transactions instantanées.",
+        "keywords": "lightning network, ln, canaux de paiement, bitcoin layer 2, scalabilité"
+      },
+      "getting-started": {
+        "title": "Débuter avec Lightning Network | Guide Pratique",
+        "description": "Guide pas à pas pour commencer avec Lightning Network : installation, configuration et première utilisation.",
+        "keywords": "lightning node, ln wallet, configuration ln, nœud lightning"
+      },
+      "channels": {
+        "title": "Gestion des Canaux Lightning | Guide Avancé",
+        "description": "Tout savoir sur la gestion des canaux Lightning : ouverture, fermeture, équilibrage et bonnes pratiques.",
+        "keywords": "canaux lightning, gestion canaux, équilibrage ln, liquidité lightning"
+      }
+    },
+    "rag": {
+      "introduction": {
+        "title": "Introduction au RAG | Retrieval Augmented Generation",
+        "description": "Découvrez le RAG (Retrieval Augmented Generation) et son application dans l'analyse des données blockchain.",
+        "keywords": "rag blockchain, analyse données, retrieval augmented generation"
+      },
+      "applications": {
+        "title": "Applications du RAG | Cas d'Usage Blockchain",
+        "description": "Explorez les applications pratiques du RAG dans l'écosystème blockchain et crypto.",
+        "keywords": "applications rag, use cases, analyse blockchain, data blockchain"
+      }
+    },
+    "umbrel": {
+      "getting-started": {
+        "title": "Débuter avec Umbrel | Guide d'Installation",
+        "description": "Guide complet pour installer et configurer votre nœud Umbrel. Devenez souverain sur le réseau Bitcoin.",
+        "keywords": "umbrel, nœud bitcoin, installation umbrel, configuration node"
+      },
+      "applications": {
+        "title": "Applications Umbrel | Guide des Services",
+        "description": "Découvrez toutes les applications disponibles sur Umbrel : wallet, explorateur, services Lightning et plus encore.",
+        "keywords": "apps umbrel, services umbrel, lightning apps, bitcoin apps"
+      }
+    },
+    "glossary": {
+      "index": {
+        "title": "Glossaire Bitcoin et Blockchain | Termes Techniques",
+        "description": "Lexique complet des termes techniques utilisés dans l'univers Bitcoin, blockchain et Lightning Network.",
+        "keywords": "glossaire bitcoin, termes blockchain, vocabulaire crypto, définitions bitcoin"
+      }
+    }
+  }
+} 
