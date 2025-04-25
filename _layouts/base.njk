@@ -135,13 +135,59 @@
         color: #60a5fa;
       }
     }
+    
+    /* Styles personnalisés pour le header et la navigation */
+    .logo-container {
+      display: flex;
+      align-items: center;
+    }
+    .logo-container img {
+      height: 36px;
+      margin-right: 10px;
+    }
+    .logo-container span {
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: #ffffff;
+    }
+    #search .pagefind-ui__search-input {
+      border: 1px solid #333;
+      border-radius: 6px;
+      padding: 8px 12px 8px 38px;
+      background-color: rgba(255, 255, 255, 0.1);
+      color: #ffffff;
+    }
+    #search .pagefind-ui__search-clear {
+      right: 12px;
+    }
+    #search .pagefind-ui__search-icon {
+      color: #2563eb;
+      width: 20px;
+      height: 20px;
+      left: 10px;
+    }
+    .sidebar {
+      width: 230px;
+    }
+    .sidebar-nav {
+      padding: 0 10px;
+    }
+    .content {
+      margin-left: 230px;
+      width: calc(100% - 230px);
+    }
+    .sidebar-collapsed .content {
+      margin-left: 60px;
+      width: calc(100% - 60px);
+    }
   </style>
 </head>
 <body>
   <header>
     <div class="header-container">
       <div class="logo-container">
-        <h1>Daz Documentation</h1>
+        <img src="/assets/images/logo.png" alt="Daznode">
+        <span>Documentation</span>
       </div>
       <div class="search-container">
         <div id="search"></div>
