@@ -21,6 +21,15 @@ module.exports = function(eleventyConfig) {
     "html"
   ]);
 
+  // Génération de l'index de recherche Fuse.js
+  eleventyConfig.addCollection("searchIndex", function(collectionApi) {
+    return collectionApi.getAll().filter(item => item.inputPath.endsWith('.md')).map(item => ({
+      title: item.data.title || '',
+      url: item.url,
+      excerpt: (item.template.frontMatter.content || '').slice(0, 300).replace(/\n/g, ' ')
+    }));
+  });
+
   // Configuration de la sortie
   return {
     dir: {

@@ -1,3 +1,38 @@
+# Nouvelle structure documentaire proposée
+
+Voici la structure recommandée pour la documentation Daznode :
+
+- **Accueil** (`index.md`) : Présentation générale et liens rapides
+- **Guide de démarrage** (`getting-started/`) :
+  - Introduction à la plateforme
+  - Installation et configuration
+  - Premiers pas
+- **Documentation technique** (`lightning-network/`, `rag/`, `connect-data/`, `manage-data/`, `use-data/`) :
+  - Organisation par grandes fonctionnalités
+  - Explications détaillées, schémas, exemples
+- **Tutoriels** (`tutoriels/` à créer) :
+  - Guides pratiques étape par étape
+  - Cas d'usage concrets
+- **Références** (`glossary/`, `Import/content/`, `API/` à créer si besoin) :
+  - Glossaire
+  - Références API
+  - Annexes et ressources
+
+Chaque fichier Markdown doit respecter le frontmatter suivant :
+
+```yaml
+---
+title: Titre de la page
+description: Description concise du contenu
+order: 1
+lastUpdated: YYYY-MM-DD
+author: Nom
+category: [accueil|démarrage|technique|tutoriel|référence]
+---
+```
+
+---
+
 # Daznode Documentation
 
 Documentation technique pour Daznode, un nœud Lightning Network accessible dans le navigateur.
@@ -21,4 +56,10 @@ Pour déployer cette documentation sur Netlify:
 - `connect-data/` - Guides de connexion de données
 - `manage-data/` - Guides de gestion des données
 - `use-data/` - Guides d'utilisation des données
-- `administration/` - Documentation d'administration 
+- `administration/` - Documentation d'administration
+- [Mémoire & Raisonnement (RAG)](rag/index.md)
+  - [Architecture du système RAG](rag/architecture-systeme.md)
+  - [Ingestion de données](rag/ingestion-donnees.md)
+  - [Vectorisation & Indexation](rag/vectorisation.md)
+  - [RAG en pratique](rag/rag-pratique.md)
+  - [Évaluation des performances](rag/evaluation.md) 

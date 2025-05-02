@@ -27,4 +27,6 @@ Thumbs.db
 .env.*.local
 
 # Netlify
-.netlify/ 
+.netlify/
+
+search-index.json.njk 

@@ -1,0 +1,21 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# Modèle de référence pour la documentation : Chapitre 1 de basics
+
+Le fichier [basics/a-savoir-absolument.md](mdc:basics/a-savoir-absolument.md) constitue le modèle canonique pour :
+- La structure des pages (frontmatter, titres, sections, listes, blocs d'alerte)
+- Le style rédactionnel (impératif, phrases courtes, voix active, zéro blabla)
+- La terminologie (lexique cohérent, définitions, liens vers le glossaire)
+- L'organisation de la navigation (ordre, liens internes, accessibilité)
+
+Toute nouvelle page ou migration de rubrique doit :
+- Reprendre la structure et le style de ce modèle
+- Respecter la hiérarchie stricte des titres (#, ##, ###)
+- Utiliser des listes à puces pour les actions ou points clés
+- Mettre en avant les alertes, astuces et notes avec des blocs visuels
+- Définir ou lier chaque terme technique au glossaire
+
+Ce modèle s'applique à toute la documentation Daznode, pas seulement à la rubrique basics.

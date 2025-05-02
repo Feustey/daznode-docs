@@ -1,42 +1,39 @@
 ---
 layout: base.njk
-title: "RAG (Retrieval-Augmented Generation) - Documentation complète"
+title: "Mémoire & Raisonnement (RAG)"
+description: "Comment l'IA à mémoire augmentée dialogue avec les données Lightning Network."
+date: 2024-06-07
+tags: ["rag", "ai", "lightning-network"]
+order: 1
 ---
 
-# RAG (Retrieval-Augmented Generation)
+# Mémoire & Raisonnement (RAG)
 
-*Temps de lecture estimé : 3 minutes*
+Le système de Mémoire & Raisonnement (RAG - Retrieval-Augmented Generation) est le cœur de [dazno.de](https://dazno.de), permettant à l'IA de dialoguer avec des données Lightning Network dynamiques et actualisées.
 
-Le RAG (Retrieval-Augmented Generation) est une approche avancée dans le domaine de l'intelligence artificielle qui combine la puissance des grands modèles de langage avec la récupération d'informations depuis des bases de connaissances externes.
+## Qu'est-ce que le RAG ?
 
-## Sections disponibles
+Le RAG combine deux capacités essentielles :
+- **Récupération (Retrieval)** : Recherche d'informations pertinentes dans une base de données Lightning Network
+- **Génération (Generation)** : Production de réponses précises basées sur ces informations
 
-### [Introduction au RAG](/rag/introduction/)
-Découvrez les principes fondamentaux du RAG, son fonctionnement et ses avantages par rapport aux modèles de langage traditionnels.
+> [!note]
+> Contrairement aux IA classiques, le RAG apporte une **mémoire externe** qui rend l'IA plus fiable, précise et à jour.
 
-### [Applications pratiques du RAG](/rag/applications/)
-Explorez les nombreux cas d'usage dans différents secteurs, de l'entreprise à la médecine, en passant par l'éducation et le domaine juridique.
+## Pourquoi est-ce important ?
 
-### [Analyse heuristique du RAG](/rag/heuristic/)
-Apprenez les différentes heuristiques permettant d'optimiser et d'améliorer les performances des systèmes RAG existants.
+- **Précision accrue** : Réponses basées sur des données réelles du réseau Lightning
+- **Actualité garantie** : Accès aux informations les plus récentes du réseau
+- **Réduction des hallucinations** : Vérification des faits et données sourcées
+- **Expertise spécifique** : Connaissances spécialisées sur Lightning Network
 
-### [Le MCP de Daznode : Architecture et fonctionnement](/rag/analysis/)
-Une analyse détaillée de l'implémentation RAG dans le Modèle de Connaissance Partagée (MCP) de Daznode, sa conception et son fonctionnement.
+## Explorez cette section
 
-## Pourquoi le RAG est-il important ?
+- [Architecture du système RAG](./architecture-systeme.md)
+- [Ingestion de données](./ingestion-donnees.md)
+- [Vectorisation & Indexation](./vectorisation.md)
+- [RAG en pratique](./rag-pratique.md)
+- [Évaluation des performances](./evaluation.md)
 
-Le RAG représente une avancée majeure dans l'utilisation des modèles de langage en apportant :
-
-- **Précision accrue** : Réponses basées sur des données vérifiables plutôt que sur les seules connaissances préentraînées
-- **Actualité des informations** : Accès à des connaissances récentes, au-delà de la date limite d'entraînement du modèle
-- **Réduction des hallucinations** : Diminution significative des informations incorrectes générées par les LLMs
-- **Personnalisation** : Adaptation des réponses aux connaissances spécifiques de chaque organisation
-- **Confidentialité** : Possibilité de travailler avec des données sensibles sans les exposer pendant l'entraînement
-
-## Ressources additionnelles
-
-- [Guide technique d'implémentation du RAG](https://github.com/run-llama/llama_index)
-- [Article de recherche fondateur sur le RAG](https://arxiv.org/abs/2005.11401)
-- [Communauté LlamaIndex](https://discord.gg/dGcwcsnxhU)
-
-Pour toute question ou besoin d'assistance sur l'implémentation du RAG dans vos projets, n'hésitez pas à consulter les ressources complémentaires ou à contacter notre équipe d'experts. 
+> [!note]
+> Chaque terme technique est défini ou lié au [glossaire](/glossary/). 

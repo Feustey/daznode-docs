@@ -46,12 +46,31 @@ document.addEventListener('DOMContentLoaded', function() {
   navItems.forEach(item => {
     item.addEventListener('click', function(e) {
       const hasSublist = this.nextElementSibling && this.nextElementSibling.classList.contains('nav-sublist');
-      
-      if (hasSublist) {
+      if (hasSublist || this.dataset.toggle === "submenu") {
         e.preventDefault();
         const parentItem = this.parentElement;
+        // Accordéon : referme tous les autres sauf celui qu'on ouvre
+        document.querySelectorAll('.nav-item.expanded').forEach(el => {
+          if (el !== parentItem) el.classList.remove('expanded');
+        });
         parentItem.classList.toggle('expanded');
       }
     });
   });
+  
+  // Après avoir ajouté la classe active, scroll automatique vers le lien actif
+  const activeLink = document.querySelector('.sidebar .active');
+  if (activeLink) {
+    activeLink.scrollIntoView({ block: 'center', behavior: 'smooth' });
+  }
+  
+  // Gestion du menu mobile
+  const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+  const sidebar = document.querySelector('.sidebar');
+  
+  if (mobileMenuToggle) {
+    mobileMenuToggle.addEventListener('click', function() {
+      sidebar.classList.toggle('mobile-visible');
+    });
+  }
 }); 
