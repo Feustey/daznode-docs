@@ -5,11 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ title }} - Documentation Daznode</title>
   <link rel="stylesheet" href="/assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
     <div class="header-container">
       <div class="logo-container">
+        <a href="/">
+          <img src="/assets/images/logo.png" alt="Logo Dazndocs" />
+        </a>
+      </div>
+      <div class="title-container">
         <h1>Daznode Documentation</h1>
       </div>
       <div class="search-container">
@@ -48,29 +54,55 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="/getting-started/" class="nav-link">
+            <a href="/basics/" class="nav-link" data-toggle="submenu">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                 <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
               </svg>
-              <span>Démarrage</span>
+              <span>Fondamentaux</span>
             </a>
             <ul class="nav-sublist">
-              <li><a href="/getting-started/get-started/">Guide de démarrage</a></li>
-              <li><a href="/getting-started/introduction-blockchain/">Introduction à la blockchain</a></li>
-              <li><a href="/getting-started/les-blockchains/">Les blockchains</a></li>
+              <li><a href="/basics/a-savoir-absolument/">À savoir absolument</a></li>
+              <li><a href="/basics/introduction-blockchain/">Introduction à la blockchain</a></li>
+              <li><a href="/basics/les-blockchains/">Les blockchains</a></li>
             </ul>
           </li>
           <li class="nav-item">
-            <a href="/lightning-network/" class="nav-link">
+            <a href="/basics/lightning-network-fondamentaux/" class="nav-link">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                 <path d="M5.52.359A.5.5 0 0 1 6 0h4a.5.5 0 0 1 .474.658L8.694 6H12.5a.5.5 0 0 1 .395.807l-7 9a.5.5 0 0 1-.873-.454L6.823 9.5H3.5a.5.5 0 0 1-.48-.641l2.5-8.5z"/>
               </svg>
               <span>Lightning Network</span>
             </a>
             <ul class="nav-sublist">
-              <li><a href="/lightning-network/basics/">Fondamentaux</a></li>
-              <li><a href="/lightning-network/getting-started/">Guide de démarrage</a></li>
-              <li><a href="/lightning-network/channels/">Canaux Lightning</a></li>
+              <li><a href="/basics/lightning-network-fondamentaux/">Fondamentaux</a></li>
+              <li><a href="/basics/lightning-network-demarrage/">Guide de démarrage</a></li>
+              <li><a href="/basics/lightning-network-canaux/">Canaux Lightning</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="/concepts-avances/" class="nav-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v8A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-8A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5m1.886 6.914L15 7.151V12.5a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5V7.15l6.614 1.764a1.5 1.5 0 0 0 .772 0M1.5 4h13a.5.5 0 0 1 .5.5v1.616L8.129 7.948a.5.5 0 0 1-.258 0L1 6.116V4.5a.5.5 0 0 1 .5-.5"/>
+              </svg>
+              <span>Concepts avancés</span>
+            </a>
+            <ul class="nav-sublist">
+              <li><a href="/concepts-avances/ml-prediction-fees/">Prédiction des frais par ML</a></li>
+              <li><a href="/concepts-avances/rag-ln/">RAG sur Lightning Network</a></li>
+              <li><a href="/concepts-avances/topologie-ln/">Topologie Lightning Network</a></li>
+              <li><a href="/concepts-avances/multipath-gossip/">Multipath et Gossip</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="/tutoriels/" class="nav-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.5 8.5h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0v3h3a.5.5 0 0 1 0 1z"/>
+              </svg>
+              <span>Tutoriels</span>
+            </a>
+            <ul class="nav-sublist">
+              <li><a href="/tutoriels/guide-demarrage-daznode/">Guide de démarrage Daznode</a></li>
+              <li><a href="/tutoriels/guide-complet-umbrel/">Guide complet Umbrel</a></li>
             </ul>
           </li>
           <li class="nav-item">
@@ -82,33 +114,28 @@
               <span>RAG</span>
             </a>
             <ul class="nav-sublist">
-              <li><a href="/rag/introduction/">Introduction</a></li>
-              <li><a href="/rag/applications/">Applications</a></li>
-              <li><a href="/rag/heuristic/">Heuristiques</a></li>
-              <li><a href="/rag/analysis/">Analyse MCP</a></li>
+              <li><a href="/rag/index/">Introduction</a></li>
+              <li><a href="/rag/architecture-systeme/">Architecture système</a></li>
+              <li><a href="/rag/ingestion-donnees/">Ingestion de données</a></li>
+              <li><a href="/rag/vectorisation/">Vectorisation</a></li>
+              <li><a href="/rag/evaluation/">Évaluation</a></li>
+              <li><a href="/rag/rag-pratique/">RAG en pratique</a></li>
             </ul>
           </li>
           <li class="nav-item">
-            <a href="/connect-data/" class="nav-link">
+            <a href="/reference-technique/" class="nav-link">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                <path d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294l4-13zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0zm6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0z"/>
+                <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2z"/>
+                <path d="M3 5.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5M3 8a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 8m0 2.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5"/>
               </svg>
-              <span>Connexion de données</span>
+              <span>Référence technique</span>
             </a>
             <ul class="nav-sublist">
-              <li><a href="/connect-data/datastreams/">Flux de données</a></li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a href="/use-data/" class="nav-link">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
-                <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
-              </svg>
-              <span>Utiliser les données</span>
-            </a>
-            <ul class="nav-sublist">
-              <li><a href="/use-data/nostr-wallet-connect/">Nostr Wallet Connect</a></li>
+              <li><a href="/reference-technique/api-endpoints/">API Endpoints</a></li>
+              <li><a href="/reference-technique/format-donnees/">Format des données</a></li>
+              <li><a href="/reference-technique/heuristiques/">Heuristiques</a></li>
+              <li><a href="/reference-technique/metriques-noeuds/">Métriques des nœuds</a></li>
+              <li><a href="/reference-technique/structure-db/">Structure de la base de données</a></li>
             </ul>
           </li>
           <li class="nav-item">
@@ -125,13 +152,25 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a href="/glossary/" class="nav-link">
+            <a href="/faq-glossaire/" class="nav-link">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                 <path d="M5.5 10.5A.5.5 0 0 1 6 10h4a.5.5 0 0 1 0 1H6a.5.5 0 0 1-.5-.5m0-2A.5.5 0 0 1 6 8h4a.5.5 0 0 1 0 1H6a.5.5 0 0 1-.5-.5m0-2A.5.5 0 0 1 6 6h4a.5.5 0 0 1 0 1H6a.5.5 0 0 1-.5-.5m0-2A.5.5 0 0 1 6 4h4a.5.5 0 0 1 0 1H6a.5.5 0 0 1-.5-.5"/>
                 <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1"/>
               </svg>
-              <span>Glossaire</span>
+              <span>FAQ & Glossaire</span>
             </a>
+            <ul class="nav-sublist">
+              <li><a href="/faq-glossaire/canal/">Canal</a></li>
+              <li><a href="/faq-glossaire/difference-ln-bitcoin/">Différence LN et Bitcoin</a></li>
+              <li><a href="/faq-glossaire/facture-bolt11/">Facture BOLT11</a></li>
+              <li><a href="/faq-glossaire/frais-ln/">Frais Lightning Network</a></li>
+              <li><a href="/faq-glossaire/htlc/">HTLC</a></li>
+              <li><a href="/faq-glossaire/liquidite-ln/">Liquidité LN</a></li>
+              <li><a href="/faq-glossaire/node/">Nœud</a></li>
+              <li><a href="/faq-glossaire/onion-routing/">Onion Routing</a></li>
+              <li><a href="/faq-glossaire/securite-ln/">Sécurité LN</a></li>
+              <li><a href="/faq-glossaire/wallet-types/">Types de portefeuilles</a></li>
+            </ul>
           </li>
         </ul>
       </nav>
@@ -153,5 +192,12 @@
   
   <script src="/assets/js/theme.js"></script>
   <script src="/assets/js/navigation.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.js"></script>
+  <script src="/assets/js/search.js"></script>
+  <button id="mobile-menu-toggle" class="mobile-menu-button d-none-desktop">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+      <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+    </svg>
+  </button>
 </body>
 </html> 
