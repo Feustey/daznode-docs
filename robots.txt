@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Plan du site
-Sitemap: https://daznode-docs.netlify.app/sitemap.xml 
+Sitemap: https://docs.dazno.de/sitemap.xml 
