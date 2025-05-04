@@ -6,7 +6,9 @@
   "scripts": {
     "build": "eleventy",
     "dev": "eleventy --serve",
-    "fix-frontmatter": "node scripts/fix-frontmatter.js"
+    "fix-frontmatter": "node scripts/fix-frontmatter.js",
+    "generate-sitemap": "node scripts/generate-sitemap.js",
+    "postbuild": "npm run generate-sitemap && cp robots.txt public/"
   },
   "keywords": [
     "documentation",

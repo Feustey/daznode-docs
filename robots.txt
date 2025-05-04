@@ -1,0 +1,6 @@
+# robots.txt pour Daznode Documentation
+User-agent: *
+Allow: /
+
+# Plan du site
+Sitemap: https://daznode-docs.netlify.app/sitemap.xml 

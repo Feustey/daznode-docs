@@ -2,6 +2,9 @@ module.exports = function(eleventyConfig) {
   // Copie les dossiers d'assets statiques vers le répertoire de sortie
   eleventyConfig.addPassthroughCopy("assets");
   
+  // Copie le fichier robots.txt vers le répertoire de sortie
+  eleventyConfig.addPassthroughCopy("robots.txt");
+  
   // Ajout du filtre date
   eleventyConfig.addFilter("date", function(value, format) {
     const date = value ? new Date(value) : new Date();
