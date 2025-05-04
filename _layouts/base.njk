@@ -1,23 +1,32 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="fr" class="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#0f172a" />
     <meta name="description" content="Documentation de Dazno – Lightning, Bitcoin, Blockchain, RAG et +" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="{{ title or 'Documentation Dazno' }}" />
+    <meta name="twitter:description" content="Explorez la documentation technique de Dazno sur Bitcoin, Lightning et le RAG." />
+    <meta name="twitter:image" content="/assets/images/preview.png" />
     <title>{{ title or "Documentation Dazno" }}</title>
     <link rel="stylesheet" href="/style.css" />
-    <link rel="canonical" href="https://docs.dazno.de{{ page.url }}" />
-<meta property="og:title" content="{{ title or 'Documentation Dazno' }}" />
-<meta property="og:description" content="Explorez la documentation technique de Dazno sur Bitcoin, Lightning et le RAG." />
-<meta property="og:image" content="/assets/images/preview.png" />
-<meta property="og:type" content="website" />
+    <link rel="canonical" href="{{ page.url | absolute_url }}" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta property="og:title" content="{{ title or 'Documentation Dazno' }}" />
+    <meta property="og:description" content="Explorez la documentation technique de Dazno sur Bitcoin, Lightning et le RAG." />
+    <meta property="og:image" content="/assets/images/preview.png" />
+    <meta property="og:type" content="website" />
   </head>
   <body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 antialiased">
     <div class="min-h-screen flex flex-col">
       <header class="border-b border-gray-200 dark:border-gray-700 sticky top-0 z-50 bg-white dark:bg-gray-900">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
           <a href="/">
-            <img src="/assets/images/Logo-Dazdocs.png" alt="Logo Dazndocs" class="h-10 w-auto" />
+            <img src="/assets/images/Logo-Dazdocs.png" alt="Logo Dazndocs" class="h-10 w-auto" loading="lazy" />
           </a>
           <button id="darkToggle" class="text-sm px-3 py-1 border border-gray-400 rounded hover:bg-gray-100 dark:hover:bg-gray-800">
             Mode
@@ -27,7 +36,6 @@
 
       <div class="flex flex-1">
         <aside class="hidden md:block w-64 border-r border-gray-200 dark:border-gray-700 p-6 sticky top-16 self-start h-screen overflow-y-auto">
-          <!-- Place for auto-generated ToC -->
           <nav>
             <ul class="space-y-2 text-sm">
               <li><a href="#" class="hover:underline">Introduction</a></li>
@@ -43,12 +51,10 @@
             {{ content | safe }}
           </article>
 
-          <!-- Progress Bar -->
           <div class="fixed bottom-0 left-0 right-0 h-1 bg-blue-500 z-50">
             <div id="scrollProgress" class="h-full bg-blue-700 dark:bg-blue-300" style="width: 0%"></div>
           </div>
 
-          <!-- Pagination Navigation -->
           <nav class="mt-12 flex justify-between text-sm">
             {% if previous_page %}
               <a href="{{ previous_page.url }}" class="text-blue-600 dark:text-blue-400 hover:underline">← {{ previous_page.title }}</a>
@@ -71,11 +77,20 @@
 
       <script>
         const toggle = document.getElementById('darkToggle');
+        const root = document.documentElement;
+        const themeKey = 'theme';
+
+        if (localStorage.getItem(themeKey) === 'dark') {
+          root.classList.add('dark');
+        } else if (localStorage.getItem(themeKey) === 'light') {
+          root.classList.remove('dark');
+        }
+
         toggle.addEventListener('click', () => {
-          document.documentElement.classList.toggle('dark');
+          const isDark = root.classList.toggle('dark');
+          localStorage.setItem(themeKey, isDark ? 'dark' : 'light');
         });
 
-        // Scroll Progress Bar
         window.addEventListener('scroll', () => {
           const doc = document.documentElement;
           const scrollTop = doc.scrollTop;
