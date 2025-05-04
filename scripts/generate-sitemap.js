@@ -9,7 +9,7 @@ function generateSitemap() {
   console.log('Génération du sitemap...');
   
   // URL de base du site
-  const baseUrl = 'https://daznode-docs.netlify.app';
+  const baseUrl = 'https://docs.dazno.de';
   
   // Date actuelle au format ISO pour la dernière modification
   const lastMod = new Date().toISOString();
