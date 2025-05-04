@@ -1,10 +1,14 @@
 ---
 title: Format des données Daznode
-description: Spécifications techniques des formats de données utilisés dans l'écosystème Daznode.
+description: >-
+  Spécifications techniques des formats de données utilisés dans l'écosystème
+  Daznode.
 order: 2
-lastUpdated: 2024-06-07
+lastUpdated: 2024-06-07T00:00:00.000Z
 author: Équipe Daznode
-category: [technique]
+category:
+  - technique
+layout: base.njk
 ---
 
 # Format des données Daznode

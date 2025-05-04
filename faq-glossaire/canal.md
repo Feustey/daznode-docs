@@ -2,9 +2,11 @@
 title: Canal Lightning
 description: Définition et fonctionnement d'un canal de paiement sur le Lightning Network.
 order: 2
-lastUpdated: 2024-06-07
+lastUpdated: 2024-06-07T00:00:00.000Z
 author: Équipe Daznode
-category: [glossaire]
+category:
+  - glossaire
+layout: base.njk
 ---
 
 # Canal Lightning

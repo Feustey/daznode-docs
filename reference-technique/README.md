@@ -1,3 +1,6 @@
+---
+layout: base.njk
+---
 # Référence technique
 
 Ce dossier regroupe toute la documentation technique destinée aux développeurs et intégrateurs.

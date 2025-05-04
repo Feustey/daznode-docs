@@ -1,6 +1,6 @@
 ---
 layout: base.njk
-title: Guides & Tutoriels
+title: "Guides & Tutoriels"
 description: Tous les guides pratiques pour Daznode et le Lightning Network.
 order: 0
 lastUpdated: 2024-06-07

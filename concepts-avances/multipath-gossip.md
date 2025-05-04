@@ -1,6 +1,6 @@
 ---
 layout: base.njk
-title: Multipath & Gossip
+title: "Multipath & Gossip"
 description: Routage multipath et protocoles de diffusion sur le Lightning Network.
 order: 4
 lastUpdated: 2024-06-07

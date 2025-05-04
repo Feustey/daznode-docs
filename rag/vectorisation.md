@@ -1,6 +1,6 @@
 ---
 layout: base.njk
-title: Vectorisation & Indexation
+title: "Vectorisation & Indexation"
 description: Méthodes de chunking, embeddings et index pour le RAG.
 order: 4
 lastUpdated: 2024-06-07

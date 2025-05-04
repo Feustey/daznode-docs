@@ -1,3 +1,6 @@
+---
+layout: base.njk
+---
 # FAQ & Glossaire
 
 Ce dossier centralise les définitions des termes, les réponses aux questions fréquentes et les explications synthétiques.

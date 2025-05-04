@@ -1,10 +1,14 @@
 ---
 title: Heuristiques d'optimisation Lightning
-description: Documentation des algorithmes et heuristiques utilisés pour l'optimisation des nœuds Lightning sur Daznode.
+description: >-
+  Documentation des algorithmes et heuristiques utilisés pour l'optimisation des
+  nœuds Lightning sur Daznode.
 order: 4
-lastUpdated: 2024-06-07
+lastUpdated: 2024-06-07T00:00:00.000Z
 author: Équipe Daznode
-category: [technique]
+category:
+  - technique
+layout: base.njk
 ---
 
 # Heuristiques d'optimisation Lightning

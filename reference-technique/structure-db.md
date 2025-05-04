@@ -1,10 +1,14 @@
 ---
 title: Structure de la base de données Daznode
-description: Documentation du schéma de base de données et du modèle de données de la plateforme Daznode.
+description: >-
+  Documentation du schéma de base de données et du modèle de données de la
+  plateforme Daznode.
 order: 5
-lastUpdated: 2024-06-07
+lastUpdated: 2024-06-07T00:00:00.000Z
 author: Équipe Daznode
-category: [technique]
+category:
+  - technique
+layout: base.njk
 ---
 
 # Structure de la base de données Daznode

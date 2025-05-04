@@ -1,10 +1,14 @@
 ---
 title: Métriques des nœuds Lightning
-description: Documentation des métriques disponibles et leur interprétation pour les nœuds Lightning Daznode.
+description: >-
+  Documentation des métriques disponibles et leur interprétation pour les nœuds
+  Lightning Daznode.
 order: 3
-lastUpdated: 2024-06-07
+lastUpdated: 2024-06-07T00:00:00.000Z
 author: Équipe Daznode
-category: [technique]
+category:
+  - technique
+layout: base.njk
 ---
 
 # Métriques des nœuds Lightning

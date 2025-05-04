@@ -1,10 +1,14 @@
 ---
 title: Quelle est la différence entre Bitcoin et Lightning Network ?
-description: Comprendre les différences fondamentales entre la blockchain Bitcoin et le Lightning Network.
+description: >-
+  Comprendre les différences fondamentales entre la blockchain Bitcoin et le
+  Lightning Network.
 order: 6
-lastUpdated: 2024-06-07
+lastUpdated: 2024-06-07T00:00:00.000Z
 author: Équipe Daznode
-category: [faq]
+category:
+  - faq
+layout: base.njk
 ---
 
 # Quelle est la différence entre Bitcoin et Lightning Network ?

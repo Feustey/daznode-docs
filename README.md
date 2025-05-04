@@ -1,3 +1,6 @@
+---
+layout: base.njk
+---
 # Nouvelle structure documentaire proposée
 
 Voici la structure recommandée pour la documentation Daznode :

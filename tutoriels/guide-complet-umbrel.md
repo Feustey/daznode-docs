@@ -1,10 +1,14 @@
 ---
-title: "Guide complet Umbrel - Installation et utilisation"
-description: Tutoriel pas à pas pour installer, configurer et exploiter un nœud Umbrel Bitcoin/Lightning.
+title: Guide complet Umbrel - Installation et utilisation
+description: >-
+  Tutoriel pas à pas pour installer, configurer et exploiter un nœud Umbrel
+  Bitcoin/Lightning.
 order: 2
-lastUpdated: 2024-06-07
+lastUpdated: 2024-06-07T00:00:00.000Z
 author: Daznode Docs
-category: [tutoriel]
+category:
+  - tutoriel
+layout: base.njk
 ---
 
 # Guide complet Umbrel - Installation et utilisation

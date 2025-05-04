@@ -8,11 +8,11 @@
   }
 
   body {
-    @apply bg-white text-gray-900 antialiased;
+    @apply bg-white text-gray-900 dark:text-gray-100 antialiased;
   }
 
   h1, h2, h3, h4 {
-    @apply font-bold leading-tight text-gray-900;
+    @apply font-bold leading-tight text-gray-900 dark:text-white;
   }
 
   h1 {
@@ -28,19 +28,19 @@
   }
 
   p {
-    @apply text-base md:text-lg leading-relaxed mb-6;
+    @apply text-base md:text-lg leading-relaxed mb-6 dark:text-gray-200;
   }
 
   ul, ol {
-    @apply list-disc ml-6 mb-6;
+    @apply list-disc ml-6 mb-6 dark:text-gray-200;
   }
 
   a {
-    @apply text-blue-600 underline underline-offset-2 hover:text-blue-800;
+    @apply text-blue-600 dark:text-blue-400 underline underline-offset-2 hover:text-blue-800 dark:hover:text-blue-300;
   }
 
   code {
-    @apply bg-gray-100 text-sm px-1 py-0.5 rounded;
+    @apply bg-gray-100 dark:bg-gray-800 text-sm px-1 py-0.5 rounded;
   }
 
   pre {
@@ -48,7 +48,7 @@
   }
 
   blockquote {
-    @apply border-l-4 border-gray-300 pl-4 italic text-gray-600 mb-6;
+    @apply border-l-4 border-gray-300 dark:border-gray-600 pl-4 italic text-gray-600 dark:text-gray-300 mb-6;
   }
 
   img {
@@ -60,6 +60,147 @@
   }
 
   th, td {
-    @apply border px-4 py-2;
+    @apply border border-gray-300 dark:border-gray-700 px-4 py-2;
+  }
+  
+  th {
+    @apply bg-gray-100 dark:bg-gray-800;
+  }
+}
+
+@layer components {
+  /* Bannière héro */
+  .hero-banner {
+    @apply bg-gradient-to-br from-blue-600 to-blue-800 dark:from-blue-800 dark:to-blue-950 rounded-xl p-8 my-8 text-white shadow-md;
+  }
+  
+  .hero-content {
+    @apply max-w-3xl mx-auto text-center;
+  }
+  
+  .hero-content h2 {
+    @apply text-2xl md:text-3xl font-bold mb-4 text-white;
+  }
+  
+  .hero-content p {
+    @apply mb-6 text-white/90;
+  }
+
+  /* Boutons */
+  .btn-primary {
+    @apply inline-block bg-white text-blue-700 font-medium py-2 px-6 rounded-lg no-underline hover:bg-blue-50 transition-colors;
+  }
+
+  .btn-secondary {
+    @apply inline-block bg-blue-600 text-white font-medium py-2 px-6 rounded-lg no-underline hover:bg-blue-700 transition-colors;
+  }
+
+  .btn-cta {
+    @apply inline-block bg-gradient-to-r from-blue-500 to-blue-700 text-white font-bold py-3 px-8 rounded-lg no-underline hover:from-blue-600 hover:to-blue-800 transition-colors;
+  }
+
+  /* Navigation styles */
+  .sidebar section > div a {
+    @apply transition-all duration-200 no-underline;
+  }
+
+  .sidebar section > div a.active {
+    @apply bg-blue-50 dark:bg-blue-900/30 rounded-md px-2 py-1 -ml-2 font-medium;
+  }
+
+  .section-toggle {
+    @apply transition-all duration-200 hover:bg-gray-50 dark:hover:bg-gray-800/50 rounded-md px-1;
+  }
+
+  /* Cartes */
+  .cards {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 my-8;
+  }
+
+  .card {
+    @apply bg-white dark:bg-gray-800 rounded-lg shadow p-6 hover:shadow-md border border-gray-100 dark:border-gray-700 transition-shadow;
+  }
+
+  .card-icon {
+    @apply text-3xl mb-3;
+  }
+
+  .feature-cards {
+    @apply grid grid-cols-1 md:grid-cols-2 gap-8 my-8;
+  }
+
+  .feature-card {
+    @apply bg-gray-50 dark:bg-gray-800/50 rounded-lg p-6 shadow-sm border border-gray-100 dark:border-gray-700;
+  }
+
+  /* Ressources et mises à jour */
+  .resource-links {
+    @apply grid grid-cols-1 md:grid-cols-3 gap-6 my-8;
+  }
+
+  .resource-category {
+    @apply mb-6;
+  }
+
+  .resource-category h4 {
+    @apply text-lg font-semibold mb-3 pb-2 border-b border-gray-200 dark:border-gray-700;
+  }
+
+  .resource-category ul {
+    @apply list-none ml-0;
+  }
+
+  .resource-category li {
+    @apply mb-2;
+  }
+
+  .cta-container {
+    @apply my-12;
+  }
+
+  .cta-box {
+    @apply bg-blue-50 dark:bg-blue-900/20 rounded-xl p-8 text-center border border-blue-100 dark:border-blue-900;
+  }
+
+  .updates-section {
+    @apply my-12 border-t border-gray-200 dark:border-gray-700 pt-8;
+  }
+
+  .update-items {
+    @apply grid grid-cols-1 md:grid-cols-3 gap-6 mt-6;
+  }
+
+  .update-item {
+    @apply bg-white dark:bg-gray-800 p-4 rounded-lg shadow-sm border border-gray-100 dark:border-gray-700;
+  }
+
+  .update-date {
+    @apply text-sm text-gray-500 dark:text-gray-400 block mb-2;
+  }
+}
+
+@layer utilities {
+  /* Améliorer les liens de navigation */
+  .sidebar a {
+    @apply cursor-pointer z-10 relative no-underline;
+  }
+
+  .sidebar a:hover {
+    @apply text-blue-600 dark:text-blue-400;
+  }
+
+  /* Assurer que les liens sont prioritaires en cas de superposition */
+  .sidebar a span {
+    @apply z-10 relative;
+  }
+
+  /* S'assurer que les boutons de toggle ont un curseur pointer */
+  .section-toggle {
+    @apply cursor-pointer z-0;
+  }
+  
+  /* Réduire la probabilité de conflits de clics entre boutons et liens */
+  .sidebar section > div {
+    @apply pt-1;
   }
 }

@@ -36,7 +36,7 @@ Prenez le contrôle de votre nœud Lightning Network et exploitez pleinement le 
     <div class="card-icon">🧠</div>
     <h3>RAG & IA</h3>
     <p>Comment l'IA augmentée révolutionne l'analyse des données Lightning</p>
-    <a href="/rag/">Explorer →</a>
+    <a href="/rag/index/">Explorer →</a>
   </div>
 </div>
 

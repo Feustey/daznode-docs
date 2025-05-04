@@ -1,10 +1,14 @@
 ---
 title: API Endpoints Daznode
-description: Documentation technique complète des endpoints API exposés par la plateforme Daznode.
+description: >-
+  Documentation technique complète des endpoints API exposés par la plateforme
+  Daznode.
 order: 1
-lastUpdated: 2024-06-07
+lastUpdated: 2024-06-07T00:00:00.000Z
 author: Équipe Daznode
-category: [technique]
+category:
+  - technique
+layout: base.njk
 ---
 
 # API Endpoints Daznode

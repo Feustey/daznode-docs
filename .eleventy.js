@@ -1,9 +1,42 @@
+const postcss = require('postcss');
+const tailwindcss = require('tailwindcss');
+const autoprefixer = require('autoprefixer');
+const fs = require('fs');
+const path = require('path');
+
 module.exports = function(eleventyConfig) {
   // Copie les dossiers d'assets statiques vers le répertoire de sortie
-  eleventyConfig.addPassthroughCopy("assets");
+  eleventyConfig.addPassthroughCopy("assets/images");
+  eleventyConfig.addPassthroughCopy("assets/js");
   
-  // Copie le fichier robots.txt vers le répertoire de sortie
+  // Copie les fichiers de base vers le répertoire de sortie
   eleventyConfig.addPassthroughCopy("robots.txt");
+  eleventyConfig.addPassthroughCopy("site.webmanifest");
+  eleventyConfig.addPassthroughCopy("favicon.ico");
+  eleventyConfig.addPassthroughCopy("apple-touch-icon.png");
+  
+  // Traitement CSS avec PostCSS et Tailwind
+  eleventyConfig.addWatchTarget("./assets/css/");
+  eleventyConfig.on("eleventy.before", async () => {
+    const cssInput = fs.readFileSync('./assets/css/style.css', 'utf8');
+    
+    const cssOutput = await postcss([
+      tailwindcss,
+      autoprefixer
+    ]).process(cssInput, {
+      from: './assets/css/style.css',
+      to: './public/style.css'
+    });
+    
+    // Création du répertoire si nécessaire
+    if (!fs.existsSync('./public')) {
+      fs.mkdirSync('./public', { recursive: true });
+    }
+    
+    // Écriture du CSS transformé
+    fs.writeFileSync('./public/style.css', cssOutput.css);
+    console.log("CSS processed with Tailwind & PostCSS");
+  });
   
   // Ajout du filtre date
   eleventyConfig.addFilter("date", function(value, format) {

@@ -1,7 +1,7 @@
 ---
 layout: base.njk
 title: RAG sur Lightning Network
-description: Application du Retrieval-Augmented Generation au Lightning Network.
+description: "Application du Retrieval-Augmented Generation au Lightning Network."
 order: 3
 lastUpdated: 2024-06-07
 author: Équipe Daznode

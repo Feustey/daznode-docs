@@ -29,11 +29,11 @@ Le RAG combine deux capacités essentielles :
 
 ## Explorez cette section
 
-- [Architecture du système RAG](./architecture-systeme.md)
-- [Ingestion de données](./ingestion-donnees.md)
-- [Vectorisation & Indexation](./vectorisation.md)
-- [RAG en pratique](./rag-pratique.md)
-- [Évaluation des performances](./evaluation.md)
+- [Architecture du système RAG](/rag/architecture-systeme/)
+- [Ingestion de données](/rag/ingestion-donnees/)
+- [Vectorisation & Indexation](/rag/vectorisation/)
+- [RAG en pratique](/rag/rag-pratique/)
+- [Évaluation des performances](/rag/evaluation/)
 
 > [!note]
-> Chaque terme technique est défini ou lié au [glossaire](/glossary/). 
+> Chaque terme technique est défini ou lié au [glossaire](/faq-glossaire/). 

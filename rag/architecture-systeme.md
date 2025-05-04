@@ -18,7 +18,7 @@ Le MCP (Modèle de Connaissance Partagée) de [dazno.de](https://dazno.de) adopt
 
 Sources → Ingestion → Vecteurs → Modèle → Réponse
 
-![Schéma MCP](../../public/assets/images/mcp-architecture-diagram.png)
+![Schéma MCP](/assets/images/mcp-architecture-diagram.png)
 
 ## Composants principaux
 
