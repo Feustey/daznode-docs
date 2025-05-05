@@ -3,6 +3,28 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Variables CSS pour les couleurs thématiques */
+:root {
+  --color-primary: #00b1ff;
+  --color-primary-dark: #008fd1;
+  --color-accent: #0060df;
+  --color-text: #1a202c;
+  --color-text-light: #4a5568;
+  --color-text-dark: #ffffff;
+  --color-bg-light: #ffffff;
+  --color-bg-dark: #111827;
+  --color-border-light: #e2e8f0;
+  --color-border-dark: #374151;
+}
+
+/* Définir les couleurs pour le mode sombre */
+.dark {
+  --color-text: #e2e8f0;
+  --color-text-light: #a0aec0;
+  --color-bg-light: #1a202c;
+  --color-border-light: #374151;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -10,8 +32,11 @@
 
   body {
     @apply bg-white text-gray-900 dark:text-gray-100 antialiased;
+    color: var(--color-text);
+    background-color: var(--color-bg-light);
   }
 
+  /* Typographie de base */
   h1, h2, h3, h4 {
     @apply font-bold leading-tight text-gray-900 dark:text-white;
   }
@@ -31,36 +56,72 @@
   p {
     @apply text-base md:text-lg leading-relaxed mb-6 dark:text-gray-200;
   }
-
-  /* Style amélioré pour les listes */
-  ul {
-    @apply list-none pl-6 mb-6 dark:text-gray-200 space-y-2;
+  
+  strong {
+    @apply text-blue-600 dark:text-blue-400 font-semibold;
+    color: var(--color-accent);
   }
   
-  ol {
-    @apply list-none pl-8 mb-6 dark:text-gray-200 space-y-2;
+  /* Eléments de texte enrichi */
+  a {
+    @apply text-blue-600 dark:text-blue-400 underline underline-offset-2 hover:text-blue-800 dark:hover:text-blue-300;
+    color: var(--color-primary);
+  }
+
+  code {
+    @apply bg-gray-100 dark:bg-gray-800 text-sm px-1 py-0.5 rounded;
+    border-color: var(--color-border-light);
+  }
+
+  pre {
+    @apply bg-gray-900 text-white text-sm p-4 overflow-auto rounded mb-6;
+  }
+
+  blockquote {
+    @apply border-l-4 border-gray-300 dark:border-gray-600 pl-4 italic text-gray-600 dark:text-gray-300 mb-6;
+    border-color: var(--color-primary-dark);
+  }
+
+  /* Base commune pour les listes */
+  .list-base {
+    @apply list-none mb-6 dark:text-gray-200 space-y-2;
+  }
+  
+  .list-item-base {
+    @apply relative;
+  }
+  
+  .list-marker-base {
+    @apply absolute left-0;
+  }
+  
+  /* Listes non-ordonnées */
+  ul {
+    @apply list-base pl-6;
   }
   
   ul > li {
-    @apply relative pl-6;
+    @apply list-item-base pl-6;
   }
   
   ul > li::before {
-    @apply absolute left-0 top-[0.5em] h-2 w-2 bg-blue-500 dark:bg-blue-400 rounded-full;
+    @apply list-marker-base top-[0.5em] h-2 w-2 bg-blue-500 dark:bg-blue-400 rounded-full;
+    background-color: var(--color-primary);
     content: '';
   }
   
+  /* Listes ordonnées */
   ol {
-    counter-reset: item;
+    @apply list-base pl-8 counter-reset-item;
   }
   
   ol > li {
-    @apply relative pl-6;
-    counter-increment: item;
+    @apply list-item-base pl-6 counter-increment-item;
   }
   
   ol > li::before {
-    @apply absolute left-0 text-blue-600 dark:text-blue-400 font-medium;
+    @apply list-marker-base text-blue-600 dark:text-blue-400 font-medium;
+    color: var(--color-primary);
     content: counter(item) '.';
   }
   
@@ -77,43 +138,35 @@
     @apply text-blue-500 dark:text-blue-500/90;
   }
 
-  a {
-    @apply text-blue-600 dark:text-blue-400 underline underline-offset-2 hover:text-blue-800 dark:hover:text-blue-300;
-  }
-
-  code {
-    @apply bg-gray-100 dark:bg-gray-800 text-sm px-1 py-0.5 rounded;
-  }
-
-  pre {
-    @apply bg-gray-900 text-white text-sm p-4 overflow-auto rounded mb-6;
-  }
-
-  blockquote {
-    @apply border-l-4 border-gray-300 dark:border-gray-600 pl-4 italic text-gray-600 dark:text-gray-300 mb-6;
-  }
-
-  img {
-    @apply max-w-full h-auto rounded;
-  }
-
+  /* Tableaux */
   table {
     @apply table-auto border-collapse w-full mb-6;
   }
 
   th, td {
     @apply border border-gray-300 dark:border-gray-700 px-4 py-2;
+    border-color: var(--color-border-light);
   }
   
   th {
     @apply bg-gray-100 dark:bg-gray-800;
   }
+
+  /* Media */
+  img {
+    @apply max-w-full h-auto rounded;
+  }
 }
 
 @layer components {
+  /* 
+   * BANNIÈRES ET ACCROCHES 
+   */
+  
   /* Bannière héro */
   .hero-banner {
     @apply bg-gradient-to-br from-blue-600 to-blue-800 dark:from-blue-800 dark:to-blue-950 rounded-xl p-8 my-8 text-white shadow-md;
+    background: linear-gradient(to bottom right, var(--color-primary), var(--color-primary-dark));
   }
   
   .hero-content {
@@ -127,55 +180,139 @@
   .hero-content p {
     @apply mb-6 text-white/90;
   }
+  
+  /* Call-to-action */
+  .cta-container {
+    @apply my-12;
+  }
 
-  /* Boutons */
+  .cta-box {
+    @apply bg-blue-50 dark:bg-blue-900/20 rounded-xl p-8 text-center border border-blue-100 dark:border-blue-900;
+    border-color: var(--color-primary);
+  }
+
+  /* 
+   * NAVIGATION 
+   */
+  
+  /* Navigation sidebar commune */
+  .nav-link {
+    @apply transition-all duration-200 no-underline cursor-pointer z-10 relative;
+  }
+  
+  .nav-link:hover {
+    @apply text-blue-600 dark:text-blue-400;
+    color: var(--color-primary);
+  }
+  
+  .nav-link.active {
+    @apply bg-blue-50 dark:bg-blue-900/30 rounded-md px-2 py-1 -ml-2 font-medium;
+  }
+  
+  .nav-link span {
+    @apply z-10 relative;
+  }
+  
+  .nav-section {
+    @apply pt-1;
+  }
+  
+  /* Toggle de section */
+  .section-toggle {
+    @apply transition-all duration-200;
+  }
+
+  /* État normal */
+  .section-toggle .section-icon {
+    @apply text-gray-600 dark:text-gray-400 transition-colors duration-200;
+  }
+
+  /* État actif - amplification de la couleur */
+  .section-toggle.section-active {
+    @apply bg-blue-50 dark:bg-blue-900/20 rounded-md px-2;
+  }
+
+  .section-toggle.section-active .section-icon {
+    @apply text-blue-600 dark:text-blue-400;
+  }
+
+  .section-toggle.section-active span {
+    @apply text-blue-700 dark:text-blue-300 font-semibold;
+  }
+
+  /* Effet de halo léger autour de la section active */
+  @media (min-width: 768px) {
+    .section-toggle.section-active {
+      @apply shadow-sm;
+      box-shadow: 0 0 8px rgba(59, 130, 246, 0.2);
+    }
+    
+    .dark .section-toggle.section-active {
+      box-shadow: 0 0 8px rgba(59, 130, 246, 0.3);
+    }
+  }
+
+  /* 
+   * BOUTONS 
+   */
+  
+  /* Base commune pour les boutons */
+  .btn {
+    @apply inline-block font-medium py-2 px-6 rounded-lg no-underline transition-colors;
+  }
+  
   .btn-primary {
-    @apply inline-block bg-white text-blue-700 font-medium py-2 px-6 rounded-lg no-underline hover:bg-blue-50 transition-colors;
+    @apply btn bg-white text-blue-700 hover:bg-blue-50;
+    color: var(--color-primary-dark);
   }
 
   .btn-secondary {
-    @apply inline-block bg-blue-600 text-white font-medium py-2 px-6 rounded-lg no-underline hover:bg-blue-700 transition-colors;
+    @apply btn bg-blue-600 text-white hover:bg-blue-700;
+    background-color: var(--color-primary);
   }
 
   .btn-cta {
-    @apply inline-block bg-gradient-to-r from-blue-500 to-blue-700 text-white font-bold py-3 px-8 rounded-lg no-underline hover:from-blue-600 hover:to-blue-800 transition-colors;
+    @apply btn font-bold py-3 px-8 bg-gradient-to-r from-blue-500 to-blue-700 text-white hover:from-blue-600 hover:to-blue-800;
+    background: linear-gradient(to right, var(--color-primary), var(--color-primary-dark));
   }
 
-  /* Navigation styles */
-  .sidebar section > div a {
-    @apply transition-all duration-200 no-underline;
+  /* 
+   * CARTES ET GRILLES 
+   */
+  
+  /* Base commune pour les cartes */
+  .card-base {
+    @apply rounded-lg shadow-sm border transition-shadow;
+    border-color: var(--color-border-light);
   }
-
-  .sidebar section > div a.active {
-    @apply bg-blue-50 dark:bg-blue-900/30 rounded-md px-2 py-1 -ml-2 font-medium;
-  }
-
-  .section-toggle {
-    @apply transition-all duration-200 hover:bg-gray-50 dark:hover:bg-gray-800/50 rounded-md px-1;
-  }
-
-  /* Cartes */
+  
+  /* Cartes standards */
   .cards {
     @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 my-8;
   }
 
   .card {
-    @apply bg-white dark:bg-gray-800 rounded-lg shadow p-6 hover:shadow-md border border-gray-100 dark:border-gray-700 transition-shadow;
+    @apply card-base bg-white dark:bg-gray-800 p-6 hover:shadow-md border-gray-100 dark:border-gray-700;
   }
 
   .card-icon {
     @apply text-3xl mb-3;
+    color: var(--color-primary);
   }
 
+  /* Cartes de fonctionnalités */
   .feature-cards {
     @apply grid grid-cols-1 md:grid-cols-2 gap-8 my-8;
   }
 
   .feature-card {
-    @apply bg-gray-50 dark:bg-gray-800/50 rounded-lg p-6 shadow-sm border border-gray-100 dark:border-gray-700;
+    @apply card-base bg-gray-50 dark:bg-gray-800/50 p-6 border-gray-100 dark:border-gray-700;
   }
 
-  /* Ressources et mises à jour */
+  /* 
+   * RESSOURCES ET LISTES DE LIENS 
+   */
+  
   .resource-links {
     @apply grid grid-cols-1 md:grid-cols-3 gap-6 my-8;
   }
@@ -186,6 +323,7 @@
 
   .resource-category h4 {
     @apply text-lg font-semibold mb-3 pb-2 border-b border-gray-200 dark:border-gray-700;
+    border-color: var(--color-border-light);
   }
 
   .resource-category ul {
@@ -196,16 +334,13 @@
     @apply mb-2;
   }
 
-  .cta-container {
-    @apply my-12;
-  }
-
-  .cta-box {
-    @apply bg-blue-50 dark:bg-blue-900/20 rounded-xl p-8 text-center border border-blue-100 dark:border-blue-900;
-  }
-
+  /* 
+   * MISES À JOUR ET ACTUALITÉS 
+   */
+  
   .updates-section {
     @apply my-12 border-t border-gray-200 dark:border-gray-700 pt-8;
+    border-color: var(--color-border-light);
   }
 
   .update-items {
@@ -213,36 +348,130 @@
   }
 
   .update-item {
-    @apply bg-white dark:bg-gray-800 p-4 rounded-lg shadow-sm border border-gray-100 dark:border-gray-700;
+    @apply card-base bg-white dark:bg-gray-800 p-4 border-gray-100 dark:border-gray-700;
   }
 
   .update-date {
     @apply text-sm text-gray-500 dark:text-gray-400 block mb-2;
+    color: var(--color-text-light);
   }
 }
 
 @layer utilities {
-  /* Améliorer les liens de navigation */
-  .sidebar a {
-    @apply cursor-pointer z-10 relative no-underline;
-  }
-
-  .sidebar a:hover {
-    @apply text-blue-600 dark:text-blue-400;
-  }
-
-  /* Assurer que les liens sont prioritaires en cas de superposition */
-  .sidebar a span {
-    @apply z-10 relative;
-  }
-
-  /* S'assurer que les boutons de toggle ont un curseur pointer */
-  .section-toggle {
-    @apply cursor-pointer z-0;
+  /* Utilitaires pour les compteurs de liste */
+  .counter-reset-item {
+    counter-reset: item;
   }
   
-  /* Réduire la probabilité de conflits de clics entre boutons et liens */
-  .sidebar section > div {
-    @apply pt-1;
+  .counter-increment-item {
+    counter-increment: item;
   }
+}
+
+/* 
+ * NAVIGATION MOBILE
+ */
+@media (max-width: 767px) {
+  /* Styles pour la sidebar mobile */
+  #sidebar {
+    @apply w-[85vw] max-w-sm bg-white dark:bg-gray-900 shadow-xl;
+    padding-top: 1rem;
+  }
+  
+  /* Améliorer les zones de clic pour les éléments de navigation */
+  .section-toggle {
+    @apply py-3 px-3 w-full flex justify-between items-center;
+  }
+  
+  /* Augmenter la taille des liens pour les rendre plus faciles à toucher */
+  #sidebar a {
+    @apply py-2 px-2 block w-full text-base;
+  }
+  
+  /* Augmenter l'espacement vertical entre les sections */
+  #sidebar nav {
+    @apply space-y-4;
+  }
+  
+  /* S'assurer que le contenu sous-menu est bien visible */
+  #sidebar [id$="-content"] {
+    @apply pl-2 mt-1;
+  }
+  
+  #sidebar [id$="-content"] a {
+    @apply mb-1;
+  }
+  
+  /* Style pour l'overlay en arrière-plan */
+  .mobile-overlay {
+    @apply fixed inset-0 bg-black bg-opacity-50 z-40;
+  }
+  
+  /* Améliorer le bouton de fermeture du menu */
+  #sidebar-close {
+    @apply p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800;
+  }
+  
+  /* Style pour le bouton hamburger */
+  #mobile-menu-toggle {
+    @apply p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800;
+  }
+  
+  /* Animations pour le menu */
+  #sidebar.slide-in {
+    animation: slideIn 0.3s forwards;
+  }
+  
+  #sidebar.slide-out {
+    animation: slideOut 0.3s forwards;
+  }
+}
+
+/* 
+ * Animation de transition pour le menu mobile 
+ */
+@keyframes slideIn {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes slideOut {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
+}
+
+/* Empêcher le défilement du body quand le menu est ouvert */
+body.overflow-hidden {
+  overflow: hidden !important;
+}
+
+/* Menu mobile simplifié */
+.mobile-menu {
+  @apply fixed inset-0 bg-gray-900 text-white z-50 overflow-auto;
+  display: none;
+}
+
+.mobile-menu.open {
+  display: block;
+}
+
+.mobile-menu-header {
+  @apply fixed top-0 left-0 right-0 bg-gray-900 flex items-center justify-between px-4 py-3 border-b border-gray-700 z-10;
+}
+
+.mobile-menu-close {
+  @apply p-2 text-white rounded-full hover:bg-gray-800;
+}
+
+.mobile-menu-content {
+  @apply pb-24 overflow-y-auto;
+  height: calc(100vh - 4rem);
+}
+
+.mobile-section a {
+  @apply block border-l-2 border-transparent pl-3 hover:border-blue-500 transition-colors;
+}
+
+.mobile-section a.active {
+  @apply text-blue-400 border-blue-500;
 }

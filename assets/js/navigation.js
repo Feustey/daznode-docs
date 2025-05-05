@@ -19,15 +19,89 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
   
-  // Gestion du menu mobile (depuis base.njk)
-  const menuToggle = document.getElementById('menuToggle');
+  // Boutons pour le menu mobile
+  const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+  const sidebarCloseBtn = document.getElementById('sidebar-close');
   const sidebar = document.getElementById('sidebar');
+  const mainContent = document.querySelector('main');
+  const overlay = document.createElement('div');
   
-  if (menuToggle && sidebar) {
-    menuToggle.addEventListener('click', function() {
-      sidebar.classList.toggle('hidden');
+  // Fonction pour appliquer les classes et structure de lien avec indicateur sur tous les liens
+  function enhanceMenuLinks() {
+    const allLinks = document.querySelectorAll('#sidebar a:not(.enhanced)');
+    allLinks.forEach(link => {
+      // Ajouter les classes pour le groupe et la position relative
+      link.classList.add('relative', 'group', 'enhanced');
+      
+      // Vérifier si l'indicateur n'existe pas déjà
+      if (!link.querySelector('.active-indicator')) {
+        // Créer l'indicateur de page active
+        const indicator = document.createElement('span');
+        indicator.className = 'active-indicator absolute left-0 h-full w-1 bg-blue-600 dark:bg-blue-400 rounded-r transition-opacity opacity-0 group-[.active]:opacity-100';
+        
+        // Ajuster la position en fonction du niveau de profondeur
+        if (link.closest('[id$="-content"]')) {
+          indicator.classList.add('-ml-1');
+        } else {
+          indicator.classList.add('-ml-2');
+        }
+        
+        // Ajouter à la fin du lien
+        link.appendChild(indicator);
+      }
     });
   }
+  
+  // Exécuter l'amélioration des liens
+  enhanceMenuLinks();
+  
+  // Configuration de l'overlay pour mobile
+  overlay.classList.add('fixed', 'inset-0', 'bg-black', 'bg-opacity-50', 'z-40', 'hidden');
+  document.body.appendChild(overlay);
+  
+  // Fonction pour ouvrir le menu mobile
+  function openMobileMenu() {
+    sidebar.classList.remove('hidden');
+    sidebar.classList.add('fixed', 'inset-y-0', 'left-0', 'z-50', 'slide-in');
+    overlay.classList.remove('hidden');
+    overlay.classList.add('mobile-overlay');
+    document.body.classList.add('overflow-hidden');
+  }
+  
+  // Fonction pour fermer le menu mobile
+  function closeMobileMenu() {
+    sidebar.classList.add('slide-out');
+    overlay.classList.remove('mobile-overlay');
+    
+    // Attendre que l'animation se termine avant de cacher complètement
+    setTimeout(() => {
+      sidebar.classList.add('hidden');
+      sidebar.classList.remove('fixed', 'inset-y-0', 'left-0', 'z-50', 'slide-in', 'slide-out');
+      overlay.classList.add('hidden');
+      document.body.classList.remove('overflow-hidden');
+    }, 300);
+  }
+  
+  // Attacher les écouteurs d'événements
+  if (mobileMenuToggle) {
+    mobileMenuToggle.addEventListener('click', openMobileMenu);
+  }
+  
+  if (sidebarCloseBtn) {
+    sidebarCloseBtn.addEventListener('click', closeMobileMenu);
+  }
+  
+  // Fermer le menu quand on clique sur l'overlay
+  overlay.addEventListener('click', closeMobileMenu);
+  
+  // Ajouter aussi la fermeture du menu quand on redimensionne la fenêtre vers desktop
+  window.addEventListener('resize', function() {
+    if (window.innerWidth >= 768) { // 768px est le breakpoint md de Tailwind
+      closeMobileMenu();
+      sidebar.classList.remove('hidden');
+      sidebar.classList.add('md:block');
+    }
+  });
   
   // Restaurer l'état des sections depuis localStorage
   function restoreSectionStates() {
@@ -64,7 +138,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Ajouter la classe active au lien de navigation actuel avec une meilleure mise en évidence
   const currentPath = window.location.pathname;
-  const navLinks = document.querySelectorAll('.sidebar a');
+  const navLinks = document.querySelectorAll('#sidebar a');
   let activeSection = null;
   
   navLinks.forEach(link => {
@@ -74,7 +148,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if ((linkPath && currentPath === linkPath) || 
         (linkPath && currentPath.includes(linkPath) && linkPath !== '/' && currentPath !== '/')) {
       
-      // Mettre en évidence le lien actif
+      // Mettre en évidence le lien actif avec les nouveaux indicateurs
       link.classList.add('active', 'text-blue-600', 'dark:text-blue-400');
       
       // Marquer la section parente comme active
@@ -106,11 +180,15 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
   
-  // S'assurer que les liens sont bien cliquables
+  // S'assurer que les liens sont bien cliquables et fermer le menu mobile en cliquant sur un lien
   navLinks.forEach(link => {
     link.addEventListener('click', function(e) {
-      // Laisser le comportement par défaut du lien
       e.stopPropagation(); // Empêcher que l'événement atteigne le parent (bouton toggle)
+      
+      // Fermer le menu mobile si on est sur mobile
+      if (window.innerWidth < 768) {
+        setTimeout(closeMobileMenu, 100); // Léger délai pour que le lien soit bien cliqué
+      }
     });
   });
   
@@ -146,6 +224,9 @@ document.addEventListener('DOMContentLoaded', function() {
   // Restaurer l'état des sections après avoir configuré les écouteurs d'événements
   restoreSectionStates();
   
+  // S'assurer que tous les liens ont les indicateurs, même après manipulation du DOM
+  enhanceMenuLinks();
+  
   // Si on a un lien actif, s'assurer que sa section soit ouverte
   if (activeSection) {
     const section = document.querySelector(`section[data-section="${activeSection}"]`);
@@ -171,9 +252,9 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Fonction pour scroller vers un élément avec offset pour le header
   function scrollToElement(element) {
-    if (!element) return;
+    if (!element || window.innerWidth < 768) return; // Ne pas scroller sur mobile
     
-    const headerHeight = 64; // Ajuster selon la hauteur de votre header
+    const headerHeight = 64;
     const elementPosition = element.getBoundingClientRect().top;
     const offsetPosition = elementPosition + window.pageYOffset - headerHeight - 20;
     
@@ -183,13 +264,16 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
   
-  // Scroll automatique vers le lien actif dans la navigation
-  const activeLink = document.querySelector('.sidebar .active');
-  if (activeLink) {
-    // Délai pour s'assurer que tout est chargé
-    setTimeout(() => {
-      scrollToElement(activeLink);
-    }, 300);
+  // Scroll automatique vers le lien actif uniquement dans la sidebar, pas dans le contenu principal
+  const activeLink = document.querySelector('#sidebar .active');
+  if (activeLink && window.innerWidth >= 768) { // Ajouter une condition pour desktop uniquement
+    const sidebarElement = document.getElementById('sidebar');
+    if (sidebarElement) {
+      // Faire défiler la sidebar vers le lien actif, pas la page entière
+      setTimeout(() => {
+        sidebarElement.scrollTop = activeLink.offsetTop - 100;
+      }, 300);
+    }
   }
   
   // Capture des clics sur les liens internes pour scroll avec offset du header
@@ -216,4 +300,30 @@ document.addEventListener('DOMContentLoaded', function() {
       scrollProgress.style.width = `${progress}%`;
     }
   });
+
+  // Gestionnaire pour le menu mobile dédié
+  const mobileMenu = document.getElementById('mobile-menu');
+  const mobileMenuClose = document.getElementById('mobile-menu-close');
+  
+  if (mobileMenuToggle && mobileMenu && mobileMenuClose) {
+    // Ouvrir le menu
+    mobileMenuToggle.addEventListener('click', () => {
+      mobileMenu.classList.add('open');
+      document.body.classList.add('overflow-hidden');
+    });
+    
+    // Fermer le menu
+    mobileMenuClose.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      document.body.classList.remove('overflow-hidden');
+    });
+    
+    // Marquer le lien actif - utiliser la variable existante au lieu d'en déclarer une nouvelle
+    // Ne pas redéclarer currentPath, utiliser celle qui existe déjà
+    document.querySelectorAll('.mobile-menu a').forEach(link => {
+      if (link.getAttribute('href') === currentPath) {
+        link.classList.add('active');
+      }
+    });
+  }
 }); 

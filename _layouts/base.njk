@@ -23,40 +23,56 @@
   </head>
   <body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 antialiased">
     <div class="min-h-screen flex flex-col">
-      <header class="border-b border-gray-200 dark:border-gray-700 sticky top-0 z-50 bg-white dark:bg-gray-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
-          <button id="menuToggle" class="md:hidden text-gray-700 dark:text-gray-200 focus:outline-none">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
-                 viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M4 6h16M4 12h16M4 18h16" />
+      <header class="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 fixed w-full z-10">
+        <div class="max-w-7xl mx-auto flex items-center justify-between h-16 px-4 sm:px-6">
+          <div class="flex items-center gap-4">
+            <button id="mobile-menu-toggle" class="block md:hidden p-2 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" stroke="currentColor" fill="none">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+            <a href="/">
+              <img src="/assets/images/Logo-Dazdocs.png" alt="Logo Dazdocs" class="h-10 w-auto" loading="lazy" />
+            </a>
+          </div>
+          <button id="darkToggle" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors focus:outline-none" aria-label="Changer de thème">
+            <!-- Icône soleil (visible en mode sombre) -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 hidden dark:block text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
             </svg>
-          </button>
-          <a href="/">
-            <img src="/assets/images/Logo-Dazdocs.png" alt="Logo Dazndocs" class="h-10 w-auto" loading="lazy" />
-          </a>
-          <button id="darkToggle" class="text-sm px-3 py-1 border border-gray-400 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
-            Mode
+            <!-- Icône lune (visible en mode clair) -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 block dark:hidden text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+            </svg>
           </button>
         </div>
       </header>
 
-      <div class="flex flex-1">
-        <aside id="sidebar" class="hidden md:block w-64 border-r border-gray-200 dark:border-gray-700 p-6 sticky top-16 self-start h-[calc(100vh-4rem)] overflow-y-auto">
+      <div class="flex flex-1 pt-16">
+        <aside id="sidebar" class="hidden md:block w-64 border-r border-gray-200 dark:border-gray-700 p-6 sticky top-16 self-start h-[calc(100vh-4rem)] overflow-y-auto transition-all duration-300">
+          <div class="flex justify-between items-center mb-4 md:hidden">
+            <h2 class="font-bold text-lg">Menu</h2>
+            <button id="sidebar-close" class="text-gray-500 hover:text-gray-900 dark:hover:text-gray-300 md:hidden">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
           <nav class="space-y-6">
             <section data-section="intro">
-              <a href="/" class="flex items-center gap-2 font-medium hover:text-blue-600 dark:hover:text-blue-400 mb-2">
+              <a href="/" class="flex items-center gap-2 font-medium hover:text-blue-600 dark:hover:text-blue-400 mb-2 relative group">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                   <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
                 </svg>
                 <span>Accueil</span>
+                <span class="active-indicator absolute left-0 -ml-2 h-full w-1 bg-blue-600 dark:bg-blue-400 rounded-r transition-opacity opacity-0 group-[.active]:opacity-100"></span>
               </a>
             </section>
             
             <section data-section="basics">
               <button class="section-toggle flex items-center justify-between w-full text-left font-medium mb-2 hover:text-blue-600 dark:hover:text-blue-400" aria-expanded="false" aria-controls="basics-content">
                 <div class="flex items-center gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="section-icon h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                     <path d="M5 4a2 2 0 012-2h6a2 2 0 012 2v14l-5-2.5L5 18V4z" />
                   </svg>
                   <span>Fondamentaux</span>
@@ -66,17 +82,19 @@
                 </svg>
               </button>
               <div id="basics-content" class="pl-4 border-l border-gray-200 dark:border-gray-700 space-y-2 mt-2 hidden">
-                <a href="/basics/a-savoir-absolument/" class="flex items-center gap-1 text-sm hover:text-blue-600 dark:hover:text-blue-400">
+                <a href="/basics/a-savoir-absolument/" class="flex items-center gap-1 text-sm hover:text-blue-600 dark:hover:text-blue-400 relative group">
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor">
                     <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                   </svg>
                   <span>À savoir absolument</span>
+                  <span class="active-indicator absolute left-0 -ml-1 h-full w-1 bg-blue-600 dark:bg-blue-400 rounded-r transition-opacity opacity-0 group-[.active]:opacity-100"></span>
                 </a>
-                <a href="/basics/introduction-blockchain/" class="flex items-center gap-1 text-sm hover:text-blue-600 dark:hover:text-blue-400">
+                <a href="/basics/introduction-blockchain/" class="flex items-center gap-1 text-sm hover:text-blue-600 dark:hover:text-blue-400 relative group">
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor">
                     <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                   </svg>
                   <span>Introduction blockchain</span>
+                  <span class="active-indicator absolute left-0 -ml-1 h-full w-1 bg-blue-600 dark:bg-blue-400 rounded-r transition-opacity opacity-0 group-[.active]:opacity-100"></span>
                 </a>
                 <a href="/basics/les-blockchains/" class="flex items-center gap-1 text-sm hover:text-blue-600 dark:hover:text-blue-400">
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor">
@@ -188,6 +206,12 @@
                   </svg>
                   <span>Évaluation</span>
                 </a>
+                <a href="/rag/daznode-ia-assistant-intelligent/" class="flex items-center gap-1 text-sm hover:text-blue-600 dark:hover:text-blue-400">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                  </svg>
+                  <span>DazeNode IA Assistant</span>
+                </a>
               </div>
             </section>
             
@@ -221,6 +245,12 @@
                     <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                   </svg>
                   <span>Optimisation des canaux</span>
+                </a>
+                <a href="/tutoriels/optimisation-rag-daznode/" class="flex items-center gap-1 text-sm hover:text-blue-600 dark:hover:text-blue-400">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                  </svg>
+                  <span>Optimiser avec DazeNode IA</span>
                 </a>
               </div>
             </section>
@@ -367,11 +397,51 @@
       </div>
 
       <footer class="border-t border-gray-200 dark:border-gray-700 py-6 text-center text-sm text-gray-500 dark:text-gray-400">
-        © 2025 <a href="http://"Dazno.de">Dazno.de</a> Tous droits réservés.
+        © 2025 <a href="https://Dazno.de" target="_blank">Dazno.de</a> Tous droits réservés.
       </footer>
 
       <script src="/assets/js/theme.js"></script>
       <script src="/assets/js/navigation.js"></script>
+    </div>
+
+    <!-- Menu mobile dédié -->
+    <div id="mobile-menu" class="mobile-menu">
+      <div class="mobile-menu-header">
+        <div class="flex items-center">
+          <img src="/assets/images/Logo-Dazdocs.png" alt="Dazdocs" class="h-8">
+        </div>
+        <button id="mobile-menu-close" class="mobile-menu-close">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      
+      <div class="mobile-menu-content mt-16 px-4 py-6">
+        <!-- Liens de navigation directs -->
+        <div class="mobile-section mb-6">
+          <h3 class="text-lg font-bold text-white mb-3 border-b border-gray-700 pb-2">Fondamentaux</h3>
+          <div class="grid gap-y-3 pl-2">
+            <a href="/basics/a-savoir-absolument/" class="text-gray-300 hover:text-white py-2">À savoir absolument</a>
+            <a href="/basics/introduction-blockchain/" class="text-gray-300 hover:text-white py-2">Introduction blockchain</a>
+            <a href="/basics/les-blockchains/" class="text-gray-300 hover:text-white py-2">Les blockchains</a>
+            <a href="/basics/lightning-network-fondamentaux/" class="text-gray-300 hover:text-white py-2">LN - Fondamentaux</a>
+            <a href="/basics/lightning-network-demarrage/" class="text-gray-300 hover:text-white py-2">LN - Démarrage</a>
+          </div>
+        </div>
+        
+        <div class="mobile-section mb-6">
+          <h3 class="text-lg font-bold text-white mb-3 border-b border-gray-700 pb-2">Concepts avancés</h3>
+          <div class="grid gap-y-3 pl-2">
+            <a href="/concepts-avances/topologie-ln/" class="text-gray-300 hover:text-white py-2">Topologie LN</a>
+            <a href="/concepts-avances/multipath-gossip/" class="text-gray-300 hover:text-white py-2">Multipath & Gossip</a>
+            <a href="/concepts-avances/ml-prediction-fees/" class="text-gray-300 hover:text-white py-2">ML Prédiction frais</a>
+            <a href="/concepts-avances/rag-ln/" class="text-gray-300 hover:text-white py-2">RAG sur LN</a>
+          </div>
+        </div>
+        
+        <!-- Autres sections de la même façon -->
+      </div>
     </div>
   </body>
 </html>
