@@ -520,4 +520,34 @@ p:has(.emoji) {
   display: flex;
   align-items: flex-start;
   gap: 0.5em;
+}
+
+/* Couleurs distinctes pour chaque rubrique principale */
+.nav-bitcoin > .nav-link {
+  background: #f7931a; /* orange Bitcoin */
+  color: #fff;
+}
+.nav-token4good > .nav-link {
+  background: #00b1ff; /* bleu Token For Good */
+  color: #fff;
+}
+.nav-lightning-network > .nav-link {
+  background: #ffcc00; /* jaune Lightning */
+  color: #222;
+}
+.nav-guide > .nav-link {
+  background: #4dccff;
+  color: #222;
+}
+/* ...ajoute d'autres rubriques si besoin... */
+
+.nav-item > .nav-link {
+  margin-bottom: 4px;
+  border-radius: 6px;
+  font-weight: bold;
+}
+.nav-item > .nav-link:hover,
+.nav-item > .nav-link.active {
+  filter: brightness(0.92);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 } 

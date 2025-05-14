@@ -5,30 +5,67 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- Métadonnées de base -->
-  <title>{{ title or 'Daz Documentation' }} | Documentation Bitcoin et Lightning Network</title>
-  <meta name="description" content="{{ description or 'Documentation complète sur Bitcoin, Lightning Network et la technologie blockchain. Apprenez à utiliser et comprendre les cryptomonnaies simplement avec Daznode.' }}">
-  <meta name="keywords" content="bitcoin, lightning network, blockchain, crypto, documentation, daznode, btc, ln, lightning, node, nœud bitcoin">
-  <meta name="author" content="Daznode">
+  {% set pageMetadata = metadata.pages[page.filePathStem] %}
+  {% set pageTitle = pageMetadata.title or title or metadata.site.title %}
+  {% set pageDescription = pageMetadata.description or description or metadata.site.description %}
+  {% set pageKeywords = pageMetadata.keywords or metadata.site.keywords %}
+  
+  <title>{{ pageTitle }}</title>
+  <meta name="description" content="{{ pageDescription }}">
+  <meta name="keywords" content="{{ pageKeywords }}">
+  <meta name="author" content="{{ metadata.site.author }}">
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://docs.dazno.de{{ page.url }}">
-  <meta property="og:title" content="{{ title or 'Daz Documentation' }} | Documentation Bitcoin et Lightning Network">
-  <meta property="og:description" content="{{ description or 'Documentation complète sur Bitcoin, Lightning Network et la technologie blockchain. Apprenez à utiliser et comprendre les cryptomonnaies simplement avec Daznode.' }}">
-  <meta property="og:image" content="https://docs.dazno.de/assets/images/daznode-docs-og.png">
+  <meta property="og:url" content="{{ metadata.site.url }}{{ page.url }}">
+  <meta property="og:title" content="{{ pageTitle }}">
+  <meta property="og:description" content="{{ pageDescription }}">
+  <meta property="og:image" content="{{ metadata.site.url }}{{ metadata.site.defaultImage }}">
+  <meta property="og:site_name" content="{{ metadata.site.title }}">
+  <meta property="og:locale" content="fr_FR">
   
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:url" content="https://docs.dazno.de{{ page.url }}">
-  <meta name="twitter:title" content="{{ title or 'Daz Documentation' }} | Documentation Bitcoin et Lightning Network">
-  <meta name="twitter:description" content="{{ description or 'Documentation complète sur Bitcoin, Lightning Network et la technologie blockchain. Apprenez à utiliser et comprendre les cryptomonnaies simplement avec Daznode.' }}">
-  <meta name="twitter:image" content="https://docs.dazno.de/assets/images/daznode-docs-og.png">
+  <meta name="twitter:site" content="{{ metadata.site.twitter }}">
+  <meta name="twitter:creator" content="{{ metadata.site.twitter }}">
+  <meta name="twitter:url" content="{{ metadata.site.url }}{{ page.url }}">
+  <meta name="twitter:title" content="{{ pageTitle }}">
+  <meta name="twitter:description" content="{{ pageDescription }}">
+  <meta name="twitter:image" content="{{ metadata.site.url }}{{ metadata.site.defaultImage }}">
   
   <!-- Autres métadonnées -->
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <meta name="googlebot" content="index, follow">
-  <meta name="theme-color" content="#2563eb">
-  <link rel="canonical" href="https://docs.dazno.de{{ page.url }}">
+  <meta name="theme-color" content="{{ metadata.site.themeColor }}">
+  <link rel="canonical" href="{{ metadata.site.url }}{{ page.url }}">
+  
+  <!-- Schema.org pour Google -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "{{ pageTitle }}",
+      "description": "{{ pageDescription }}",
+      "image": "{{ metadata.site.url }}{{ metadata.site.defaultImage }}",
+      "author": {
+        "@type": "Organization",
+        "name": "{{ metadata.site.author }}"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "{{ metadata.site.title }}",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "{{ metadata.site.url }}/assets/images/favicon/android-chrome-512x512.png"
+        }
+      },
+      "url": "{{ metadata.site.url }}{{ page.url }}",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "{{ metadata.site.url }}{{ page.url }}"
+      }
+    }
+  </script>
   
   <!-- Favicons -->
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png">
@@ -207,6 +244,7 @@
       color-scheme: dark;
     }
   </style>
+  <meta name="google-site-verification" content="AFeYQ0g4-0LfK8spRRi8vsjDYsARq3j8EVsW6Er0cLg" />
 </head>
 <body>
   <header>
@@ -240,108 +278,21 @@
     <aside class="sidebar">
       <nav class="sidebar-nav">
         <ul class="nav-list">
-          <li class="nav-item">
-            <a href="/" class="nav-link">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z"/>
-              </svg>
-              <span>Accueil</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="/getting-started/" class="nav-link">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
-              </svg>
-              <span>Démarrage</span>
-            </a>
-            <ul class="nav-sublist">
-              <li><a href="/getting-started/get-started/">Guide de démarrage</a></li>
-              <li><a href="/getting-started/introduction-blockchain/">Introduction à la blockchain</a></li>
-              <li><a href="/getting-started/les-blockchains/">Les blockchains</a></li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a href="/bitcoin/" class="nav-link">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                <path d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09z"/>
-              </svg>
-              <span>Bitcoin</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="/lightning-network/" class="nav-link">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                <path d="M5.52.359A.5.5 0 0 1 6 0h4a.5.5 0 0 1 .474.658L8.694 6H12.5a.5.5 0 0 1 .395.807l-7 9a.5.5 0 0 1-.873-.454L6.823 9.5H3.5a.5.5 0 0 1-.48-.641l2.5-8.5z"/>
-              </svg>
-              <span>Lightning Network</span>
-            </a>
-            <ul class="nav-sublist">
-              <li><a href="/lightning-network/basics/">Fondamentaux</a></li>
-              <li><a href="/lightning-network/getting-started/">Guide de démarrage</a></li>
-              <li><a href="/lightning-network/channels/">Canaux Lightning</a></li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a href="/rag/" class="nav-link">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
-                <path d="M6.854 4.646a.5.5 0 0 1 0 .708L4.207 8l2.647 2.646a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 0 1 .708 0zm2.292 0a.5.5 0 0 0 0 .708L11.793 8l-2.647 2.646a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708 0z"/>
-              </svg>
-              <span>RAG</span>
-            </a>
-            <ul class="nav-sublist">
-              <li><a href="/rag/introduction/">Introduction</a></li>
-              <li><a href="/rag/applications/">Applications</a></li>
-              <li><a href="/rag/heuristic/">Heuristiques</a></li>
-              <li><a href="/rag/analysis/">Analyse MCP</a></li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a href="/connect-data/" class="nav-link">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                <path d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294l4-13zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0zm6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0z"/>
-              </svg>
-              <span>Connexion de données</span>
-            </a>
-            <ul class="nav-sublist">
-              <li><a href="/connect-data/datastreams/">Flux de données</a></li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a href="/use-data/" class="nav-link">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
-                <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
-              </svg>
-              <span>Utiliser les données</span>
-            </a>
-            <ul class="nav-sublist">
-              <li><a href="/use-data/nostr-wallet-connect/">Nostr Wallet Connect</a></li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a href="/umbrel/" class="nav-link">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm7.5-6.923c-.67.204-1.335.82-1.887 1.855A7.97 7.97 0 0 0 5.145 4H7.5V1.077zM4.09 4a9.267 9.267 0 0 1 .64-1.539 6.7 6.7 0 0 1 .597-.933A7.025 7.025 0 0 0 2.255 4H4.09zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a6.958 6.958 0 0 0-.656 2.5h2.49zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5H4.847zM8.5 5v2.5h2.99a12.495 12.495 0 0 0-.337-2.5H8.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5H4.51zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5H8.5zM5.145 12c.138.386.295.744.468 1.068.552 1.035 1.218 1.65 1.887 1.855V12H5.145zm.182 2.472a6.696 6.696 0 0 1-.597-.933A9.268 9.268 0 0 1 4.09 12H2.255a7.024 7.024 0 0 0 3.072 2.472zM3.82 11a13.652 13.652 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5H3.82zm6.853 3.472A7.024 7.024 0 0 0 13.745 12H11.91a9.27 9.27 0 0 1-.64 1.539 6.688 6.688 0 0 1-.597.933zM8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855.173-.324.33-.682.468-1.068H8.5zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.65 13.65 0 0 1-.312 2.5zm2.802-3.5a6.959 6.959 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5h2.49zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7.024 7.024 0 0 0-3.072-2.472c.218.284.418.598.597.933zM10.855 4a7.966 7.966 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4h2.355z"/>
-              </svg>
-              <span>Umbrel</span>
-            </a>
-            <ul class="nav-sublist">
-              <li><a href="/umbrel/getting-started/">Guide de démarrage</a></li>
-              <li><a href="/umbrel/lightning-network/">Utilisation du Lightning Network</a></li>
-              <li><a href="/umbrel/applications/">Applications Umbrel</a></li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a href="/glossary/" class="nav-link">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                <path d="M5.5 10.5A.5.5 0 0 1 6 10h4a.5.5 0 0 1 0 1H6a.5.5 0 0 1-.5-.5m0-2A.5.5 0 0 1 6 8h4a.5.5 0 0 1 0 1H6a.5.5 0 0 1-.5-.5m0-2A.5.5 0 0 1 6 6h4a.5.5 0 0 1 0 1H6a.5.5 0 0 1-.5-.5m0-2A.5.5 0 0 1 6 4h4a.5.5 0 0 1 0 1H6a.5.5 0 0 1-.5-.5"/>
-                <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1"/>
-              </svg>
-              <span>Glossaire</span>
-            </a>
-          </li>
+          {# Boucle sur la navigation principale #}
+          {% for item in navigation.main %}
+            <li class="nav-item nav-{{ item.title | lower | replace(' ', '-') }}">
+              <a href="{{ item.url }}" class="nav-link">
+                {{ item.title }}
+              </a>
+              {% if item.children %}
+                <ul class="nav-sublist">
+                  {% for child in item.children %}
+                    <li><a href="{{ child.url }}">{{ child.title }}</a></li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            </li>
+          {% endfor %}
         </ul>
       </nav>
     </aside>
@@ -360,7 +311,7 @@
         <p>&copy; <a href="https://dazno.de" target="_blank">Daznode</a> - {{ "" | date("yyyy") }}</p>
       </div>
       <div class="footer-right">
-        <a href="https://github.com/feustey" target="_blank" class="social-link">
+        <a href="https://github.com/Feustey" target="_blank" class="social-link">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
             <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
           </svg>
