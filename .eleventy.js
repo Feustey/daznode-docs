@@ -30,6 +30,8 @@ module.exports = function(eleventyConfig) {
   });
 
   // Configuration de la sortie
+  eleventyConfig.addGlobalData("navigation", require("./_data/navigation.json"));
+
   return {
     dir: {
       input: ".",
