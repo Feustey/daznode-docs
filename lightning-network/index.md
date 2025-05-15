@@ -1,6 +1,8 @@
 ---
 layout: base.njk
 title: "Lightning Network - Documentation complète"
+description: "Tout comprendre sur le Lightning Network : fonctionnement, canaux de paiement, avantages, cas d'usage, installation et ressources pour des paiements Bitcoin instantanés."
+keywords: ["lightning network", "bitcoin", "paiement instantané", "canal lightning", "micropaiement", "crypto", "seconde couche", "tutoriel lightning", "documentation lightning"]
 ---
 
 # Lightning Network ⚡

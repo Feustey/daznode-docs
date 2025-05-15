@@ -1,6 +1,8 @@
 ---
 layout: base.njk
 title: Glossaire du Lightning Network - Daznode
+description: "Glossaire complet des termes Bitcoin, Lightning Network, blockchain et cryptomonnaie. Définitions simples, exemples et explications pour débutants et experts."
+keywords: ["glossaire", "bitcoin", "lightning network", "blockchain", "cryptomonnaie", "définitions", "vocabulaire", "canal lightning", "wallet", "minage", "tutoriel"]
 ---
 
 # Glossaire du Lightning Network

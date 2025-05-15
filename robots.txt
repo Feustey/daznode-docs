@@ -1,9 +1,17 @@
 User-agent: *
 Allow: /
+
+# Bloquer les dossiers techniques
+Disallow: /assets/
+Disallow: /_data/
+Disallow: /_layouts/
+Disallow: /scripts/
+Disallow: /node_modules/
+Disallow: /public/_pagefind/
+
 Sitemap: https://docs.dazno.de/sitemap.xml
 
 # Optimisations spécifiques
-Disallow: /assets/
 Disallow: /*.js$
 Disallow: /*.css$
 Disallow: /*.json$ 

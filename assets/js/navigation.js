@@ -9,13 +9,15 @@ document.addEventListener('DOMContentLoaded', function() {
     mainContainer.classList.add('sidebar-collapsed');
   }
   
-  toggleButton.addEventListener('click', function() {
-    mainContainer.classList.toggle('sidebar-collapsed');
-    
-    // Sauvegarder l'état dans localStorage
-    const isCollapsed = mainContainer.classList.contains('sidebar-collapsed');
-    localStorage.setItem('sidebar-state', isCollapsed ? 'collapsed' : 'expanded');
-  });
+  if (toggleButton) {
+    toggleButton.addEventListener('click', function() {
+      mainContainer.classList.toggle('sidebar-collapsed');
+      
+      // Sauvegarder l'état dans localStorage
+      const isCollapsed = mainContainer.classList.contains('sidebar-collapsed');
+      localStorage.setItem('sidebar-state', isCollapsed ? 'collapsed' : 'expanded');
+    });
+  }
   
   // Ajouter la classe active au lien de navigation actuel
   const currentPath = window.location.pathname;
@@ -54,4 +56,25 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
+
+  // Gestion du menu mobile (hamburger)
+  const mobileMenuButton = document.getElementById('mobile-menu-toggle');
+  const sidebar = document.querySelector('.sidebar');
+
+  if (mobileMenuButton && sidebar) {
+    mobileMenuButton.addEventListener('click', function() {
+      sidebar.classList.toggle('open');
+    });
+
+    // Fermer le menu si on clique en dehors (optionnel)
+    document.addEventListener('click', function(e) {
+      if (
+        sidebar.classList.contains('open') &&
+        !sidebar.contains(e.target) &&
+        !mobileMenuButton.contains(e.target)
+      ) {
+        sidebar.classList.remove('open');
+      }
+    });
+  }
 }); 

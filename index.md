@@ -1,6 +1,8 @@
 ---
 layout: base.njk
 title: Documentation Daznode
+description: "Documentation complète sur la blockchain, Bitcoin, Lightning Network, RAG, sécurité et gestion de données."
+keywords: ["blockchain", "bitcoin", "lightning network", "RAG", "sécurité", "gestion de données", "daznode", "cryptomonnaie", "tutoriel"]
 ---
 
 # Documentation Daznode

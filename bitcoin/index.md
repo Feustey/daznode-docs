@@ -1,6 +1,8 @@
 ---
 layout: base.njk
 title: Bitcoin - La Révolution Monétaire Numérique
+description: "Tout savoir sur Bitcoin : genèse, fonctionnement, minage, cas d'usage, impact environnemental, évolution du prix et perspectives."
+keywords: ["bitcoin", "cryptomonnaie", "blockchain", "minage", "halving", "réserve de valeur", "transferts internationaux", "inflation", "prix bitcoin", "énergie", "satoshi nakamoto"]
 ---
 
 # Bitcoin - La Révolution Monétaire Numérique

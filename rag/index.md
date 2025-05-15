@@ -1,6 +1,8 @@
 ---
 layout: base.njk
 title: "RAG (Retrieval-Augmented Generation) - Documentation complète"
+description: "Découvrez le RAG : une technologie d'IA qui combine modèles de langage et recherche d'information, ses principes, applications, analyses et avantages pour l'entreprise."
+keywords: ["RAG", "retrieval augmented generation", "intelligence artificielle", "modèle de langage", "llm", "recherche d'information", "applications RAG", "analyse heuristique", "MCP", "daznode"]
 ---
 
 # RAG (Retrieval-Augmented Generation)

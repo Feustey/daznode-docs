@@ -357,17 +357,46 @@ footer {
   }
   
   .sidebar {
-    width: 100%;
-    position: static;
+    position: fixed;
+    width: 80vw;
+    left: -80vw;
+    transition: left 0.3s;
     height: auto;
     border-right: none;
     border-bottom: 1px solid var(--color-border);
     padding-bottom: 16px;
   }
   
+  .sidebar.open {
+    left: 0;
+  }
+  
   .content {
-    margin-left: 0;
+    margin-left: 0 !important;
+    width: 100% !important;
+    padding: 16px 8px !important;
+  }
+  
+  .content-container {
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+  
+  .header-container {
+    position: relative;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
     width: 100%;
+    padding-left: 48px; /* pour laisser la place au burger */
+  }
+  
+  .logo-container {
+    margin-bottom: 8px;
+  }
+  
+  .search-container {
+    display: none !important;
   }
   
   .toggle-sidebar-button {
@@ -394,12 +423,14 @@ footer {
   /* Ajout d'un bouton menu mobile */
   .mobile-menu-button {
     display: block;
-    background: transparent;
-    border: none;
-    color: var(--color-header-text);
-    font-size: 1.5rem;
-    padding: 8px;
-    cursor: pointer;
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    z-index: 200;
+  }
+  
+  .mobile-menu-button {
+    z-index: 9999 !important;
   }
 }
 
@@ -527,10 +558,6 @@ p:has(.emoji) {
   background: #f7931a; /* orange Bitcoin */
   color: #fff;
 }
-.nav-token4good > .nav-link {
-  background: #00b1ff; /* bleu Token For Good */
-  color: #fff;
-}
 .nav-lightning-network > .nav-link {
   background: #ffcc00; /* jaune Lightning */
   color: #222;
@@ -539,7 +566,27 @@ p:has(.emoji) {
   background: #4dccff;
   color: #222;
 }
-/* ...ajoute d'autres rubriques si besoin... */
+.nav-rag > .nav-link {
+  background: #00b1ff;
+  color: #fff;
+}
+.nav-umbrel > .nav-link {
+  background: #6c47ff;
+  color: #fff;
+}
+.nav-securisation > .nav-link {
+  background: #e74c3c;
+  color: #fff;
+}
+.nav-cas-dusage > .nav-link {
+  background: #2ecc40;
+  color: #fff;
+}
+.nav-glossary > .nav-link {
+  background: #222;
+  color: #fff;
+  font-style: italic;
+}
 
 .nav-item > .nav-link {
   margin-bottom: 4px;
