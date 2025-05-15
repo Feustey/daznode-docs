@@ -27,4 +27,4 @@ Thumbs.db
 .env.*.local
 
 # Netlify
-.netlify/ 
+.netlify/ node-v22.15.1.pkg
