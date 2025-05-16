@@ -289,7 +289,7 @@
               {% set navClass = 'nav-lightning-network' %}
             {% elif item.title | lower | replace(' ', '-') in ['introduction-/-démarrage', 'guide'] %}
               {% set navClass = 'nav-guide' %}
-            {% elif item.title | lower | replace(' ', '-') startswith 'rag' %}
+            {% elif item.title | lower | replace(' ', '-') == 'rag' %}
               {% set navClass = 'nav-rag' %}
             {% elif item.title | lower | replace(' ', '-') == 'umbrel' %}
               {% set navClass = 'nav-umbrel' %}
