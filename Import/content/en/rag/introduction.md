@@ -1,5 +1,6 @@
 ---
-title: Introduction to RAG (Retrieval-Augmented Generation)
+layout: base.njk
+title: Introduction RAG (EN)
 order: 1
 section: rag
 language: en

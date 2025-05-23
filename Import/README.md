@@ -1,3 +1,8 @@
+---
+layout: base.njk
+title: Import
+---
+
 # Section Learn de Daznode
 
 Cette section offre un guide d'apprentissage complet sur Lightning Network, organisé en sections et chapitres, disponible en plusieurs langues.

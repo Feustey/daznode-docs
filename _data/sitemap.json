@@ -1,0 +1,26 @@
+{
+  "excludedPaths": [
+    "/404.html",
+    "/search",
+    "/assets",
+    "/_pagefind"
+  ],
+  "priorities": {
+    "index": 1.0,
+    "getting-started": 0.9,
+    "bitcoin/introduction": 0.9,
+    "lightning-network/basics": 0.9,
+    "bitcoin": 0.8,
+    "lightning-network": 0.8,
+    "rag": 0.7,
+    "glossary": 0.7
+  },
+  "changefreq": {
+    "index": "weekly",
+    "getting-started": "monthly",
+    "bitcoin": "monthly",
+    "lightning-network": "monthly",
+    "rag": "monthly",
+    "glossary": "monthly"
+  }
+} 

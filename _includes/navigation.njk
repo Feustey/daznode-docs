@@ -1,0 +1,37 @@
+<ul class="nav-list">
+  {# Boucle sur la navigation principale #}
+  {% for item in navigation.main %}
+    {% set navClass = '' %}
+    {% if item.title | lower | replace(' ', '-') == 'bitcoin' %}
+      {% set navClass = 'nav-bitcoin' %}
+    {% elif item.title | lower | replace(' ', '-') == 'lightning-network' %}
+      {% set navClass = 'nav-lightning-network' %}
+    {% elif item.title | lower | replace(' ', '-') in ['introduction-/-démarrage', 'guide'] %}
+      {% set navClass = 'nav-guide' %}
+    {% elif item.title | lower | replace(' ', '-') == 'rag' %}
+      {% set navClass = 'nav-rag' %}
+    {% elif item.title | lower | replace(' ', '-') == 'umbrel' %}
+      {% set navClass = 'nav-umbrel' %}
+    {% elif item.title | lower | replace(' ', '-') == 'sécurisation' %}
+      {% set navClass = 'nav-securisation' %}
+    {% elif item.title | lower | replace(' ', '-') == 'cas-d\'usage' %}
+      {% set navClass = 'nav-cas-dusage' %}
+    {% elif item.title | lower | replace(' ', '-') == 'glossaire' %}
+      {% set navClass = 'nav-glossary' %}
+    {% endif %}
+    <li class="nav-item {{ navClass }}">
+      <a href="{{ item.url }}" class="nav-link">
+        {{ item.title }}
+      </a>
+      {% if item.children %}
+        <ul class="nav-sublist">
+          {% for child in item.children %}
+            <li><a href="{{ child.url }}">{{ child.title }}</a></li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </li>
+  {% endfor %}
+</ul>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+

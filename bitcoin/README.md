@@ -1,3 +1,8 @@
+---
+layout: base.njk
+title: Bitcoin
+---
+
 # Images requises pour la section Bitcoin
 
 Voici les spécifications des images nécessaires pour illustrer la rubrique Bitcoin:

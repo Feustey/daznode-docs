@@ -1,0 +1,92 @@
+:root {
+  /* === Couleurs principales === */
+  --color-primary-h: 195;
+  --color-primary-s: 100%;
+  --color-primary-l: 50%;
+  --color-primary: hsl(var(--color-primary-h), var(--color-primary-s), var(--color-primary-l));
+  --color-secondary-h: 33;
+  --color-secondary-s: 100%;
+  --color-secondary-l: 50%;
+  --color-secondary: hsl(var(--color-secondary-h), var(--color-secondary-s), var(--color-secondary-l));
+
+  /* === Couleurs neutres === */
+  --color-neutral-0: hsl(0, 0%, 100%);
+  --color-neutral-100: hsl(0, 0%, 95%);
+  --color-neutral-200: hsl(0, 0%, 85%);
+  --color-neutral-300: hsl(0, 0%, 60%);
+  --color-neutral-400: hsl(0, 0%, 40%);
+  --color-neutral-500: hsl(0, 0%, 20%);
+  --color-neutral-600: hsl(0, 0%, 10%);
+  --color-neutral-700: hsl(0, 0%, 5%);
+  --color-neutral-800: hsl(0, 0%, 2%);
+
+  /* === Couleurs sémantiques === */
+  --color-background: var(--color-neutral-800);
+  --color-surface: var(--color-neutral-700);
+  --color-text: var(--color-neutral-100);
+  --color-light: var(--color-neutral-200);
+  --color-sidebar: var(--color-neutral-700);
+  --color-header: var(--color-neutral-800);
+  --color-header-text: var(--color-neutral-0);
+  --color-border: var(--color-neutral-400);
+  --color-link: hsl(var(--color-primary-h), var(--color-primary-s), 55%);
+  --color-link-hover: hsl(var(--color-primary-h), var(--color-primary-s), 70%);
+  --color-nav-active: hsl(var(--color-primary-h), var(--color-primary-s), 20%, 0.15);
+  --color-heading: hsl(var(--color-primary-h), var(--color-primary-s), 60%);
+  --color-footer: var(--color-neutral-700);
+
+  /* === Typographie responsive === */
+  --font-size-xs: clamp(0.8rem, 1vw, 0.95rem);
+  --font-size-sm: clamp(0.95rem, 1.2vw, 1.1rem);
+  --font-size-md: clamp(1.1rem, 1.5vw, 1.25rem);
+  --font-size-lg: clamp(1.3rem, 2vw, 1.7rem);
+  --font-size-xl: clamp(2rem, 4vw, 2.5rem);
+  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-family-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+
+  /* === Espacements === */
+  --space-xxs: 0.2rem;
+  --space-xs: 0.4rem;
+  --space-sm: 0.8rem;
+  --space-md: 1.2rem;
+  --space-lg: 2rem;
+  --space-xl: 3.2rem;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 32px;
+  --space-8: 40px;
+  --space-9: 48px;
+  --space-10: 64px;
+
+  /* === Rayons === */
+  --radius-xs: 3px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 12px;
+  --radius-xl: 20px;
+  --radius-round: 50%;
+
+  /* === Ombres === */
+  --shadow-xs: 0 1px 2px rgba(0,0,0,0.05);
+  --shadow-sm: 0 1px 4px rgba(0,0,0,0.1);
+  --shadow-md: 0 2px 8px rgba(0,0,0,0.15);
+  --shadow-lg: 0 4px 16px rgba(0,0,0,0.2);
+
+  /* === Z-index === */
+  --z-header: 100;
+  --z-menu: 200;
+  --z-modal: 9999;
+  --z-sidebar-btn: 110;
+  --z-overlay: 1000;
+  --z-fixed: 500;
+  --z-default: 1;
+
+  /* === Largeurs/hauteurs === */
+  --sidebar-width: 280px;
+  --sidebar-collapsed-width: 60px;
+  --header-height: 64px;
+} 

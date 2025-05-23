@@ -24,14 +24,7 @@
   <meta property="og:site_name" content="{{ metadata.site.title }}">
   <meta property="og:locale" content="fr_FR">
   
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:site" content="{{ metadata.site.twitter }}">
-  <meta name="twitter:creator" content="{{ metadata.site.twitter }}">
-  <meta name="twitter:url" content="{{ metadata.site.url }}{{ page.url }}">
-  <meta name="twitter:title" content="{{ pageTitle }}">
-  <meta name="twitter:description" content="{{ pageDescription }}">
-  <meta name="twitter:image" content="{{ metadata.site.url }}{{ metadata.site.defaultImage }}">
+ 
   
   <!-- Autres métadonnées -->
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
@@ -74,7 +67,7 @@
   <link rel="manifest" href="/assets/images/favicon/site.webmanifest">
   
   <!-- PageFind CSS pour la recherche -->
-  <link href="/_pagefind/pagefind-ui.css" rel="stylesheet" type="text/css">
+  <link href="/pagefind/pagefind-ui.css" rel="stylesheet" type="text/css">
   <style>
     /* Styles pour PageFind en mode sombre */
     @media (prefers-color-scheme: dark) {
@@ -251,7 +244,6 @@
     <div class="header-container">
       <div class="logo-container">
         <img src="/assets/images/logo.png" alt="Daznode">
-        <span>Documentation</span>
       </div>
       <div class="search-container">
         <div id="search"></div>
@@ -279,41 +271,7 @@
     
     <aside class="sidebar">
       <nav class="sidebar-nav">
-        <ul class="nav-list">
-          {# Boucle sur la navigation principale #}
-          {% for item in navigation.main %}
-            {% set navClass = '' %}
-            {% if item.title | lower | replace(' ', '-') == 'bitcoin' %}
-              {% set navClass = 'nav-bitcoin' %}
-            {% elif item.title | lower | replace(' ', '-') == 'lightning-network' %}
-              {% set navClass = 'nav-lightning-network' %}
-            {% elif item.title | lower | replace(' ', '-') in ['introduction-/-démarrage', 'guide'] %}
-              {% set navClass = 'nav-guide' %}
-            {% elif item.title | lower | replace(' ', '-') == 'rag' %}
-              {% set navClass = 'nav-rag' %}
-            {% elif item.title | lower | replace(' ', '-') == 'umbrel' %}
-              {% set navClass = 'nav-umbrel' %}
-            {% elif item.title | lower | replace(' ', '-') == 'sécurisation' %}
-              {% set navClass = 'nav-securisation' %}
-            {% elif item.title | lower | replace(' ', '-') == 'cas-d\'usage' %}
-              {% set navClass = 'nav-cas-dusage' %}
-            {% elif item.title | lower | replace(' ', '-') == 'glossaire' %}
-              {% set navClass = 'nav-glossary' %}
-            {% endif %}
-            <li class="nav-item {{ navClass }}">
-              <a href="{{ item.url }}" class="nav-link">
-                {{ item.title }}
-              </a>
-              {% if item.children %}
-                <ul class="nav-sublist">
-                  {% for child in item.children %}
-                    <li><a href="{{ child.url }}">{{ child.title }}</a></li>
-                  {% endfor %}
-                </ul>
-              {% endif %}
-            </li>
-          {% endfor %}
-        </ul>
+        {% include "navigation.njk" %}
       </nav>
     </aside>
     
@@ -397,7 +355,7 @@
   </style>
 
   <!-- Script PageFind pour la recherche -->
-  <script src="/_pagefind/pagefind-ui.js" onload="
+  <script src="/pagefind/pagefind-ui.js" onload="
     new PagefindUI({ 
       element: '#search', 
       showImages: false,

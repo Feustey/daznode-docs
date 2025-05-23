@@ -1,4 +1,9 @@
 ---
+layout: base.njk
+title: Getting Started Lightning (EN)
+---
+
+---
 title: Join the Lightning Network
 order: 1
 section: lightning

@@ -1,3 +1,8 @@
+---
+layout: base.njk
+title: Accueil
+---
+
 # Daznode Documentation
 
 Documentation technique pour Daznode, un nœud Lightning Network accessible dans le navigateur.

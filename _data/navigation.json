@@ -5,26 +5,37 @@
       "url": "/"
     },
     {
-      "title": "Introduction / Démarrage",
-      "url": "/getting-started/",
-      "children": [
-        { "title": "Introduction", "url": "/getting-started/introduction-blockchain/" },
-        { "title": "Démarrage", "url": "/getting-started/get-started/" },
-        { "title": "Bitcoin (intro)", "url": "/getting-started/bitcoin/" },
-        { "title": "Les blockchains", "url": "/getting-started/les-blockchains/" }
-      ]
-    },
-    {
       "title": "Bitcoin",
       "url": "/bitcoin/",
       "children": [
-        { "title": "La Genèse", "url": "/bitcoin/#la-genese" },
-        { "title": "Le Livre Blanc", "url": "/bitcoin/#le-livre-blanc" },
-        { "title": "Le Minage", "url": "/bitcoin/#le-minage" },
-        { "title": "Cas d'Usage", "url": "/bitcoin/#les-cas-dusage" },
-        { "title": "Impact Environnemental", "url": "/bitcoin/#limpact-environnemental" },
-        { "title": "Évolution du Prix et Perspectives", "url": "/bitcoin/#levolution-du-prix-depuis-2017-et-perspectives" },
-        { "title": "Conclusion", "url": "/bitcoin/#conclusion" }
+        { "title": "Introduction", "url": "/bitcoin/introduction/" },
+        { "title": "Minage", "url": "/bitcoin/minage/" },
+        { "title": "Cas d'Usage", "url": "/bitcoin/cas-usage/" },
+        { "title": "Impact Environnemental", "url": "/bitcoin/impact-environnemental/" },
+        { "title": "Évolution du Prix", "url": "/bitcoin/evolution-prix/" },
+        { "title": "Communautés Locales", "url": "/bitcoin/communautes-locales/" }
+      ]
+    },
+    {
+      "title": "Guide",
+      "url": "/getting-started/",
+      "children": [
+        {
+          "title": "Introduction",
+          "url": "/getting-started/introduction-blockchain/"
+        },
+        {
+          "title": "Démarrage",
+          "url": "/getting-started/get-started/"
+        },
+        {
+          "title": "Wallets",
+          "url": "/wallets/"
+        },
+        {
+          "title": "Sécurisation",
+          "url": "/securisation/"
+        }
       ]
     },
     {
@@ -35,49 +46,165 @@
         { "title": "Canaux", "url": "/lightning-network/channels/" },
         { "title": "Démarrage", "url": "/lightning-network/getting-started/" },
         { "title": "Fonctionnement", "url": "/lightning-network/fonctionnement/" },
-        { "title": "Canaux et paiements", "url": "/lightning-network/canaux-et-paiements/" }
-      ]
-    },
-    {
-      "title": "Gestion des données",
-      "url": "/manage-data/lightning-network/"
-    },
-    {
-      "title": "Utilisation des données",
-      "url": "/use-data/",
-      "children": [
+        { "title": "Canaux et paiements", "url": "/lightning-network/canaux-et-paiements/" },
+        { "title": "Gestion des données", "url": "/manage-data/lightning-network/" },
         { "title": "Nostr Wallet Connect", "url": "/use-data/nostr-wallet-connect/" }
       ]
     },
+
     {
-      "title": "Umbrel",
-      "url": "/umbrel/",
+      "title": "Communauté Token4Good",
+      "url": "/token4good/",
       "children": [
-        { "title": "Démarrage", "url": "/umbrel/getting-started/" },
-        { "title": "Applications", "url": "/umbrel/applications/" }
+        { "title": "Mission et valeurs", "url": "/token4good/mission/" },
+        { "title": "Aide aux débutants", "url": "/token4good/aide-debutants/" },
+        { "title": "Projets en cours", "url": "/token4good/projets/" },
+        { "title": "Guide de contribution", "url": "/token4good/contribuer/" },
+        { "title": "Participer", "url": "/token4good/participer/" }
       ]
     },
+
     {
-      "title": "RAG (Retrieval Augmented Generation)",
-      "url": "/rag/",
+      "title": "DazBox",
+      "url": "/dazbox/",
       "children": [
+        { "title": "Démarrage", "url": "/umbrel/getting-started/" },
+        { "title": "Applications", "url": "/umbrel/applications/" },
+        { "title": "Daznode", "url": "/cas-dusage-daznode/" },
+        { "title": "Heuristique", "url": "/rag/heuristic/" },
         { "title": "Introduction", "url": "/rag/introduction/" },
         { "title": "Applications", "url": "/rag/applications/" },
         { "title": "Heuristique", "url": "/rag/heuristic/" },
-        { "title": "Analyse", "url": "/rag/analysis/" }
+        { "title": "Analyse", "url": "/rag/analysis/" },
+        { "title": "Développeurs", "url": "/devs/" }
       ]
     },
+
+
     {
-      "title": "Sécurisation",
-      "url": "/securisation/"
-    },
-    {
-      "title": "Cas d'usage",
-      "url": "/cas-dusage-daznode/"
-    },
+      "title": "",
+      "url": "#"
+    }, 
     {
       "title": "Glossaire",
       "url": "/glossary/"
+    },
+    {
+      "title": "",
+      "url": "#"
+    }, 
+    {
+      "title": "",
+      "url": "#"
+    },    {
+      "title": "",
+      "url": "#"
+    }, 
+    {
+      "title": "",
+      "url": "#"
+    },    {
+      "title": "",
+      "url": "#"
+    }, 
+    {
+      "title": "",
+      "url": "#"
+    },    {
+      "title": "",
+      "url": "#"
+    }, 
+    {
+      "title": "",
+      "url": "#"
+    },    {
+      "title": "",
+      "url": "#"
+    }, 
+    {
+      "title": "",
+      "url": "#"
+    },    {
+      "title": "",
+      "url": "#"
+    }, 
+    {
+      "title": "",
+      "url": "#"
+    },    {
+      "title": "",
+      "url": "#"
+    }, 
+    {
+      "title": "",
+      "url": "#"
+    },    {
+      "title": "",
+      "url": "#"
+    }, 
+    {
+      "title": "",
+      "url": "#"
+    },    {
+      "title": "",
+      "url": "#"
+    }, 
+    {
+      "title": "",
+      "url": "#"
+    },    {
+      "title": "",
+      "url": "#"
+    }, 
+    {
+      "title": "",
+      "url": "#"
+    },    {
+      "title": "",
+      "url": "#"
+    }, 
+    {
+      "title": "",
+      "url": "#"
+    },    {
+      "title": "",
+      "url": "#"
+    }, 
+    {
+      "title": "",
+      "url": "#"
+    },    {
+      "title": "",
+      "url": "#"
+    }, 
+    {
+      "title": "",
+      "url": "#"
+    },    {
+      "title": "",
+      "url": "#"
+    }, 
+    {
+      "title": "",
+      "url": "#"
+    },    {
+      "title": "",
+      "url": "#"
+    }, 
+    {
+      "title": "",
+      "url": "#"
+    },    {
+      "title": "",
+      "url": "#"
+    }, 
+    {
+      "title": "",
+      "url": "#"
+    },
+    {
+      "title": "",
+      "url": "#"
     }
   ]
 } 

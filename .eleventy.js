@@ -24,9 +24,13 @@ module.exports = function(eleventyConfig) {
   // Configuration de PageFind pour la recherche
   const { execSync } = require('child_process');
   eleventyConfig.on('eleventy.after', () => {
-    console.log('Génération de l\'index de recherche avec PageFind...');
-    execSync(`npx pagefind --source public --glob \"**/*.html\"`, { encoding: 'utf-8' });
-    console.log('Index de recherche généré avec succès!');
+    try {
+      console.log('Génération de l\'index de recherche avec PageFind...');
+      execSync(`npx pagefind --site public --glob "**/*.html" --output-subdir pagefind`, { encoding: 'utf-8' });
+      console.log('Index de recherche généré avec succès!');
+    } catch (error) {
+      console.error('Erreur lors de la génération de l\'index de recherche avec PageFind:', error);
+    }
   });
 
   // Configuration de la sortie

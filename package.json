@@ -13,7 +13,7 @@
     "lightning",
     "bitcoin"
   ],
-  "author": "",
+  "author": "Daznode Team",
   "license": "MIT",
   "dependencies": {
     "@11ty/eleventy": "^2.0.1",

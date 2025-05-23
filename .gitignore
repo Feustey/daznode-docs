@@ -2,7 +2,6 @@
 node_modules/
 npm-debug.log
 yarn-error.log
-package-lock.json
 yarn.lock
 
 # Répertoire de build
@@ -27,4 +26,5 @@ Thumbs.db
 .env.*.local
 
 # Netlify
-.netlify/ node-v22.15.1.pkg
+.netlify/
+node-v22.15.1.pkg

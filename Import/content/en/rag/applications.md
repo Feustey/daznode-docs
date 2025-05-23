@@ -1,4 +1,9 @@
 ---
+layout: base.njk
+title: Applications RAG (EN)
+---
+
+---
 title: Practical Applications of RAG
 order: 2
 section: rag

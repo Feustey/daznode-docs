@@ -5,6 +5,36 @@ description: "Documentation complète sur la blockchain, Bitcoin, Lightning Netw
 keywords: ["blockchain", "bitcoin", "lightning network", "RAG", "sécurité", "gestion de données", "daznode", "cryptomonnaie", "tutoriel"]
 ---
 
+# Bienvenue sur la documentation Daznode & Token4Good
+
+Notre mission : Fédérer autour de l'innovation Bitcoin et de l'impact social avec Token4Good.
+
+## Choisissez votre parcours :
+
+<div class="cards">
+  <div class="card">
+    <h3>Utilisateurs DazBox</h3>
+    <p>Configuration, cas d'usage, FAQ, accompagnement</p>
+    <a href="/dazbox/">Accéder →</a>
+  </div>
+  <div class="card">
+    <h3>Développeurs</h3>
+    <p>API, guides MCP, intégrations Lightning, guides RGB</p>
+    <a href="/devs/">Accéder →</a>
+  </div>
+  <div class="card">
+    <h3>Communauté Token4Good</h3>
+    <p>Vision, contribution, projets en cours, aide aux débutants</p>
+    <a href="/token4good/">Accéder →</a>
+  </div>
+</div>
+
+> Un lexique commun est disponible <a href="/glossary/">ici</a>.
+
+**Objectif du site** : Vous aider à configurer, comprendre et contribuer à l'écosystème Daznode & Token4Good, selon votre profil.
+
+<a href="https://github.com/Token4Good/daznode-docs/discussions" class="contrib-btn">Contribuer à la doc 🚀</a>
+
 # Documentation Daznode
 
 Tout ce que tu dois savoir pour comprendre et utiliser la blockchain, Bitcoin et le Lightning Network, simplement.

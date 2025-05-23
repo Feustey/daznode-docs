@@ -1,4 +1,9 @@
 ---
+layout: base.njk
+title: Introduction (EN)
+---
+
+---
 title: Introduction to Lightning Network
 order: 1
 section: basics

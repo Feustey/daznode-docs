@@ -1,3 +1,8 @@
+---
+layout: base.njk
+title: Gérer le Lightning Network
+---
+
 # Comprendre le Lightning Network
 
 Le Lightning Network est une solution de "couche 2" construite sur Bitcoin qui permet d'effectuer des transactions instantanées, à faible coût et évolutives. Ce document vous aidera à comprendre les concepts fondamentaux du Lightning Network et comment il fonctionne avec Daznode.
