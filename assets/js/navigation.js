@@ -63,7 +63,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
   if (mobileMenuButton && sidebar) {
     mobileMenuButton.addEventListener('click', function() {
-      sidebar.classList.toggle('open');
+      const isOpen = sidebar.classList.toggle('open');
+      // Mettre à jour les attributs ARIA
+      mobileMenuButton.setAttribute('aria-expanded', isOpen);
+      mobileMenuButton.setAttribute('aria-label', isOpen ? 'Fermer le menu' : 'Ouvrir le menu');
     });
 
     // Fermer le menu si on clique en dehors (optionnel)
@@ -74,6 +77,8 @@ document.addEventListener('DOMContentLoaded', function() {
         !mobileMenuButton.contains(e.target)
       ) {
         sidebar.classList.remove('open');
+        mobileMenuButton.setAttribute('aria-expanded', 'false');
+        mobileMenuButton.setAttribute('aria-label', 'Ouvrir le menu');
       }
     });
   }

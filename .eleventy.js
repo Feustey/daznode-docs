@@ -1,6 +1,46 @@
+const CleanCSS = require("clean-css");
+const markdownIt = require("markdown-it");
+const markdownItAnchor = require("markdown-it-anchor");
+
 module.exports = function(eleventyConfig) {
+  // Optimisation CSS
+  eleventyConfig.addFilter("cssmin", function(code) {
+    return new CleanCSS({}).minify(code).styles;
+  });
+  
+  // Minification HTML simple (sans bibliothèque externe problématique)
+  eleventyConfig.addTransform("htmlmin", function(content, outputPath) {
+    if( outputPath && outputPath.endsWith(".html") ) {
+      return content
+        .replace(/\s+/g, ' ')
+        .replace(/>\s+</g, '><')
+        .replace(/<!--[\s\S]*?-->/g, '')
+        .trim();
+    }
+    return content;
+  });
+  
+  // Configuration Markdown avec anchors
+  const markdownLibrary = markdownIt({
+    html: true,
+    breaks: true,
+    linkify: true
+  }).use(markdownItAnchor, {
+    permalink: markdownItAnchor.permalink.ariaHidden({
+      placement: "after",
+      class: "direct-link",
+      symbol: "#",
+    }),
+    level: [1,2,3,4],
+    slugify: eleventyConfig.getFilter("slug")
+  });
+  eleventyConfig.setLibrary("md", markdownLibrary);
+  
   // Copie les dossiers d'assets statiques vers le répertoire de sortie
   eleventyConfig.addPassthroughCopy("assets");
+  eleventyConfig.addPassthroughCopy("robots.txt");
+  eleventyConfig.addPassthroughCopy("sitemap.xml");
+  eleventyConfig.addPassthroughCopy("google7a1c0391a3642e79.html");
   
   // Ajout du filtre date
   eleventyConfig.addFilter("date", function(value, format) {
@@ -44,6 +84,7 @@ module.exports = function(eleventyConfig) {
       layouts: "_layouts"
     },
     markdownTemplateEngine: "njk",
-    htmlTemplateEngine: "njk"
+    htmlTemplateEngine: "njk",
+    pathPrefix: "/"
   };
 }; 

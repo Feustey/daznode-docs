@@ -20,6 +20,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const theme = document.body.classList.contains('light-theme') ? 'light' : 'dark';
     localStorage.setItem('theme', theme);
     
+    // Mettre à jour les attributs ARIA
+    themeToggle.setAttribute('aria-pressed', theme === 'light');
+    themeToggle.setAttribute('aria-label', theme === 'light' ? 'Activer le thème sombre' : 'Activer le thème clair');
+    
     // On change l'icône
     updateThemeIcon(theme);
   });
