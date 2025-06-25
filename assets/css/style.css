@@ -46,6 +46,12 @@ header {
   color: var(--color-header-text);
 }
 
+.logo-container img {
+  max-width: 120px;
+  height: auto;
+  display: block;
+}
+
 .search-container {
   display: flex;
   align-items: center;
@@ -610,4 +616,4 @@ button:disabled, .search-button:disabled, .theme-toggle:disabled, .toggle-sideba
 .content, .card, .footer-container {
   padding-left: clamp(1rem, 4vw, 3.2rem);
   padding-right: clamp(1rem, 4vw, 3.2rem);
-} 
+}
