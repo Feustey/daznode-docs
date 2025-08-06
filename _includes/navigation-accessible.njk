@@ -1,0 +1,397 @@
+{# Navigation accessible avec ARIA et support clavier #}
+<nav class="main-nav" role="navigation" aria-label="Navigation principale">
+  <ul class="nav-list" role="menubar">
+    {# Boucle sur la navigation principale #}
+    {% for item in navigation.main %}
+      {% set navClass = '' %}
+      {% if item.title | lower | replace(' ', '-') == 'bitcoin' %}
+        {% set navClass = 'nav-bitcoin' %}
+      {% elif item.title | lower | replace(' ', '-') == 'lightning-network' or item.title | lower | replace(' ', '-') == 'découvrir' %}
+        {% set navClass = 'nav-lightning-network' %}
+      {% elif item.title | lower | replace(' ', '-') in ['introduction-/-démarrage', 'guide', 'guides'] %}
+        {% set navClass = 'nav-guide' %}
+      {% elif item.title | lower | replace(' ', '-') == 'solutions' %}
+        {% set navClass = 'nav-rag' %}
+      {% elif item.title | lower | replace(' ', '-') == 'support' %}
+        {% set navClass = 'nav-securisation' %}
+      {% endif %}
+      
+      <li class="nav-item {{ navClass }}" role="none">
+        {% if item.children %}
+          {# Menu avec sous-éléments #}
+          <button 
+            class="nav-toggle" 
+            aria-expanded="false" 
+            aria-controls="submenu-{{ loop.index }}"
+            aria-haspopup="true"
+            id="nav-toggle-{{ loop.index }}"
+            type="button">
+            {% if item.icon %}
+              <span class="nav-icon" aria-hidden="true">
+                {% if item.icon == 'home' %}🏠
+                {% elif item.icon == 'book' %}📚
+                {% elif item.icon == 'package' %}📦
+                {% elif item.icon == 'guide' %}📋
+                {% elif item.icon == 'help' %}❓
+                {% endif %}
+              </span>
+            {% endif %}
+            <span class="nav-text">{{ item.title }}</span>
+            <svg class="nav-chevron" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6,9 12,15 18,9"></polyline>
+            </svg>
+          </button>
+          
+          <ul 
+            class="nav-sublist" 
+            id="submenu-{{ loop.index }}"
+            role="menu"
+            aria-labelledby="nav-toggle-{{ loop.index }}"
+            hidden>
+            {% for child in item.children %}
+              <li role="none">
+                <a 
+                  href="{{ child.url }}" 
+                  role="menuitem"
+                  class="nav-sublink"
+                  {% if child.description %}
+                    title="{{ child.description }}"
+                    aria-describedby="desc-{{ loop.parent.loop.index }}-{{ loop.index }}"
+                  {% endif %}>
+                  <span class="nav-subtext">{{ child.title }}</span>
+                  {% if child.featured %}
+                    <span class="nav-featured" aria-label="Recommandé">⭐</span>
+                  {% endif %}
+                </a>
+                {% if child.description %}
+                  <span id="desc-{{ loop.parent.loop.index }}-{{ loop.index }}" class="nav-description sr-only">
+                    {{ child.description }}
+                  </span>
+                {% endif %}
+              </li>
+            {% endfor %}
+          </ul>
+        {% else %}
+          {# Lien simple #}
+          <a 
+            href="{{ item.url }}" 
+            role="menuitem" 
+            class="nav-link"
+            {% if item.title == 'Accueil' %}
+              aria-label="Retour à l'accueil"
+            {% endif %}>
+            {% if item.icon %}
+              <span class="nav-icon" aria-hidden="true">
+                {% if item.icon == 'home' %}🏠
+                {% elif item.icon == 'book' %}📚
+                {% elif item.icon == 'package' %}📦
+                {% elif item.icon == 'guide' %}📋
+                {% elif item.icon == 'help' %}❓
+                {% endif %}
+              </span>
+            {% endif %}
+            <span class="nav-text">{{ item.title }}</span>
+          </a>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+
+  {# Liens rapides accessibles #}
+  <div class="nav-quick-links" role="group" aria-labelledby="quick-links-heading">
+    <h3 id="quick-links-heading" class="nav-section-title">Liens rapides</h3>
+    <ul class="nav-quick-list">
+      <li>
+        <a href="/glossaire/" class="nav-quick-link" aria-describedby="glossary-desc">
+          <span>📖 Glossaire</span>
+        </a>
+        <span id="glossary-desc" class="sr-only">Définitions des termes techniques</span>
+      </li>
+      <li>
+        <a href="/support/faq/" class="nav-quick-link" aria-describedby="faq-desc">
+          <span>❓ FAQ</span>
+        </a>
+        <span id="faq-desc" class="sr-only">Questions fréquemment posées</span>
+      </li>
+      <li>
+        <a href="https://t.me/+_tiT3od1q_Q0MjI0" class="nav-quick-link" target="_blank" rel="noopener noreferrer" aria-describedby="telegram-desc">
+          <span>💬 Communauté</span>
+          <span class="external-link-icon" aria-hidden="true">↗</span>
+        </a>
+        <span id="telegram-desc" class="sr-only">Rejoindre notre communauté Telegram (ouvre dans un nouvel onglet)</span>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<style>
+/* Styles pour la navigation accessible */
+.nav-toggle {
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-text);
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.nav-toggle:hover,
+.nav-toggle:focus {
+  background: var(--color-nav-active);
+  color: var(--color-primary);
+}
+
+.nav-toggle[aria-expanded="true"] .nav-chevron {
+  transform: rotate(180deg);
+}
+
+.nav-chevron {
+  margin-left: auto;
+  transition: transform 0.2s ease;
+}
+
+.nav-icon {
+  font-size: 18px;
+  width: 24px;
+  text-align: center;
+}
+
+.nav-text {
+  flex: 1;
+}
+
+.nav-sublist {
+  list-style: none;
+  margin: 4px 0 8px 0;
+  padding: 0;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.nav-sublist[hidden] {
+  display: none;
+}
+
+.nav-sublink {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px 10px 48px;
+  font-size: 14px;
+  color: var(--color-text);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  min-height: 40px;
+  gap: 8px;
+}
+
+.nav-sublink:hover,
+.nav-sublink:focus {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+.nav-featured {
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+.nav-quick-links {
+  margin-top: 2rem;
+  padding: 0 16px;
+  border-top: 1px solid var(--color-border);
+  padding-top: 1rem;
+}
+
+.nav-section-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  margin: 0 0 12px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.nav-quick-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-quick-list li {
+  margin-bottom: 4px;
+}
+
+.nav-quick-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.nav-quick-link:hover,
+.nav-quick-link:focus {
+  background: var(--color-nav-active);
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.external-link-icon {
+  font-size: 12px;
+  opacity: 0.6;
+}
+
+/* Amélioration du focus pour la navigation */
+.nav-toggle:focus-visible,
+.nav-link:focus-visible,
+.nav-sublink:focus-visible,
+.nav-quick-link:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Mode sombre pour la navigation */
+.theme-dark .nav-sublist {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.theme-dark .nav-sublink:hover,
+.theme-dark .nav-sublink:focus {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+</style>
+
+<script>
+// JavaScript pour la navigation accessible
+document.addEventListener('DOMContentLoaded', function() {
+  const navToggles = document.querySelectorAll('.nav-toggle');
+  
+  navToggles.forEach(toggle => {
+    const submenu = document.getElementById(toggle.getAttribute('aria-controls'));
+    
+    toggle.addEventListener('click', function() {
+      const isExpanded = this.getAttribute('aria-expanded') === 'true';
+      
+      // Fermer tous les autres menus
+      navToggles.forEach(otherToggle => {
+        if (otherToggle !== this) {
+          otherToggle.setAttribute('aria-expanded', 'false');
+          const otherSubmenu = document.getElementById(otherToggle.getAttribute('aria-controls'));
+          if (otherSubmenu) {
+            otherSubmenu.hidden = true;
+          }
+        }
+      });
+      
+      // Toggle du menu courant
+      this.setAttribute('aria-expanded', !isExpanded);
+      if (submenu) {
+        submenu.hidden = isExpanded;
+      }
+      
+      // Focus sur le premier élément du sous-menu si ouvert
+      if (!isExpanded && submenu) {
+        const firstLink = submenu.querySelector('a');
+        if (firstLink) {
+          setTimeout(() => firstLink.focus(), 100);
+        }
+      }
+    });
+    
+    // Gestion des touches clavier
+    toggle.addEventListener('keydown', function(e) {
+      switch(e.key) {
+        case 'Enter':
+        case ' ':
+          e.preventDefault();
+          this.click();
+          break;
+        case 'Escape':
+          if (this.getAttribute('aria-expanded') === 'true') {
+            this.setAttribute('aria-expanded', 'false');
+            if (submenu) {
+              submenu.hidden = true;
+            }
+          }
+          break;
+        case 'ArrowDown':
+          if (this.getAttribute('aria-expanded') === 'true' && submenu) {
+            e.preventDefault();
+            const firstLink = submenu.querySelector('a');
+            if (firstLink) firstLink.focus();
+          }
+          break;
+      }
+    });
+  });
+  
+  // Navigation clavier dans les sous-menus
+  document.querySelectorAll('.nav-sublist').forEach(submenu => {
+    const links = submenu.querySelectorAll('a');
+    
+    links.forEach((link, index) => {
+      link.addEventListener('keydown', function(e) {
+        switch(e.key) {
+          case 'ArrowDown':
+            e.preventDefault();
+            const nextLink = links[index + 1] || links[0];
+            nextLink.focus();
+            break;
+          case 'ArrowUp':
+            e.preventDefault();
+            const prevLink = links[index - 1] || links[links.length - 1];
+            prevLink.focus();
+            break;
+          case 'Escape':
+            e.preventDefault();
+            const toggle = submenu.previousElementSibling;
+            if (toggle) {
+              toggle.click();
+              toggle.focus();
+            }
+            break;
+          case 'Home':
+            e.preventDefault();
+            links[0].focus();
+            break;
+          case 'End':
+            e.preventDefault();
+            links[links.length - 1].focus();
+            break;
+        }
+      });
+    });
+  });
+  
+  // Fermer les menus en cliquant ailleurs
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.nav-item')) {
+      navToggles.forEach(toggle => {
+        toggle.setAttribute('aria-expanded', 'false');
+        const submenu = document.getElementById(toggle.getAttribute('aria-controls'));
+        if (submenu) {
+          submenu.hidden = true;
+        }
+      });
+    }
+  });
+});
+</script>

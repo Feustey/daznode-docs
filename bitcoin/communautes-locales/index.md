@@ -106,6 +106,6 @@ Créer une communauté Bitcoin locale est une aventure enrichissante qui contrib
 
 ### Ressources Utiles
 - [Guide du Meet-up Bitcoin](https://planb.network)
-- [Telegram des Organisateurs](https://t.me/bitcoinmeetups)
+- [Telegram des Organisateurs](https://t.me/+_tiT3od1q_Q0MjI0)
 - [Kit de Démarrage](https://pack4communities.fr)
 - [Forum des Communautés](https://bitcoin.fr/communautes) 

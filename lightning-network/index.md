@@ -29,17 +29,17 @@ Marie veut acheter son café quotidien chez Bob :
 
 ## Sections disponibles 📚
 
-### [Les fondamentaux](/lightning-network/basics/) 📘
+### [Les fondamentaux](/lightning/bases/) 📘
 - Architecture du réseau
 - Fonctionnement des canaux
 - Sécurité et confidentialité
 
-### [Guide de démarrage](/lightning-network/getting-started/) 🎯
+### [Guide de démarrage](/lightning/premiers-pas/) 🎯
 - Installation de votre premier portefeuille
 - Ouverture de votre premier canal
 - Réalisation de votre première transaction
 
-### [Gestion des canaux](/lightning-network/channels/) ⚙️
+### [Gestion des canaux](/lightning/canaux/) ⚙️
 - Optimisation de vos canaux
 - Gestion de la liquidité
 - Résolution des problèmes courants
@@ -85,8 +85,8 @@ Marie veut acheter son café quotidien chez Bob :
 
 ## Besoin d'aide ? 💬
 
-- Rejoignez notre [communauté Telegram](https://t.me/lightningnetwork)
-- Consultez notre [FAQ](/lightning-network/faq)
+- Rejoignez notre [communauté Telegram](https://t.me/+_tiT3od1q_Q0MjI0)
+- Consultez notre [FAQ](/lightning/faq)
 - Posez vos questions sur notre [forum](/forum)
 
 > **Conseil pratique :** 💡 Commencez avec un petit montant pour vous familiariser avec le réseau. Testez d'abord avec quelques milliers de satoshis (quelques euros) avant d'utiliser des sommes plus importantes. 

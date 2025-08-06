@@ -1,0 +1,575 @@
+{
+  "_comment": "Navigation pour la plateforme collaborative Daznode + T4G - Organisation par domaines d'expertise",
+  "main": [
+    {
+      "title": "🏠 Accueil",
+      "url": "/",
+      "icon": "home"
+    },
+    {
+      "title": "🚀 Quick Start",
+      "url": "/quick-start/",
+      "icon": "rocket",
+      "description": "Démarrage rapide et essentiel",
+      "children": [
+        {
+          "title": "Première DazBox en 30min",
+          "url": "/quick-start/dazbox-30min/",
+          "description": "Setup express de votre nœud Lightning",
+          "difficulty": "beginner",
+          "reward": 100
+        },
+        {
+          "title": "Mon premier canal Lightning", 
+          "url": "/quick-start/premier-canal/",
+          "description": "Ouvrir et gérer votre premier canal",
+          "difficulty": "beginner",
+          "reward": 80
+        },
+        {
+          "title": "Checklist sécurité essentielle",
+          "url": "/quick-start/securite-checklist/",
+          "description": "Les 10 points critiques à vérifier",
+          "difficulty": "beginner",
+          "reward": 120
+        }
+      ]
+    },
+    {
+      "title": "🔧 Hardware & DazBox",
+      "url": "/hardware/",
+      "icon": "hardware",
+      "description": "Expertise matériel et optimisation DazBox",
+      "expertiseDomain": "hardware",
+      "children": [
+        {
+          "title": "Guides configuration par modèle",
+          "url": "/hardware/configuration/",
+          "description": "Setup spécifique par type de DazBox",
+          "children": [
+            {
+              "title": "DazBox Pro",
+              "url": "/hardware/configuration/dazbox-pro/",
+              "reward": 150
+            },
+            {
+              "title": "DazBox Mini",
+              "url": "/hardware/configuration/dazbox-mini/",
+              "reward": 120
+            },
+            {
+              "title": "Custom Build",
+              "url": "/hardware/configuration/custom/",
+              "reward": 200
+            }
+          ]
+        },
+        {
+          "title": "Optimisations performances",
+          "url": "/hardware/optimisation/",
+          "description": "Tuning CPU, RAM, stockage, réseau",
+          "children": [
+            {
+              "title": "Optimisation CPU & RAM",
+              "url": "/hardware/optimisation/cpu-ram/",
+              "reward": 180
+            },
+            {
+              "title": "Stockage & I/O",
+              "url": "/hardware/optimisation/storage/",
+              "reward": 160
+            },
+            {
+              "title": "Réseau & Bande passante",
+              "url": "/hardware/optimisation/network/",
+              "reward": 140
+            }
+          ]
+        },
+        {
+          "title": "Dépannage courant",
+          "url": "/hardware/depannage/",
+          "description": "Solutions aux problèmes fréquents",
+          "reward": 100
+        },
+        {
+          "title": "Mods communautaires",
+          "url": "/hardware/mods/",
+          "description": "Améliorations développées par la communauté",
+          "reward": 250
+        }
+      ]
+    },
+    {
+      "title": "⚡ Lightning Network Mastery",
+      "url": "/lightning/",
+      "icon": "lightning",
+      "description": "Expertise complète du Lightning Network",
+      "expertiseDomain": "lightning",
+      "children": [
+        {
+          "title": "Setup & Configuration",
+          "url": "/lightning/setup/",
+          "description": "Installation LND, CLN, Eclair",
+          "children": [
+            {
+              "title": "LND Configuration",
+              "url": "/lightning/setup/lnd/",
+              "reward": 200
+            },
+            {
+              "title": "Core Lightning (CLN)",
+              "url": "/lightning/setup/cln/",
+              "reward": 200
+            },
+            {
+              "title": "Eclair Setup",
+              "url": "/lightning/setup/eclair/",
+              "reward": 180
+            }
+          ]
+        },
+        {
+          "title": "Channel Management",
+          "url": "/lightning/channels/",
+          "description": "Gestion avancée des canaux",
+          "children": [
+            {
+              "title": "Stratégies d'ouverture",
+              "url": "/lightning/channels/opening/",
+              "reward": 150
+            },
+            {
+              "title": "Rééquilibrage",
+              "url": "/lightning/channels/rebalancing/",
+              "reward": 180
+            },
+            {
+              "title": "Fermeture optimisée",
+              "url": "/lightning/channels/closing/",
+              "reward": 140
+            }
+          ]
+        },
+        {
+          "title": "Routing & Fees",
+          "url": "/lightning/routing/",
+          "description": "Optimisation routing et commissions",
+          "children": [
+            {
+              "title": "Fee Management",
+              "url": "/lightning/routing/fees/",
+              "reward": 200
+            },
+            {
+              "title": "Path Finding",
+              "url": "/lightning/routing/pathfinding/",
+              "reward": 220
+            },
+            {
+              "title": "Liquidity Provision",
+              "url": "/lightning/routing/liquidity/",
+              "reward": 250
+            }
+          ]
+        },
+        {
+          "title": "Monitoring & Analytics",
+          "url": "/lightning/monitoring/",
+          "description": "Surveillance et métriques de performance",
+          "reward": 180
+        },
+        {
+          "title": "Security & Backup",
+          "url": "/lightning/security/",
+          "description": "Sécurisation et sauvegarde",
+          "expertiseDomain": "security",
+          "children": [
+            {
+              "title": "Backup Seeds & HSM",
+              "url": "/lightning/security/backup/",
+              "reward": 300
+            },
+            {
+              "title": "Tor Configuration",
+              "url": "/lightning/security/tor/",
+              "reward": 200
+            },
+            {
+              "title": "Watchtowers",
+              "url": "/lightning/security/watchtowers/",
+              "reward": 180
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "💡 Business & ROI",
+      "url": "/business/",
+      "icon": "chart",
+      "description": "Optimisation économique et rentabilité",
+      "expertiseDomain": "economics",
+      "children": [
+        {
+          "title": "Stratégies de profitabilité",
+          "url": "/business/profitability/",
+          "description": "Maximiser les revenus de votre nœud",
+          "children": [
+            {
+              "title": "Revenue Streams",
+              "url": "/business/profitability/revenue/",
+              "reward": 200
+            },
+            {
+              "title": "Cost Optimization", 
+              "url": "/business/profitability/costs/",
+              "reward": 180
+            },
+            {
+              "title": "ROI Calculation",
+              "url": "/business/profitability/roi/",
+              "reward": 160
+            }
+          ]
+        },
+        {
+          "title": "Analyse de marché",
+          "url": "/business/market/",
+          "description": "Trends fees, competition, opportunités",
+          "reward": 220
+        },
+        {
+          "title": "Cas d'usage commerciaux",
+          "url": "/business/use-cases/",
+          "description": "E-commerce, micropaiements, services",
+          "children": [
+            {
+              "title": "E-commerce Integration",
+              "url": "/business/use-cases/ecommerce/",
+              "reward": 180
+            },
+            {
+              "title": "Micropaiements",
+              "url": "/business/use-cases/micropayments/",
+              "reward": 160
+            },
+            {
+              "title": "Services B2B",
+              "url": "/business/use-cases/b2b/",
+              "reward": 200
+            }
+          ]
+        },
+        {
+          "title": "Fiscalité et compliance",
+          "url": "/business/compliance/",
+          "description": "Aspects légaux et déclaratifs",
+          "reward": 250
+        }
+      ]
+    },
+    {
+      "title": "🌍 Décentralisation",
+      "url": "/decentralization/",
+      "icon": "network",
+      "description": "Résilience réseau et souveraineté",
+      "expertiseDomain": "decentralization",
+      "children": [
+        {
+          "title": "Architecture distribuée",
+          "url": "/decentralization/architecture/",
+          "description": "Design de réseaux résilients",
+          "reward": 200
+        },
+        {
+          "title": "Résilience réseau",
+          "url": "/decentralization/resilience/",
+          "description": "Disaster recovery et redondance",
+          "reward": 220
+        },
+        {
+          "title": "Geographic diversity",
+          "url": "/decentralization/geographic/",
+          "description": "Distribution géographique optimale",
+          "reward": 180
+        },
+        {
+          "title": "Censorship resistance",
+          "url": "/decentralization/censorship/",
+          "description": "Résistance à la censure",
+          "reward": 300
+        }
+      ]
+    },
+    {
+      "title": "🎓 Learning Path",
+      "url": "/learning/",
+      "icon": "graduation",
+      "description": "Parcours d'apprentissage progressif",
+      "expertiseDomain": "education",
+      "children": [
+        {
+          "title": "Bitcoin fundamentals",
+          "url": "/learning/bitcoin/",
+          "description": "Les bases de Bitcoin",
+          "difficulty": "beginner",
+          "reward": 80
+        },
+        {
+          "title": "Lightning concepts",
+          "url": "/learning/lightning/",
+          "description": "Comprendre le Lightning Network",
+          "difficulty": "intermediate",
+          "reward": 120
+        },
+        {
+          "title": "Advanced topics",
+          "url": "/learning/advanced/",
+          "description": "HTLC, watchtowers, splicing",
+          "difficulty": "expert",
+          "children": [
+            {
+              "title": "HTLC Deep Dive",
+              "url": "/learning/advanced/htlc/",
+              "reward": 200
+            },
+            {
+              "title": "Channel Splicing",
+              "url": "/learning/advanced/splicing/",
+              "reward": 180
+            },
+            {
+              "title": "Submarine Swaps",
+              "url": "/learning/advanced/swaps/",
+              "reward": 160
+            }
+          ]
+        },
+        {
+          "title": "Community challenges",
+          "url": "/learning/challenges/",
+          "description": "Défis techniques et éducatifs",
+          "reward": 300
+        }
+      ]
+    },
+    {
+      "title": "🚀 Innovation T4G",
+      "url": "/innovation/",
+      "icon": "innovation",
+      "description": "Écosystème Token4Good et RGB",
+      "expertiseDomain": "t4g_innovation",
+      "children": [
+        {
+          "title": "RGB integration",
+          "url": "/innovation/rgb/",
+          "description": "Intégration protocole RGB",
+          "reward": 300
+        },
+        {
+          "title": "Social impact projects",
+          "url": "/innovation/social/",
+          "description": "Projets à impact social",
+          "reward": 250
+        },
+        {
+          "title": "Community governance",
+          "url": "/innovation/governance/",
+          "description": "Gouvernance décentralisée",
+          "reward": 200
+        },
+        {
+          "title": "Future roadmap",
+          "url": "/innovation/roadmap/",
+          "description": "Vision et développements futurs",
+          "reward": 150
+        }
+      ]
+    }
+  ],
+  "community": [
+    {
+      "title": "💬 Community Hub",
+      "url": "/community/",
+      "icon": "community",
+      "children": [
+        {
+          "title": "🏆 Leaderboard",
+          "url": "/community/leaderboard/",
+          "description": "Classement des contributeurs experts"
+        },
+        {
+          "title": "🎯 Challenges",
+          "url": "/community/challenges/",
+          "description": "Défis mensuels et hackathons"
+        },
+        {
+          "title": "🤝 Mentoring",
+          "url": "/community/mentoring/",
+          "description": "Système de mentoring pair-à-pair"
+        },
+        {
+          "title": "📊 Analytics",
+          "url": "/community/analytics/",
+          "description": "Métriques réseau et impact économique"
+        }
+      ]
+    }
+  ],
+  "tools": [
+    {
+      "title": "🛠️ Outils",
+      "url": "/tools/",
+      "icon": "tools",
+      "children": [
+        {
+          "title": "📈 Node Monitor",
+          "url": "/tools/monitor/",
+          "description": "Dashboard monitoring temps réel"
+        },
+        {
+          "title": "🔍 Fee Optimizer",
+          "url": "/tools/fees/",
+          "description": "Optimisation automatique des commissions"
+        },
+        {
+          "title": "💰 ROI Calculator",
+          "url": "/tools/roi/",
+          "description": "Calculateur de rentabilité"
+        },
+        {
+          "title": "🎯 Channel Advisor",
+          "url": "/tools/channels/",
+          "description": "Recommandations ouverture canaux"
+        }
+      ]
+    }
+  ],
+  "footer": [
+    {
+      "title": "Expertise Domains",
+      "items": [
+        {
+          "title": "⚡ Lightning Expert",
+          "url": "/expertise/lightning/",
+          "description": "Routing, fees, channels"
+        },
+        {
+          "title": "🔧 Hardware Guru", 
+          "url": "/expertise/hardware/",
+          "description": "DazBox, optimisation matériel"
+        },
+        {
+          "title": "🛡️ Security Specialist",
+          "url": "/expertise/security/",
+          "description": "Backup, HSM, tor"
+        },
+        {
+          "title": "💰 Economics Analyst",
+          "url": "/expertise/economics/",
+          "description": "ROI, profitabilité"
+        },
+        {
+          "title": "🎓 Educator",
+          "url": "/expertise/education/",
+          "description": "Pédagogie, vulgarisation"
+        },
+        {
+          "title": "🌐 Decentralization Advocate",
+          "url": "/expertise/decentralization/"
+        },
+        {
+          "title": "🚀 T4G Innovator",
+          "url": "/expertise/t4g/",
+          "description": "RGB, projets communautaires"
+        }
+      ]
+    },
+    {
+      "title": "Communauté T4G",
+      "items": [
+        {
+          "title": "💎 Gagner des T4G",
+          "url": "/t4g/earn/"
+        },
+        {
+          "title": "🏆 Système de récompenses",
+          "url": "/t4g/rewards/"
+        },
+        {
+          "title": "👥 Devenir mentor",
+          "url": "/t4g/mentoring/"
+        },
+        {
+          "title": "🚀 Challenges en cours",
+          "url": "/t4g/challenges/"
+        }
+      ]
+    },
+    {
+      "title": "Ressources",
+      "items": [
+        {
+          "title": "📚 Documentation API",
+          "url": "/api/"
+        },
+        {
+          "title": "🔧 Outils développeur",
+          "url": "/dev-tools/"
+        },
+        {
+          "title": "📊 Node Statistics",
+          "url": "/stats/"
+        },
+        {
+          "title": "💾 Téléchargements",
+          "url": "/downloads/"
+        }
+      ]
+    },
+    {
+      "title": "Support",
+      "items": [
+        {
+          "title": "❓ FAQ",
+          "url": "/faq/"
+        },
+        {
+          "title": "🆘 Support technique",
+          "url": "/support/"
+        },
+        {
+          "title": "📞 Contact",
+          "url": "/contact/"
+        },
+        {
+          "title": "🐛 Signaler un bug",
+          "url": "/bug-report/"
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "contributionTypes": {
+      "guide": { "baseReward": 200, "multipliers": { "complexity": [1.5, 3], "originality": 1.2 } },
+      "tutorial": { "baseReward": 150, "multipliers": { "roi_impact": [1.3, 2.5] } },
+      "troubleshooting": { "baseReward": 80, "multipliers": { "urgency": [1.2, 2], "rarity": 1.5 } },
+      "analysis": { "baseReward": 120, "multipliers": { "research_depth": [1.3, 2] } },
+      "script": { "baseReward": 100, "multipliers": { "community_utility": [1.2, 2.5] } },
+      "security": { "baseReward": 180, "multipliers": { "criticality": [1.5, 3] } },
+      "translation": { "baseReward": 60, "multipliers": { "language": [1, 1.4], "quality": 1.2 } },
+      "support": { "baseReward": 15, "multipliers": { "precision": [1.1, 1.8], "speed": 1.1 } },
+      "review": { "baseReward": 25, "multipliers": { "domain_expertise": [1.2, 2] } },
+      "pioneer_bonus": 100
+    },
+    "expertiseLevels": ["beginner", "intermediate", "advanced", "expert", "master"],
+    "difficultyRewards": {
+      "beginner": 1.0,
+      "intermediate": 1.2, 
+      "advanced": 1.5,
+      "expert": 2.0,
+      "master": 2.5
+    }
+  }
+}

@@ -38,9 +38,9 @@ Apprends à créer et animer une communauté Bitcoin dans ta région pour favori
 
 ## Ressources Complémentaires
 
-- [Guide du Débutant](/getting-started/)
-- [Glossaire Bitcoin](/glossary/)
-- [Lightning Network](/lightning-network/)
+- [Guide du Débutant](/premiers-pas/)
+- [Glossaire Bitcoin](/glossaire/)
+- [Lightning Network](/lightning/)
 - [Sécurisation](/securisation/)
 
 > "Bitcoin est plus qu'une monnaie numérique, c'est une technologie qui redéfinit la notion même d'argent pour l'ère numérique." 

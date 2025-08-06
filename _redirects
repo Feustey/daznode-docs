@@ -1,0 +1,33 @@
+# Redirections automatiques - Migration UX
+
+/getting-started/ /premiers-pas/ 301
+/getting-started/bitcoin.md /premiers-pas/bitcoin/ 301
+/getting-started/introduction.md /premiers-pas/introduction/ 301
+/getting-started/introduction-blockchain/ /premiers-pas/blockchain/ 301
+/getting-started/les-blockchains/ /premiers-pas/blockchains/ 301
+/lightning-network/ /lightning/ 301
+/lightning-network/getting-started/ /lightning/premiers-pas/ 301
+/lightning-network/basics/ /lightning/bases/ 301
+/lightning-network/channels/ /lightning/canaux/ 301
+/solutions/dazbox/presentation/ /dazbox/ 301
+/solutions/dazbox/performance/ /dazbox/performance/ 301
+/solutions/dazbox/faq/ /dazbox/faq/ 301
+/solutions/dazia/overview/ /dazia/ 301
+/solutions/dazpay/overview/ /dazpay/ 301
+/devs/ /guides/developpeurs/ 301
+/devs/api.md /guides/developpeurs/api/ 301
+/devs/mcp.md /guides/developpeurs/mcp/ 301
+/devs/rgb.md /guides/developpeurs/rgb/ 301
+/dazbox/faq.md /support/dazbox/ 301
+/support/ /support/ 301
+/glossary/ /glossaire/ 301
+/manage-data/ /guides/gestion-donnees/ 301
+/use-data/ /guides/utilisation-donnees/ 301
+/connect-data/ /guides/connexion-donnees/ 301
+/securisation.md /guides/securisation/ 301
+/cas-dusage-daznode.md /dazbox/cas-usage/ 301
+
+# Redirections spécifiques
+/docs/* /guides/:splat 301
+/documentation/* /guides/:splat 301
+/.well-known/* /.well-known/:splat 200

@@ -9,7 +9,7 @@ Cette section décrit les différentes méthodes et outils de connexion de donn�
 
 ## Sections disponibles
 
-### [Flux de données](/connect-data/datastreams/)
+### [Flux de données](/guides/connexion-donnees/datastreams/)
 Découvrez comment configurer et gérer vos flux de données et connecter vos sources à Daznode.
 
 ## À venir

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  
+  <!-- Métadonnées de base -->
+  {% set pageMetadata = metadata.pages[page.filePathStem] %}
+  {% set pageTitle = pageMetadata.title or title or metadata.site.title %}
+  {% set pageDescription = pageMetadata.description or description or metadata.site.description %}
+  {% set pageKeywords = pageMetadata.keywords or metadata.site.keywords %}
+  
+  <title>{{ pageTitle }}</title>
+  <meta name="description" content="{{ pageDescription }}">
+  <meta name="keywords" content="{{ pageKeywords }}">
+  <meta name="author" content="{{ metadata.site.author }}">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ metadata.site.url }}{{ page.url }}">
+  <meta property="og:title" content="{{ pageTitle }}">
+  <meta property="og:description" content="{{ pageDescription }}">
+  <meta property="og:image" content="{{ metadata.site.url }}{{ metadata.site.defaultImage }}">
+  <meta property="og:site_name" content="{{ metadata.site.title }}">
+  <meta property="og:locale" content="fr_FR">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ pageTitle }}">
+  <meta name="twitter:description" content="{{ pageDescription }}">
+  <meta name="twitter:image" content="{{ metadata.site.url }}{{ metadata.site.defaultImage }}">
+  
+  <!-- Autres métadonnées -->
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="googlebot" content="index, follow">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="canonical" href="{{ metadata.site.url }}{{ page.url }}">
+  
+  <!-- Schema.org pour Google -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "{{ pageTitle }}",
+      "description": "{{ pageDescription }}",
+      "image": "{{ metadata.site.url }}{{ metadata.site.defaultImage }}",
+      "author": {
+        "@type": "Organization",
+        "name": "{{ metadata.site.author }}"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "{{ metadata.site.title }}",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "{{ metadata.site.url }}/assets/images/favicon/android-chrome-512x512.png"
+        }
+      },
+      "url": "{{ metadata.site.url }}{{ page.url }}",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "{{ metadata.site.url }}{{ page.url }}"
+      }
+    }
+  </script>
+  
+  <!-- Preload des ressources critiques -->
+  <link rel="preload" href="/assets/css/theme-system.css" as="style">
+  <link rel="preload" href="/assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
+  
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/assets/images/favicon/site.webmanifest">
+  
+  <!-- PageFind CSS pour la recherche -->
+  <link href="/pagefind/pagefind-ui.css" rel="stylesheet" type="text/css">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/css/theme-system.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/mobile-nav.css">
+  <link rel="stylesheet" href="/assets/css/accessibility.css">
+  
+  <meta name="google-site-verification" content="AFeYQ0g4-0LfK8spRRi8vsjDYsARq3j8EVsW6Er0cLg" />
+</head>
+<body>
+  <!-- Skip Links pour l'accessibilité -->
+  <div class="skip-links">
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+    <a href="#navigation" class="skip-link">Aller à la navigation</a>
+    <a href="#search" class="skip-link">Aller à la recherche</a>
+    <a href="#footer" class="skip-link">Aller au pied de page</a>
+  </div>
+  
+  <!-- Indicateur de chargement pour les lecteurs d'écran -->
+  <div id="loading-indicator" class="sr-only" aria-live="polite" aria-atomic="true">
+    Chargement de la page...
+  </div>
+  
+  <header role="banner">
+    <div class="header-container">
+      <!-- Menu mobile burger -->
+      <button 
+        id="mobile-menu-toggle" 
+        class="mobile-menu-button" 
+        aria-expanded="false"
+        aria-controls="mobile-sidebar"
+        aria-label="Ouvrir le menu de navigation">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <rect y="4" width="24" height="2" rx="1" fill="currentColor"/>
+          <rect y="11" width="24" height="2" rx="1" fill="currentColor"/>
+          <rect y="18" width="24" height="2" rx="1" fill="currentColor"/>
+        </svg>
+      </button>
+      
+      <!-- Logo -->
+      <div class="logo-container">
+        <a href="/" aria-label="Accueil - {{ metadata.site.title }}">
+          <img src="/assets/images/logo.png" alt="{{ metadata.site.title }}" width="36" height="36">
+        </a>
+      </div>
+      
+      <!-- Recherche -->
+      <div class="search-container">
+        <div id="search" role="search" aria-label="Recherche dans la documentation"></div>
+        
+        <!-- Toggle de thème amélioré -->
+        <button 
+          id="theme-toggle" 
+          class="theme-toggle" 
+          role="switch"
+          aria-checked="false"
+          aria-label="Changer de thème"
+          title="Changer de thème">
+          <svg xmlns="http://www.w3.org/2000/svg" id="sun-icon" style="display:none;" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" id="moon-icon" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="main-container">    
+    <aside class="sidebar" id="mobile-sidebar" role="navigation" aria-label="Navigation principale">
+      <nav id="navigation" class="sidebar-nav">
+        {% include "navigation-accessible.njk" %}
+      </nav>
+    </aside>
+    
+    <main id="main-content" class="content" role="main" tabindex="-1">
+      <div class="content-container" data-pagefind-body>
+        {% if title %}
+        <h1 class="page-title">{{ title }}</h1>
+        {% endif %}
+        {{ content | safe }}
+      </div>
+    </main>
+  </div>
+  
+  <footer id="footer" role="contentinfo">
+    <div class="footer-container">
+      <div class="footer-left">
+        <p>&copy; <a href="https://dazno.de" target="_blank" rel="noopener noreferrer">Daznode</a> - {{ "" | date("yyyy") }}</p>
+      </div>
+      <div class="footer-right">
+        <nav aria-label="Liens sociaux">
+          <a href="https://github.com/Feustey" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub de Daznode">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+              <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+            </svg>
+          </a>
+          <a href="https://t.me/+_tiT3od1q_Q0MjI0" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Telegram de Daznode">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+              <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.287 5.906c-.778.324-2.334.994-4.666 2.01-.378.15-.577.298-.595.442-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294.26.006.549-.1.868-.32 2.179-1.471 3.304-2.214 3.374-2.23.05-.012.12-.026.166.016.047.041.042.12.037.141-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8.154 8.154 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629.093.06.183.125.27.187.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.426 1.426 0 0 0-.013-.315.337.337 0 0 0-.114-.217.526.526 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09z"/>
+            </svg>
+          </a>
+          <a href="https://nostr.com/npub1daznode9hxkn6v8zp5p4qc7ddsjfq9krt5q9xfvgwkrjswa8s8k3qvz9sg8" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Nostr de Daznode">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+              <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+            </svg>
+          </a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Région live pour les annonces dynamiques -->
+  <div id="announcements" aria-live="polite" aria-atomic="true" class="sr-only"></div>
+  
+  <!-- Script PageFind pour la recherche -->
+  <script src="/pagefind/pagefind-ui.js" onload="
+    new PagefindUI({ 
+      element: '#search', 
+      showImages: false,
+      showSubResults: true,
+      highlightParam: 'highlight',
+      translations: {
+        placeholder: 'Rechercher dans la documentation...',
+        clear_search: 'Effacer la recherche',
+        load_more: 'Voir plus de résultats',
+        search_label: 'Rechercher dans ce site',
+        filters_label: 'Filtres de recherche',
+        zero_results: 'Aucun résultat pour [SEARCH_TERM]',
+        many_results: '[COUNT] résultats pour [SEARCH_TERM]',
+        one_result: 'Un résultat pour [SEARCH_TERM]',
+        alt_search: 'Aucun résultat pour [SEARCH_TERM]. Affichage des résultats pour [DIFFERENT_TERM] à la place',
+        search_suggestion: 'Aucun résultat pour [SEARCH_TERM]. Essayez une des recherches suivantes :',
+        searching: 'Recherche pour [SEARCH_TERM]...'
+      }
+    });
+  "></script>
+
+  <!-- Scripts -->
+  <script src="/assets/js/theme-enhanced.js"></script>
+  <script src="/assets/js/navigation.js"></script>
+  <script src="/assets/js/mobile-nav.js"></script>
+  <script src="/assets/js/accessibility-utils.js"></script>
+
+  <!-- Indicateur de fin de chargement -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Masquer l'indicateur de chargement
+      const loadingIndicator = document.getElementById('loading-indicator');
+      if (loadingIndicator) {
+        loadingIndicator.textContent = 'Page chargée';
+        setTimeout(() => {
+          loadingIndicator.remove();
+        }, 500);
+      }
+
+      // Focus management pour le skip link
+      const skipLinks = document.querySelectorAll('.skip-link');
+      skipLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href').substring(1);
+          const target = document.getElementById(targetId);
+          if (target) {
+            target.focus();
+            target.scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+      });
+
+      // Améliorer l'accessibilité de PageFind
+      const searchContainer = document.getElementById('search');
+      if (searchContainer) {
+        const observer = new MutationObserver(() => {
+          const searchInput = searchContainer.querySelector('input');
+          if (searchInput && !searchInput.hasAttribute('aria-describedby')) {
+            searchInput.setAttribute('aria-describedby', 'search-instructions');
+            
+            // Ajouter des instructions
+            const instructions = document.createElement('div');
+            instructions.id = 'search-instructions';
+            instructions.className = 'sr-only';
+            instructions.textContent = 'Tapez votre recherche et utilisez les flèches pour naviguer dans les résultats';
+            searchContainer.appendChild(instructions);
+          }
+        });
+        
+        observer.observe(searchContainer, { childList: true, subtree: true });
+      }
+    });
+  </script>
+</body>
+</html>

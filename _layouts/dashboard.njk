@@ -1,0 +1,789 @@
+---
+layout: base.njk
+---
+
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} - Daznode</title>
+    <meta name="description" content="{{ description }}">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/ux-enhanced.css">
+    <link rel="stylesheet" href="/assets/css/dashboard.css">
+    
+    <!-- Preload des ressources critiques -->
+    <link rel="preload" href="/assets/js/navigation-enhanced.js" as="script">
+    <link rel="preload" href="/assets/js/onboarding-system.js" as="script">
+    
+    <!-- Meta tags -->
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="theme-color" content="#ff9500">
+    
+    <!-- Progressive Web App -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Daznode Dashboard">
+</head>
+
+<body class="dashboard-layout">
+    <!-- Auth Check -->
+    <script>
+        // Vérifier l'authentification
+        const isAuthenticated = localStorage.getItem('daznode_auth_token');
+        if (!isAuthenticated) {
+            window.location.href = '/login/?redirect=' + encodeURIComponent(window.location.pathname);
+        }
+    </script>
+
+    <!-- Header Navigation -->
+    <header class="dashboard-header-nav">
+        <div class="header-container">
+            <!-- Logo -->
+            <div class="logo-container">
+                <a href="/" class="logo-link">
+                    <img src="/assets/images/logo.png" alt="Daznode" class="logo-img">
+                    <span class="logo-text">Daznode</span>
+                </a>
+            </div>
+
+            <!-- Navigation principale -->
+            <nav class="main-nav" id="main-navigation">
+                <!-- Navigation sera injectée par JavaScript -->
+            </nav>
+
+            <!-- Actions utilisateur -->
+            <div class="user-actions">
+                <!-- Barre de recherche -->
+                <div class="search-container">
+                    <input type="search" class="search-input" placeholder="Rechercher..." aria-label="Recherche">
+                    <span class="search-icon">🔍</span>
+                </div>
+
+                <!-- Notifications -->
+                <button class="notification-btn" aria-label="Notifications">
+                    <span class="notification-icon">🔔</span>
+                    <span class="notification-badge" id="notification-count">3</span>
+                </button>
+
+                <!-- Wallet T4G -->
+                <div class="wallet-display">
+                    <span class="wallet-icon">💰</span>
+                    <span class="wallet-balance" id="header-t4g-balance">0</span>
+                    <span class="wallet-label">T4G</span>
+                </div>
+
+                <!-- Menu utilisateur -->
+                <div class="user-menu-container">
+                    <button class="user-menu-toggle" aria-label="Menu utilisateur">
+                        <img src="/assets/images/default-avatar.png" alt="Avatar" class="user-avatar" id="user-avatar">
+                        <span class="user-name" id="header-user-name">Utilisateur</span>
+                        <span class="dropdown-arrow">▼</span>
+                    </button>
+                    
+                    <div class="user-menu-dropdown">
+                        <a href="/profile/" class="menu-item">
+                            <span class="menu-icon">👤</span>
+                            <span>Mon Profil</span>
+                        </a>
+                        <a href="/settings/" class="menu-item">
+                            <span class="menu-icon">⚙️</span>
+                            <span>Paramètres</span>
+                        </a>
+                        <a href="/wallet/" class="menu-item">
+                            <span class="menu-icon">💎</span>
+                            <span>Wallet T4G</span>
+                        </a>
+                        <div class="menu-separator"></div>
+                        <a href="/help/" class="menu-item">
+                            <span class="menu-icon">❓</span>
+                            <span>Aide</span>
+                        </a>
+                        <button class="menu-item logout-btn" onclick="logout()">
+                            <span class="menu-icon">🚪</span>
+                            <span>Déconnexion</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Theme toggle -->
+                <button class="theme-toggle" aria-label="Changer le thème">
+                    <span class="theme-icon">🌙</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Barre de progression globale -->
+        <div class="global-progress" id="global-progress">
+            <div class="progress-info">
+                <span class="progress-label">Progression globale</span>
+                <span class="progress-percentage" id="global-progress-text">0%</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="global-progress-bar"></div>
+            </div>
+            <div class="progress-details">
+                <span class="progress-modules">0/12 modules complétés</span>
+                <span class="progress-next">Prochain: +50 T4G</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenu principal -->
+    <main class="dashboard-main">
+        <div class="dashboard-container">
+            {{ content | safe }}
+        </div>
+    </main>
+
+    <!-- Sidebar rapide (mobile) -->
+    <aside class="mobile-sidebar" id="mobile-sidebar">
+        <div class="sidebar-header">
+            <h3>Navigation rapide</h3>
+            <button class="sidebar-close" aria-label="Fermer">✕</button>
+        </div>
+        <div class="sidebar-content">
+            <!-- Contenu sera injecté par JavaScript -->
+        </div>
+    </aside>
+
+    <!-- Panneau de notifications -->
+    <div class="notifications-panel" id="notifications-panel">
+        <div class="panel-header">
+            <h3>Notifications</h3>
+            <button class="panel-close" aria-label="Fermer">✕</button>
+        </div>
+        <div class="notifications-content">
+            <div class="notification-item unread">
+                <span class="notification-icon">🎉</span>
+                <div class="notification-text">
+                    <h4>Nouveau badge débloqué!</h4>
+                    <p>Vous avez gagné le badge "Lightning Learner"</p>
+                    <time>Il y a 2 heures</time>
+                </div>
+            </div>
+            <div class="notification-item">
+                <span class="notification-icon">💰</span>
+                <div class="notification-text">
+                    <h4>Récompense reçue</h4>
+                    <p>+150 T4G pour votre guide "Setup DazBox"</p>
+                    <time>Il y a 1 jour</time>
+                </div>
+            </div>
+            <div class="notification-item">
+                <span class="notification-icon">🤝</span>
+                <div class="notification-text">
+                    <h4>Nouvelle demande de mentoring</h4>
+                    <p>Un utilisateur souhaite être mentoré par vous</p>
+                    <time>Il y a 2 jours</time>
+                </div>
+            </div>
+        </div>
+        <div class="panel-footer">
+            <a href="/notifications/" class="view-all-btn">Voir toutes les notifications</a>
+        </div>
+    </div>
+
+    <!-- Bouton retour en haut -->
+    <button class="back-to-top" id="backToTop" aria-label="Retour en haut">
+        <span>↑</span>
+    </button>
+
+    <!-- Scripts -->
+    <script src="/assets/js/navigation-enhanced.js"></script>
+    <script src="/assets/js/onboarding-system.js"></script>
+    
+    <!-- Dashboard JavaScript -->
+    <script>
+        class DashboardManager {
+            constructor() {
+                this.userProfile = null;
+                this.notifications = [];
+                this.init();
+            }
+
+            async init() {
+                try {
+                    // Charger le profil utilisateur
+                    this.userProfile = await this.loadUserProfile();
+                    
+                    // Initialiser l'interface
+                    this.updateHeaderInfo();
+                    this.initializeInteractions();
+                    this.startRealTimeUpdates();
+                    
+                    // Marquer comme prêt
+                    document.body.classList.add('dashboard-ready');
+                    
+                } catch (error) {
+                    console.error('Erreur initialisation dashboard:', error);
+                    this.showErrorToast('Erreur de chargement des données');
+                }
+            }
+
+            async loadUserProfile() {
+                // En production, appel API réel
+                return {
+                    id: 'user123',
+                    name: 'Jean Dupont',
+                    email: 'jean@example.com',
+                    avatar: '/assets/images/avatars/user123.jpg',
+                    level: 'Intermédiaire',
+                    t4gBalance: 1245,
+                    globalProgress: 42,
+                    unreadNotifications: 3,
+                    completedModules: 5,
+                    totalModules: 12
+                };
+            }
+
+            updateHeaderInfo() {
+                const elements = {
+                    'header-user-name': this.userProfile.name,
+                    'header-t4g-balance': this.userProfile.t4gBalance.toLocaleString(),
+                    'global-progress-text': `${this.userProfile.globalProgress}%`,
+                    'global-progress-bar': null, // Géré séparément
+                    'notification-count': this.userProfile.unreadNotifications
+                };
+
+                Object.entries(elements).forEach(([id, value]) => {
+                    const element = document.getElementById(id);
+                    if (element && value !== null) {
+                        element.textContent = value;
+                    }
+                });
+
+                // Mettre à jour la barre de progression
+                const progressBar = document.getElementById('global-progress-bar');
+                if (progressBar) {
+                    progressBar.style.width = `${this.userProfile.globalProgress}%`;
+                }
+
+                // Mettre à jour l'avatar
+                const avatar = document.getElementById('user-avatar');
+                if (avatar && this.userProfile.avatar) {
+                    avatar.src = this.userProfile.avatar;
+                }
+
+                // Mettre à jour les détails de progression
+                const progressDetails = document.querySelector('.progress-modules');
+                if (progressDetails) {
+                    progressDetails.textContent = 
+                        `${this.userProfile.completedModules}/${this.userProfile.totalModules} modules complétés`;
+                }
+            }
+
+            initializeInteractions() {
+                // Menu utilisateur
+                this.initUserMenu();
+                
+                // Notifications
+                this.initNotifications();
+                
+                // Theme toggle
+                this.initThemeToggle();
+                
+                // Bouton retour en haut
+                this.initBackToTop();
+                
+                // Raccourcis clavier
+                this.initKeyboardShortcuts();
+            }
+
+            initUserMenu() {
+                const toggle = document.querySelector('.user-menu-toggle');
+                const dropdown = document.querySelector('.user-menu-dropdown');
+                
+                if (toggle && dropdown) {
+                    toggle.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        dropdown.classList.toggle('open');
+                    });
+
+                    // Fermer en cliquant dehors
+                    document.addEventListener('click', () => {
+                        dropdown.classList.remove('open');
+                    });
+                }
+            }
+
+            initNotifications() {
+                const btn = document.querySelector('.notification-btn');
+                const panel = document.getElementById('notifications-panel');
+                const closeBtn = panel?.querySelector('.panel-close');
+                
+                if (btn && panel) {
+                    btn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        panel.classList.toggle('open');
+                    });
+
+                    closeBtn?.addEventListener('click', () => {
+                        panel.classList.remove('open');
+                    });
+
+                    // Fermer en cliquant dehors
+                    document.addEventListener('click', (e) => {
+                        if (!panel.contains(e.target) && !btn.contains(e.target)) {
+                            panel.classList.remove('open');
+                        }
+                    });
+                }
+            }
+
+            initThemeToggle() {
+                const toggle = document.querySelector('.theme-toggle');
+                const icon = toggle?.querySelector('.theme-icon');
+                
+                if (toggle) {
+                    // Charger le thème sauvegardé
+                    const savedTheme = localStorage.getItem('daznode_theme') || 'light';
+                    this.setTheme(savedTheme);
+                    
+                    toggle.addEventListener('click', () => {
+                        const currentTheme = document.documentElement.getAttribute('data-theme');
+                        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+                        this.setTheme(newTheme);
+                    });
+                }
+            }
+
+            setTheme(theme) {
+                document.documentElement.setAttribute('data-theme', theme);
+                localStorage.setItem('daznode_theme', theme);
+                
+                const icon = document.querySelector('.theme-icon');
+                if (icon) {
+                    icon.textContent = theme === 'light' ? '🌙' : '☀️';
+                }
+            }
+
+            initBackToTop() {
+                const btn = document.getElementById('backToTop');
+                
+                if (btn) {
+                    window.addEventListener('scroll', () => {
+                        if (window.scrollY > 300) {
+                            btn.classList.add('visible');
+                        } else {
+                            btn.classList.remove('visible');
+                        }
+                    });
+
+                    btn.addEventListener('click', () => {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    });
+                }
+            }
+
+            initKeyboardShortcuts() {
+                document.addEventListener('keydown', (e) => {
+                    // Ctrl/Cmd + K pour la recherche
+                    if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+                        e.preventDefault();
+                        const searchInput = document.querySelector('.search-input');
+                        searchInput?.focus();
+                    }
+                    
+                    // Échap pour fermer les panneaux
+                    if (e.key === 'Escape') {
+                        document.querySelectorAll('.open').forEach(el => {
+                            el.classList.remove('open');
+                        });
+                    }
+                });
+            }
+
+            startRealTimeUpdates() {
+                // Mettre à jour les données toutes les 30 secondes
+                setInterval(() => {
+                    this.checkForUpdates();
+                }, 30000);
+                
+                // Vérification immédiate
+                setTimeout(() => this.checkForUpdates(), 2000);
+            }
+
+            async checkForUpdates() {
+                try {
+                    // Simuler l'API de vérification
+                    const updates = await this.fetchUpdates();
+                    
+                    if (updates.t4gBalance && updates.t4gBalance !== this.userProfile.t4gBalance) {
+                        this.showRewardNotification(updates.t4gBalance - this.userProfile.t4gBalance);
+                        this.userProfile.t4gBalance = updates.t4gBalance;
+                        this.updateHeaderInfo();
+                    }
+                    
+                    if (updates.newNotifications) {
+                        this.addNotifications(updates.newNotifications);
+                    }
+                    
+                } catch (error) {
+                    console.error('Erreur mise à jour temps réel:', error);
+                }
+            }
+
+            async fetchUpdates() {
+                // Simuler des mises à jour aléatoires
+                const shouldUpdate = Math.random() > 0.7;
+                if (!shouldUpdate) return {};
+                
+                return {
+                    t4gBalance: this.userProfile.t4gBalance + Math.floor(Math.random() * 50),
+                    newNotifications: Math.random() > 0.8 ? [{
+                        icon: '🎉',
+                        title: 'Nouvelle récompense!',
+                        message: 'Vous avez gagné des T4G',
+                        time: 'À l\'instant'
+                    }] : null
+                };
+            }
+
+            showRewardNotification(amount) {
+                const notification = document.createElement('div');
+                notification.className = 'reward-toast';
+                notification.innerHTML = `
+                    <span class="toast-icon">💰</span>
+                    <span class="toast-text">+${amount} T4G gagnés!</span>
+                `;
+                
+                document.body.appendChild(notification);
+                
+                setTimeout(() => notification.classList.add('show'), 100);
+                setTimeout(() => {
+                    notification.classList.remove('show');
+                    setTimeout(() => notification.remove(), 300);
+                }, 3000);
+            }
+
+            showErrorToast(message) {
+                const toast = document.createElement('div');
+                toast.className = 'error-toast';
+                toast.textContent = message;
+                
+                document.body.appendChild(toast);
+                setTimeout(() => toast.remove(), 5000);
+            }
+        }
+
+        // Fonction de déconnexion
+        function logout() {
+            if (confirm('Êtes-vous sûr de vouloir vous déconnecter?')) {
+                localStorage.removeItem('daznode_auth_token');
+                localStorage.removeItem('daznode_user_profile');
+                window.location.href = '/';
+            }
+        }
+
+        // Initialiser le dashboard
+        let dashboardManager;
+        document.addEventListener('DOMContentLoaded', () => {
+            dashboardManager = new DashboardManager();
+        });
+
+        // Service Worker pour PWA
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => {
+                        console.log('SW registered: ', registration);
+                    })
+                    .catch(registrationError => {
+                        console.log('SW registration failed: ', registrationError);
+                    });
+            });
+        }
+    </script>
+
+    <!-- Styles additionnels pour le layout dashboard -->
+    <style>
+        .dashboard-header-nav {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--color-border);
+            position: sticky;
+            top: 0;
+            z-index: var(--z-sticky);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: var(--space-sm) var(--space-lg);
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo-link {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .logo-img {
+            height: 32px;
+            margin-right: var(--space-sm);
+        }
+
+        .logo-text {
+            font-size: var(--font-size-lg);
+            font-weight: 700;
+        }
+
+        .user-actions {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+        }
+
+        .notification-btn {
+            position: relative;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: var(--space-sm);
+            border-radius: var(--radius-md);
+            transition: background var(--transition-fast);
+        }
+
+        .notification-btn:hover {
+            background: var(--color-surface);
+        }
+
+        .notification-badge {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: var(--color-danger);
+            color: white;
+            font-size: var(--font-size-xs);
+            padding: 2px 6px;
+            border-radius: var(--radius-full);
+            min-width: 18px;
+            text-align: center;
+        }
+
+        .wallet-display {
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+            background: var(--color-surface);
+            padding: var(--space-sm) var(--space-md);
+            border-radius: var(--radius-md);
+            font-weight: 600;
+        }
+
+        .user-menu-container {
+            position: relative;
+        }
+
+        .user-menu-toggle {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: var(--space-sm);
+            border-radius: var(--radius-md);
+            transition: background var(--transition-fast);
+        }
+
+        .user-menu-toggle:hover {
+            background: var(--color-surface);
+        }
+
+        .user-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: var(--radius-full);
+            object-fit: cover;
+        }
+
+        .user-menu-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: var(--color-background);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-lg);
+            min-width: 200px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all var(--transition-base);
+            z-index: var(--z-dropdown);
+        }
+
+        .user-menu-dropdown.open {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .menu-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            padding: var(--space-sm) var(--space-md);
+            text-decoration: none;
+            color: var(--color-text);
+            background: none;
+            border: none;
+            width: 100%;
+            cursor: pointer;
+            transition: background var(--transition-fast);
+        }
+
+        .menu-item:hover {
+            background: var(--color-surface);
+        }
+
+        .menu-separator {
+            height: 1px;
+            background: var(--color-border);
+            margin: var(--space-xs) 0;
+        }
+
+        .notifications-panel {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 400px;
+            height: 100vh;
+            background: var(--color-background);
+            border-left: 1px solid var(--color-border);
+            box-shadow: var(--shadow-xl);
+            transition: right var(--transition-base);
+            z-index: var(--z-modal);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .notifications-panel.open {
+            right: 0;
+        }
+
+        .panel-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--space-lg);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .panel-close {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: var(--font-size-lg);
+        }
+
+        .notifications-content {
+            flex: 1;
+            overflow-y: auto;
+            padding: var(--space-md);
+        }
+
+        .notification-item {
+            display: flex;
+            gap: var(--space-md);
+            padding: var(--space-md);
+            border-radius: var(--radius-md);
+            margin-bottom: var(--space-sm);
+            transition: background var(--transition-fast);
+        }
+
+        .notification-item:hover {
+            background: var(--color-surface);
+        }
+
+        .notification-item.unread {
+            background: rgba(255, 149, 0, 0.1);
+            border-left: 3px solid var(--color-primary);
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: var(--space-lg);
+            right: var(--space-lg);
+            width: 48px;
+            height: 48px;
+            background: var(--color-primary);
+            color: white;
+            border: none;
+            border-radius: var(--radius-full);
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all var(--transition-base);
+            z-index: var(--z-fixed);
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: scale(1.1);
+        }
+
+        .reward-toast,
+        .error-toast {
+            position: fixed;
+            top: var(--space-lg);
+            right: var(--space-lg);
+            padding: var(--space-md) var(--space-lg);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-lg);
+            transform: translateX(100%);
+            transition: transform var(--transition-base);
+            z-index: var(--z-modal);
+        }
+
+        .reward-toast {
+            background: var(--success-gradient);
+            color: white;
+        }
+
+        .error-toast {
+            background: var(--color-danger);
+            color: white;
+        }
+
+        .reward-toast.show {
+            transform: translateX(0);
+        }
+
+        .dashboard-ready {
+            animation: fadeIn var(--transition-slow);
+        }
+
+        @media (max-width: 768px) {
+            .user-name,
+            .wallet-label {
+                display: none;
+            }
+            
+            .notifications-panel {
+                width: 100%;
+                right: -100%;
+            }
+            
+            .search-container {
+                display: none;
+            }
+        }
+    </style>
+</body>
+</html>

@@ -11,7 +11,7 @@ La gestion efficace de vos canaux Lightning est essentielle pour optimiser votre
 
 Un canal Lightning est une connexion directe entre deux nœuds qui permet d'effectuer des transactions instantanées et à faible coût. Chaque canal possède :
 
-- Une **[capacité totale](/glossary/#capacite-totale)** : le montant total de bitcoins alloués au canal
+- Une **[capacité totale](/glossaire/#capacite-totale)** : le montant total de bitcoins alloués au canal
 - Une **capacité locale** (sortante) : montant que vous pouvez envoyer
 - Une **capacité distante** (entrante) : montant que vous pouvez recevoir
 

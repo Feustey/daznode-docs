@@ -53,10 +53,10 @@ De nombreuses opérations sur le Lightning Network ont une propriété déroutan
 
 ## Ressources en ligne
 
-- [Guide de démarrage rapide](/getting-started/get-started/)
-- [Introduction aux Blockchains](/getting-started/introduction-blockchain/)
-- [Les Piliers de la Blockchain](/getting-started/les-blockchains/)
-- [Comprendre le Lightning Network](/manage-data/lightning-network/)
+- [Guide de démarrage rapide](/premiers-pas/get-started/)
+- [Introduction aux Blockchains](/premiers-pas/blockchain/)
+- [Les Piliers de la Blockchain](/premiers-pas/blockchains/)
+- [Comprendre le Lightning Network](/guides/gestion-donnees/lightning/)
 
 ## Modèle de sécurité
 

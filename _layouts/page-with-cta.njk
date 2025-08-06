@@ -1,0 +1,32 @@
+---
+layout: base.njk
+---
+
+{# Import du système CTA #}
+{% from "_includes/cta-system.njk" import cta, ctaGetStarted, ctaProduct, ctaCommunity, ctaSupport, smartCta %}
+
+<div class="page-content">
+  {{ content | safe }}
+  
+  {# CTA contextuel intelligent basé sur la page #}
+  {{ smartCta(page, userData) }}
+</div>
+
+{# Sections expandables exemple #}
+<div data-expandable="advanced-features" data-expandable-title="Fonctionnalités avancées" class="technical-content">
+  <div data-expand-content>
+    <p>Contenu technique détaillé visible uniquement en mode technique...</p>
+    
+    <div data-help="Cette fonctionnalité nécessite des connaissances avancées en Lightning Network">
+      <h4>Configuration avancée</h4>
+      <p>Instructions détaillées pour les utilisateurs expérimentés.</p>
+    </div>
+  </div>
+</div>
+
+<div class="simple-content">
+  <div class="simplified-explanation">
+    <h3>Version simplifiée</h3>
+    <p>Explication accessible pour les débutants...</p>
+  </div>
+</div>

@@ -1,0 +1,143 @@
+{
+  "_comment": "Navigation restructurée pour une meilleure UX - 3 niveaux max",
+  "main": [
+    {
+      "title": "Accueil",
+      "url": "/",
+      "icon": "home"
+    },
+    {
+      "title": "Découvrir",
+      "url": "/decouvrir/",
+      "icon": "book",
+      "children": [
+        {
+          "title": "Bitcoin",
+          "url": "/bitcoin/",
+          "description": "Comprendre la révolution monétaire"
+        },
+        {
+          "title": "Lightning Network", 
+          "url": "/lightning/",
+          "description": "Paiements instantanés et peu coûteux"
+        },
+        {
+          "title": "Premiers pas",
+          "url": "/premiers-pas/",
+          "description": "Guide complet pour débuter"
+        }
+      ]
+    },
+    {
+      "title": "Solutions",
+      "url": "/solutions/",
+      "icon": "package",
+      "children": [
+        {
+          "title": "DazBox",
+          "url": "/dazbox/",
+          "description": "Nœud Lightning clé en main",
+          "featured": true
+        },
+        {
+          "title": "DazIA",
+          "url": "/dazia/",
+          "description": "IA pour optimiser votre nœud"
+        },
+        {
+          "title": "DazPay",
+          "url": "/dazpay/",
+          "description": "Solution de paiement complète"
+        }
+      ]
+    },
+    {
+      "title": "Guides",
+      "url": "/guides/",
+      "icon": "guide",
+      "children": [
+        {
+          "title": "Installation",
+          "url": "/guides/installation/",
+          "description": "Installer votre nœud Lightning"
+        },
+        {
+          "title": "Configuration", 
+          "url": "/guides/configuration/",
+          "description": "Configurer et optimiser"
+        },
+        {
+          "title": "Dépannage",
+          "url": "/guides/depannage/",
+          "description": "Résoudre les problèmes courants"
+        }
+      ]
+    },
+    {
+      "title": "Support",
+      "url": "/support/",
+      "icon": "help"
+    }
+  ],
+  "footer": [
+    {
+      "title": "Ressources",
+      "items": [
+        {
+          "title": "Documentation",
+          "url": "/guides/"
+        },
+        {
+          "title": "FAQ",
+          "url": "/support/faq/"
+        },
+        {
+          "title": "API",
+          "url": "/developpeurs/api/"
+        },
+        {
+          "title": "Glossaire",
+          "url": "/glossaire/"
+        }
+      ]
+    },
+    {
+      "title": "Communauté",
+      "items": [
+        {
+          "title": "Forum",
+          "url": "https://forum.daznode.com"
+        },
+        {
+          "title": "Telegram",
+          "url": "https://t.me/+_tiT3od1q_Q0MjI0"
+        },
+        {
+          "title": "GitHub",
+          "url": "https://github.com/Feustey"
+        },
+        {
+          "title": "Nostr",
+          "url": "https://nostr.com/npub1daznode9hxkn6v8zp5p4qc7ddsjfq9krt5q9xfvgwkrjswa8s8k3qvz9sg8"
+        }
+      ]
+    },
+    {
+      "title": "Légal",
+      "items": [
+        {
+          "title": "Mentions légales",
+          "url": "/legal/"
+        },
+        {
+          "title": "Confidentialité",
+          "url": "/privacy/"
+        },
+        {
+          "title": "CGV",
+          "url": "/terms/"
+        }
+      ]
+    }
+  ]
+}

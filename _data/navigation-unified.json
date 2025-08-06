@@ -1,0 +1,450 @@
+{
+  "_comment": "Navigation unifiée Daznode - Architecture UX optimisée pour tous les profils utilisateurs",
+  "main": [
+    {
+      "id": "home",
+      "title": "🏠 Accueil",
+      "url": "/",
+      "icon": "home",
+      "alwaysVisible": true
+    },
+    {
+      "id": "start",
+      "title": "🎯 Pour Commencer",
+      "url": "/start/",
+      "icon": "rocket",
+      "description": "Votre point d'entrée personnalisé",
+      "highlight": true,
+      "children": [
+        {
+          "id": "discover-bitcoin",
+          "title": "Je découvre Bitcoin",
+          "url": "/start/discover/",
+          "icon": "sparkles",
+          "description": "Parcours guidé pour débutants",
+          "userLevel": "beginner",
+          "estimatedTime": "30 min",
+          "reward": 50
+        },
+        {
+          "id": "setup-node",
+          "title": "J'ai un nœud Lightning",
+          "url": "/start/node-operator/",
+          "icon": "server",
+          "description": "Optimisez votre infrastructure",
+          "userLevel": "intermediate",
+          "estimatedTime": "45 min",
+          "reward": 100
+        },
+        {
+          "id": "contribute",
+          "title": "Je veux contribuer",
+          "url": "/start/contributor/",
+          "icon": "heart",
+          "description": "Rejoignez la communauté T4G",
+          "userLevel": "all",
+          "estimatedTime": "15 min",
+          "reward": 30
+        }
+      ]
+    },
+    {
+      "id": "learn",
+      "title": "📚 Apprendre",
+      "url": "/learn/",
+      "icon": "book",
+      "description": "Parcours d'apprentissage structuré",
+      "children": [
+        {
+          "id": "level-1",
+          "title": "Niveau 1: Fondamentaux",
+          "url": "/learn/fundamentals/",
+          "icon": "seedling",
+          "userLevel": "beginner",
+          "modules": [
+            {
+              "title": "Bitcoin expliqué simplement",
+              "url": "/learn/fundamentals/bitcoin-basics/",
+              "duration": "20 min",
+              "reward": 40
+            },
+            {
+              "title": "Votre premier wallet",
+              "url": "/learn/fundamentals/first-wallet/",
+              "duration": "15 min",
+              "reward": 35
+            },
+            {
+              "title": "Sécurité essentielle",
+              "url": "/learn/fundamentals/security-basics/",
+              "duration": "25 min",
+              "reward": 50
+            }
+          ]
+        },
+        {
+          "id": "level-2",
+          "title": "Niveau 2: Lightning Network",
+          "url": "/learn/lightning/",
+          "icon": "bolt",
+          "userLevel": "intermediate",
+          "prerequisite": "level-1",
+          "modules": [
+            {
+              "title": "Comprendre Lightning",
+              "url": "/learn/lightning/understanding/",
+              "duration": "30 min",
+              "reward": 60
+            },
+            {
+              "title": "Ouvrir des canaux",
+              "url": "/learn/lightning/channels/",
+              "duration": "40 min",
+              "reward": 80
+            },
+            {
+              "title": "Routing et fees",
+              "url": "/learn/lightning/routing/",
+              "duration": "45 min",
+              "reward": 100
+            }
+          ]
+        },
+        {
+          "id": "level-3",
+          "title": "Niveau 3: Expertise avancée",
+          "url": "/learn/advanced/",
+          "icon": "trophy",
+          "userLevel": "expert",
+          "prerequisite": "level-2",
+          "modules": [
+            {
+              "title": "Optimisation économique",
+              "url": "/learn/advanced/economics/",
+              "duration": "60 min",
+              "reward": 150
+            },
+            {
+              "title": "Sécurité avancée",
+              "url": "/learn/advanced/security/",
+              "duration": "50 min",
+              "reward": 180
+            },
+            {
+              "title": "Architecture décentralisée",
+              "url": "/learn/advanced/decentralization/",
+              "duration": "55 min",
+              "reward": 200
+            }
+          ]
+        },
+        {
+          "id": "personalized",
+          "title": "Mon parcours personnalisé",
+          "url": "/learn/my-path/",
+          "icon": "user",
+          "requiresAuth": true,
+          "dynamic": true
+        }
+      ]
+    },
+    {
+      "id": "solutions",
+      "title": "💡 Solutions Daznode",
+      "url": "/solutions/",
+      "icon": "lightbulb",
+      "description": "Nos produits et services",
+      "children": [
+        {
+          "id": "compare",
+          "title": "Comparer les solutions",
+          "url": "/solutions/compare/",
+          "icon": "scales",
+          "highlight": true
+        },
+        {
+          "id": "dazbox",
+          "title": "DazBox",
+          "url": "/solutions/dazbox/",
+          "icon": "box",
+          "badge": "Hardware",
+          "features": [
+            "Nœud clé en main",
+            "Performance optimisée",
+            "Support 24/7"
+          ]
+        },
+        {
+          "id": "dazpay",
+          "title": "DazPay",
+          "url": "/solutions/dazpay/",
+          "icon": "credit-card",
+          "badge": "Paiements",
+          "features": [
+            "Intégration e-commerce",
+            "API complète",
+            "0% commission*"
+          ]
+        },
+        {
+          "id": "dazia",
+          "title": "DazIA",
+          "url": "/solutions/dazia/",
+          "icon": "brain",
+          "badge": "IA",
+          "features": [
+            "Optimisation automatique",
+            "Prédictions de marché",
+            "Alertes intelligentes"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "technical",
+      "title": "🛠️ Centre Technique",
+      "url": "/technical/",
+      "icon": "tools",
+      "description": "Ressources techniques par expertise",
+      "userLevel": "intermediate",
+      "children": [
+        {
+          "id": "by-domain",
+          "title": "Par domaine d'expertise",
+          "url": "/technical/domains/",
+          "icon": "grid",
+          "domains": [
+            {
+              "id": "lightning",
+              "title": "⚡ Lightning Expert",
+              "count": 42,
+              "topContributors": 5
+            },
+            {
+              "id": "hardware",
+              "title": "🔧 Hardware Guru",
+              "count": 28,
+              "topContributors": 3
+            },
+            {
+              "id": "security",
+              "title": "🛡️ Security Specialist",
+              "count": 35,
+              "topContributors": 4
+            },
+            {
+              "id": "economics",
+              "title": "💰 Economics Analyst",
+              "count": 24,
+              "topContributors": 3
+            }
+          ]
+        },
+        {
+          "id": "guides",
+          "title": "Guides pratiques",
+          "url": "/technical/guides/",
+          "icon": "book-open",
+          "filter": ["difficulty", "domain", "reward"]
+        },
+        {
+          "id": "troubleshooting",
+          "title": "Dépannage",
+          "url": "/technical/troubleshooting/",
+          "icon": "wrench",
+          "searchable": true
+        },
+        {
+          "id": "tools",
+          "title": "Outils & Calculateurs",
+          "url": "/technical/tools/",
+          "icon": "calculator",
+          "tools": [
+            {
+              "name": "ROI Calculator",
+              "icon": "chart-line",
+              "popular": true
+            },
+            {
+              "name": "Fee Optimizer",
+              "icon": "percentage",
+              "new": true
+            },
+            {
+              "name": "Channel Advisor",
+              "icon": "network",
+              "beta": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "community",
+      "title": "🤝 Communauté T4G",
+      "url": "/community/",
+      "icon": "users",
+      "description": "Contribuez et gagnez des tokens",
+      "badge": "LIVE",
+      "children": [
+        {
+          "id": "profile",
+          "title": "Mon profil & récompenses",
+          "url": "/community/profile/",
+          "icon": "user-circle",
+          "requiresAuth": true,
+          "widgets": [
+            "balance-t4g",
+            "expertise-badges",
+            "contribution-stats"
+          ]
+        },
+        {
+          "id": "contribute",
+          "title": "Contribuer & gagner",
+          "url": "/community/contribute/",
+          "icon": "edit",
+          "cta": true,
+          "opportunities": {
+            "guides": { "reward": "50-200 T4G" },
+            "reviews": { "reward": "10-50 T4G" },
+            "translations": { "reward": "30-100 T4G" }
+          }
+        },
+        {
+          "id": "mentoring",
+          "title": "Mentoring",
+          "url": "/community/mentoring/",
+          "icon": "graduation-cap",
+          "features": [
+            "Matching automatique",
+            "Sessions 1-to-1",
+            "Rewards partagés"
+          ]
+        },
+        {
+          "id": "challenges",
+          "title": "Challenges actifs",
+          "url": "/community/challenges/",
+          "icon": "trophy",
+          "liveCount": 3,
+          "totalRewards": "5000 T4G"
+        }
+      ]
+    },
+    {
+      "id": "support",
+      "title": "🆘 Support",
+      "url": "/support/",
+      "icon": "help-circle",
+      "description": "Aide et assistance",
+      "children": [
+        {
+          "id": "faq",
+          "title": "FAQ intelligente",
+          "url": "/support/faq/",
+          "icon": "question",
+          "searchable": true,
+          "aiPowered": true
+        },
+        {
+          "id": "contact",
+          "title": "Contact expert",
+          "url": "/support/contact/",
+          "icon": "message",
+          "responseTime": "< 2h"
+        },
+        {
+          "id": "status",
+          "title": "État du réseau",
+          "url": "/support/status/",
+          "icon": "activity",
+          "realtime": true
+        }
+      ]
+    }
+  ],
+  "userActions": {
+    "authenticated": [
+      {
+        "id": "dashboard",
+        "title": "Dashboard",
+        "url": "/dashboard/",
+        "icon": "layout",
+        "primary": true
+      },
+      {
+        "id": "notifications",
+        "title": "Notifications",
+        "url": "/notifications/",
+        "icon": "bell",
+        "badge": "dynamic"
+      },
+      {
+        "id": "wallet",
+        "title": "Wallet T4G",
+        "url": "/wallet/",
+        "icon": "wallet",
+        "balance": "dynamic"
+      }
+    ],
+    "anonymous": [
+      {
+        "id": "login",
+        "title": "Connexion",
+        "url": "/login/",
+        "icon": "log-in",
+        "primary": true
+      },
+      {
+        "id": "register",
+        "title": "Créer un compte",
+        "url": "/register/",
+        "icon": "user-plus",
+        "cta": true
+      }
+    ]
+  },
+  "quickAccess": {
+    "title": "Accès rapide",
+    "items": [
+      {
+        "title": "🚀 Quick Start DazBox",
+        "url": "/quick-start/dazbox-30min/",
+        "hot": true
+      },
+      {
+        "title": "💰 Calculateur ROI",
+        "url": "/technical/tools/roi-calculator/",
+        "popular": true
+      },
+      {
+        "title": "📊 Leaderboard",
+        "url": "/community/leaderboard/",
+        "new": true
+      },
+      {
+        "title": "🎓 Cours Lightning",
+        "url": "/learn/lightning/",
+        "recommended": true
+      }
+    ]
+  },
+  "metadata": {
+    "version": "2.0",
+    "lastUpdate": "2024-01-15",
+    "features": {
+      "adaptiveNavigation": true,
+      "progressTracking": true,
+      "rewardSystem": true,
+      "personalization": true,
+      "offlineMode": true,
+      "multiLanguage": true
+    },
+    "analytics": {
+      "trackUserJourney": true,
+      "heatmapEnabled": true,
+      "abTesting": true
+    }
+  }
+}

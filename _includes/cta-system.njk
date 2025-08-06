@@ -1,0 +1,258 @@
+{# Système de CTA hiérarchisé et contextuel #}
+{% macro cta(config) %}
+  {% set priority = config.priority or 'primary' %}
+  {% set variant = config.variant or 'default' %}
+  {% set size = config.size or 'medium' %}
+  {% set context = config.context or 'general' %}
+  
+  <div class="cta-container cta-{{ priority }} cta-{{ variant }} cta-{{ size }}" 
+       data-context="{{ context }}"
+       data-priority="{{ priority }}">
+    
+    {% if config.title %}
+      <h3 class="cta-title">{{ config.title }}</h3>
+    {% endif %}
+    
+    {% if config.description %}
+      <p class="cta-description">{{ config.description }}</p>
+    {% endif %}
+    
+    <div class="cta-actions">
+      {% if config.primary %}
+        <a href="{{ config.primary.url }}" 
+           class="cta-button cta-primary-btn {{ config.primary.class or '' }}"
+           {% if config.primary.external %}target="_blank" rel="noopener noreferrer"{% endif %}
+           {% if config.primary.download %}download{% endif %}
+           data-cta-action="primary"
+           data-cta-label="{{ config.primary.text }}">
+          {% if config.primary.icon %}
+            <span class="cta-icon">{{ config.primary.icon }}</span>
+          {% endif %}
+          <span class="cta-text">{{ config.primary.text }}</span>
+          {% if config.primary.external %}
+            <svg class="cta-external-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+              <polyline points="15,3 21,3 21,9"></polyline>
+              <line x1="10" y1="14" x2="21" y2="3"></line>
+            </svg>
+          {% endif %}
+        </a>
+      {% endif %}
+      
+      {% if config.secondary %}
+        <a href="{{ config.secondary.url }}" 
+           class="cta-button cta-secondary-btn {{ config.secondary.class or '' }}"
+           {% if config.secondary.external %}target="_blank" rel="noopener noreferrer"{% endif %}
+           data-cta-action="secondary"
+           data-cta-label="{{ config.secondary.text }}">
+          {% if config.secondary.icon %}
+            <span class="cta-icon">{{ config.secondary.icon }}</span>
+          {% endif %}
+          <span class="cta-text">{{ config.secondary.text }}</span>
+        </a>
+      {% endif %}
+      
+      {% if config.tertiary %}
+        <a href="{{ config.tertiary.url }}" 
+           class="cta-button cta-tertiary-btn {{ config.tertiary.class or '' }}"
+           {% if config.tertiary.external %}target="_blank" rel="noopener noreferrer"{% endif %}
+           data-cta-action="tertiary"
+           data-cta-label="{{ config.tertiary.text }}">
+          <span class="cta-text">{{ config.tertiary.text }}</span>
+        </a>
+      {% endif %}
+    </div>
+    
+    {% if config.note %}
+      <p class="cta-note">{{ config.note }}</p>
+    {% endif %}
+    
+    {% if config.badges %}
+      <div class="cta-badges">
+        {% for badge in config.badges %}
+          <span class="cta-badge cta-badge-{{ badge.type or 'info' }}">
+            {% if badge.icon %}{{ badge.icon }}{% endif %}
+            {{ badge.text }}
+          </span>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+{% endmacro %}
+
+{# CTA spécialisés par contexte #}
+{% macro ctaGetStarted(config = {}) %}
+  {{ cta({
+    title: config.title or "Prêt à commencer ?",
+    description: config.description or "Rejoignez des milliers d'utilisateurs qui font confiance à Daznode pour leurs solutions Lightning Network.",
+    priority: "primary",
+    variant: "hero",
+    context: "get-started",
+    primary: {
+      text: config.primaryText or "Commencer maintenant",
+      url: config.primaryUrl or "/premiers-pas/",
+      icon: "🚀"
+    },
+    secondary: {
+      text: config.secondaryText or "Voir une démo",
+      url: config.secondaryUrl or "/demo/"
+    },
+    badges: config.badges or [
+      { text: "Installation en 5 min", type: "success", icon: "⚡" },
+      { text: "Support 24/7", type: "info", icon: "💬" }
+    ]
+  }) }}
+{% endmacro %}
+
+{% macro ctaProduct(product, config = {}) %}
+  {% set productConfig = {
+    dazbox: {
+      title: "Découvrez DazBox",
+      description: "Votre nœud Lightning Network clé en main avec optimisation IA",
+      icon: "⚡",
+      url: "/dazbox/",
+      color: "blue"
+    },
+    dazia: {
+      title: "Optimisez avec DazIA", 
+      description: "Intelligence artificielle pour maximiser vos revenus Lightning",
+      icon: "🤖",
+      url: "/dazia/",
+      color: "purple"
+    },
+    dazpay: {
+      title: "Paiements avec DazPay",
+      description: "Solution complète de paiement Lightning pour commerçants",
+      icon: "💳",
+      url: "/dazpay/",
+      color: "green"
+    }
+  } %}
+  
+  {% set prod = productConfig[product] %}
+  {% if prod %}
+    {{ cta({
+      title: config.title or prod.title,
+      description: config.description or prod.description,
+      priority: "primary",
+      variant: "product",
+      context: product,
+      primary: {
+        text: config.primaryText or ("Découvrir " + product | title),
+        url: config.primaryUrl or prod.url,
+        icon: prod.icon
+      },
+      secondary: {
+        text: "En savoir plus",
+        url: prod.url + "features/"
+      }
+    }) }}
+  {% endif %}
+{% endmacro %}
+
+{% macro ctaCommunity(config = {}) %}
+  {{ cta({
+    title: config.title or "Rejoignez la communauté",
+    description: config.description or "Échangez avec d'autres utilisateurs, posez vos questions et restez informé des dernières actualités.",
+    priority: "secondary",
+    variant: "community",
+    context: "community",
+    primary: {
+      text: "Rejoindre Telegram",
+      url: "https://t.me/+_tiT3od1q_Q0MjI0",
+      external: true,
+      icon: "💬"
+    },
+    secondary: {
+      text: "Forum",
+      url: "/forum/",
+      icon: "🗣️"
+    },
+    tertiary: {
+      text: "GitHub",
+      url: "https://github.com/Feustey",
+      external: true
+    }
+  }) }}
+{% endmacro %}
+
+{% macro ctaSupport(config = {}) %}
+  {{ cta({
+    title: config.title or "Besoin d'aide ?",
+    description: config.description or "Notre équipe est là pour vous accompagner à chaque étape.",
+    priority: "secondary",
+    variant: "support",
+    context: "support",
+    primary: {
+      text: "Contacter le support",
+      url: "/support/",
+      icon: "💬"
+    },
+    secondary: {
+      text: "Consulter la FAQ",
+      url: "/support/faq/"
+    },
+    tertiary: {
+      text: "Documentation",
+      url: "/guides/"
+    }
+  }) }}
+{% endmacro %}
+
+{% macro ctaNewsletter(config = {}) %}
+  {{ cta({
+    title: config.title or "Restez informé",
+    description: config.description or "Recevez les actualités Daznode et les conseils d'experts directement dans votre boîte mail.",
+    priority: "tertiary",
+    variant: "newsletter",
+    context: "newsletter",
+    primary: {
+      text: "S'abonner",
+      url: "#newsletter-signup",
+      icon: "📧"
+    },
+    badges: [
+      { text: "Gratuit", type: "success" },
+      { text: "1 email/mois", type: "info" }
+    ]
+  }) }}
+{% endmacro %}
+
+{# CTA contextuel intelligent #}
+{% macro smartCta(page, userProfile = null) %}
+  {% set pageType = page.filePathStem | split('/') | first %}
+  {% set isHomePage = page.url == '/' %}
+  {% set isBitcoinPage = pageType == 'bitcoin' %}
+  {% set isLightningPage = pageType == 'lightning-network' or pageType == 'lightning' %}
+  {% set isSolutionPage = pageType == 'solutions' or ['dazbox', 'dazia', 'dazpay'] | includes(pageType) %}
+  {% set isGuidePage = pageType == 'guides' or pageType == 'getting-started' %}
+  
+  {% if isHomePage %}
+    {{ ctaGetStarted() }}
+  {% elif isBitcoinPage and not userProfile %}
+    {{ ctaGetStarted({
+      title: "Prêt pour Lightning Network ?",
+      description: "Maintenant que vous comprenez Bitcoin, découvrez la puissance des paiements instantanés.",
+      primaryText: "Explorer Lightning Network",
+      primaryUrl: "/lightning/"
+    }) }}
+  {% elif isLightningPage %}
+    {{ ctaProduct('dazbox', {
+      title: "Lancez votre nœud Lightning",
+      description: "Mettez en pratique ce que vous avez appris avec DazBox"
+    }) }}
+  {% elif isSolutionPage %}
+    {{ ctaGetStarted({
+      title: "Prêt à essayer ?",
+      primaryText: "Démarrer maintenant",
+      secondaryText: "Planifier une démo"
+    }) }}
+  {% elif isGuidePage %}
+    {{ ctaCommunity({
+      title: "Questions sur ce guide ?",
+      description: "Notre communauté est là pour vous aider"
+    }) }}
+  {% else %}
+    {{ ctaSupport() }}
+  {% endif %}
+{% endmacro %}

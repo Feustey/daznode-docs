@@ -1,0 +1,3912 @@
+{
+  "timestamp": "2025-08-05T13:39:11.221Z",
+  "totalBrokenLinks": 650,
+  "brokenLinks": [
+    {
+      "file": "index.md",
+      "text": "FAQ",
+      "url": "/dazbox/faq/",
+      "line": 21
+    },
+    {
+      "file": "index.md",
+      "text": "DazIA",
+      "url": "/dazia/",
+      "line": 24
+    },
+    {
+      "file": "index.md",
+      "text": "DazPay",
+      "url": "/dazpay/",
+      "line": 31
+    },
+    {
+      "file": "index.md",
+      "text": "Guide de démarrage",
+      "url": "/premiers-pas/",
+      "line": 40
+    },
+    {
+      "file": "index.md",
+      "text": "Glossaire",
+      "url": "/glossaire/",
+      "line": 44
+    },
+    {
+      "file": "index.md",
+      "text": "Contribuer",
+      "url": "/token4good/contribuer/",
+      "line": 51
+    },
+    {
+      "file": "wallets/index.md",
+      "text": "wallet",
+      "url": "/glossaire/#wallet-portefeuille",
+      "line": 12
+    },
+    {
+      "file": "wallets/index.md",
+      "text": "bitcoins",
+      "url": "/glossaire/#bitcoin",
+      "line": 12
+    },
+    {
+      "file": "wallets/index.md",
+      "text": "satoshis",
+      "url": "/glossaire/#satoshi-sat",
+      "line": 12
+    },
+    {
+      "file": "wallets/index.md",
+      "text": "Non-custodial",
+      "url": "/glossaire/#non-custodial",
+      "line": 17
+    },
+    {
+      "file": "wallets/index.md",
+      "text": "phrase secrète",
+      "url": "/glossaire/#seed-phrase-secrete",
+      "line": 17
+    },
+    {
+      "file": "wallets/index.md",
+      "text": "Custodial",
+      "url": "/glossaire/#custodial",
+      "line": 18
+    },
+    {
+      "file": "wallets/index.md",
+      "text": "Extension navigateur",
+      "url": "/glossaire/#extension-navigateur",
+      "line": 28
+    },
+    {
+      "file": "wallets/index.md",
+      "text": "store",
+      "url": "/glossaire/#store-magasin-dapplications",
+      "line": 34
+    },
+    {
+      "file": "wallets/index.md",
+      "text": "phrase secrète",
+      "url": "/glossaire/#seed-phrase-secrete",
+      "line": 17
+    },
+    {
+      "file": "wallets/index.md",
+      "text": "facture Lightning",
+      "url": "/glossaire/#facture-lightning-lightning-invoice",
+      "line": 51
+    },
+    {
+      "file": "wallets/index.md",
+      "text": "QR code",
+      "url": "/glossaire/#qr-code",
+      "line": 52
+    },
+    {
+      "file": "wallets/index.md",
+      "text": "BOLT11",
+      "url": "/glossaire/#bolt11",
+      "line": 56
+    },
+    {
+      "file": "wallets/index.md",
+      "text": "2FA",
+      "url": "/glossaire/#2fa-authentification-a-deux-facteurs",
+      "line": 61
+    },
+    {
+      "file": "wallets/index.md",
+      "text": "Guide de démarrage Lightning",
+      "url": "/lightning/premiers-pas/",
+      "line": 68
+    },
+    {
+      "file": "wallets/index.md",
+      "text": "Comprendre les canaux Lightning",
+      "url": "/lightning/canaux/",
+      "line": 69
+    },
+    {
+      "file": "wallets/index.md",
+      "text": "Sécurisation de vos fonds",
+      "url": "/securisation/",
+      "line": 70
+    },
+    {
+      "file": "use-data/index.md",
+      "text": "Nostr Wallet Connect",
+      "url": "/guides/utilisation-donnees/nostr-wallet-connect/",
+      "line": 12
+    },
+    {
+      "file": "use-data/nostr-wallet-connect/index.md",
+      "text": "Liste des applications compatibles NWC",
+      "url": "/docs/nwc-apps",
+      "line": 168
+    },
+    {
+      "file": "use-data/nostr-wallet-connect/index.md",
+      "text": "FAQ Nostr Wallet Connect",
+      "url": "/docs/faq-nwc",
+      "line": 170
+    },
+    {
+      "file": "token4good/index.md",
+      "text": "Participer",
+      "url": "/token4good/participer/",
+      "line": 8
+    },
+    {
+      "file": "solutions/index.md",
+      "text": "Découvrir →",
+      "url": "/dazia/",
+      "line": 27
+    },
+    {
+      "file": "solutions/index.md",
+      "text": "Explorer →",
+      "url": "/dazpay/",
+      "line": 35
+    },
+    {
+      "file": "solutions/index.md",
+      "text": "Contacter un expert →",
+      "url": "/contact/",
+      "line": 56
+    },
+    {
+      "file": "solutions/dazia/overview/index.md",
+      "text": "Voir les résultats →",
+      "url": "/solutions/dazia/results/",
+      "line": 96
+    },
+    {
+      "file": "solutions/dazbox/presentation/index.md",
+      "text": "Voir nos résultats de performance →",
+      "url": "/dazbox/performance/",
+      "line": 54
+    },
+    {
+      "file": "solutions/dazbox/presentation/index.md",
+      "text": "Voir nos solutions entreprise →",
+      "url": "/solutions/dazbox/enterprise/",
+      "line": 87
+    },
+    {
+      "file": "solutions/dazbox/presentation/index.md",
+      "text": "Voir nos performances →",
+      "url": "/solutions/dazbox/roi/",
+      "line": 99
+    },
+    {
+      "file": "solutions/dazbox/presentation/index.md",
+      "text": "Commencer →",
+      "url": "/premiers-pas/dazbox/",
+      "line": 105
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/workspaces.md",
+      "text": "`package.json`",
+      "url": "/configuring-npm/package-json#workspaces",
+      "line": 21
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/workspaces.md",
+      "text": "`package.json`",
+      "url": "/configuring-npm/package-json#workspaces",
+      "line": 21
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/workspaces.md",
+      "text": "npm init",
+      "url": "/commands/npm-init",
+      "line": 71
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/workspaces.md",
+      "text": "`workspace` config",
+      "url": "/using-npm/config#workspace",
+      "line": 85
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/workspaces.md",
+      "text": "publish",
+      "url": "/commands/npm-publish",
+      "line": 133
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/workspaces.md",
+      "text": "npm install",
+      "url": "/commands/npm-install",
+      "line": 222
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/workspaces.md",
+      "text": "npm publish",
+      "url": "/commands/npm-publish",
+      "line": 223
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/workspaces.md",
+      "text": "npm run-script",
+      "url": "/commands/npm-run-script",
+      "line": 224
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/workspaces.md",
+      "text": "config",
+      "url": "/using-npm/config",
+      "line": 225
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/scripts.md",
+      "text": "`npm cache add`",
+      "url": "/commands/npm-cache",
+      "line": 107
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/scripts.md",
+      "text": "`npm ci`",
+      "url": "/commands/npm-ci",
+      "line": 111
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/scripts.md",
+      "text": "`npm diff`",
+      "url": "/commands/npm-diff",
+      "line": 124
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/scripts.md",
+      "text": "`npm install`",
+      "url": "/commands/npm-install",
+      "line": 128
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/scripts.md",
+      "text": "`npm pack`",
+      "url": "/commands/npm-pack",
+      "line": 147
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/scripts.md",
+      "text": "`npm publish`",
+      "url": "/commands/npm-publish",
+      "line": 153
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/scripts.md",
+      "text": "`npm rebuild`",
+      "url": "/commands/npm-rebuild",
+      "line": 162
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/scripts.md",
+      "text": "`npm restart`",
+      "url": "/commands/npm-restart",
+      "line": 172
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/scripts.md",
+      "text": "`npm run <user defined>`",
+      "url": "/commands/npm-run-script",
+      "line": 182
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/scripts.md",
+      "text": "`npm start`",
+      "url": "/commands/npm-start",
+      "line": 188
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/scripts.md",
+      "text": "`npm stop`",
+      "url": "/commands/npm-stop",
+      "line": 198
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/scripts.md",
+      "text": "`npm test`",
+      "url": "/commands/npm-test",
+      "line": 204
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/scripts.md",
+      "text": "`npm version`",
+      "url": "/commands/npm-version",
+      "line": 210
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/scripts.md",
+      "text": "`npm uninstall`",
+      "url": "/commands/npm-uninstall",
+      "line": 216
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/scripts.md",
+      "text": "`package.json`",
+      "url": "/configuring-npm/package-json",
+      "line": 272
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/scripts.md",
+      "text": "`package.json`",
+      "url": "/configuring-npm/package-json",
+      "line": 272
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/scripts.md",
+      "text": "npm run-script",
+      "url": "/commands/npm-run-script",
+      "line": 365
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/scripts.md",
+      "text": "package.json",
+      "url": "/configuring-npm/package-json",
+      "line": 366
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/scripts.md",
+      "text": "npm developers",
+      "url": "/using-npm/developers",
+      "line": 367
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/scripts.md",
+      "text": "npm install",
+      "url": "/commands/npm-install",
+      "line": 368
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/scope.md",
+      "text": "`npm install`",
+      "url": "/commands/npm-install",
+      "line": 55
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/scope.md",
+      "text": "npm install",
+      "url": "/commands/npm-install",
+      "line": 140
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/scope.md",
+      "text": "npm publish",
+      "url": "/commands/npm-publish",
+      "line": 141
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/scope.md",
+      "text": "npm access",
+      "url": "/commands/npm-access",
+      "line": 142
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/scope.md",
+      "text": "npm registry",
+      "url": "/using-npm/registry",
+      "line": 143
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/removal.md",
+      "text": "npm uninstall",
+      "url": "/commands/npm-uninstall",
+      "line": 63
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/removal.md",
+      "text": "npm prune",
+      "url": "/commands/npm-prune",
+      "line": 64
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/registry.md",
+      "text": "`scope`",
+      "url": "/using-npm/scope",
+      "line": 29
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/registry.md",
+      "text": "`registry` config",
+      "url": "/using-npm/config#registry",
+      "line": 30
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/registry.md",
+      "text": "`npm config`",
+      "url": "/commands/npm-config",
+      "line": 31
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/registry.md",
+      "text": "`npmrc`",
+      "url": "/configuring-npm/npmrc",
+      "line": 32
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/registry.md",
+      "text": "`config`",
+      "url": "/using-npm/config",
+      "line": 32
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/registry.md",
+      "text": "Auth Related Configuration",
+      "url": "/configuring-npm/npmrc#auth-related-configuration",
+      "line": 36
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/registry.md",
+      "text": "`package.json`",
+      "url": "/configuring-npm/package-json",
+      "line": 75
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/registry.md",
+      "text": "npm config",
+      "url": "/commands/npm-config",
+      "line": 83
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/registry.md",
+      "text": "config",
+      "url": "/using-npm/config",
+      "line": 84
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/registry.md",
+      "text": "npmrc",
+      "url": "/configuring-npm/npmrc",
+      "line": 85
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/registry.md",
+      "text": "npm developers",
+      "url": "/using-npm/developers",
+      "line": 86
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/package-spec.md",
+      "text": "registry",
+      "url": "/using-npm/config#registry",
+      "line": 25
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/package-spec.md",
+      "text": "registry",
+      "url": "/using-npm/config#registry",
+      "line": 25
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/package-spec.md",
+      "text": "scope",
+      "url": "/using-npm/scope",
+      "line": 104
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/package-spec.md",
+      "text": "config",
+      "url": "/using-npm/config",
+      "line": 105
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/orgs.md",
+      "text": "npm team",
+      "url": "/commands/npm-team",
+      "line": 23
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/orgs.md",
+      "text": "npm access",
+      "url": "/commands/npm-access",
+      "line": 24
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/orgs.md",
+      "text": "npm team",
+      "url": "/commands/npm-team",
+      "line": 23
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/orgs.md",
+      "text": "npm access",
+      "url": "/commands/npm-access",
+      "line": 24
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/orgs.md",
+      "text": "npm scope",
+      "url": "/using-npm/scope",
+      "line": 93
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/logging.md",
+      "text": "`--timing` config",
+      "url": "/using-npm/config#timing",
+      "line": 62
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/logging.md",
+      "text": "config",
+      "url": "/using-npm/config",
+      "line": 96
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/developers.md",
+      "text": "`package.json`",
+      "url": "/configuring-npm/package-json",
+      "line": 58
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/developers.md",
+      "text": "scripts",
+      "url": "/using-npm/scripts",
+      "line": 82
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/developers.md",
+      "text": "`npm\ninit`",
+      "url": "/commands/npm-init",
+      "line": 93
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/developers.md",
+      "text": "`npm link`",
+      "url": "/commands/npm-link",
+      "line": 165
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/developers.md",
+      "text": "npm adduser",
+      "url": "/commands/npm-adduser",
+      "line": 213
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/developers.md",
+      "text": "npm",
+      "url": "/commands/npm",
+      "line": 239
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/developers.md",
+      "text": "npm init",
+      "url": "/commands/npm-init",
+      "line": 240
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/developers.md",
+      "text": "package.json",
+      "url": "/configuring-npm/package-json",
+      "line": 241
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/developers.md",
+      "text": "npm scripts",
+      "url": "/using-npm/scripts",
+      "line": 242
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/developers.md",
+      "text": "npm publish",
+      "url": "/commands/npm-publish",
+      "line": 243
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/developers.md",
+      "text": "npm adduser",
+      "url": "/commands/npm-adduser",
+      "line": 213
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/developers.md",
+      "text": "npm registry",
+      "url": "/using-npm/registry",
+      "line": 245
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/dependency-selectors.md",
+      "text": "`npm query`",
+      "url": "/commands/npm-query",
+      "line": 9
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/dependency-selectors.md",
+      "text": "npm query",
+      "url": "/commands/npm-query",
+      "line": 206
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/config.md",
+      "text": "`scripts`",
+      "url": "/using-npm/scripts",
+      "line": 32
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/config.md",
+      "text": "npmrc",
+      "url": "/configuring-npm/npmrc",
+      "line": 51
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/config.md",
+      "text": "`npm audit`",
+      "url": "/commands/npm-audit",
+      "line": 187
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/config.md",
+      "text": "`npm\nfund`",
+      "url": "/commands/npm-fund",
+      "line": 601
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/config.md",
+      "text": "folders",
+      "url": "/configuring-npm/folders",
+      "line": 633
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/config.md",
+      "text": "npm init",
+      "url": "/commands/npm-init",
+      "line": 785
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/config.md",
+      "text": "folders",
+      "url": "/configuring-npm/folders",
+      "line": 633
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/config.md",
+      "text": "`npm logging`",
+      "url": "/using-npm/logging",
+      "line": 941
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/config.md",
+      "text": "`npm exec`",
+      "url": "/commands/npm-exec",
+      "line": 1088
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/config.md",
+      "text": "npm config",
+      "url": "/commands/npm-config",
+      "line": 1980
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/config.md",
+      "text": "npmrc",
+      "url": "/configuring-npm/npmrc",
+      "line": 51
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/config.md",
+      "text": "npm scripts",
+      "url": "/using-npm/scripts",
+      "line": 1982
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/config.md",
+      "text": "npm folders",
+      "url": "/configuring-npm/folders",
+      "line": 1983
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/using-npm/config.md",
+      "text": "npm",
+      "url": "/commands/npm",
+      "line": 1984
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/configuring-npm/package-lock-json.md",
+      "text": "npm-shrinkwrap.json",
+      "url": "/configuring-npm/npm-shrinkwrap-json",
+      "line": 42
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/configuring-npm/package-lock-json.md",
+      "text": "npm shrinkwrap",
+      "url": "/commands/npm-shrinkwrap",
+      "line": 232
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/configuring-npm/package-lock-json.md",
+      "text": "npm-shrinkwrap.json",
+      "url": "/configuring-npm/npm-shrinkwrap-json",
+      "line": 42
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/configuring-npm/package-lock-json.md",
+      "text": "package.json",
+      "url": "/configuring-npm/package-json",
+      "line": 234
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/configuring-npm/package-lock-json.md",
+      "text": "npm install",
+      "url": "/commands/npm-install",
+      "line": 235
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/configuring-npm/package-json.md",
+      "text": "`config`",
+      "url": "/using-npm/config",
+      "line": 14
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/configuring-npm/package-json.md",
+      "text": "`scope`",
+      "url": "/using-npm/scope",
+      "line": 51
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/configuring-npm/package-json.md",
+      "text": "`npm-shrinkwrap.json`",
+      "url": "/configuring-npm/npm-shrinkwrap-json",
+      "line": 311
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/configuring-npm/package-json.md",
+      "text": "folders",
+      "url": "/configuring-npm/folders#executables",
+      "line": 396
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/configuring-npm/package-json.md",
+      "text": "`scripts`",
+      "url": "/using-npm/scripts",
+      "line": 542
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/configuring-npm/package-json.md",
+      "text": "`npm\n  dist-tag`",
+      "url": "/commands/npm-dist-tag",
+      "line": 591
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/configuring-npm/package-json.md",
+      "text": "`config`",
+      "url": "/using-npm/config",
+      "line": 14
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/configuring-npm/package-json.md",
+      "text": "`engine-strict` config",
+      "url": "/using-npm/config#engine-strict",
+      "line": 1036
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/configuring-npm/package-json.md",
+      "text": "`config`",
+      "url": "/using-npm/config",
+      "line": 14
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/configuring-npm/package-json.md",
+      "text": "workspace",
+      "url": "/using-npm/workspaces",
+      "line": 1123
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/configuring-npm/package-json.md",
+      "text": "`workspaces`",
+      "url": "/using-npm/workspaces",
+      "line": 1142
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/configuring-npm/package-json.md",
+      "text": "workspaces",
+      "url": "/using-npm/workspaces",
+      "line": 1168
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/configuring-npm/package-json.md",
+      "text": "npm init",
+      "url": "/commands/npm-init",
+      "line": 1169
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/configuring-npm/package-json.md",
+      "text": "npm version",
+      "url": "/commands/npm-version",
+      "line": 1170
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/configuring-npm/package-json.md",
+      "text": "npm config",
+      "url": "/commands/npm-config",
+      "line": 1171
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/configuring-npm/package-json.md",
+      "text": "npm help",
+      "url": "/commands/npm-help",
+      "line": 1172
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/configuring-npm/package-json.md",
+      "text": "npm install",
+      "url": "/commands/npm-install",
+      "line": 1173
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/configuring-npm/package-json.md",
+      "text": "npm publish",
+      "url": "/commands/npm-publish",
+      "line": 1174
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/configuring-npm/package-json.md",
+      "text": "npm uninstall",
+      "url": "/commands/npm-uninstall",
+      "line": 1175
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/configuring-npm/npmrc.md",
+      "text": "config",
+      "url": "/using-npm/config",
+      "line": 16
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/configuring-npm/npmrc.md",
+      "text": "npm folders",
+      "url": "/configuring-npm/folders",
+      "line": 133
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/configuring-npm/npmrc.md",
+      "text": "npm config",
+      "url": "/commands/npm-config",
+      "line": 134
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/configuring-npm/npmrc.md",
+      "text": "config",
+      "url": "/using-npm/config",
+      "line": 16
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/configuring-npm/npmrc.md",
+      "text": "package.json",
+      "url": "/configuring-npm/package-json",
+      "line": 136
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/configuring-npm/npmrc.md",
+      "text": "npm",
+      "url": "/commands/npm",
+      "line": 137
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/configuring-npm/npm-shrinkwrap-json.md",
+      "text": "`npm\nshrinkwrap`",
+      "url": "/commands/npm-shrinkwrap",
+      "line": 9
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/configuring-npm/npm-shrinkwrap-json.md",
+      "text": "package-lock.json",
+      "url": "/configuring-npm/package-lock-json",
+      "line": 27
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/configuring-npm/npm-shrinkwrap-json.md",
+      "text": "npm shrinkwrap",
+      "url": "/commands/npm-shrinkwrap",
+      "line": 31
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/configuring-npm/npm-shrinkwrap-json.md",
+      "text": "package-lock.json",
+      "url": "/configuring-npm/package-lock-json",
+      "line": 27
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/configuring-npm/npm-shrinkwrap-json.md",
+      "text": "package.json",
+      "url": "/configuring-npm/package-json",
+      "line": 33
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/configuring-npm/npm-shrinkwrap-json.md",
+      "text": "npm install",
+      "url": "/commands/npm-install",
+      "line": 34
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/configuring-npm/folders.md",
+      "text": "`prefix` config",
+      "url": "/using-npm/config#prefix",
+      "line": 25
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/configuring-npm/folders.md",
+      "text": "`scope`",
+      "url": "/using-npm/scope",
+      "line": 49
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/configuring-npm/folders.md",
+      "text": "`npm cache`",
+      "url": "/commands/npm-cache",
+      "line": 74
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/configuring-npm/folders.md",
+      "text": "`cache` config",
+      "url": "/using-npm/config#cache",
+      "line": 77
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/configuring-npm/folders.md",
+      "text": "`tmp` config",
+      "url": "/using-npm/config#tmp",
+      "line": 82
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/configuring-npm/folders.md",
+      "text": "`global` config",
+      "url": "/using-npm/config#global",
+      "line": 114
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/configuring-npm/folders.md",
+      "text": "`package.json`",
+      "url": "/configuring-npm/package-json",
+      "line": 208
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/configuring-npm/folders.md",
+      "text": "package.json",
+      "url": "/configuring-npm/package-json",
+      "line": 212
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/configuring-npm/folders.md",
+      "text": "npm install",
+      "url": "/commands/npm-install",
+      "line": 213
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/configuring-npm/folders.md",
+      "text": "npm pack",
+      "url": "/commands/npm-pack",
+      "line": 214
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/configuring-npm/folders.md",
+      "text": "npm cache",
+      "url": "/commands/npm-cache",
+      "line": 215
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/configuring-npm/folders.md",
+      "text": "npm config",
+      "url": "/commands/npm-config",
+      "line": 216
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/configuring-npm/folders.md",
+      "text": "npmrc",
+      "url": "/configuring-npm/npmrc",
+      "line": 217
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/configuring-npm/folders.md",
+      "text": "config",
+      "url": "/using-npm/config",
+      "line": 218
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/configuring-npm/folders.md",
+      "text": "npm publish",
+      "url": "/commands/npm-publish",
+      "line": 219
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npx.md",
+      "text": "npm run-script",
+      "url": "/commands/npm-run-script",
+      "line": 160
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npx.md",
+      "text": "npm scripts",
+      "url": "/using-npm/scripts",
+      "line": 161
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npx.md",
+      "text": "npm test",
+      "url": "/commands/npm-test",
+      "line": 162
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npx.md",
+      "text": "npm start",
+      "url": "/commands/npm-start",
+      "line": 163
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npx.md",
+      "text": "npm restart",
+      "url": "/commands/npm-restart",
+      "line": 164
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npx.md",
+      "text": "npm stop",
+      "url": "/commands/npm-stop",
+      "line": 165
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npx.md",
+      "text": "npm config",
+      "url": "/commands/npm-config",
+      "line": 166
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npx.md",
+      "text": "npm exec",
+      "url": "/commands/npm-exec",
+      "line": 167
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm.md",
+      "text": "`npm install`",
+      "url": "/commands/npm-install",
+      "line": 50
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm.md",
+      "text": "`folders`",
+      "url": "/configuring-npm/folders",
+      "line": 73
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm.md",
+      "text": "`package.json`",
+      "url": "/configuring-npm/package-json",
+      "line": 97
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm.md",
+      "text": "`npm\n  link`",
+      "url": "/commands/npm-link",
+      "line": 100
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm.md",
+      "text": "`npm install`",
+      "url": "/commands/npm-install",
+      "line": 50
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm.md",
+      "text": "`npm publish`",
+      "url": "/commands/npm-publish",
+      "line": 110
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm.md",
+      "text": "`npm prefix`",
+      "url": "/commands/npm-prefix",
+      "line": 132
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm.md",
+      "text": "`config`",
+      "url": "/using-npm/config",
+      "line": 139
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm.md",
+      "text": "npm help",
+      "url": "/commands/npm-help",
+      "line": 169
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm.md",
+      "text": "package.json",
+      "url": "/configuring-npm/package-json",
+      "line": 170
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm.md",
+      "text": "npmrc",
+      "url": "/configuring-npm/npmrc",
+      "line": 171
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm.md",
+      "text": "npm config",
+      "url": "/commands/npm-config",
+      "line": 172
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm.md",
+      "text": "npm install",
+      "url": "/commands/npm-install",
+      "line": 173
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm.md",
+      "text": "npm prefix",
+      "url": "/commands/npm-prefix",
+      "line": 174
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm.md",
+      "text": "npm publish",
+      "url": "/commands/npm-publish",
+      "line": 175
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-whoami.md",
+      "text": "npm config",
+      "url": "/commands/npm-config",
+      "line": 39
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-whoami.md",
+      "text": "npmrc",
+      "url": "/configuring-npm/npmrc",
+      "line": 40
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-whoami.md",
+      "text": "npm adduser",
+      "url": "/commands/npm-adduser",
+      "line": 41
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-view.md",
+      "text": "`package.json`",
+      "url": "/configuring-npm/package-json",
+      "line": 89
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-view.md",
+      "text": "package spec",
+      "url": "/using-npm/package-spec",
+      "line": 195
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-view.md",
+      "text": "npm search",
+      "url": "/commands/npm-search",
+      "line": 196
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-view.md",
+      "text": "npm registry",
+      "url": "/using-npm/registry",
+      "line": 197
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-view.md",
+      "text": "npm config",
+      "url": "/commands/npm-config",
+      "line": 198
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-view.md",
+      "text": "npmrc",
+      "url": "/configuring-npm/npmrc",
+      "line": 199
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-view.md",
+      "text": "npm docs",
+      "url": "/commands/npm-docs",
+      "line": 200
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-version.md",
+      "text": "`--message` config",
+      "url": "/using-npm/config#message",
+      "line": 165
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-version.md",
+      "text": "`sign-git-tag` config",
+      "url": "/using-npm/config#sign-git-tag",
+      "line": 174
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-version.md",
+      "text": "npm init",
+      "url": "/commands/npm-init",
+      "line": 231
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-version.md",
+      "text": "npm run-script",
+      "url": "/commands/npm-run-script",
+      "line": 232
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-version.md",
+      "text": "npm scripts",
+      "url": "/using-npm/scripts",
+      "line": 233
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-version.md",
+      "text": "package.json",
+      "url": "/configuring-npm/package-json",
+      "line": 234
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-version.md",
+      "text": "config",
+      "url": "/using-npm/config",
+      "line": 235
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-update.md",
+      "text": "`tag` config",
+      "url": "/using-npm/config#tag",
+      "line": 18
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-update.md",
+      "text": "configuration file",
+      "url": "/configuring-npm/npmrc",
+      "line": 33
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-update.md",
+      "text": "folders",
+      "url": "/configuring-npm/folders",
+      "line": 181
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-update.md",
+      "text": "`npm audit`",
+      "url": "/commands/npm-audit",
+      "line": 330
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-update.md",
+      "text": "`npm\nfund`",
+      "url": "/commands/npm-fund",
+      "line": 355
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-update.md",
+      "text": "npm install",
+      "url": "/commands/npm-install",
+      "line": 441
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-update.md",
+      "text": "npm outdated",
+      "url": "/commands/npm-outdated",
+      "line": 442
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-update.md",
+      "text": "npm shrinkwrap",
+      "url": "/commands/npm-shrinkwrap",
+      "line": 443
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-update.md",
+      "text": "npm registry",
+      "url": "/using-npm/registry",
+      "line": 444
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-update.md",
+      "text": "npm folders",
+      "url": "/configuring-npm/folders",
+      "line": 445
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-update.md",
+      "text": "npm ls",
+      "url": "/commands/npm-ls",
+      "line": 446
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-unstar.md",
+      "text": "`npm star`",
+      "url": "/commands/npm-star",
+      "line": 17
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-unstar.md",
+      "text": "`npm star`",
+      "url": "/commands/npm-star",
+      "line": 17
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-unstar.md",
+      "text": "`npm stars`",
+      "url": "/commands/npm-stars",
+      "line": 30
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-unstar.md",
+      "text": "npm star",
+      "url": "/commands/npm-star",
+      "line": 69
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-unstar.md",
+      "text": "npm stars",
+      "url": "/commands/npm-stars",
+      "line": 70
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-unstar.md",
+      "text": "npm view",
+      "url": "/commands/npm-view",
+      "line": 71
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-unstar.md",
+      "text": "npm whoami",
+      "url": "/commands/npm-whoami",
+      "line": 72
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-unstar.md",
+      "text": "npm adduser",
+      "url": "/commands/npm-adduser",
+      "line": 73
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-unpublish.md",
+      "text": "`deprecate`",
+      "url": "/commands/npm-deprecate",
+      "line": 18
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-unpublish.md",
+      "text": "logged\nin",
+      "url": "/commands/npm-adduser",
+      "line": 27
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-unpublish.md",
+      "text": "package spec",
+      "url": "/using-npm/package-spec",
+      "line": 126
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-unpublish.md",
+      "text": "npm deprecate",
+      "url": "/commands/npm-deprecate",
+      "line": 127
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-unpublish.md",
+      "text": "npm publish",
+      "url": "/commands/npm-publish",
+      "line": 128
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-unpublish.md",
+      "text": "npm registry",
+      "url": "/using-npm/registry",
+      "line": 129
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-unpublish.md",
+      "text": "npm adduser",
+      "url": "/commands/npm-adduser",
+      "line": 130
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-unpublish.md",
+      "text": "npm owner",
+      "url": "/commands/npm-owner",
+      "line": 131
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-unpublish.md",
+      "text": "npm login",
+      "url": "/commands/npm-adduser",
+      "line": 132
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-uninstall.md",
+      "text": "`scope`",
+      "url": "/using-npm/scope",
+      "line": 39
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-uninstall.md",
+      "text": "folders",
+      "url": "/configuring-npm/folders",
+      "line": 80
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-uninstall.md",
+      "text": "npm prune",
+      "url": "/commands/npm-prune",
+      "line": 155
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-uninstall.md",
+      "text": "npm install",
+      "url": "/commands/npm-install",
+      "line": 156
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-uninstall.md",
+      "text": "npm folders",
+      "url": "/configuring-npm/folders",
+      "line": 157
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-uninstall.md",
+      "text": "npm config",
+      "url": "/commands/npm-config",
+      "line": 158
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-uninstall.md",
+      "text": "npmrc",
+      "url": "/configuring-npm/npmrc",
+      "line": 159
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-token.md",
+      "text": "npm adduser",
+      "url": "/commands/npm-adduser",
+      "line": 124
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-token.md",
+      "text": "npm registry",
+      "url": "/using-npm/registry",
+      "line": 125
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-token.md",
+      "text": "npm config",
+      "url": "/commands/npm-config",
+      "line": 126
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-token.md",
+      "text": "npmrc",
+      "url": "/configuring-npm/npmrc",
+      "line": 127
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-token.md",
+      "text": "npm owner",
+      "url": "/commands/npm-owner",
+      "line": 128
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-token.md",
+      "text": "npm whoami",
+      "url": "/commands/npm-whoami",
+      "line": 129
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-token.md",
+      "text": "npm profile",
+      "url": "/commands/npm-profile",
+      "line": 130
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-test.md",
+      "text": "npm run-script",
+      "url": "/commands/npm-run-script",
+      "line": 66
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-test.md",
+      "text": "npm scripts",
+      "url": "/using-npm/scripts",
+      "line": 67
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-test.md",
+      "text": "npm start",
+      "url": "/commands/npm-start",
+      "line": 68
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-test.md",
+      "text": "npm restart",
+      "url": "/commands/npm-restart",
+      "line": 69
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-test.md",
+      "text": "npm stop",
+      "url": "/commands/npm-stop",
+      "line": 70
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-team.md",
+      "text": "npm access",
+      "url": "/commands/npm-access",
+      "line": 153
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-team.md",
+      "text": "npm config",
+      "url": "/commands/npm-config",
+      "line": 154
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-team.md",
+      "text": "npm registry",
+      "url": "/using-npm/registry",
+      "line": 155
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-stop.md",
+      "text": "npm start",
+      "url": "/commands/npm-start",
+      "line": 18
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-stop.md",
+      "text": "npm run-script",
+      "url": "/commands/npm-run-script",
+      "line": 69
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-stop.md",
+      "text": "npm scripts",
+      "url": "/using-npm/scripts",
+      "line": 70
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-stop.md",
+      "text": "npm test",
+      "url": "/commands/npm-test",
+      "line": 71
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-stop.md",
+      "text": "npm start",
+      "url": "/commands/npm-start",
+      "line": 18
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-stop.md",
+      "text": "npm restart",
+      "url": "/commands/npm-restart",
+      "line": 73
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-start.md",
+      "text": "`npm run-script`",
+      "url": "/commands/npm-run-script",
+      "line": 26
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-start.md",
+      "text": "npm run-script",
+      "url": "/commands/npm-run-script",
+      "line": 76
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-start.md",
+      "text": "npm scripts",
+      "url": "/using-npm/scripts",
+      "line": 77
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-start.md",
+      "text": "npm test",
+      "url": "/commands/npm-test",
+      "line": 78
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-start.md",
+      "text": "npm restart",
+      "url": "/commands/npm-restart",
+      "line": 79
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-start.md",
+      "text": "npm stop",
+      "url": "/commands/npm-stop",
+      "line": 80
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-stars.md",
+      "text": "npm star",
+      "url": "/commands/npm-star",
+      "line": 36
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-stars.md",
+      "text": "npm unstar",
+      "url": "/commands/npm-unstar",
+      "line": 37
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-stars.md",
+      "text": "npm view",
+      "url": "/commands/npm-view",
+      "line": 38
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-stars.md",
+      "text": "npm whoami",
+      "url": "/commands/npm-whoami",
+      "line": 39
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-stars.md",
+      "text": "npm adduser",
+      "url": "/commands/npm-adduser",
+      "line": 40
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-star.md",
+      "text": "`npm unstar`",
+      "url": "/commands/npm-unstar",
+      "line": 28
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-star.md",
+      "text": "`npm stars`",
+      "url": "/commands/npm-stars",
+      "line": 34
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-star.md",
+      "text": "package spec",
+      "url": "/using-npm/package-spec",
+      "line": 73
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-star.md",
+      "text": "npm unstar",
+      "url": "/commands/npm-unstar",
+      "line": 74
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-star.md",
+      "text": "npm stars",
+      "url": "/commands/npm-stars",
+      "line": 75
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-star.md",
+      "text": "npm view",
+      "url": "/commands/npm-view",
+      "line": 76
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-star.md",
+      "text": "npm whoami",
+      "url": "/commands/npm-whoami",
+      "line": 77
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-star.md",
+      "text": "npm adduser",
+      "url": "/commands/npm-adduser",
+      "line": 78
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-shrinkwrap.md",
+      "text": "package-lock-json",
+      "url": "/configuring-npm/package-lock-json",
+      "line": 22
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-shrinkwrap.md",
+      "text": "npm install",
+      "url": "/commands/npm-install",
+      "line": 26
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-shrinkwrap.md",
+      "text": "npm run-script",
+      "url": "/commands/npm-run-script",
+      "line": 27
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-shrinkwrap.md",
+      "text": "npm scripts",
+      "url": "/using-npm/scripts",
+      "line": 28
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-shrinkwrap.md",
+      "text": "package.json",
+      "url": "/configuring-npm/package-json",
+      "line": 29
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-shrinkwrap.md",
+      "text": "package-lock.json",
+      "url": "/configuring-npm/package-lock-json",
+      "line": 30
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-shrinkwrap.md",
+      "text": "npm-shrinkwrap.json",
+      "url": "/configuring-npm/npm-shrinkwrap-json",
+      "line": 31
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-shrinkwrap.md",
+      "text": "npm ls",
+      "url": "/commands/npm-ls",
+      "line": 32
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-search.md",
+      "text": "npm registry",
+      "url": "/using-npm/registry",
+      "line": 154
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-search.md",
+      "text": "npm config",
+      "url": "/commands/npm-config",
+      "line": 155
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-search.md",
+      "text": "npmrc",
+      "url": "/configuring-npm/npmrc",
+      "line": 156
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-search.md",
+      "text": "npm view",
+      "url": "/commands/npm-view",
+      "line": 157
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-search.md",
+      "text": "npm cache",
+      "url": "/commands/npm-cache",
+      "line": 158
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-sbom.md",
+      "text": "package spec",
+      "url": "/using-npm/package-spec",
+      "line": 315
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-sbom.md",
+      "text": "dependency selectors",
+      "url": "/using-npm/dependency-selectors",
+      "line": 316
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-sbom.md",
+      "text": "package.json",
+      "url": "/configuring-npm/package-json",
+      "line": 317
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-sbom.md",
+      "text": "workspaces",
+      "url": "/using-npm/workspaces",
+      "line": 318
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-run-script.md",
+      "text": "`script-shell` config",
+      "url": "/using-npm/config#script-shell",
+      "line": 63
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-run-script.md",
+      "text": "`workspace`",
+      "url": "/using-npm/config#workspace",
+      "line": 80
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-run-script.md",
+      "text": "`workspaces`",
+      "url": "/using-npm/config#workspaces",
+      "line": 81
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-run-script.md",
+      "text": "`workspaces` config",
+      "url": "/using-npm/config#workspaces",
+      "line": 111
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-run-script.md",
+      "text": "npm scripts",
+      "url": "/using-npm/scripts",
+      "line": 247
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-run-script.md",
+      "text": "npm test",
+      "url": "/commands/npm-test",
+      "line": 248
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-run-script.md",
+      "text": "npm start",
+      "url": "/commands/npm-start",
+      "line": 249
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-run-script.md",
+      "text": "npm restart",
+      "url": "/commands/npm-restart",
+      "line": 250
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-run-script.md",
+      "text": "npm stop",
+      "url": "/commands/npm-stop",
+      "line": 251
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-run-script.md",
+      "text": "npm config",
+      "url": "/commands/npm-config",
+      "line": 252
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-run-script.md",
+      "text": "npm workspaces",
+      "url": "/using-npm/workspaces",
+      "line": 253
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-root.md",
+      "text": "folders",
+      "url": "/configuring-npm/folders",
+      "line": 37
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-root.md",
+      "text": "npm prefix",
+      "url": "/commands/npm-prefix",
+      "line": 48
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-root.md",
+      "text": "npm folders",
+      "url": "/configuring-npm/folders",
+      "line": 49
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-root.md",
+      "text": "npm config",
+      "url": "/commands/npm-config",
+      "line": 50
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-root.md",
+      "text": "npmrc",
+      "url": "/configuring-npm/npmrc",
+      "line": 51
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-restart.md",
+      "text": "npm run-script",
+      "url": "/commands/npm-run-script",
+      "line": 65
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-restart.md",
+      "text": "npm scripts",
+      "url": "/using-npm/scripts",
+      "line": 66
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-restart.md",
+      "text": "npm test",
+      "url": "/commands/npm-test",
+      "line": 67
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-restart.md",
+      "text": "npm start",
+      "url": "/commands/npm-start",
+      "line": 68
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-restart.md",
+      "text": "npm stop",
+      "url": "/commands/npm-stop",
+      "line": 69
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-restart.md",
+      "text": "npm restart",
+      "url": "/commands/npm-restart",
+      "line": 70
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-repo.md",
+      "text": "`--browser` config",
+      "url": "/using-npm/config#browser",
+      "line": 17
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-repo.md",
+      "text": "npm docs",
+      "url": "/commands/npm-docs",
+      "line": 101
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-repo.md",
+      "text": "npm config",
+      "url": "/commands/npm-config",
+      "line": 102
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-rebuild.md",
+      "text": "folders",
+      "url": "/configuring-npm/folders",
+      "line": 50
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-rebuild.md",
+      "text": "package spec",
+      "url": "/using-npm/package-spec",
+      "line": 167
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-rebuild.md",
+      "text": "npm install",
+      "url": "/commands/npm-install",
+      "line": 168
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-query.md",
+      "text": "folders",
+      "url": "/configuring-npm/folders",
+      "line": 161
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-query.md",
+      "text": "dependency selectors",
+      "url": "/using-npm/dependency-selectors",
+      "line": 240
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-publish.md",
+      "text": "`scope`",
+      "url": "/using-npm/scope",
+      "line": 19
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-publish.md",
+      "text": "`package.json`",
+      "url": "/configuring-npm/package-json",
+      "line": 21
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-publish.md",
+      "text": "`package.json`",
+      "url": "/configuring-npm/package-json",
+      "line": 21
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-publish.md",
+      "text": "`registry`",
+      "url": "/using-npm/registry",
+      "line": 32
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-publish.md",
+      "text": "`npm dist-tag`",
+      "url": "/commands/npm-dist-tag",
+      "line": 33
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-publish.md",
+      "text": "`npm unpublish`",
+      "url": "/commands/npm-unpublish",
+      "line": 43
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-publish.md",
+      "text": "`npm pack`",
+      "url": "/commands/npm-pack",
+      "line": 49
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-publish.md",
+      "text": "`package.json`",
+      "url": "/configuring-npm/package-json",
+      "line": 21
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-publish.md",
+      "text": "`developers`",
+      "url": "/using-npm/developers",
+      "line": 84
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-publish.md",
+      "text": "package spec",
+      "url": "/using-npm/package-spec",
+      "line": 226
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-publish.md",
+      "text": "npm registry",
+      "url": "/using-npm/registry",
+      "line": 228
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-publish.md",
+      "text": "npm scope",
+      "url": "/using-npm/scope",
+      "line": 229
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-publish.md",
+      "text": "npm adduser",
+      "url": "/commands/npm-adduser",
+      "line": 230
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-publish.md",
+      "text": "npm owner",
+      "url": "/commands/npm-owner",
+      "line": 231
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-publish.md",
+      "text": "npm deprecate",
+      "url": "/commands/npm-deprecate",
+      "line": 232
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-publish.md",
+      "text": "npm dist-tag",
+      "url": "/commands/npm-dist-tag",
+      "line": 233
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-publish.md",
+      "text": "npm pack",
+      "url": "/commands/npm-pack",
+      "line": 234
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-publish.md",
+      "text": "npm profile",
+      "url": "/commands/npm-profile",
+      "line": 235
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-prune.md",
+      "text": "npm uninstall",
+      "url": "/commands/npm-uninstall",
+      "line": 194
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-prune.md",
+      "text": "npm folders",
+      "url": "/configuring-npm/folders",
+      "line": 195
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-prune.md",
+      "text": "npm ls",
+      "url": "/commands/npm-ls",
+      "line": 196
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-profile.md",
+      "text": "npm adduser",
+      "url": "/commands/npm-adduser",
+      "line": 125
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-profile.md",
+      "text": "npm registry",
+      "url": "/using-npm/registry",
+      "line": 126
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-profile.md",
+      "text": "npm config",
+      "url": "/commands/npm-config",
+      "line": 127
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-profile.md",
+      "text": "npmrc",
+      "url": "/configuring-npm/npmrc",
+      "line": 128
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-profile.md",
+      "text": "npm owner",
+      "url": "/commands/npm-owner",
+      "line": 129
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-profile.md",
+      "text": "npm whoami",
+      "url": "/commands/npm-whoami",
+      "line": 130
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-profile.md",
+      "text": "npm token",
+      "url": "/commands/npm-token",
+      "line": 131
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-prefix.md",
+      "text": "`npm config`",
+      "url": "/commands/npm-config",
+      "line": 22
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-prefix.md",
+      "text": "folders",
+      "url": "/configuring-npm/folders",
+      "line": 45
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-prefix.md",
+      "text": "npm root",
+      "url": "/commands/npm-root",
+      "line": 56
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-prefix.md",
+      "text": "npm folders",
+      "url": "/configuring-npm/folders",
+      "line": 57
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-prefix.md",
+      "text": "npm config",
+      "url": "/commands/npm-config",
+      "line": 58
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-prefix.md",
+      "text": "npmrc",
+      "url": "/configuring-npm/npmrc",
+      "line": 59
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-pkg.md",
+      "text": "`npm view`",
+      "url": "/commands/npm-view",
+      "line": 26
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-pkg.md",
+      "text": "`workspace`",
+      "url": "/using-npm/config#workspace",
+      "line": 155
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-pkg.md",
+      "text": "`workspaces`",
+      "url": "/using-npm/config#workspaces",
+      "line": 156
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-pkg.md",
+      "text": "npm install",
+      "url": "/commands/npm-install",
+      "line": 269
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-pkg.md",
+      "text": "npm init",
+      "url": "/commands/npm-init",
+      "line": 270
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-pkg.md",
+      "text": "npm config",
+      "url": "/commands/npm-config",
+      "line": 271
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-pkg.md",
+      "text": "workspaces",
+      "url": "/using-npm/workspaces",
+      "line": 272
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-ping.md",
+      "text": "npm doctor",
+      "url": "/commands/npm-doctor",
+      "line": 44
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-ping.md",
+      "text": "npm config",
+      "url": "/commands/npm-config",
+      "line": 45
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-ping.md",
+      "text": "npmrc",
+      "url": "/configuring-npm/npmrc",
+      "line": 46
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-pack.md",
+      "text": "package spec",
+      "url": "/using-npm/package-spec",
+      "line": 121
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-pack.md",
+      "text": "npm cache",
+      "url": "/commands/npm-cache",
+      "line": 123
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-pack.md",
+      "text": "npm publish",
+      "url": "/commands/npm-publish",
+      "line": 124
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-pack.md",
+      "text": "npm config",
+      "url": "/commands/npm-config",
+      "line": 125
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-pack.md",
+      "text": "npmrc",
+      "url": "/configuring-npm/npmrc",
+      "line": 126
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-owner.md",
+      "text": "`npm-profile`",
+      "url": "/commands/npm-profile",
+      "line": 33
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-owner.md",
+      "text": "package spec",
+      "url": "/using-npm/package-spec",
+      "line": 102
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-owner.md",
+      "text": "npm profile",
+      "url": "/commands/npm-profile",
+      "line": 103
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-owner.md",
+      "text": "npm publish",
+      "url": "/commands/npm-publish",
+      "line": 104
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-owner.md",
+      "text": "npm registry",
+      "url": "/using-npm/registry",
+      "line": 105
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-owner.md",
+      "text": "npm adduser",
+      "url": "/commands/npm-adduser",
+      "line": 106
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-outdated.md",
+      "text": "dist-tag",
+      "url": "/commands/npm-dist-tag",
+      "line": 34
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-outdated.md",
+      "text": "folders",
+      "url": "/configuring-npm/folders",
+      "line": 140
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-outdated.md",
+      "text": "package spec",
+      "url": "/using-npm/package-spec",
+      "line": 173
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-outdated.md",
+      "text": "npm update",
+      "url": "/commands/npm-update",
+      "line": 174
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-outdated.md",
+      "text": "npm dist-tag",
+      "url": "/commands/npm-dist-tag",
+      "line": 175
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-outdated.md",
+      "text": "npm registry",
+      "url": "/using-npm/registry",
+      "line": 176
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-outdated.md",
+      "text": "npm folders",
+      "url": "/configuring-npm/folders",
+      "line": 177
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-outdated.md",
+      "text": "npm workspaces",
+      "url": "/using-npm/workspaces",
+      "line": 178
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-org.md",
+      "text": "using orgs",
+      "url": "/using-npm/orgs",
+      "line": 113
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-ls.md",
+      "text": "`npm explain`",
+      "url": "/commands/npm-explain",
+      "line": 22
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-ls.md",
+      "text": "folders",
+      "url": "/configuring-npm/folders",
+      "line": 127
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-ls.md",
+      "text": "package spec",
+      "url": "/using-npm/package-spec",
+      "line": 284
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-ls.md",
+      "text": "npm explain",
+      "url": "/commands/npm-explain",
+      "line": 285
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-ls.md",
+      "text": "npm config",
+      "url": "/commands/npm-config",
+      "line": 286
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-ls.md",
+      "text": "npmrc",
+      "url": "/configuring-npm/npmrc",
+      "line": 287
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-ls.md",
+      "text": "npm folders",
+      "url": "/configuring-npm/folders",
+      "line": 288
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-ls.md",
+      "text": "npm explain",
+      "url": "/commands/npm-explain",
+      "line": 285
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-ls.md",
+      "text": "npm install",
+      "url": "/commands/npm-install",
+      "line": 290
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-ls.md",
+      "text": "npm link",
+      "url": "/commands/npm-link",
+      "line": 291
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-ls.md",
+      "text": "npm prune",
+      "url": "/commands/npm-prune",
+      "line": 292
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-ls.md",
+      "text": "npm outdated",
+      "url": "/commands/npm-outdated",
+      "line": 293
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-ls.md",
+      "text": "npm update",
+      "url": "/commands/npm-update",
+      "line": 294
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-logout.md",
+      "text": "npm adduser",
+      "url": "/commands/npm-adduser",
+      "line": 72
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-logout.md",
+      "text": "npm registry",
+      "url": "/using-npm/registry",
+      "line": 73
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-logout.md",
+      "text": "npm config",
+      "url": "/commands/npm-config",
+      "line": 74
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-logout.md",
+      "text": "npm whoami",
+      "url": "/commands/npm-whoami",
+      "line": 75
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-login.md",
+      "text": "`config`",
+      "url": "/using-npm/config",
+      "line": 19
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-login.md",
+      "text": "npm registry",
+      "url": "/using-npm/registry",
+      "line": 87
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-login.md",
+      "text": "npm config",
+      "url": "/commands/npm-config",
+      "line": 88
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-login.md",
+      "text": "npmrc",
+      "url": "/configuring-npm/npmrc",
+      "line": 89
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-login.md",
+      "text": "npm owner",
+      "url": "/commands/npm-owner",
+      "line": 90
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-login.md",
+      "text": "npm whoami",
+      "url": "/commands/npm-whoami",
+      "line": 91
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-login.md",
+      "text": "npm token",
+      "url": "/commands/npm-token",
+      "line": 92
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-login.md",
+      "text": "npm profile",
+      "url": "/commands/npm-profile",
+      "line": 93
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-link.md",
+      "text": "`scope`",
+      "url": "/using-npm/scope",
+      "line": 36
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-link.md",
+      "text": "`scope`",
+      "url": "/using-npm/scope",
+      "line": 36
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-link.md",
+      "text": "folders",
+      "url": "/configuring-npm/folders",
+      "line": 144
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-link.md",
+      "text": "`npm audit`",
+      "url": "/commands/npm-audit",
+      "line": 279
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-link.md",
+      "text": "`npm\nfund`",
+      "url": "/commands/npm-fund",
+      "line": 304
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-link.md",
+      "text": "package spec",
+      "url": "/using-npm/package-spec",
+      "line": 390
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-link.md",
+      "text": "npm developers",
+      "url": "/using-npm/developers",
+      "line": 391
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-link.md",
+      "text": "package.json",
+      "url": "/configuring-npm/package-json",
+      "line": 392
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-link.md",
+      "text": "npm install",
+      "url": "/commands/npm-install",
+      "line": 393
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-link.md",
+      "text": "npm folders",
+      "url": "/configuring-npm/folders",
+      "line": 394
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-link.md",
+      "text": "npm config",
+      "url": "/commands/npm-config",
+      "line": 395
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-link.md",
+      "text": "npmrc",
+      "url": "/configuring-npm/npmrc",
+      "line": 396
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-install.md",
+      "text": "package-lock.json",
+      "url": "/configuring-npm/package-lock-json",
+      "line": 26
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-install.md",
+      "text": "`npm shrinkwrap`",
+      "url": "/commands/npm-shrinkwrap",
+      "line": 27
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-install.md",
+      "text": "`package.json`",
+      "url": "/configuring-npm/package-json",
+      "line": 32
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-install.md",
+      "text": "`registry`",
+      "url": "/using-npm/registry",
+      "line": 36
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-install.md",
+      "text": "`npm dist-tag`",
+      "url": "/commands/npm-dist-tag",
+      "line": 37
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-install.md",
+      "text": "`package.json`",
+      "url": "/configuring-npm/package-json",
+      "line": 32
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-install.md",
+      "text": "`npm link`",
+      "url": "/commands/npm-link",
+      "line": 89
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-install.md",
+      "text": "`config`",
+      "url": "/using-npm/config#tag",
+      "line": 121
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-install.md",
+      "text": "`scope`",
+      "url": "/using-npm/scope",
+      "line": 161
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-install.md",
+      "text": "`package.json`",
+      "url": "/configuring-npm/package-json",
+      "line": 32
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-install.md",
+      "text": "`config`",
+      "url": "/using-npm/config",
+      "line": 406
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-install.md",
+      "text": "folders",
+      "url": "/configuring-npm/folders",
+      "line": 443
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-install.md",
+      "text": "`npm audit`",
+      "url": "/commands/npm-audit",
+      "line": 618
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-install.md",
+      "text": "`npm\nfund`",
+      "url": "/commands/npm-fund",
+      "line": 643
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-install.md",
+      "text": "folders",
+      "url": "/configuring-npm/folders",
+      "line": 443
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-install.md",
+      "text": "npm folders",
+      "url": "/configuring-npm/folders",
+      "line": 783
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-install.md",
+      "text": "npm update",
+      "url": "/commands/npm-update",
+      "line": 784
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-install.md",
+      "text": "npm audit",
+      "url": "/commands/npm-audit",
+      "line": 785
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-install.md",
+      "text": "npm fund",
+      "url": "/commands/npm-fund",
+      "line": 786
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-install.md",
+      "text": "npm link",
+      "url": "/commands/npm-link",
+      "line": 787
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-install.md",
+      "text": "npm rebuild",
+      "url": "/commands/npm-rebuild",
+      "line": 788
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-install.md",
+      "text": "npm scripts",
+      "url": "/using-npm/scripts",
+      "line": 789
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-install.md",
+      "text": "npm config",
+      "url": "/commands/npm-config",
+      "line": 790
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-install.md",
+      "text": "npmrc",
+      "url": "/configuring-npm/npmrc",
+      "line": 791
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-install.md",
+      "text": "npm registry",
+      "url": "/using-npm/registry",
+      "line": 792
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-install.md",
+      "text": "npm dist-tag",
+      "url": "/commands/npm-dist-tag",
+      "line": 793
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-install.md",
+      "text": "npm uninstall",
+      "url": "/commands/npm-uninstall",
+      "line": 794
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-install.md",
+      "text": "npm shrinkwrap",
+      "url": "/commands/npm-shrinkwrap",
+      "line": 795
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-install.md",
+      "text": "package.json",
+      "url": "/configuring-npm/package-json",
+      "line": 796
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-install.md",
+      "text": "workspaces",
+      "url": "/using-npm/workspaces",
+      "line": 797
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-install-test.md",
+      "text": "folders",
+      "url": "/configuring-npm/folders",
+      "line": 53
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-install-test.md",
+      "text": "`npm audit`",
+      "url": "/commands/npm-audit",
+      "line": 228
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-install-test.md",
+      "text": "`npm\nfund`",
+      "url": "/commands/npm-fund",
+      "line": 253
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-install-test.md",
+      "text": "npm install",
+      "url": "/commands/npm-install",
+      "line": 359
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-install-test.md",
+      "text": "npm install-ci-test",
+      "url": "/commands/npm-install-ci-test",
+      "line": 360
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-install-test.md",
+      "text": "npm test",
+      "url": "/commands/npm-test",
+      "line": 361
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-install-ci-test.md",
+      "text": "`npm audit`",
+      "url": "/commands/npm-audit",
+      "line": 151
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-install-ci-test.md",
+      "text": "`npm\nfund`",
+      "url": "/commands/npm-fund",
+      "line": 176
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-install-ci-test.md",
+      "text": "npm install-test",
+      "url": "/commands/npm-install-test",
+      "line": 262
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-install-ci-test.md",
+      "text": "npm ci",
+      "url": "/commands/npm-ci",
+      "line": 263
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-install-ci-test.md",
+      "text": "npm test",
+      "url": "/commands/npm-test",
+      "line": 264
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-init.md",
+      "text": "`npm-exec`",
+      "url": "/commands/npm-exec",
+      "line": 22
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-init.md",
+      "text": "npm init",
+      "url": "/commands/npm-init",
+      "line": 195
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-init.md",
+      "text": "package spec",
+      "url": "/using-npm/package-spec",
+      "line": 343
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-init.md",
+      "text": "package.json",
+      "url": "/configuring-npm/package-json",
+      "line": 345
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-init.md",
+      "text": "npm version",
+      "url": "/commands/npm-version",
+      "line": 346
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-init.md",
+      "text": "npm scope",
+      "url": "/using-npm/scope",
+      "line": 347
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-init.md",
+      "text": "npm exec",
+      "url": "/commands/npm-exec",
+      "line": 348
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-init.md",
+      "text": "npm workspaces",
+      "url": "/using-npm/workspaces",
+      "line": 349
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-help.md",
+      "text": "npm",
+      "url": "/commands/npm",
+      "line": 41
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-help.md",
+      "text": "npm folders",
+      "url": "/configuring-npm/folders",
+      "line": 42
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-help.md",
+      "text": "npm config",
+      "url": "/commands/npm-config",
+      "line": 43
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-help.md",
+      "text": "npmrc",
+      "url": "/configuring-npm/npmrc",
+      "line": 44
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-help.md",
+      "text": "package.json",
+      "url": "/configuring-npm/package-json",
+      "line": 45
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-help.md",
+      "text": "npm help-search",
+      "url": "/commands/npm-help-search",
+      "line": 46
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-help-search.md",
+      "text": "npm",
+      "url": "/commands/npm",
+      "line": 39
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-help-search.md",
+      "text": "npm help",
+      "url": "/commands/npm-help",
+      "line": 40
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-fund.md",
+      "text": "`--browser` config",
+      "url": "/using-npm/config#browser",
+      "line": 20
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-fund.md",
+      "text": "`workspace` config",
+      "url": "/using-npm/config#workspace",
+      "line": 34
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-fund.md",
+      "text": "package spec",
+      "url": "/using-npm/package-spec",
+      "line": 140
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-fund.md",
+      "text": "npm install",
+      "url": "/commands/npm-install",
+      "line": 141
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-fund.md",
+      "text": "npm docs",
+      "url": "/commands/npm-docs",
+      "line": 142
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-fund.md",
+      "text": "npm ls",
+      "url": "/commands/npm-ls",
+      "line": 143
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-fund.md",
+      "text": "npm config",
+      "url": "/commands/npm-config",
+      "line": 144
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-fund.md",
+      "text": "npm workspaces",
+      "url": "/using-npm/workspaces",
+      "line": 145
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-find-dupes.md",
+      "text": "`npm audit`",
+      "url": "/commands/npm-audit",
+      "line": 146
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-find-dupes.md",
+      "text": "`npm\nfund`",
+      "url": "/commands/npm-fund",
+      "line": 171
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-find-dupes.md",
+      "text": "npm dedupe",
+      "url": "/commands/npm-dedupe",
+      "line": 242
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-find-dupes.md",
+      "text": "npm ls",
+      "url": "/commands/npm-ls",
+      "line": 243
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-find-dupes.md",
+      "text": "npm update",
+      "url": "/commands/npm-update",
+      "line": 244
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-find-dupes.md",
+      "text": "npm install",
+      "url": "/commands/npm-install",
+      "line": 245
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-explore.md",
+      "text": "npm folders",
+      "url": "/configuring-npm/folders",
+      "line": 46
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-explore.md",
+      "text": "npm edit",
+      "url": "/commands/npm-edit",
+      "line": 47
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-explore.md",
+      "text": "npm rebuild",
+      "url": "/commands/npm-rebuild",
+      "line": 48
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-explore.md",
+      "text": "npm install",
+      "url": "/commands/npm-install",
+      "line": 49
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-explain.md",
+      "text": "package spec",
+      "url": "/using-npm/package-spec",
+      "line": 96
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-explain.md",
+      "text": "npm config",
+      "url": "/commands/npm-config",
+      "line": 97
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-explain.md",
+      "text": "npmrc",
+      "url": "/configuring-npm/npmrc",
+      "line": 98
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-explain.md",
+      "text": "npm folders",
+      "url": "/configuring-npm/folders",
+      "line": 99
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-explain.md",
+      "text": "npm ls",
+      "url": "/commands/npm-ls",
+      "line": 100
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-explain.md",
+      "text": "npm install",
+      "url": "/commands/npm-install",
+      "line": 101
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-explain.md",
+      "text": "npm link",
+      "url": "/commands/npm-link",
+      "line": 102
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-explain.md",
+      "text": "npm prune",
+      "url": "/commands/npm-prune",
+      "line": 103
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-explain.md",
+      "text": "npm outdated",
+      "url": "/commands/npm-outdated",
+      "line": 104
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-explain.md",
+      "text": "npm update",
+      "url": "/commands/npm-update",
+      "line": 105
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-exec.md",
+      "text": "`npm exec`",
+      "url": "/commands/npm-exec",
+      "line": 119
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-exec.md",
+      "text": "`workspace`",
+      "url": "/using-npm/config#workspace",
+      "line": 218
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-exec.md",
+      "text": "`workspaces`",
+      "url": "/using-npm/config#workspaces",
+      "line": 219
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-exec.md",
+      "text": "`workspaces` config options",
+      "url": "/using-npm/config#workspace",
+      "line": 251
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-exec.md",
+      "text": "`npm cache`",
+      "url": "/commands/npm-cache",
+      "line": 311
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-exec.md",
+      "text": "npm run-script",
+      "url": "/commands/npm-run-script",
+      "line": 358
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-exec.md",
+      "text": "npm scripts",
+      "url": "/using-npm/scripts",
+      "line": 359
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-exec.md",
+      "text": "npm test",
+      "url": "/commands/npm-test",
+      "line": 360
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-exec.md",
+      "text": "npm start",
+      "url": "/commands/npm-start",
+      "line": 361
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-exec.md",
+      "text": "npm restart",
+      "url": "/commands/npm-restart",
+      "line": 362
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-exec.md",
+      "text": "npm stop",
+      "url": "/commands/npm-stop",
+      "line": 363
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-exec.md",
+      "text": "npm config",
+      "url": "/commands/npm-config",
+      "line": 364
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-exec.md",
+      "text": "npm workspaces",
+      "url": "/using-npm/workspaces",
+      "line": 365
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-exec.md",
+      "text": "npx",
+      "url": "/commands/npx",
+      "line": 366
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-edit.md",
+      "text": "npm folders",
+      "url": "/configuring-npm/folders",
+      "line": 42
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-edit.md",
+      "text": "npm explore",
+      "url": "/commands/npm-explore",
+      "line": 43
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-edit.md",
+      "text": "npm install",
+      "url": "/commands/npm-install",
+      "line": 44
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-edit.md",
+      "text": "npm config",
+      "url": "/commands/npm-config",
+      "line": 45
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-edit.md",
+      "text": "npmrc",
+      "url": "/configuring-npm/npmrc",
+      "line": 46
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-doctor.md",
+      "text": "npm bugs",
+      "url": "/commands/npm-bugs",
+      "line": 120
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-doctor.md",
+      "text": "npm help",
+      "url": "/commands/npm-help",
+      "line": 121
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-doctor.md",
+      "text": "npm ping",
+      "url": "/commands/npm-ping",
+      "line": 122
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-docs.md",
+      "text": "`--browser` config",
+      "url": "/using-npm/config#browser",
+      "line": 19
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-docs.md",
+      "text": "npm view",
+      "url": "/commands/npm-view",
+      "line": 103
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-docs.md",
+      "text": "npm publish",
+      "url": "/commands/npm-publish",
+      "line": 104
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-docs.md",
+      "text": "npm registry",
+      "url": "/using-npm/registry",
+      "line": 105
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-docs.md",
+      "text": "npm config",
+      "url": "/commands/npm-config",
+      "line": 106
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-docs.md",
+      "text": "npmrc",
+      "url": "/configuring-npm/npmrc",
+      "line": 107
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-docs.md",
+      "text": "package.json",
+      "url": "/configuring-npm/package-json",
+      "line": 108
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-dist-tag.md",
+      "text": "`--tag` config",
+      "url": "/using-npm/config#tag",
+      "line": 22
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-dist-tag.md",
+      "text": "package spec",
+      "url": "/using-npm/package-spec",
+      "line": 148
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-dist-tag.md",
+      "text": "npm publish",
+      "url": "/commands/npm-publish",
+      "line": 149
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-dist-tag.md",
+      "text": "npm install",
+      "url": "/commands/npm-install",
+      "line": 150
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-dist-tag.md",
+      "text": "npm dedupe",
+      "url": "/commands/npm-dedupe",
+      "line": 151
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-dist-tag.md",
+      "text": "npm registry",
+      "url": "/using-npm/registry",
+      "line": 152
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-dist-tag.md",
+      "text": "npm config",
+      "url": "/commands/npm-config",
+      "line": 153
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-dist-tag.md",
+      "text": "npmrc",
+      "url": "/configuring-npm/npmrc",
+      "line": 154
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-diff.md",
+      "text": "folders",
+      "url": "/configuring-npm/folders",
+      "line": 234
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-diff.md",
+      "text": "npm outdated",
+      "url": "/commands/npm-outdated",
+      "line": 313
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-diff.md",
+      "text": "npm install",
+      "url": "/commands/npm-install",
+      "line": 314
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-diff.md",
+      "text": "npm config",
+      "url": "/commands/npm-config",
+      "line": 315
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-diff.md",
+      "text": "npm registry",
+      "url": "/using-npm/registry",
+      "line": 316
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-deprecate.md",
+      "text": "package spec",
+      "url": "/using-npm/package-spec",
+      "line": 69
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-deprecate.md",
+      "text": "npm publish",
+      "url": "/commands/npm-publish",
+      "line": 70
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-deprecate.md",
+      "text": "npm registry",
+      "url": "/using-npm/registry",
+      "line": 71
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-deprecate.md",
+      "text": "npm owner",
+      "url": "/commands/npm-owner",
+      "line": 72
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-deprecate.md",
+      "text": "npm adduser",
+      "url": "/commands/npm-adduser",
+      "line": 73
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-dedupe.md",
+      "text": "`npm audit`",
+      "url": "/commands/npm-audit",
+      "line": 206
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-dedupe.md",
+      "text": "`npm\nfund`",
+      "url": "/commands/npm-fund",
+      "line": 231
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-dedupe.md",
+      "text": "npm find-dupes",
+      "url": "/commands/npm-find-dupes",
+      "line": 317
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-dedupe.md",
+      "text": "npm ls",
+      "url": "/commands/npm-ls",
+      "line": 318
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-dedupe.md",
+      "text": "npm update",
+      "url": "/commands/npm-update",
+      "line": 319
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-dedupe.md",
+      "text": "npm install",
+      "url": "/commands/npm-install",
+      "line": 320
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-config.md",
+      "text": "npmrc",
+      "url": "/configuring-npm/npmrc",
+      "line": 27
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-config.md",
+      "text": "config",
+      "url": "/using-npm/config",
+      "line": 30
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-config.md",
+      "text": "folders",
+      "url": "/configuring-npm/folders",
+      "line": 128
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-config.md",
+      "text": "folders",
+      "url": "/configuring-npm/folders",
+      "line": 128
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-config.md",
+      "text": "npm folders",
+      "url": "/configuring-npm/folders",
+      "line": 177
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-config.md",
+      "text": "npm config",
+      "url": "/commands/npm-config",
+      "line": 178
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-config.md",
+      "text": "package.json",
+      "url": "/configuring-npm/package-json",
+      "line": 179
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-config.md",
+      "text": "npmrc",
+      "url": "/configuring-npm/npmrc",
+      "line": 27
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-config.md",
+      "text": "npm",
+      "url": "/commands/npm",
+      "line": 181
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-completion.md",
+      "text": "npm developers",
+      "url": "/using-npm/developers",
+      "line": 40
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-completion.md",
+      "text": "npm",
+      "url": "/commands/npm",
+      "line": 41
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-ci.md",
+      "text": "`npm install`",
+      "url": "/commands/npm-install",
+      "line": 17
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-ci.md",
+      "text": "`npm audit`",
+      "url": "/commands/npm-audit",
+      "line": 205
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-ci.md",
+      "text": "`npm\nfund`",
+      "url": "/commands/npm-fund",
+      "line": 230
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-ci.md",
+      "text": "npm install",
+      "url": "/commands/npm-install",
+      "line": 316
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-ci.md",
+      "text": "package-lock.json",
+      "url": "/configuring-npm/package-lock-json",
+      "line": 317
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-cache.md",
+      "text": "package spec",
+      "url": "/using-npm/package-spec",
+      "line": 84
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-cache.md",
+      "text": "npm folders",
+      "url": "/configuring-npm/folders",
+      "line": 85
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-cache.md",
+      "text": "npm config",
+      "url": "/commands/npm-config",
+      "line": 86
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-cache.md",
+      "text": "npmrc",
+      "url": "/configuring-npm/npmrc",
+      "line": 87
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-cache.md",
+      "text": "npm install",
+      "url": "/commands/npm-install",
+      "line": 88
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-cache.md",
+      "text": "npm publish",
+      "url": "/commands/npm-publish",
+      "line": 89
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-cache.md",
+      "text": "npm pack",
+      "url": "/commands/npm-pack",
+      "line": 90
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-bugs.md",
+      "text": "`--browser` config",
+      "url": "/using-npm/config#browser",
+      "line": 19
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-bugs.md",
+      "text": "npm docs",
+      "url": "/commands/npm-docs",
+      "line": 103
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-bugs.md",
+      "text": "npm view",
+      "url": "/commands/npm-view",
+      "line": 104
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-bugs.md",
+      "text": "npm publish",
+      "url": "/commands/npm-publish",
+      "line": 105
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-bugs.md",
+      "text": "npm registry",
+      "url": "/using-npm/registry",
+      "line": 106
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-bugs.md",
+      "text": "npm config",
+      "url": "/commands/npm-config",
+      "line": 107
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-bugs.md",
+      "text": "npmrc",
+      "url": "/configuring-npm/npmrc",
+      "line": 108
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-bugs.md",
+      "text": "package.json",
+      "url": "/configuring-npm/package-json",
+      "line": 109
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-audit.md",
+      "text": "`--omit` config",
+      "url": "/using-npm/config#omit",
+      "line": 110
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-audit.md",
+      "text": "`audit-level` config",
+      "url": "/using-npm/config#audit-level",
+      "line": 189
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-audit.md",
+      "text": "npm install",
+      "url": "/commands/npm-install",
+      "line": 469
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-audit.md",
+      "text": "config",
+      "url": "/using-npm/config",
+      "line": 470
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-adduser.md",
+      "text": "`registry`",
+      "url": "/using-npm/registry",
+      "line": 21
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-adduser.md",
+      "text": "npm registry",
+      "url": "/using-npm/registry",
+      "line": 80
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-adduser.md",
+      "text": "npm config",
+      "url": "/commands/npm-config",
+      "line": 81
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-adduser.md",
+      "text": "npmrc",
+      "url": "/configuring-npm/npmrc",
+      "line": 82
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-adduser.md",
+      "text": "npm owner",
+      "url": "/commands/npm-owner",
+      "line": 83
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-adduser.md",
+      "text": "npm whoami",
+      "url": "/commands/npm-whoami",
+      "line": 84
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-adduser.md",
+      "text": "npm token",
+      "url": "/commands/npm-token",
+      "line": 85
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-adduser.md",
+      "text": "npm profile",
+      "url": "/commands/npm-profile",
+      "line": 86
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-access.md",
+      "text": "npm team",
+      "url": "/commands/npm-team",
+      "line": 120
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-access.md",
+      "text": "npm publish",
+      "url": "/commands/npm-publish",
+      "line": 121
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-access.md",
+      "text": "npm config",
+      "url": "/commands/npm-config",
+      "line": 122
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/npm/docs/content/commands/npm-access.md",
+      "text": "npm registry",
+      "url": "/using-npm/registry",
+      "line": 123
+    },
+    {
+      "file": "node-v20.11.1-darwin-x64/lib/node_modules/corepack/README.md",
+      "text": "`DESIGN.md`",
+      "url": "/DESIGN.md",
+      "line": 284
+    },
+    {
+      "file": "manage-data/lightning-network/index.md",
+      "text": "Daznode Academy",
+      "url": "/docs/tutorials",
+      "line": 148
+    },
+    {
+      "file": "lightning-network/index.md",
+      "text": "Les fondamentaux",
+      "url": "/lightning/bases/",
+      "line": 32
+    },
+    {
+      "file": "lightning-network/index.md",
+      "text": "Guide de démarrage",
+      "url": "/lightning/premiers-pas/",
+      "line": 37
+    },
+    {
+      "file": "lightning-network/index.md",
+      "text": "Gestion des canaux",
+      "url": "/lightning/canaux/",
+      "line": 42
+    },
+    {
+      "file": "lightning-network/index.md",
+      "text": "FAQ",
+      "url": "/lightning/faq",
+      "line": 89
+    },
+    {
+      "file": "lightning-network/index.md",
+      "text": "forum",
+      "url": "/forum",
+      "line": 90
+    },
+    {
+      "file": "getting-started/index.md",
+      "text": "Guide de démarrage rapide",
+      "url": "/premiers-pas/get-started/",
+      "line": 56
+    },
+    {
+      "file": "getting-started/index.md",
+      "text": "Introduction aux Blockchains",
+      "url": "/premiers-pas/blockchain/",
+      "line": 57
+    },
+    {
+      "file": "getting-started/index.md",
+      "text": "Les Piliers de la Blockchain",
+      "url": "/premiers-pas/blockchains/",
+      "line": 58
+    },
+    {
+      "file": "getting-started/index.md",
+      "text": "Comprendre le Lightning Network",
+      "url": "/guides/gestion-donnees/lightning/",
+      "line": 59
+    },
+    {
+      "file": "getting-started/get-started/index.md",
+      "text": "documentation complète",
+      "url": "/docs",
+      "line": 115
+    },
+    {
+      "file": "connect-data/index.md",
+      "text": "Flux de données",
+      "url": "/guides/connexion-donnees/datastreams/",
+      "line": 12
+    },
+    {
+      "file": "connect-data/datastreams/index.md",
+      "text": "capacité totale",
+      "url": "/glossaire/#capacite-totale",
+      "line": 14
+    },
+    {
+      "file": "connect-data/datastreams/index.md",
+      "text": "Guide détaillé des types de canaux",
+      "url": "/docs/types-canaux",
+      "line": 214
+    },
+    {
+      "file": "connect-data/datastreams/index.md",
+      "text": "Stratégies d'équilibrage avancées",
+      "url": "/docs/equilibrage-avance",
+      "line": 215
+    },
+    {
+      "file": "connect-data/datastreams/index.md",
+      "text": "Webinaires mensuels sur la gestion de canaux",
+      "url": "/docs/webinaires",
+      "line": 217
+    },
+    {
+      "file": "bitcoin/index.md",
+      "text": "Guide du Débutant",
+      "url": "/premiers-pas/",
+      "line": 41
+    },
+    {
+      "file": "bitcoin/index.md",
+      "text": "Glossaire Bitcoin",
+      "url": "/glossaire/",
+      "line": 42
+    },
+    {
+      "file": "bitcoin/index.md",
+      "text": "Lightning Network",
+      "url": "/lightning/",
+      "line": 43
+    },
+    {
+      "file": "bitcoin/index.md",
+      "text": "Sécurisation",
+      "url": "/securisation/",
+      "line": 44
+    },
+    {
+      "file": "bitcoin/minage/index.md",
+      "text": "blockchain",
+      "url": "/glossaire/#blockchain",
+      "line": 16
+    },
+    {
+      "file": "bitcoin/minage/index.md",
+      "text": "Ferme de minage moderne",
+      "url": "/assets/images/bitcoin/mining-farm.jpg",
+      "line": 18
+    },
+    {
+      "file": "bitcoin/introduction/index.md",
+      "text": "blockchain",
+      "url": "/glossaire/#blockchain",
+      "line": 18
+    },
+    {
+      "file": "bitcoin/introduction/index.md",
+      "text": "Bloc Genesis avec le message du Times",
+      "url": "/assets/images/bitcoin/genesis-block.jpg",
+      "line": 22
+    },
+    {
+      "file": "bitcoin/introduction/index.md",
+      "text": "Première page du whitepaper Bitcoin",
+      "url": "/assets/images/bitcoin/bitcoin-whitepaper.jpg",
+      "line": 30
+    },
+    {
+      "file": "bitcoin/introduction/index.md",
+      "text": "mining",
+      "url": "/glossaire/#mineur",
+      "line": 40
+    },
+    {
+      "file": "bitcoin/cas-usage/index.md",
+      "text": "Carte mondiale de l'adoption Bitcoin",
+      "url": "/assets/images/bitcoin/bitcoin-adoption-map.jpg",
+      "line": 16
+    },
+    {
+      "file": "bitcoin/cas-usage/index.md",
+      "text": "Guide d'Adoption Bitcoin",
+      "url": "/premiers-pas/",
+      "line": 155
+    },
+    {
+      "file": "bitcoin/cas-usage/index.md",
+      "text": "Sécurité des Fonds",
+      "url": "/securisation/",
+      "line": 157
+    },
+    {
+      "file": "bitcoin/cas-usage/index.md",
+      "text": "Lightning Network",
+      "url": "/lightning/",
+      "line": 160
+    }
+  ],
+  "suggestions": [
+    "Vérifier les liens externes régulièrement",
+    "Utiliser des liens relatifs quand possible",
+    "Implémenter un système de vérification automatique",
+    "Créer des pages de redirection pour les URLs importantes"
+  ]
+}

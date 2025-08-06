@@ -9,7 +9,7 @@ Cette section vous guide sur les différentes façons d'utiliser et d'exploiter 
 
 ## Sections disponibles
 
-### [Nostr Wallet Connect](/use-data/nostr-wallet-connect/)
+### [Nostr Wallet Connect](/guides/utilisation-donnees/nostr-wallet-connect/)
 Apprenez à utiliser le protocole Nostr Wallet Connect pour intégrer votre nœud Lightning à diverses applications et services.
 
 ## À venir

@@ -15,7 +15,7 @@ eleventyNavigation:
 
 Bitcoin est né dans le contexte de la crise financière mondiale de 2008. Le 31 octobre 2008, une personne ou un groupe utilisant le pseudonyme **Satoshi Nakamoto** publie un document technique intitulé "Bitcoin: Un système de monnaie électronique pair-à-pair".
 
-Quelques mois plus tard, le 3 janvier 2009, le premier bloc de la [blockchain](/glossary/#blockchain) Bitcoin (appelé le "bloc genesis") est créé. Ce bloc contient un message significatif faisant référence à un titre du Times de Londres :
+Quelques mois plus tard, le 3 janvier 2009, le premier bloc de la [blockchain](/glossaire/#blockchain) Bitcoin (appelé le "bloc genesis") est créé. Ce bloc contient un message significatif faisant référence à un titre du Times de Londres :
 
 > "The Times 03/Jan/2009 Chancellor on brink of second bailout for banks"
 
@@ -37,7 +37,7 @@ Le document fondateur de Bitcoin (whitepaper) présente une solution au problèm
    - Réseau distribué et résilient
 
 2. **Preuve de Travail**
-   - Sécurisation du réseau par le [mining](/glossary/#mineur)
+   - Sécurisation du réseau par le [mining](/glossaire/#mineur)
    - Consensus décentralisé
    - Incitation économique
 

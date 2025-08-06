@@ -186,7 +186,7 @@ Vous voulez payer votre café en Bitcoin instantanément ? Envoyer 0,01€ à un
 - [Voltage](https://voltage.cloud) - Cloud nodes
 
 ### Communauté active 👥
-- [Telegram FR](https://t.me/LightningFR)
+- [Telegram FR](https://t.me/+_tiT3od1q_Q0MjI0)
 - [Discord Lightning](https://discord.gg/lightning)
 - [Matrix Lightning](https://matrix.to/#/#lightning:matrix.org)
 

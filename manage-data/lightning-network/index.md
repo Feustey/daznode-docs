@@ -144,5 +144,5 @@ Daznode simplifie considérablement votre expérience du Lightning Network en :
 ## Ressources pour approfondir
 
 - [Lightning Network Whitepaper](https://lightning.network/lightning-network-paper.pdf)
-- [Canal Telegram Daznode](https://t.me/daznode)
+- [Canal Telegram Daznode](https://t.me/+_tiT3od1q_Q0MjI0)
 - [Daznode Academy](/docs/tutorials) 

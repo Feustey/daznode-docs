@@ -152,12 +152,12 @@ De nouvelles formes de rémunération émergent avec Bitcoin :
 ## Ressources et Outils 🔧
 
 ### Pour Démarrer
-- [Guide d'Adoption Bitcoin](/getting-started/)
+- [Guide d'Adoption Bitcoin](/premiers-pas/)
 - [Wallets Recommandés](/wallets/)
 - [Sécurité des Fonds](/securisation/)
 
 ### Pour Aller Plus Loin
-- [Lightning Network](/lightning-network/)
+- [Lightning Network](/lightning/)
 - [Communautés Locales](/bitcoin/communautes-locales/)
 - [Ressources Techniques](https://bitcoin.org/fr/developer-documentation)
 

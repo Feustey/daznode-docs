@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <meta name="description" content="{{ description }}">
+    {% if keywords %}<meta name="keywords" content="{{ keywords }}">{% endif %}
+    <link rel="canonical" href="{{ canonical }}">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="{{ title }}">
+    <meta property="og:description" content="{{ description }}">
+    <meta property="og:url" content="{{ canonical }}">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ title }}">
+    <meta name="twitter:description" content="{{ description }}">
+    
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon/favicon-16x16.png">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+    
+    <!-- Schema.org -->
+    {% if schema %}
+        <script type="application/ld+json">
+            {{ schema | safe }}
+        </script>
+    {% endif %}
+    
+    <!-- PageFind -->
+    <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+    <script src="/pagefind/pagefind-ui.js"></script>
+</head>
+<body>
+    <header class="site-header">
+        {% include "header.njk" %}
+    </header>
+
+    <main class="content">
+        {{ content | safe }}
+    </main>
+
+    <footer class="site-footer">
+        {% include "footer.njk" %}
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        window.addEventListener('load', function() {
+            new PagefindUI({ 
+                element: "#search",
+                showImages: false,
+                translations: {
+                    placeholder: "Rechercher dans la documentation...",
+                    clear_search: "Effacer",
+                    load_more: "Voir plus de résultats",
+                    search_prompt: "Commencez à taper pour rechercher",
+                    filters_label: "Filtres",
+                    zero_results: "Aucun résultat pour [SEARCH_TERM]"
+                }
+            });
+        });
+    </script>
+</body>
+</html> 

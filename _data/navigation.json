@@ -5,206 +5,141 @@
       "url": "/"
     },
     {
-      "title": "Bitcoin",
-      "url": "/bitcoin/",
-      "children": [
-        { "title": "Introduction", "url": "/bitcoin/introduction/" },
-        { "title": "Minage", "url": "/bitcoin/minage/" },
-        { "title": "Cas d'Usage", "url": "/bitcoin/cas-usage/" },
-        { "title": "Impact Environnemental", "url": "/bitcoin/impact-environnemental/" },
-        { "title": "Évolution du Prix", "url": "/bitcoin/evolution-prix/" },
-        { "title": "Communautés Locales", "url": "/bitcoin/communautes-locales/" }
-      ]
-    },
-    {
-      "title": "Guide",
-      "url": "/getting-started/",
+      "title": "Solutions",
+      "url": "/solutions/",
       "children": [
         {
-          "title": "Introduction",
-          "url": "/getting-started/introduction-blockchain/"
+          "title": "DazBox",
+          "url": "/solutions/dazbox/",
+          "children": [
+            {
+              "title": "Présentation",
+              "url": "/solutions/dazbox/presentation/"
+            },
+            {
+              "title": "Performance",
+              "url": "/solutions/dazbox/performance/"
+            },
+            {
+              "title": "FAQ",
+              "url": "/solutions/dazbox/faq/"
+            }
+          ]
         },
         {
-          "title": "Démarrage",
-          "url": "/getting-started/get-started/"
+          "title": "DazPay",
+          "url": "/solutions/dazpay/"
         },
         {
-          "title": "Wallets",
-          "url": "/wallets/"
-        },
-        {
-          "title": "Sécurisation",
-          "url": "/securisation/"
+          "title": "DazIA",
+          "url": "/solutions/dazia/"
         }
       ]
     },
     {
-      "title": "Lightning Network",
-      "url": "/lightning-network/",
+      "title": "Documentation",
+      "url": "/docs/",
       "children": [
-        { "title": "Bases", "url": "/lightning-network/basics/" },
-        { "title": "Canaux", "url": "/lightning-network/channels/" },
-        { "title": "Démarrage", "url": "/lightning-network/getting-started/" },
-        { "title": "Fonctionnement", "url": "/lightning-network/fonctionnement/" },
-        { "title": "Canaux et paiements", "url": "/lightning-network/canaux-et-paiements/" },
-        { "title": "Gestion des données", "url": "/manage-data/lightning-network/" },
-        { "title": "Nostr Wallet Connect", "url": "/use-data/nostr-wallet-connect/" }
+        {
+          "title": "Démarrage",
+          "url": "/getting-started/"
+        },
+        {
+          "title": "Bitcoin",
+          "url": "/bitcoin/"
+        },
+        {
+          "title": "Lightning Network",
+          "url": "/lightning-network/"
+        },
+        {
+          "title": "RGB - Couche L3",
+          "url": "/rgb/",
+          "children": [
+            {
+              "title": "Les Fondamentaux",
+              "url": "/rgb/fondamentaux/"
+            },
+            {
+              "title": "Guide de Démarrage",
+              "url": "/rgb/demarrage/"
+            },
+            {
+              "title": "Création d'Actifs",
+              "url": "/rgb/creation-actifs/"
+            },
+            {
+              "title": "Développement",
+              "url": "/rgb/developpement/"
+            },
+            {
+              "title": "Cas d'Usage",
+              "url": "/rgb/cas-usage/"
+            }
+          ]
+        }
       ]
     },
-
     {
-      "title": "Communauté Token4Good",
-      "url": "/token4good/",
-      "children": [
-        { "title": "Mission et valeurs", "url": "/token4good/mission/" },
-        { "title": "Aide aux débutants", "url": "/token4good/aide-debutants/" },
-        { "title": "Projets en cours", "url": "/token4good/projets/" },
-        { "title": "Guide de contribution", "url": "/token4good/contribuer/" },
-        { "title": "Participer", "url": "/token4good/participer/" }
+      "title": "Support",
+      "url": "/support/"
+    },
+    {
+      "title": "Contact",
+      "url": "/contact/"
+    }
+  ],
+  "footer": [
+    {
+      "title": "À propos",
+      "items": [
+        {
+          "title": "Notre mission",
+          "url": "/about/mission/"
+        },
+        {
+          "title": "L'équipe",
+          "url": "/about/team/"
+        },
+        {
+          "title": "Blog",
+          "url": "/blog/"
+        }
       ]
     },
-
     {
-      "title": "DazBox",
-      "url": "/dazbox/",
-      "children": [
-        { "title": "Démarrage", "url": "/umbrel/getting-started/" },
-        { "title": "Applications", "url": "/umbrel/applications/" },
-        { "title": "Daznode", "url": "/cas-dusage-daznode/" },
-        { "title": "Heuristique", "url": "/rag/heuristic/" },
-        { "title": "Introduction", "url": "/rag/introduction/" },
-        { "title": "Applications", "url": "/rag/applications/" },
-        { "title": "Heuristique", "url": "/rag/heuristic/" },
-        { "title": "Analyse", "url": "/rag/analysis/" },
-        { "title": "Développeurs", "url": "/devs/" }
+      "title": "Ressources",
+      "items": [
+        {
+          "title": "Documentation",
+          "url": "/docs/"
+        },
+        {
+          "title": "FAQ",
+          "url": "/faq/"
+        },
+        {
+          "title": "API",
+          "url": "/api/"
+        }
       ]
     },
-
-
     {
-      "title": "",
-      "url": "#"
-    }, 
-    {
-      "title": "Glossaire",
-      "url": "/glossary/"
-    },
-    {
-      "title": "",
-      "url": "#"
-    }, 
-    {
-      "title": "",
-      "url": "#"
-    },    {
-      "title": "",
-      "url": "#"
-    }, 
-    {
-      "title": "",
-      "url": "#"
-    },    {
-      "title": "",
-      "url": "#"
-    }, 
-    {
-      "title": "",
-      "url": "#"
-    },    {
-      "title": "",
-      "url": "#"
-    }, 
-    {
-      "title": "",
-      "url": "#"
-    },    {
-      "title": "",
-      "url": "#"
-    }, 
-    {
-      "title": "",
-      "url": "#"
-    },    {
-      "title": "",
-      "url": "#"
-    }, 
-    {
-      "title": "",
-      "url": "#"
-    },    {
-      "title": "",
-      "url": "#"
-    }, 
-    {
-      "title": "",
-      "url": "#"
-    },    {
-      "title": "",
-      "url": "#"
-    }, 
-    {
-      "title": "",
-      "url": "#"
-    },    {
-      "title": "",
-      "url": "#"
-    }, 
-    {
-      "title": "",
-      "url": "#"
-    },    {
-      "title": "",
-      "url": "#"
-    }, 
-    {
-      "title": "",
-      "url": "#"
-    },    {
-      "title": "",
-      "url": "#"
-    }, 
-    {
-      "title": "",
-      "url": "#"
-    },    {
-      "title": "",
-      "url": "#"
-    }, 
-    {
-      "title": "",
-      "url": "#"
-    },    {
-      "title": "",
-      "url": "#"
-    }, 
-    {
-      "title": "",
-      "url": "#"
-    },    {
-      "title": "",
-      "url": "#"
-    }, 
-    {
-      "title": "",
-      "url": "#"
-    },    {
-      "title": "",
-      "url": "#"
-    }, 
-    {
-      "title": "",
-      "url": "#"
-    },    {
-      "title": "",
-      "url": "#"
-    }, 
-    {
-      "title": "",
-      "url": "#"
-    },
-    {
-      "title": "",
-      "url": "#"
+      "title": "Légal",
+      "items": [
+        {
+          "title": "Mentions légales",
+          "url": "/legal/"
+        },
+        {
+          "title": "Confidentialité",
+          "url": "/privacy/"
+        },
+        {
+          "title": "CGV",
+          "url": "/terms/"
+        }
+      ]
     }
   ]
 } 

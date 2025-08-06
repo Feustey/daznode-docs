@@ -13,7 +13,7 @@ eleventyNavigation:
 
 ## Qu'est-ce que le Minage ? 🤔
 
-Le minage est le processus par lequel de nouvelles transactions sont ajoutées à la [blockchain](/glossary/#blockchain) Bitcoin. Les "mineurs" sont des participants qui utilisent la puissance de calcul de leurs ordinateurs pour résoudre des problèmes mathématiques complexes, sécurisant ainsi le réseau.
+Le minage est le processus par lequel de nouvelles transactions sont ajoutées à la [blockchain](/glossaire/#blockchain) Bitcoin. Les "mineurs" sont des participants qui utilisent la puissance de calcul de leurs ordinateurs pour résoudre des problèmes mathématiques complexes, sécurisant ainsi le réseau.
 
 ![Ferme de minage moderne](/assets/images/bitcoin/mining-farm.jpg)
 

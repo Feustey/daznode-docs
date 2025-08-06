@@ -19,13 +19,13 @@ Umbrel est une solution facile à utiliser qui vous permet d'exécuter un nœud 
   <div class="card">
     <h3>Démarrage avec Umbrel</h3>
     <p>Guide complet pour les nouveaux utilisateurs de nœuds Umbrel</p>
-    <a href="/umbrel/getting-started/">En savoir plus →</a>
+    <a href="/umbrel/premiers-pas/">En savoir plus →</a>
   </div>
   
   <div class="card">
     <h3>Utilisation du Lightning Network</h3>
     <p>Comment utiliser efficacement le Lightning Network avec votre nœud</p>
-    <a href="/umbrel/lightning-network/">En savoir plus →</a>
+    <a href="/umbrel/lightning/">En savoir plus →</a>
   </div>
   
   <div class="card">
