@@ -1,0 +1,180 @@
+# Prometheus Configuration for Daznode Community Platform
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+  external_labels:
+    cluster: 'daznode-community'
+    environment: 'production'
+
+rule_files:
+  - "rules/*.yml"
+
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets:
+          - alertmanager:9093
+
+scrape_configs:
+  # Prometheus self-monitoring
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+    scrape_interval: 15s
+    metrics_path: /metrics
+
+  # Daznode Backend API
+  - job_name: 'daznode-backend'
+    static_configs:
+      - targets: ['daznode-backend:3001']
+    scrape_interval: 10s
+    metrics_path: /metrics
+    scrape_timeout: 5s
+    honor_labels: true
+    params:
+      format: ['prometheus']
+
+  # Node Exporter for system metrics
+  - job_name: 'node-exporter'
+    static_configs:
+      - targets: ['node-exporter:9100']
+    scrape_interval: 15s
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: __param_target
+      - source_labels: [__param_target]
+        target_label: instance
+      - target_label: __address__
+        replacement: node-exporter:9100
+
+  # PostgreSQL Exporter
+  - job_name: 'postgres-exporter'
+    static_configs:
+      - targets: ['postgres-exporter:9187']
+    scrape_interval: 30s
+    metrics_path: /metrics
+
+  # Redis Exporter
+  - job_name: 'redis-exporter'
+    static_configs:
+      - targets: ['redis-exporter:9121']
+    scrape_interval: 15s
+    metrics_path: /metrics
+
+  # Kafka Exporter
+  - job_name: 'kafka-exporter'
+    static_configs:
+      - targets: ['kafka-exporter:9308']
+    scrape_interval: 30s
+    metrics_path: /metrics
+
+  # Nginx Exporter
+  - job_name: 'nginx-exporter'
+    static_configs:
+      - targets: ['nginx-exporter:9113']
+    scrape_interval: 15s
+    metrics_path: /metrics
+
+  # GitBook Integration Metrics (Custom)
+  - job_name: 'gitbook-integration'
+    static_configs:
+      - targets: ['daznode-backend:3001']
+    scrape_interval: 30s
+    metrics_path: /metrics/gitbook
+    params:
+      module: [gitbook_integration]
+
+  # T4G Blockchain Metrics
+  - job_name: 't4g-blockchain'
+    static_configs:
+      - targets: ['daznode-backend:3001']
+    scrape_interval: 60s
+    metrics_path: /metrics/blockchain
+    params:
+      module: [t4g_rewards]
+
+  # Lightning Network Metrics
+  - job_name: 'lightning-network'
+    static_configs:
+      - targets: ['daznode-backend:3001']
+    scrape_interval: 30s
+    metrics_path: /metrics/lightning
+    params:
+      module: [lightning_monitoring]
+
+  # Community Analytics
+  - job_name: 'community-analytics'
+    static_configs:
+      - targets: ['daznode-backend:3001']
+    scrape_interval: 300s  # 5 minutes for analytics
+    metrics_path: /metrics/community
+    params:
+      module: [community_stats]
+
+  # Application Performance Monitoring
+  - job_name: 'apm'
+    kubernetes_sd_configs:
+    - role: pod
+      namespaces:
+        names:
+        - daznode-community
+    relabel_configs:
+    - source_labels: [__meta_kubernetes_pod_annotation_prometheus_io_scrape]
+      action: keep
+      regex: true
+    - source_labels: [__meta_kubernetes_pod_annotation_prometheus_io_path]
+      action: replace
+      target_label: __metrics_path__
+      regex: (.+)
+    - source_labels: [__address__, __meta_kubernetes_pod_annotation_prometheus_io_port]
+      action: replace
+      regex: ([^:]+)(?::\d+)?;(\d+)
+      replacement: $1:$2
+      target_label: __address__
+    - action: labelmap
+      regex: __meta_kubernetes_pod_label_(.+)
+    - source_labels: [__meta_kubernetes_namespace]
+      action: replace
+      target_label: kubernetes_namespace
+    - source_labels: [__meta_kubernetes_pod_name]
+      action: replace
+      target_label: kubernetes_pod_name
+
+  # External Service Monitoring
+  - job_name: 'external-services'
+    static_configs:
+      - targets:
+        - 'api.gitbook.com'
+        - 'mainnet.infura.io'
+    scrape_interval: 60s
+    metrics_path: /probe
+    params:
+      module: [http_2xx]
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: __param_target
+      - source_labels: [__param_target]
+        target_label: instance
+      - target_label: __address__
+        replacement: blackbox-exporter:9115
+
+  # Business Metrics
+  - job_name: 'business-metrics'
+    static_configs:
+      - targets: ['daznode-backend:3001']
+    scrape_interval: 300s
+    metrics_path: /metrics/business
+    honor_labels: true
+
+# Remote write configuration for long-term storage
+remote_write:
+  - url: "https://prometheus-remote-write.monitoring.svc.cluster.local/api/v1/write"
+    queue_config:
+      max_samples_per_send: 1000
+      max_shards: 200
+      capacity: 2500
+
+# Remote read configuration
+remote_read:
+  - url: "https://prometheus-remote-read.monitoring.svc.cluster.local/api/v1/read"
+    read_recent: true
