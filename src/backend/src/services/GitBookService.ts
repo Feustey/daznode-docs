@@ -1,4 +1,4 @@
-import { GitBookAPI } from '@gitbook/api';
+import axios, { AxiosInstance } from 'axios';
 import { logger } from '@/utils/logger';
 import { CacheService } from './CacheService';
 
@@ -51,13 +51,19 @@ export interface GitBookWebhookEvent {
 }
 
 export class GitBookService {
-    private client: GitBookAPI;
+    private client: AxiosInstance;
     private config: GitBookConfig;
     private cache?: CacheService;
 
     constructor(config: GitBookConfig, cache?: CacheService) {
         this.config = config;
-        this.client = new GitBookAPI(config.apiToken);
+        this.client = axios.create({
+            baseURL: config.baseUrl,
+            headers: {
+                'Authorization': `Bearer ${config.apiToken}`,
+                'Content-Type': 'application/json'
+            }
+        });
         this.cache = cache;
         logger.info('✅ GitBook service initialized');
     }
@@ -67,20 +73,20 @@ export class GitBookService {
         try {
             logger.info(`Creating page in space ${spaceId}`, { title: page.title });
 
-            const response = await this.client.spaces.createPage(spaceId, {
+            const response = await this.client.post(`/v1/spaces/${spaceId}/pages`, {
                 title: page.title!,
                 content: page.content || '',
                 parent: page.parentId
             });
 
-            const createdPage = await this.getPage(spaceId, response.id);
+            const createdPage = await this.getPage(spaceId, response.data.id);
             
             // Invalidate cache
             if (this.cache) {
                 await this.cache.invalidatePattern(`gitbook:space:${spaceId}:*`);
             }
 
-            logger.info(`✅ Page created successfully`, { pageId: response.id });
+            logger.info(`✅ Page created successfully`, { pageId: response.data.id });
             return createdPage;
 
         } catch (error) {
