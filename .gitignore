@@ -28,3 +28,4 @@ Thumbs.db
 # Netlify
 .netlify/
 node-v22.15.1.pkg
+node-v20.11.1-darwin-x64*
