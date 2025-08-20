@@ -1,0 +1,199 @@
+{%- set pathSegments = page.url | replace("/index.html", "/") | split("/") | reject("empty") -%}
+{%- set breadcrumbsArray = [] -%}
+
+{# Ne pas afficher les breadcrumbs si la page utilise déjà le layout docs-with-cta qui a ses propres breadcrumbs #}
+{%- if pathSegments | length > 0 and layout != "docs-with-cta.njk" -%}
+<nav class="breadcrumbs" aria-label="fil d'Ariane">
+  <ol class="breadcrumbs-list">
+    <li class="breadcrumb-item">
+      <a href="/" class="breadcrumb-link" aria-label="Retour à l'accueil">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="breadcrumb-home-icon">
+          <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+          <polyline points="9,22 9,12 15,12 15,22"></polyline>
+        </svg>
+        <span class="breadcrumb-text">Accueil</span>
+      </a>
+    </li>
+    
+    {%- set currentPath = "" -%}
+    {%- for segment in pathSegments -%}
+      {%- set currentPath = currentPath + "/" + segment -%}
+      {%- set isLast = loop.last -%}
+      
+      <li class="breadcrumb-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="breadcrumb-separator">
+          <polyline points="9,18 15,12 9,6"></polyline>
+        </svg>
+        
+        {%- if isLast -%}
+          <span class="breadcrumb-current" aria-current="page">
+            {%- set segmentTitle = segment | replace("-", " ") | title -%}
+            {%- if segment == "lightning-network" -%}Lightning Network
+            {%- elif segment == "token4good" -%}Token4Good
+            {%- elif segment == "getting-started" -%}Guide de démarrage
+            {%- elif segment == "solutions" -%}Solutions
+            {%- elif segment == "dazbox" -%}DazBox
+            {%- elif segment == "dazia" -%}DazIA
+            {%- elif segment == "dazpay" -%}DazPay
+            {%- elif segment == "devs" -%}Développeurs
+            {%- elif segment == "api" -%}API
+            {%- elif segment == "bitcoin" -%}Bitcoin
+            {%- elif segment == "glossary" -%}Glossaire
+            {%- elif segment == "rgb" -%}RGB Protocol
+            {%- elif segment == "hardware" -%}Hardware
+            {%- elif segment == "community" -%}Communauté
+            {%- elif segment == "support" -%}Support
+            {%- else -%}{{ segmentTitle }}
+            {%- endif -%}
+          </span>
+        {%- else -%}
+          <a href="{{ currentPath }}/" class="breadcrumb-link">
+            {%- set segmentTitle = segment | replace("-", " ") | title -%}
+            {%- if segment == "lightning-network" -%}Lightning Network
+            {%- elif segment == "token4good" -%}Token4Good
+            {%- elif segment == "getting-started" -%}Guide de démarrage
+            {%- elif segment == "solutions" -%}Solutions
+            {%- elif segment == "dazbox" -%}DazBox
+            {%- elif segment == "dazia" -%}DazIA
+            {%- elif segment == "dazpay" -%}DazPay
+            {%- elif segment == "devs" -%}Développeurs
+            {%- elif segment == "api" -%}API
+            {%- elif segment == "bitcoin" -%}Bitcoin
+            {%- elif segment == "glossary" -%}Glossaire
+            {%- elif segment == "rgb" -%}RGB Protocol
+            {%- elif segment == "hardware" -%}Hardware
+            {%- elif segment == "community" -%}Communauté
+            {%- elif segment == "support" -%}Support
+            {%- else -%}{{ segmentTitle }}
+            {%- endif -%}
+          </a>
+        {%- endif -%}
+      </li>
+    {%- endfor -%}
+  </ol>
+</nav>
+
+<style>
+.breadcrumbs {
+  margin: 0 0 1.5rem 0;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--border, rgba(0,0,0,0.1));
+}
+
+.breadcrumbs-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  gap: 0.25rem;
+}
+
+.breadcrumb-item {
+  display: flex;
+  align-items: center;
+  font-size: 0.875rem;
+  line-height: 1.25;
+}
+
+.breadcrumb-link {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  color: var(--muted-foreground, #6b7280);
+  text-decoration: none;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.375rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.breadcrumb-link:hover {
+  color: var(--foreground);
+  background-color: var(--accent, rgba(0,0,0,0.05));
+  text-decoration: none;
+}
+
+.breadcrumb-link:focus {
+  outline: 2px solid var(--primary, #2563eb);
+  outline-offset: 2px;
+}
+
+.breadcrumb-current {
+  color: var(--foreground);
+  font-weight: 500;
+  padding: 0.25rem 0.5rem;
+}
+
+.breadcrumb-separator {
+  width: 12px;
+  height: 12px;
+  color: var(--muted-foreground, #6b7280);
+  margin: 0 0.125rem;
+  flex-shrink: 0;
+}
+
+.breadcrumb-home-icon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.breadcrumb-text {
+  display: none;
+}
+
+/* Afficher le texte "Accueil" sur les écrans plus grands */
+@media (min-width: 640px) {
+  .breadcrumb-text {
+    display: inline;
+  }
+}
+
+/* Mode sombre */
+@media (prefers-color-scheme: dark) {
+  .breadcrumbs {
+    border-color: rgba(255,255,255,0.1);
+  }
+  
+  .breadcrumb-link {
+    color: #9ca3af;
+  }
+  
+  .breadcrumb-link:hover {
+    color: #f3f4f6;
+    background-color: rgba(255,255,255,0.05);
+  }
+  
+  .breadcrumb-current {
+    color: #f3f4f6;
+  }
+  
+  .breadcrumb-separator {
+    color: #6b7280;
+  }
+}
+
+/* Responsive : masquer sur très petits écrans */
+@media (max-width: 480px) {
+  .breadcrumbs {
+    display: none;
+  }
+}
+
+/* Alternative responsive : version compacte sur mobile */
+@media (max-width: 640px) {
+  .breadcrumbs-list {
+    font-size: 0.8125rem;
+  }
+  
+  .breadcrumb-link {
+    padding: 0.125rem 0.25rem;
+  }
+  
+  .breadcrumb-current {
+    padding: 0.125rem 0.25rem;
+  }
+}
+</style>
+{%- endif -%}

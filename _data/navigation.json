@@ -1,92 +1,108 @@
 {
   "main": [
     {
-      "title": "Accueil",
-      "url": "/"
+      "title": "🏠 Accueil",
+      "url": "/",
+      "icon": "home"
     },
     {
-      "title": "Solutions",
-      "url": "/solutions/",
+      "title": "👤 Pour Utilisateurs",
+      "url": "/getting-started/",
+      "icon": "user",
+      "description": "Guides et tutoriels pour utilisateurs",
       "children": [
         {
-          "title": "DazBox",
+          "title": "Guide de démarrage",
+          "url": "/getting-started/",
+          "description": "Premiers pas avec Bitcoin et Lightning",
+          "featured": true
+        },
+        {
+          "title": "Configuration DazBox",
           "url": "/solutions/dazbox/",
-          "children": [
-            {
-              "title": "Présentation",
-              "url": "/solutions/dazbox/presentation/"
-            },
-            {
-              "title": "Performance",
-              "url": "/solutions/dazbox/performance/"
-            },
-            {
-              "title": "FAQ",
-              "url": "/solutions/dazbox/faq/"
-            }
-          ]
+          "description": "Setup et utilisation de votre nœud"
         },
         {
-          "title": "DazPay",
-          "url": "/solutions/dazpay/"
-        },
-        {
-          "title": "DazIA",
-          "url": "/solutions/dazia/"
+          "title": "FAQ DazBox",
+          "url": "/solutions/dazbox/faq/",
+          "description": "Questions fréquentes DazBox"
         }
       ]
     },
     {
-      "title": "Documentation",
-      "url": "/docs/",
+      "title": "💻 Pour Développeurs",
+      "url": "/devs/",
+      "icon": "code",
+      "description": "Resources techniques et API",
       "children": [
         {
-          "title": "Démarrage",
-          "url": "/getting-started/"
+          "title": "API Documentation",
+          "url": "/devs/api/",
+          "description": "Documentation complète de l'API"
+        },
+        {
+          "title": "MCP Lightning",
+          "url": "/devs/mcp/",
+          "description": "Model Context Protocol"
+        },
+        {
+          "title": "Guides d'intégration",
+          "url": "/devs/examples/",
+          "description": "Exemples et tutoriels techniques"
+        }
+      ]
+    },
+    {
+      "title": "🌟 Token4Good",
+      "url": "/token4good/",
+      "icon": "heart",
+      "description": "Contribuez et gagnez des récompenses",
+      "children": [
+        {
+          "title": "Vision & Mission",
+          "url": "/token4good/mission/",
+          "description": "Notre vision d'un écosystème décentralisé"
+        },
+        {
+          "title": "Contribuer",
+          "url": "/token4good/contribuer/",
+          "description": "Comment participer et gagner des tokens",
+          "featured": true
+        },
+        {
+          "title": "Projets communautaires",
+          "url": "/token4good/projets/",
+          "description": "Initiatives de la communauté"
+        }
+      ]
+    },
+    {
+      "title": "📚 Ressources",
+      "url": "/lightning-network/",
+      "icon": "book",
+      "description": "Documentation technique et références",
+      "children": [
+        {
+          "title": "Lightning Network",
+          "url": "/lightning-network/",
+          "description": "Guide complet du Lightning Network"
         },
         {
           "title": "Bitcoin",
-          "url": "/bitcoin/"
+          "url": "/bitcoin/",
+          "description": "Fondamentaux et concepts avancés"
         },
         {
-          "title": "Lightning Network",
-          "url": "/lightning-network/"
-        },
-        {
-          "title": "RGB - Couche L3",
+          "title": "RGB Protocol",
           "url": "/rgb/",
-          "children": [
-            {
-              "title": "Les Fondamentaux",
-              "url": "/rgb/fondamentaux/"
-            },
-            {
-              "title": "Guide de Démarrage",
-              "url": "/rgb/demarrage/"
-            },
-            {
-              "title": "Création d'Actifs",
-              "url": "/rgb/creation-actifs/"
-            },
-            {
-              "title": "Développement",
-              "url": "/rgb/developpement/"
-            },
-            {
-              "title": "Cas d'Usage",
-              "url": "/rgb/cas-usage/"
-            }
-          ]
+          "description": "Couche 3 pour les smart contracts"
+        },
+        {
+          "title": "Glossaire",
+          "url": "/glossary/",
+          "description": "Définitions des termes techniques"
         }
       ]
-    },
-    {
-      "title": "Support",
-      "url": "/support/"
-    },
-    {
-      "title": "Contact",
-      "url": "/contact/"
     }
   ],
   "footer": [
@@ -94,16 +110,16 @@
       "title": "À propos",
       "items": [
         {
-          "title": "Notre mission",
-          "url": "/about/mission/"
+          "title": "Token4Good Mission",
+          "url": "/token4good/mission/"
         },
         {
-          "title": "L'équipe",
-          "url": "/about/team/"
+          "title": "Site principal",
+          "url": "https://dazno.de"
         },
         {
-          "title": "Blog",
-          "url": "/blog/"
+          "title": "Blog & News",
+          "url": "https://dazno.de/news"
         }
       ]
     },
@@ -112,32 +128,32 @@
       "items": [
         {
           "title": "Documentation",
-          "url": "/docs/"
+          "url": "/"
         },
         {
-          "title": "FAQ",
-          "url": "/faq/"
+          "title": "FAQ DazBox",
+          "url": "/solutions/dazbox/faq/"
         },
         {
           "title": "API",
-          "url": "/api/"
+          "url": "/devs/api/"
         }
       ]
     },
     {
-      "title": "Légal",
+      "title": "Support",
       "items": [
         {
-          "title": "Mentions légales",
-          "url": "/legal/"
+          "title": "Support Technique",
+          "url": "https://dazno.de/support"
         },
         {
-          "title": "Confidentialité",
-          "url": "/privacy/"
+          "title": "Communauté",
+          "url": "https://dazno.de/community"
         },
         {
-          "title": "CGV",
-          "url": "/terms/"
+          "title": "Contact",
+          "url": "https://dazno.de/contact"
         }
       ]
     }

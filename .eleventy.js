@@ -65,6 +65,23 @@ module.exports = function(eleventyConfig) {
     // Formats supplémentaires peuvent être ajoutés ici si nécessaire
     return date.toLocaleDateString("fr-FR");
   });
+
+  // Filtre split pour Nunjucks
+  eleventyConfig.addFilter("split", function(str, delimiter) {
+    if (typeof str !== "string") return [];
+    return str.split(delimiter || "");
+  });
+
+  // Filtre reject pour filtrer les éléments vides
+  eleventyConfig.addFilter("reject", function(arr, condition) {
+    if (!Array.isArray(arr)) return arr;
+    return arr.filter(item => {
+      if (condition === "empty") {
+        return item !== "" && item != null;
+      }
+      return item !== condition;
+    });
+  });
   
   // Traite les fichiers Markdown
   eleventyConfig.setTemplateFormats([
