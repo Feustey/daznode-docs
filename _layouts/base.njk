@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
+  <!-- DNS Prefetch pour optimisation cross-domain -->
+  <link rel="dns-prefetch" href="//dazno.de">
+  <link rel="preconnect" href="https://dazno.de">
+  
   <!-- Métadonnées de base -->
   {% set pageMetadata = metadata.pages[page.filePathStem] %}
   {% set pageTitle = pageMetadata.title or title or metadata.site.title %}
@@ -32,33 +36,138 @@
   <meta name="theme-color" content="{{ metadata.site.themeColor }}">
   <link rel="canonical" href="{{ metadata.site.url }}{{ page.url }}">
   
-  <!-- Schema.org pour Google -->
+  <!-- Schema.org Cross-Domain pour Google -->
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Article",
+      "@type": "TechArticle",
       "headline": "{{ pageTitle }}",
       "description": "{{ pageDescription }}",
       "image": "{{ metadata.site.url }}{{ metadata.site.defaultImage }}",
       "author": {
         "@type": "Organization",
-        "name": "{{ metadata.site.author }}"
+        "name": "{{ metadata.site.author }}",
+        "url": "https://dazno.de",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://dazno.de/assets/images/logo.png"
+        }
       },
       "publisher": {
         "@type": "Organization",
-        "name": "{{ metadata.site.title }}",
+        "name": "DazNode",
+        "url": "https://dazno.de",
         "logo": {
           "@type": "ImageObject",
-          "url": "{{ metadata.site.url }}/assets/images/favicon/android-chrome-512x512.png"
-        }
+          "url": "https://dazno.de/assets/images/logo.png"
+        },
+        "sameAs": [
+          "{{ metadata.site.url }}",
+          "https://dazno.de/api",
+          "https://github.com/daznode"
+        ]
       },
       "url": "{{ metadata.site.url }}{{ page.url }}",
       "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "{{ metadata.site.url }}{{ page.url }}"
+      },
+      "isPartOf": {
+        "@type": "Website",
+        "name": "DazNode Ecosystem",
+        "url": "https://dazno.de"
+      },
+      "about": {
+        "@type": "SoftwareApplication",
+        "name": "DazNode Lightning Network Solutions",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Linux",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://dazno.de/pricing",
+          "priceCurrency": "EUR"
+        }
       }
     }
   </script>
+  
+  <!-- Schema Organization Cross-Domain -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "DazNode",
+      "url": "https://dazno.de",
+      "logo": "https://dazno.de/assets/images/logo.png",
+      "description": "Solutions Lightning Network et Bitcoin : DazBox, DazIA, DazPay",
+      "sameAs": [
+        "{{ metadata.site.url }}",
+        "https://github.com/daznode",
+        "https://t.me/+_tiT3od1q_Q0MjI0"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "DazNode Solutions",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "name": "DazBox",
+            "description": "Nœud Lightning Network clé en main",
+            "url": "https://dazno.de/dazbox",
+            "category": "Hardware"
+          },
+          {
+            "@type": "Offer", 
+            "name": "DazIA",
+            "description": "Intelligence artificielle pour Lightning Network",
+            "url": "https://dazno.de/dazia",
+            "category": "Software"
+          },
+          {
+            "@type": "Offer",
+            "name": "DazPay", 
+            "description": "Solution de paiement Lightning pour commerçants",
+            "url": "https://dazno.de/dazpay",
+            "category": "Service"
+          }
+        ]
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "url": "https://dazno.de/support",
+        "availableLanguage": ["French", "English"]
+      }
+    }
+  </script>
+  
+  {% if page.data.topic %}
+  <!-- Schema Topic Cluster -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CreativeWork",
+      "name": "{{ page.data.topic }} - Guide Technique",
+      "description": "{{ pageDescription }}",
+      "creator": {
+        "@type": "Organization",
+        "name": "DazNode",
+        "url": "https://dazno.de"
+      },
+      "hasPart": [
+        {
+          "@type": "TechArticle",
+          "url": "{{ metadata.site.url }}{{ page.url }}",
+          "name": "{{ pageTitle }}"
+        }
+      ],
+      "relatedLink": [
+        "https://dazno.de/solutions",
+        "https://dazno.de/{{ page.data.topic | slug }}"
+      ]
+    }
+  </script>
+  {% endif %}
   
   <!-- Favicons -->
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png">
@@ -86,12 +195,25 @@
     }
   </style>
   
-  <!-- Styles -->
-  <link rel="stylesheet" href="/assets/css/theme-system.css">
-  <link rel="stylesheet" href="/assets/css/style.css">
-  <link rel="stylesheet" href="/assets/css/mobile-nav.css">
-  <link rel="stylesheet" href="/assets/css/accessibility.css">
-  <link rel="stylesheet" href="/assets/css/cta-system.css">
+  <!-- Critical CSS inline pour optimiser LCP -->
+  <link rel="preload" href="/assets/css/critical-performance.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/assets/css/critical-performance.css"></noscript>
+  
+  <!-- Styles non-critiques en defer -->
+  <link rel="preload" href="/assets/css/theme-system.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/assets/css/theme-system.css"></noscript>
+  
+  <link rel="preload" href="/assets/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/assets/css/style.css"></noscript>
+  
+  <link rel="preload" href="/assets/css/mobile-nav.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/assets/css/mobile-nav.css"></noscript>
+  
+  <link rel="preload" href="/assets/css/accessibility.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/assets/css/accessibility.css"></noscript>
+  
+  <link rel="preload" href="/assets/css/cta-system.css" as="style" onload="this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/assets/css/cta-system.css"></noscript>
   <style>
     body {
       font-family: 'Inter', Arial, sans-serif;
@@ -242,6 +364,9 @@
     }
   </style>
   <meta name="google-site-verification" content="AFeYQ0g4-0LfK8spRRi8vsjDYsARq3j8EVsW6Er0cLg" />
+  
+  <!-- Umami Analytics -->
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="10a8a34f-90f7-4786-9471-554f1fe6870e"></script>
 </head>
 <body>
   <header>
@@ -261,6 +386,7 @@
         </button>
       </div>
     </div>
+    {% include "cross-domain-nav.njk" %}
   </header>
 
   <div class="main-container">
@@ -281,8 +407,10 @@
     
     <main class="content">
       <div class="content-container" data-pagefind-body>
+        {% include "contextual-links-enhanced.njk" %}
         <h1 class="page-title">{{ title }}</h1>
         {{ content | safe }}
+        {% include "ux-enhancements.njk" %}
       </div>
     </main>
   </div>
@@ -379,11 +507,14 @@
     });
   "></script>
 
-  <script src="/assets/js/theme-enhanced.js"></script>
-  <script src="/assets/js/navigation.js"></script>
-  <script src="/assets/js/mobile-nav.js"></script>
-  <script src="/assets/js/progressive-disclosure.js"></script>
-  <script src="/assets/js/onboarding-wizard.js"></script>
+  <!-- JavaScript optimisé avec defer -->
+  <script defer src="/assets/js/cross-domain-analytics.js"></script>
+  <script defer src="/assets/js/related-content-engine.js"></script>
+  <script defer src="/assets/js/theme-enhanced.js"></script>
+  <script defer src="/assets/js/navigation.js"></script>
+  <script defer src="/assets/js/mobile-nav.js"></script>
+  <script defer src="/assets/js/progressive-disclosure.js"></script>
+  <script defer src="/assets/js/onboarding-wizard.js"></script>
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {

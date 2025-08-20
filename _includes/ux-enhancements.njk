@@ -1,0 +1,624 @@
+{# Composants UX avancés pour améliorer l'expérience utilisateur #}
+
+{# Callout boxes avec différents types #}
+<div class="ux-callouts-system">
+  <!-- Ces classes seront utilisées dans le contenu Markdown -->
+  <style>
+    /* Système de callouts amélioré */
+    .callout {
+      display: flex;
+      gap: 1rem;
+      padding: 1rem 1.25rem;
+      border-radius: 8px;
+      border-left: 4px solid;
+      margin: 1.5rem 0;
+      font-size: 0.875rem;
+      line-height: 1.6;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .callout::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100px;
+      height: 100%;
+      opacity: 0.05;
+      background-image: linear-gradient(45deg, transparent 30%, currentColor 30%, currentColor 70%, transparent 70%);
+    }
+    
+    .callout-icon {
+      font-size: 1.5rem;
+      flex-shrink: 0;
+      margin-top: 0.125rem;
+    }
+    
+    .callout-content {
+      flex: 1;
+    }
+    
+    .callout-content h4 {
+      margin: 0 0 0.5rem 0;
+      font-weight: 700;
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    
+    .callout-content p {
+      margin: 0;
+      color: inherit;
+    }
+    
+    .callout-content p:not(:last-child) {
+      margin-bottom: 0.75rem;
+    }
+    
+    .callout-content .cta-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 0.75rem;
+      padding: 0.5rem 1rem;
+      background: rgba(255, 255, 255, 0.2);
+      color: inherit;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.75rem;
+      transition: all 0.2s;
+    }
+    
+    .callout-content .cta-link:hover {
+      background: rgba(255, 255, 255, 0.3);
+      transform: translateY(-1px);
+    }
+    
+    /* Types de callouts */
+    .callout-tip {
+      background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+      border-color: #3b82f6;
+      color: #1e40af;
+    }
+    
+    .callout-warning {
+      background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+      border-color: #f59e0b;
+      color: #92400e;
+    }
+    
+    .callout-danger {
+      background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+      border-color: #ef4444;
+      color: #b91c1c;
+    }
+    
+    .callout-success {
+      background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+      border-color: #10b981;
+      color: #059669;
+    }
+    
+    .callout-info {
+      background: linear-gradient(135deg, #e0f2fe 0%, #b3e5fc 100%);
+      border-color: #0891b2;
+      color: #0e7490;
+    }
+    
+    .callout-commercial {
+      background: linear-gradient(135deg, #fef7cd 0%, #fef08a 100%);
+      border-color: #eab308;
+      color: #a16207;
+      border-width: 2px;
+      box-shadow: 0 4px 12px rgba(234, 179, 8, 0.2);
+    }
+    
+    /* Code blocks améliorés */
+    .code-block {
+      position: relative;
+      margin: 1.5rem 0;
+      background: var(--color-code-bg, #1e293b);
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--color-border-code, #334155);
+    }
+    
+    .code-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 1rem;
+      background: var(--color-code-header, #0f172a);
+      border-bottom: 1px solid var(--color-border-code, #334155);
+    }
+    
+    .language-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--color-code-language, #94a3b8);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    
+    .copy-btn {
+      background: var(--color-primary, #3b82f6);
+      color: white;
+      border: none;
+      padding: 0.375rem 0.75rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+    
+    .copy-btn:hover {
+      background: var(--color-primary-dark, #2563eb);
+      transform: translateY(-1px);
+    }
+    
+    .copy-btn.copied {
+      background: var(--color-success, #10b981);
+    }
+    
+    .code-block pre {
+      margin: 0;
+      padding: 1rem;
+      overflow-x: auto;
+      font-size: 0.875rem;
+      line-height: 1.5;
+      color: var(--color-code-text, #e2e8f0);
+    }
+    
+    .code-block code {
+      background: none;
+      padding: 0;
+      color: inherit;
+      font-size: inherit;
+    }
+    
+    /* FAQ accordéon amélioré */
+    .faq-section {
+      margin: 2rem 0;
+    }
+    
+    .faq-item {
+      border: 1px solid var(--color-border, #e5e7eb);
+      border-radius: 8px;
+      margin-bottom: 0.5rem;
+      overflow: hidden;
+      transition: all 0.2s;
+    }
+    
+    .faq-item:hover {
+      border-color: var(--color-primary, #3b82f6);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .faq-question {
+      width: 100%;
+      background: var(--color-surface, #ffffff);
+      border: none;
+      padding: 1rem 1.25rem;
+      text-align: left;
+      font-weight: 600;
+      color: var(--color-text, #1f2937);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: all 0.2s;
+    }
+    
+    .faq-question:hover {
+      background: var(--color-surface-hover, #f9fafb);
+    }
+    
+    .faq-question[aria-expanded="true"] {
+      background: var(--color-primary-light, #dbeafe);
+      color: var(--color-primary-dark, #1e40af);
+    }
+    
+    .faq-icon {
+      font-size: 1.25rem;
+      transition: transform 0.2s;
+      color: var(--color-primary, #3b82f6);
+    }
+    
+    .faq-question[aria-expanded="true"] .faq-icon {
+      transform: rotate(180deg);
+    }
+    
+    .faq-answer {
+      padding: 0 1.25rem 1rem;
+      color: var(--color-text-secondary, #6b7280);
+      background: var(--color-surface-variant, #f8fafc);
+      border-top: 1px solid var(--color-border, #e5e7eb);
+      display: none;
+      animation: slideDown 0.3s ease-out;
+    }
+    
+    .faq-answer.active {
+      display: block;
+    }
+    
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    /* Tables responsives améliorées */
+    .table-container {
+      overflow-x: auto;
+      margin: 1.5rem 0;
+      border-radius: 8px;
+      border: 1px solid var(--color-border, #e5e7eb);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+    
+    .enhanced-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.875rem;
+    }
+    
+    .enhanced-table th {
+      background: var(--color-surface-variant, #f8fafc);
+      color: var(--color-text, #1f2937);
+      font-weight: 600;
+      padding: 0.75rem 1rem;
+      text-align: left;
+      border-bottom: 2px solid var(--color-border, #e5e7eb);
+    }
+    
+    .enhanced-table td {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid var(--color-border, #e5e7eb);
+      color: var(--color-text-secondary, #6b7280);
+    }
+    
+    .enhanced-table tr:hover {
+      background: var(--color-surface-hover, #f9fafb);
+    }
+    
+    .enhanced-table tr:last-child td {
+      border-bottom: none;
+    }
+    
+    /* Status indicators */
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.25rem 0.5rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 500;
+    }
+    
+    .status-success {
+      background: #d1fae5;
+      color: #059669;
+    }
+    
+    .status-warning {
+      background: #fef3c7;
+      color: #d97706;
+    }
+    
+    .status-danger {
+      background: #fee2e2;
+      color: #dc2626;
+    }
+    
+    .status-info {
+      background: #e0f2fe;
+      color: #0891b2;
+    }
+    
+    /* Mode sombre */
+    @media (prefers-color-scheme: dark) {
+      .code-block {
+        background: #0f172a;
+        border-color: #1e293b;
+      }
+      
+      .code-header {
+        background: #020617;
+        border-color: #1e293b;
+      }
+      
+      .faq-question {
+        background: rgba(255, 255, 255, 0.05);
+      }
+      
+      .faq-question:hover {
+        background: rgba(255, 255, 255, 0.1);
+      }
+      
+      .faq-answer {
+        background: rgba(255, 255, 255, 0.02);
+      }
+      
+      .enhanced-table th {
+        background: rgba(255, 255, 255, 0.05);
+      }
+      
+      .enhanced-table tr:hover {
+        background: rgba(255, 255, 255, 0.05);
+      }
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .callout {
+        padding: 1rem;
+      }
+      
+      .callout-content .cta-link {
+        display: block;
+        text-align: center;
+        margin-top: 1rem;
+      }
+      
+      .code-header {
+        padding: 0.5rem 0.75rem;
+      }
+      
+      .code-block pre {
+        padding: 0.75rem;
+        font-size: 0.8125rem;
+      }
+      
+      .copy-btn {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.6875rem;
+      }
+    }
+  </style>
+</div>
+
+{# Script pour les interactions #}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  
+  // Gestion des boutons de copie pour les blocs de code
+  function initCodeBlocks() {
+    const codeBlocks = document.querySelectorAll('.code-block');
+    
+    codeBlocks.forEach(block => {
+      const copyBtn = block.querySelector('.copy-btn');
+      const code = block.querySelector('code');
+      
+      if (copyBtn && code) {
+        copyBtn.addEventListener('click', async function() {
+          try {
+            await navigator.clipboard.writeText(code.textContent);
+            
+            const originalText = this.innerHTML;
+            this.innerHTML = '✅ Copié';
+            this.classList.add('copied');
+            
+            setTimeout(() => {
+              this.innerHTML = originalText;
+              this.classList.remove('copied');
+            }, 2000);
+            
+            // Umami analytics tracking
+            if (typeof umami !== 'undefined') {
+              umami.track('code_copy', {
+                language: block.querySelector('.language-tag')?.textContent || 'unknown'
+              });
+            }
+            
+          } catch (err) {
+            console.error('Erreur copie:', err);
+            this.innerHTML = '❌ Erreur';
+            setTimeout(() => {
+              this.innerHTML = '📋 Copier';
+            }, 2000);
+          }
+        });
+      }
+    });
+  }
+  
+  // Gestion des FAQ accordéons
+  function initFAQ() {
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    
+    faqQuestions.forEach(question => {
+      question.addEventListener('click', function() {
+        const isExpanded = this.getAttribute('aria-expanded') === 'true';
+        const answer = this.nextElementSibling;
+        
+        // Fermer toutes les autres FAQ
+        faqQuestions.forEach(otherQuestion => {
+          if (otherQuestion !== this) {
+            otherQuestion.setAttribute('aria-expanded', 'false');
+            const otherAnswer = otherQuestion.nextElementSibling;
+            if (otherAnswer) {
+              otherAnswer.classList.remove('active');
+            }
+          }
+        });
+        
+        // Toggle de la FAQ courante
+        this.setAttribute('aria-expanded', !isExpanded);
+        if (answer) {
+          answer.classList.toggle('active', !isExpanded);
+        }
+        
+        // Umami analytics tracking
+        if (typeof umami !== 'undefined') {
+          umami.track('faq_toggle', {
+            question: this.textContent.trim(),
+            expanded: !isExpanded
+          });
+        }
+      });
+      
+      // Support clavier
+      question.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          this.click();
+        }
+      });
+    });
+  }
+  
+  // Amélioration de la navigation clavier dans les tables
+  function enhanceTables() {
+    const tables = document.querySelectorAll('.enhanced-table');
+    
+    tables.forEach(table => {
+      const cells = table.querySelectorAll('td, th');
+      
+      cells.forEach((cell, index) => {
+        cell.tabIndex = 0;
+        
+        cell.addEventListener('keydown', function(e) {
+          const currentRow = this.parentElement;
+          const currentIndex = Array.from(currentRow.children).indexOf(this);
+          
+          switch(e.key) {
+            case 'ArrowRight':
+              e.preventDefault();
+              const nextCell = currentRow.children[currentIndex + 1];
+              if (nextCell) nextCell.focus();
+              break;
+              
+            case 'ArrowLeft':
+              e.preventDefault();
+              const prevCell = currentRow.children[currentIndex - 1];
+              if (prevCell) prevCell.focus();
+              break;
+              
+            case 'ArrowDown':
+              e.preventDefault();
+              const nextRow = currentRow.nextElementSibling;
+              if (nextRow && nextRow.children[currentIndex]) {
+                nextRow.children[currentIndex].focus();
+              }
+              break;
+              
+            case 'ArrowUp':
+              e.preventDefault();
+              const prevRow = currentRow.previousElementSibling;
+              if (prevRow && prevRow.children[currentIndex]) {
+                prevRow.children[currentIndex].focus();
+              }
+              break;
+          }
+        });
+      });
+    });
+  }
+  
+  // Lazy loading pour les images dans les callouts
+  function initLazyLoading() {
+    if ('IntersectionObserver' in window) {
+      const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const img = entry.target;
+            img.src = img.dataset.src;
+            img.classList.remove('lazy');
+            observer.unobserve(img);
+          }
+        });
+      });
+      
+      document.querySelectorAll('img[data-src]').forEach(img => {
+        imageObserver.observe(img);
+      });
+    }
+  }
+  
+  // Animations d'entrée pour les callouts
+  function initAnimations() {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.animation = 'slideInUp 0.6s ease-out';
+        }
+      });
+    }, { threshold: 0.1 });
+    
+    document.querySelectorAll('.callout, .code-block, .faq-section').forEach(el => {
+      observer.observe(el);
+    });
+  }
+  
+  // Initialisation de tous les composants
+  initCodeBlocks();
+  initFAQ();
+  enhanceTables();
+  initLazyLoading();
+  initAnimations();
+  
+  // Gestion des callouts avec liens CTA
+  const ctaLinks = document.querySelectorAll('.callout .cta-link');
+  ctaLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      if (typeof umami !== 'undefined') {
+        umami.track('callout_cta_click', {
+          cta_text: this.textContent.trim(),
+          target_url: this.href
+        });
+      }
+    });
+  });
+});
+
+// Animations CSS
+const animationStyles = document.createElement('style');
+animationStyles.textContent = `
+  @keyframes slideInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .lazy {
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .lazy:not([src]) {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+  }
+  
+  @keyframes loading {
+    0% {
+      background-position: 200% 0;
+    }
+    100% {
+      background-position: -200% 0;
+    }
+  }
+`;
+document.head.appendChild(animationStyles);
+</script>

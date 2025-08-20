@@ -1,8 +1,26 @@
 ---
-layout: base.njk
-title: "RAG (Retrieval-Augmented Generation) - Documentation complète"
-description: "Découvrez le RAG : une technologie d'IA qui combine modèles de langage et recherche d'information, ses principes, applications, analyses et avantages pour l'entreprise."
+layout: docs-with-cta.njk
+title: "Architecture RAG Bitcoin : IA et Blockchain | Documentation DazNode"
+description: "Architecture RAG pour Bitcoin : IA générative, optimisation requêtes, intégration Lightning. Documentation technique avancée DazNode avec analyse de 47 métriques temps réel."
 keywords: ["RAG", "retrieval augmented generation", "intelligence artificielle", "modèle de langage", "llm", "recherche d'information", "applications RAG", "analyse heuristique", "MCP", "daznode"]
+topic: "RAG Intelligence Artificielle"
+category: "rag"
+categoryTitle: "RAG IA"
+showRoi: true
+solutions:
+  - name: "DazIA RAG Engine"
+    url: "https://dazno.de/dazia/rag-engine"
+    description: "Architecture RAG avancée pour Lightning Network et Bitcoin"
+  - name: "DazIA Custom Training"
+    url: "https://dazno.de/dazia/custom-training"
+    description: "Formation de modèles sur vos données spécifiques"
+conversionBridge:
+  - name: "DazIA Platform"
+    url: "https://dazno.de/dazia"
+    description: "Intelligence artificielle complète"
+  - name: "API Enterprise"
+    url: "https://dazno.de/api/enterprise"
+    description: "Intégration RAG sur-mesure"
 ---
 
 # RAG (Retrieval-Augmented Generation)
@@ -10,6 +28,8 @@ keywords: ["RAG", "retrieval augmented generation", "intelligence artificielle",
 *Temps de lecture estimé : 3 minutes*
 
 Le RAG (Retrieval-Augmented Generation) est une approche avancée dans le domaine de l'intelligence artificielle qui combine la puissance des grands modèles de langage avec la récupération d'informations depuis des bases de connaissances externes.
+
+[DazIA utilise une architecture RAG avancée](https://dazno.de/dazia) pour analyser 47 métriques Lightning Network en temps réel et fournir des prédictions précises.
 
 ## Sections disponibles
 
@@ -41,4 +61,6 @@ Le RAG représente une avancée majeure dans l'utilisation des modèles de langa
 - [Article de recherche fondateur sur le RAG](https://arxiv.org/abs/2005.11401)
 - [Communauté LlamaIndex](https://discord.gg/dGcwcsnxhU)
 
-Pour toute question ou besoin d'assistance sur l'implémentation du RAG dans vos projets, n'hésitez pas à consulter les ressources complémentaires ou à contacter notre équipe d'experts. 
+⚡ **Implémentation Industrielle :** [DazIA](https://dazno.de/dazia) implémente ces concepts RAG pour optimiser automatiquement les nœuds Lightning Network avec 89% de réduction des force-close.
+
+Pour toute question ou besoin d'assistance sur l'implémentation du RAG dans vos projets, consultez notre [équipe d'experts IA](https://dazno.de/support/ia-experts). 

@@ -1,0 +1,781 @@
+{# Système de liens contextuels avec progression et CTA commerciaux optimisés #}
+{% set currentSection = page.data.category or 'general' %}
+{% set currentTopic = page.data.topic or page.data.title %}
+
+<div class="contextual-content-hub">
+  {# Breadcrumbs améliorés #}
+  <nav aria-label="Fil d'Ariane" class="enhanced-breadcrumb">
+    <ol class="breadcrumb-list">
+      <li>
+        <a href="https://dazno.de" class="breadcrumb-link">
+          <span class="breadcrumb-icon">🏠</span>
+          <span>DazNode</span>
+        </a>
+      </li>
+      <li aria-hidden="true" class="breadcrumb-separator">→</li>
+      <li>
+        <a href="/" class="breadcrumb-link">
+          <span class="breadcrumb-icon">📚</span>
+          <span>Documentation</span>
+        </a>
+      </li>
+      {% if currentSection != 'general' %}
+      <li aria-hidden="true" class="breadcrumb-separator">→</li>
+      <li>
+        <a href="/{{ currentSection }}/" class="breadcrumb-link">
+          <span class="breadcrumb-icon">
+            {% if currentSection == 'lightning-network' %}⚡
+            {% elif currentSection == 'bitcoin' %}₿
+            {% elif currentSection == 'devs' %}👨‍💻
+            {% elif currentSection == 'rag' %}🤖
+            {% else %}📖{% endif %}
+          </span>
+          <span>{{ page.data.categoryTitle or (currentSection | title) }}</span>
+        </a>
+      </li>
+      {% endif %}
+      <li aria-hidden="true" class="breadcrumb-separator">→</li>
+      <li aria-current="page" class="breadcrumb-current">
+        <span>{{ page.data.title or title }}</span>
+      </li>
+    </ol>
+  </nav>
+
+  {# Indicateur de progression dans la section #}
+  {% if currentSection != 'general' %}
+  <div class="reading-progress-section">
+    <div class="progress-header">
+      <h4>📊 Progression dans cette section</h4>
+    </div>
+    <div class="progress-visual">
+      <div class="progress-bar">
+        <div class="progress-fill" data-section="{{ currentSection }}"></div>
+      </div>
+      <span class="progress-text">
+        <span class="progress-current">1</span> de 
+        <span class="progress-total">5</span> articles lus
+      </span>
+    </div>
+    <div class="progress-actions">
+      <button class="progress-action" data-action="mark-read">
+        ✅ Marquer comme lu
+      </button>
+      <button class="progress-action" data-action="bookmark">
+        🔖 Sauvegarder
+      </button>
+    </div>
+  </div>
+  {% endif %}
+
+  {# Liens contextuels intelligents basés sur la section #}
+  <div class="contextual-links-smart">
+    <h4>📚 Ressources Liées</h4>
+    <div class="contextual-grid">
+      {% if currentSection == 'lightning-network' %}
+        <a href="/lightning-network/optimization/" class="contextual-card">
+          <div class="card-icon">⚡</div>
+          <div class="card-content">
+            <h5>Optimisation Lightning</h5>
+            <p>Maximisez le ROI de vos canaux</p>
+          </div>
+        </a>
+        <a href="/lightning-network/troubleshooting/" class="contextual-card">
+          <div class="card-icon">🔧</div>
+          <div class="card-content">
+            <h5>Prévention Force-Close</h5>
+            <p>Évitez les fermetures forcées</p>
+          </div>
+        </a>
+        <a href="/devs/api/" class="contextual-card">
+          <div class="card-icon">👨‍💻</div>
+          <div class="card-content">
+            <h5>API Lightning</h5>
+            <p>Intégrez dans vos apps</p>
+          </div>
+        </a>
+      {% elif currentSection == 'bitcoin' %}
+        <a href="/bitcoin/node-management/" class="contextual-card">
+          <div class="card-icon">₿</div>
+          <div class="card-content">
+            <h5>Gestion Node Bitcoin</h5>
+            <p>Configuration optimale</p>
+          </div>
+        </a>
+        <a href="/lightning-network/basics/" class="contextual-card">
+          <div class="card-icon">⚡</div>
+          <div class="card-content">
+            <h5>Lightning Network</h5>
+            <p>Étape suivante naturelle</p>
+          </div>
+        </a>
+        <a href="/hardware/" class="contextual-card">
+          <div class="card-icon">🖥️</div>
+          <div class="card-content">
+            <h5>Hardware Recommandé</h5>
+            <p>Configurez votre setup</p>
+          </div>
+        </a>
+      {% elif currentSection == 'devs' %}
+        <a href="/devs/examples/" class="contextual-card">
+          <div class="card-icon">💻</div>
+          <div class="card-content">
+            <h5>Exemples de Code</h5>
+            <p>Implémentations pratiques</p>
+          </div>
+        </a>
+        <a href="/lightning-network/channels/" class="contextual-card">
+          <div class="card-icon">⚡</div>
+          <div class="card-content">
+            <h5>Gestion Canaux</h5>
+            <p>Logique métier Lightning</p>
+          </div>
+        </a>
+        <a href="/devs/mcp/" class="contextual-card">
+          <div class="card-icon">🔗</div>
+          <div class="card-content">
+            <h5>Protocol MCP</h5>
+            <p>Intégration avancée</p>
+          </div>
+        </a>
+      {% elif currentSection == 'rag' %}
+        <a href="/rag/applications/" class="contextual-card">
+          <div class="card-icon">🤖</div>
+          <div class="card-content">
+            <h5>Applications RAG</h5>
+            <p>Cas d'usage concrets</p>
+          </div>
+        </a>
+        <a href="/devs/api/" class="contextual-card">
+          <div class="card-icon">🔌</div>
+          <div class="card-content">
+            <h5>API IA</h5>
+            <p>Intégrez l'IA dans vos apps</p>
+          </div>
+        </a>
+        <a href="/lightning-network/" class="contextual-card">
+          <div class="card-icon">⚡</div>
+          <div class="card-content">
+            <h5>Lightning + IA</h5>
+            <p>Optimisation intelligente</p>
+          </div>
+        </a>
+      {% else %}
+        <a href="/getting-started/" class="contextual-card">
+          <div class="card-icon">🚀</div>
+          <div class="card-content">
+            <h5>Guide de Démarrage</h5>
+            <p>Premiers pas avec DazNode</p>
+          </div>
+        </a>
+        <a href="/lightning-network/" class="contextual-card">
+          <div class="card-icon">⚡</div>
+          <div class="card-content">
+            <h5>Lightning Network</h5>
+            <p>Solution de paiement rapide</p>
+          </div>
+        </a>
+        <a href="/devs/" class="contextual-card">
+          <div class="card-icon">👨‍💻</div>
+          <div class="card-content">
+            <h5>Développeurs</h5>
+            <p>APIs et intégrations</p>
+          </div>
+        </a>
+      {% endif %}
+    </div>
+  </div>
+
+  {# Bridge commercial intelligent par section #}
+  <div class="commercial-bridge-enhanced">
+    <div class="bridge-content">
+      {% if currentSection == 'lightning-network' %}
+        <div class="bridge-icon">💡</div>
+        <div class="bridge-text">
+          <h4>⚡ Automatisation Lightning</h4>
+          <p><strong>DazNode automatise</strong> ces optimisations 24/7 avec monitoring intelligent et prédictions IA.</p>
+          <ul class="bridge-benefits">
+            <li>✅ <strong>89% réduction</strong> des force-close</li>
+            <li>✅ <strong>ROI optimisé</strong> automatiquement</li>
+            <li>✅ <strong>Alertes préventives</strong> temps réel</li>
+          </ul>
+        </div>
+        <div class="bridge-actions">
+          <a href="https://dazno.de/demo" class="cta-primary">
+            🎬 Voir la démo
+          </a>
+          <a href="https://dazno.de/dazbox" class="cta-secondary">
+            📦 DazBox Solution
+          </a>
+        </div>
+      {% elif currentSection == 'bitcoin' %}
+        <div class="bridge-icon">💡</div>
+        <div class="bridge-text">
+          <h4>₿ Node Bitcoin Optimisé</h4>
+          <p><strong>DazBox inclut</strong> une configuration Bitcoin optimale avec monitoring et maintenance automatisés.</p>
+          <ul class="bridge-benefits">
+            <li>✅ <strong>Configuration automatique</strong> optimale</li>
+            <li>✅ <strong>Monitoring 24/7</strong> performance</li>
+            <li>✅ <strong>Mises à jour sécurisées</strong></li>
+          </ul>
+        </div>
+        <div class="bridge-actions">
+          <a href="https://dazno.de/dazbox" class="cta-primary">
+            🖥️ Hardware DazBox
+          </a>
+          <a href="https://dazno.de/configurator" class="cta-secondary">
+            ⚙️ Configurateur
+          </a>
+        </div>
+      {% elif currentSection == 'devs' %}
+        <div class="bridge-icon">💡</div>
+        <div class="bridge-text">
+          <h4>👨‍💻 API Enterprise</h4>
+          <p><strong>Nos APIs</strong> simplifient l'intégration Lightning avec SDK complets et support développeur.</p>
+          <ul class="bridge-benefits">
+            <li>✅ <strong>SDK multi-langages</strong> disponibles</li>
+            <li>✅ <strong>Documentation interactive</strong></li>
+            <li>✅ <strong>Support technique</strong> dédié</li>
+          </ul>
+        </div>
+        <div class="bridge-actions">
+          <a href="https://dazno.de/api/free-tier" class="cta-primary">
+            🆓 API Gratuite
+          </a>
+          <a href="https://dazno.de/sdk" class="cta-secondary">
+            📦 SDK & Docs
+          </a>
+        </div>
+      {% elif currentSection == 'rag' %}
+        <div class="bridge-icon">💡</div>
+        <div class="bridge-text">
+          <h4>🤖 DazIA Platform</h4>
+          <p><strong>DazIA implémente</strong> ces concepts RAG pour optimiser automatiquement vos opérations Lightning.</p>
+          <ul class="bridge-benefits">
+            <li>✅ <strong>Architecture RAG</strong> industrielle</li>
+            <li>✅ <strong>47 métriques analysées</strong> temps réel</li>
+            <li>✅ <strong>Prédictions ML</strong> avancées</li>
+          </ul>
+        </div>
+        <div class="bridge-actions">
+          <a href="https://dazno.de/dazia" class="cta-primary">
+            🧠 DazIA Platform
+          </a>
+          <a href="https://dazno.de/api/ai" class="cta-secondary">
+            🔌 API Intelligence
+          </a>
+        </div>
+      {% else %}
+        <div class="bridge-icon">💡</div>
+        <div class="bridge-text">
+          <h4>🚀 Solutions DazNode</h4>
+          <p><strong>DazNode simplifie</strong> votre parcours Bitcoin/Lightning avec des solutions clé en main.</p>
+          <ul class="bridge-benefits">
+            <li>✅ <strong>Setup automatisé</strong> en 1-clic</li>
+            <li>✅ <strong>Support expert</strong> inclus</li>
+            <li>✅ <strong>ROI optimisé</strong> garanti</li>
+          </ul>
+        </div>
+        <div class="bridge-actions">
+          <a href="https://dazno.de/solutions" class="cta-primary">
+            📋 Voir Solutions
+          </a>
+          <a href="https://dazno.de/trial" class="cta-secondary">
+            🎯 Essai Gratuit
+          </a>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+
+  {# Navigation Suivant/Précédent contextuelle #}
+  <div class="content-navigation">
+    <div class="nav-grid">
+      <div class="nav-prev">
+        {% if page.data.prevPage %}
+        <a href="{{ page.data.prevPage.url }}" class="nav-directional">
+          <div class="nav-direction">← Précédent</div>
+          <div class="nav-title">{{ page.data.prevPage.title }}</div>
+          <div class="nav-description">{{ page.data.prevPage.description }}</div>
+        </a>
+        {% endif %}
+      </div>
+      <div class="nav-next">
+        {% if page.data.nextPage %}
+        <a href="{{ page.data.nextPage.url }}" class="nav-directional">
+          <div class="nav-direction">Suivant →</div>
+          <div class="nav-title">{{ page.data.nextPage.title }}</div>
+          <div class="nav-description">{{ page.data.nextPage.description }}</div>
+        </a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+/* Styles pour le système de liens contextuels amélioré */
+.contextual-content-hub {
+  margin: 2rem 0;
+}
+
+.enhanced-breadcrumb {
+  margin-bottom: 1.5rem;
+  padding: 0.75rem 1rem;
+  background: var(--color-surface-variant, #f8f9fa);
+  border-radius: 8px;
+  border-left: 4px solid var(--color-primary, #2563eb);
+}
+
+.breadcrumb-list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.breadcrumb-link {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: var(--color-text-secondary, #6b7280);
+  text-decoration: none;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.breadcrumb-link:hover {
+  background: var(--color-primary-light, #dbeafe);
+  color: var(--color-primary, #2563eb);
+}
+
+.breadcrumb-separator {
+  color: var(--color-text-muted, #9ca3af);
+  margin: 0 0.25rem;
+}
+
+.breadcrumb-current {
+  color: var(--color-text, #1f2937);
+  font-weight: 500;
+}
+
+.reading-progress-section {
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+  border: 1px solid var(--color-border, #e5e7eb);
+  border-radius: 12px;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.progress-header h4 {
+  margin: 0 0 0.75rem 0;
+  color: var(--color-primary, #2563eb);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.progress-visual {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.progress-bar {
+  flex: 1;
+  height: 8px;
+  background: var(--color-surface, #e5e7eb);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-primary, #2563eb), var(--color-secondary, #10b981));
+  border-radius: 4px;
+  transition: width 0.3s ease;
+  width: 20%;
+}
+
+.progress-text {
+  font-size: 0.75rem;
+  color: var(--color-text-secondary, #6b7280);
+  font-weight: 500;
+  min-width: 80px;
+}
+
+.progress-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.progress-action {
+  background: transparent;
+  border: 1px solid var(--color-border, #e5e7eb);
+  color: var(--color-text-secondary, #6b7280);
+  padding: 0.25rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.progress-action:hover {
+  background: var(--color-primary, #2563eb);
+  color: white;
+  border-color: var(--color-primary, #2563eb);
+}
+
+.contextual-links-smart {
+  margin: 1.5rem 0;
+}
+
+.contextual-links-smart h4 {
+  margin: 0 0 1rem 0;
+  color: var(--color-text, #1f2937);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.contextual-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.contextual-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: var(--color-surface, #ffffff);
+  border: 1px solid var(--color-border, #e5e7eb);
+  border-radius: 8px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s;
+}
+
+.contextual-card:hover {
+  border-color: var(--color-primary, #2563eb);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.card-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.card-content h5 {
+  margin: 0 0 0.25rem 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text, #1f2937);
+}
+
+.card-content p {
+  margin: 0;
+  font-size: 0.75rem;
+  color: var(--color-text-secondary, #6b7280);
+  line-height: 1.4;
+}
+
+.commercial-bridge-enhanced {
+  margin: 2rem 0;
+  background: linear-gradient(135deg, #fef3c7 0%, #fed7aa 100%);
+  border: 2px solid var(--color-warning, #f59e0b);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.bridge-content {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 1rem;
+  align-items: start;
+  padding: 1.5rem;
+}
+
+.bridge-icon {
+  font-size: 2rem;
+  margin-top: 0.25rem;
+}
+
+.bridge-text h4 {
+  margin: 0 0 0.5rem 0;
+  color: var(--color-warning-dark, #92400e);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.bridge-text p {
+  margin: 0 0 0.75rem 0;
+  color: var(--color-text, #1f2937);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.bridge-benefits {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.25rem;
+}
+
+.bridge-benefits li {
+  font-size: 0.75rem;
+  color: var(--color-text-secondary, #6b7280);
+}
+
+.bridge-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 140px;
+}
+
+.cta-primary, .cta-secondary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: all 0.2s;
+  text-align: center;
+}
+
+.cta-primary {
+  background: var(--color-primary, #2563eb);
+  color: white;
+  border: 1px solid var(--color-primary, #2563eb);
+}
+
+.cta-primary:hover {
+  background: var(--color-primary-dark, #1d4ed8);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.cta-secondary {
+  background: transparent;
+  color: var(--color-primary, #2563eb);
+  border: 1px solid var(--color-primary, #2563eb);
+}
+
+.cta-secondary:hover {
+  background: var(--color-primary, #2563eb);
+  color: white;
+}
+
+.content-navigation {
+  margin: 2rem 0;
+  padding: 1rem 0;
+  border-top: 1px solid var(--color-border, #e5e7eb);
+}
+
+.nav-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.nav-directional {
+  display: block;
+  padding: 1rem;
+  background: var(--color-surface, #ffffff);
+  border: 1px solid var(--color-border, #e5e7eb);
+  border-radius: 8px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s;
+}
+
+.nav-directional:hover {
+  border-color: var(--color-primary, #2563eb);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.nav-direction {
+  font-size: 0.75rem;
+  color: var(--color-primary, #2563eb);
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.nav-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text, #1f2937);
+  margin-bottom: 0.25rem;
+}
+
+.nav-description {
+  font-size: 0.75rem;
+  color: var(--color-text-secondary, #6b7280);
+  line-height: 1.4;
+}
+
+.nav-prev .nav-directional {
+  text-align: left;
+}
+
+.nav-next .nav-directional {
+  text-align: right;
+}
+
+/* Mode sombre */
+@media (prefers-color-scheme: dark) {
+  .enhanced-breadcrumb {
+    background: rgba(255, 255, 255, 0.05);
+  }
+  
+  .reading-progress-section {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(16, 185, 129, 0.1) 100%);
+  }
+  
+  .contextual-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .commercial-bridge-enhanced {
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.2) 0%, rgba(251, 146, 60, 0.2) 100%);
+  }
+  
+  .nav-directional {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .bridge-content {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    text-align: center;
+  }
+  
+  .bridge-actions {
+    flex-direction: row;
+    justify-content: center;
+  }
+  
+  .nav-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .contextual-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+
+<script>
+// JavaScript pour la gestion de la progression et interactions
+document.addEventListener('DOMContentLoaded', function() {
+  const currentSection = '{{ currentSection }}';
+  const currentPage = window.location.pathname;
+  
+  // Gestion de la progression de lecture
+  function updateReadingProgress() {
+    const progressKey = `reading-progress-${currentSection}`;
+    let progress = JSON.parse(localStorage.getItem(progressKey) || '{"pages": [], "total": 5}');
+    
+    if (!progress.pages.includes(currentPage)) {
+      progress.pages.push(currentPage);
+      localStorage.setItem(progressKey, JSON.stringify(progress));
+    }
+    
+    const progressFill = document.querySelector('.progress-fill');
+    const progressCurrent = document.querySelector('.progress-current');
+    
+    if (progressFill && progressCurrent) {
+      const percentage = (progress.pages.length / progress.total) * 100;
+      progressFill.style.width = `${percentage}%`;
+      progressCurrent.textContent = progress.pages.length;
+    }
+  }
+  
+  // Actions de progression
+  const markReadBtn = document.querySelector('[data-action="mark-read"]');
+  const bookmarkBtn = document.querySelector('[data-action="bookmark"]');
+  
+  if (markReadBtn) {
+    markReadBtn.addEventListener('click', function() {
+      updateReadingProgress();
+      this.innerHTML = '✅ Marqué comme lu';
+      this.disabled = true;
+    });
+  }
+  
+  if (bookmarkBtn) {
+    bookmarkBtn.addEventListener('click', function() {
+      const bookmarksKey = 'daznode-bookmarks';
+      let bookmarks = JSON.parse(localStorage.getItem(bookmarksKey) || '[]');
+      
+      const bookmark = {
+        url: window.location.href,
+        title: document.title,
+        timestamp: Date.now()
+      };
+      
+      if (!bookmarks.find(b => b.url === bookmark.url)) {
+        bookmarks.unshift(bookmark);
+        localStorage.setItem(bookmarksKey, JSON.stringify(bookmarks));
+        this.innerHTML = '🔖 Sauvegardé';
+        this.style.background = 'var(--color-success, #10b981)';
+        this.style.color = 'white';
+      }
+    });
+  }
+  
+  // Initialiser la progression
+  updateReadingProgress();
+  
+  // Tracking d'engagement pour les CTA
+  const ctaButtons = document.querySelectorAll('.cta-primary, .cta-secondary');
+  ctaButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      // Umami analytics tracking
+      if (typeof umami !== 'undefined') {
+        umami.track('cta_click', {
+          section: currentSection,
+          cta_text: this.textContent.trim()
+        });
+      }
+    });
+  });
+  
+  // Intersection Observer pour les métriques d'engagement
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const element = entry.target;
+        if (element.classList.contains('commercial-bridge-enhanced')) {
+          if (typeof umami !== 'undefined') {
+            umami.track('commercial_bridge_view', {
+              section: currentSection
+            });
+          }
+        }
+      }
+    });
+  }, { threshold: 0.5 });
+  
+  const commercialBridge = document.querySelector('.commercial-bridge-enhanced');
+  if (commercialBridge) {
+    observer.observe(commercialBridge);
+  }
+});
+</script>

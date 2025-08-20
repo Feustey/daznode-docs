@@ -1,0 +1,413 @@
+<!-- Template CTA Bridge Commercial -->
+{% macro commercialBridge(config = {}) %}
+  {% set defaultConfig = {
+    title: "💡 Mettre en pratique",
+    subtitle: "Prêt à automatiser ces configurations ?",
+    ctaPrimary: {
+      text: "Essai Gratuit 7 jours",
+      url: "https://dazno.de/trial",
+      utm: "commercial_bridge_trial"
+    },
+    ctaSecondary: {
+      text: "Voir les Solutions",
+      url: "https://dazno.de/solutions",
+      utm: "commercial_bridge_solutions"
+    },
+    automationNote: true
+  } %}
+  
+  {% set finalConfig = config if config.title else defaultConfig %}
+  
+  <div class="commercial-bridge" data-bridge-type="conversion">
+    <div class="bridge-content">
+      <div class="bridge-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      
+      <div class="bridge-text">
+        <h3 class="bridge-title">{{ finalConfig.title }}</h3>
+        <p class="bridge-subtitle">{{ finalConfig.subtitle }}</p>
+      </div>
+      
+      <div class="bridge-actions">
+        <a href="{{ finalConfig.ctaPrimary.url }}" 
+           class="cta-primary commercial-link" 
+           data-utm="{{ finalConfig.ctaPrimary.utm }}"
+           data-bridge-action="primary">
+          {{ finalConfig.ctaPrimary.text }}
+        </a>
+        
+        {% if finalConfig.ctaSecondary %}
+        <a href="{{ finalConfig.ctaSecondary.url }}" 
+           class="cta-secondary commercial-link" 
+           data-utm="{{ finalConfig.ctaSecondary.utm }}"
+           data-bridge-action="secondary">
+          {{ finalConfig.ctaSecondary.text }}
+        </a>
+        {% endif %}
+      </div>
+    </div>
+    
+    {% if finalConfig.automationNote %}
+    <div class="automation-note">
+      <span class="automation-icon">⚡</span>
+      <strong>Automatisation :</strong> Ces configurations sont automatiques avec 
+      <a href="https://dazno.de" class="inline-commercial-link" data-utm="automation_note">DazNode</a>
+    </div>
+    {% endif %}
+  </div>
+{% endmacro %}
+
+<!-- Version simplifiée pour automatisation -->
+{% macro automationNote(customText = "") %}
+  {% set text = customText or "Ces configurations sont automatiques avec DazNode" %}
+  <div class="automation-cta">
+    <p>⚡ <strong>Automatisation :</strong> {{ text }} 
+      <a href="https://dazno.de" class="inline-commercial-link" data-utm="automation_note_simple">→ En savoir plus</a>
+    </p>
+  </div>
+{% endmacro %}
+
+<!-- Knowledge to Conversion Bridge -->
+{% macro knowledgeToConversion(topic = "", solutions = []) %}
+  {% set defaultSolutions = [
+    { name: "DazBox", url: "https://dazno.de/dazbox", description: "Nœud clé en main" },
+    { name: "DazIA", url: "https://dazno.de/dazia", description: "IA prédictive" },
+    { name: "DazPay", url: "https://dazno.de/dazpay", description: "Paiements Lightning" }
+  ] %}
+  
+  {% set solutionsList = solutions if solutions.length > 0 else defaultSolutions %}
+  
+  <div class="knowledge-conversion-bridge">
+    <div class="bridge-header">
+      <h3>🚀 Solutions pour {{ topic or "ce cas d'usage" }}</h3>
+    </div>
+    
+    <div class="solutions-grid">
+      {% for solution in solutionsList %}
+      <a href="{{ solution.url }}" class="solution-card commercial-link" data-utm="knowledge_conversion_{{ solution.name.lower() }}">
+        <div class="solution-name">{{ solution.name }}</div>
+        <div class="solution-description">{{ solution.description }}</div>
+      </a>
+      {% endfor %}
+    </div>
+    
+    <div class="conversion-footer">
+      <a href="https://dazno.de/demo" class="demo-link commercial-link" data-utm="knowledge_conversion_demo">
+        📹 Voir une démo complète
+      </a>
+    </div>
+  </div>
+{% endmacro %}
+
+<style>
+/* Commercial Bridge Styles */
+.commercial-bridge {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.bridge-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.bridge-icon {
+  color: #3b82f6;
+  flex-shrink: 0;
+}
+
+.bridge-text {
+  flex-grow: 1;
+}
+
+.bridge-title {
+  margin: 0 0 0.25rem 0;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.bridge-subtitle {
+  margin: 0;
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.bridge-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.cta-primary {
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  color: white;
+  text-decoration: none;
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(59, 130, 246, 0.3);
+}
+
+.cta-primary:hover {
+  background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(59, 130, 246, 0.4);
+  text-decoration: none;
+  color: white;
+}
+
+.cta-secondary {
+  background: transparent;
+  color: #3b82f6;
+  text-decoration: none;
+  padding: 0.75rem 1.25rem;
+  border: 2px solid #3b82f6;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.cta-secondary:hover {
+  background: #3b82f6;
+  color: white;
+  text-decoration: none;
+}
+
+.automation-note {
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: 8px;
+  padding: 0.75rem;
+  font-size: 0.875rem;
+  color: #1e40af;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.automation-icon {
+  font-size: 1rem;
+}
+
+.automation-cta {
+  background: rgba(251, 191, 36, 0.1);
+  border-left: 4px solid #f59e0b;
+  padding: 1rem;
+  margin: 1.5rem 0;
+  border-radius: 0 8px 8px 0;
+}
+
+.automation-cta p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #92400e;
+}
+
+.inline-commercial-link {
+  color: #3b82f6;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.inline-commercial-link:hover {
+  text-decoration: underline;
+}
+
+/* Knowledge to Conversion Bridge */
+.knowledge-conversion-bridge {
+  background: linear-gradient(135deg, #fefce8 0%, #fef3c7 100%);
+  border: 1px solid #fbbf24;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+}
+
+.bridge-header h3 {
+  margin: 0 0 1rem 0;
+  color: #92400e;
+  font-size: 1.125rem;
+}
+
+.solutions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.solution-card {
+  background: white;
+  border: 1px solid #fbbf24;
+  border-radius: 8px;
+  padding: 1rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.solution-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(251, 191, 36, 0.3);
+  text-decoration: none;
+}
+
+.solution-name {
+  font-weight: 600;
+  color: #92400e;
+  margin-bottom: 0.25rem;
+}
+
+.solution-description {
+  font-size: 0.8rem;
+  color: #a16207;
+}
+
+.conversion-footer {
+  text-align: center;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(251, 191, 36, 0.3);
+}
+
+.demo-link {
+  color: #92400e;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.demo-link:hover {
+  text-decoration: underline;
+}
+
+/* Dark mode adaptations */
+@media (prefers-color-scheme: dark) {
+  .commercial-bridge {
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    border-color: #475569;
+  }
+  
+  .bridge-title {
+    color: #f1f5f9;
+  }
+  
+  .bridge-subtitle {
+    color: #94a3b8;
+  }
+  
+  .automation-note {
+    background: rgba(59, 130, 246, 0.2);
+    border-color: rgba(59, 130, 246, 0.4);
+    color: #60a5fa;
+  }
+  
+  .automation-cta {
+    background: rgba(251, 191, 36, 0.2);
+    border-color: #fbbf24;
+  }
+  
+  .automation-cta p {
+    color: #fbbf24;
+  }
+  
+  .knowledge-conversion-bridge {
+    background: linear-gradient(135deg, #1c1917 0%, #292524 100%);
+    border-color: #a16207;
+  }
+  
+  .bridge-header h3 {
+    color: #fbbf24;
+  }
+  
+  .solution-card {
+    background: #27272a;
+    border-color: #a16207;
+  }
+  
+  .solution-name {
+    color: #fbbf24;
+  }
+  
+  .solution-description {
+    color: #d97706;
+  }
+  
+  .demo-link {
+    color: #fbbf24;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .bridge-content {
+    flex-direction: column;
+    text-align: center;
+    align-items: flex-start;
+  }
+  
+  .bridge-actions {
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .cta-primary, .cta-secondary {
+    flex: 1;
+    text-align: center;
+    min-width: 140px;
+  }
+  
+  .solutions-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+
+<script>
+// Tracking pour les bridges commerciaux
+document.addEventListener('DOMContentLoaded', function() {
+  const commercialLinks = document.querySelectorAll('.commercial-link');
+  
+  commercialLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      const utmContent = this.getAttribute('data-utm') || 'commercial_bridge';
+      const bridgeAction = this.getAttribute('data-bridge-action') || 'click';
+      const currentPage = window.location.pathname;
+      
+      // Ajouter UTM parameters
+      if (this.href.includes('dazno.de')) {
+        const url = new URL(this.href);
+        url.searchParams.set('utm_source', 'docs');
+        url.searchParams.set('utm_medium', 'content_bridge');
+        url.searchParams.set('utm_campaign', 'docs_to_commercial_bridge');
+        url.searchParams.set('utm_content', utmContent);
+        url.searchParams.set('utm_term', currentPage.replace('/', ''));
+        
+        this.href = url.toString();
+      }
+      
+      // Analytics event
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'commercial_bridge_click', {
+          bridge_type: 'content_to_conversion',
+          bridge_action: bridgeAction,
+          utm_content: utmContent,
+          source_page: currentPage,
+          target_url: this.href
+        });
+      }
+    });
+  });
+});
+</script>

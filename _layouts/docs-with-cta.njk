@@ -1,0 +1,375 @@
+---
+layout: base.njk
+---
+
+{% from "commercial-bridge.njk" import commercialBridge, automationNote, knowledgeToConversion %}
+{% from "contextual-links.njk" import learnMoreModule, relatedSolutions, roiCalculatorLink %}
+
+<article class="documentation-article">
+  <!-- Article content -->
+  <div class="article-content">
+    {{ content | safe }}
+  </div>
+  
+  <!-- Automatic CTA insertion based on page type -->
+  {% if page.data.topic %}
+    {% set topic = page.data.topic %}
+    {% set ctaConfig = {
+      title: "💡 Automatiser " + topic,
+      subtitle: "Prêt à implémenter automatiquement ces optimisations ?",
+      ctaPrimary: {
+        text: "Essai Gratuit 7 jours",
+        url: "https://dazno.de/trial",
+        utm: "topic_cta_" + (topic | slug)
+      },
+      ctaSecondary: {
+        text: "Voir " + topic + " Solutions",
+        url: "https://dazno.de/solutions/" + (topic | slug),
+        utm: "topic_solutions_" + (topic | slug)
+      }
+    } %}
+    
+    {{ commercialBridge(ctaConfig) }}
+  {% else %}
+    {{ commercialBridge() }}
+  {% endif %}
+  
+  <!-- Related Solutions -->
+  {% if page.data.solutions %}
+    {{ relatedSolutions(page.data.topic or "general", page.data.solutions) }}
+  {% endif %}
+  
+  <!-- ROI Calculator for business pages -->
+  {% if page.data.showRoi %}
+    {{ roiCalculatorLink(page.data.topic or page.fileSlug) }}
+  {% endif %}
+  
+  <!-- Learn More Module -->
+  {% if page.data.learnMore %}
+    {{ learnMoreModule(page.data.learnMore) }}
+  {% else %}
+    {{ learnMoreModule() }}
+  {% endif %}
+  
+  <!-- Knowledge to Conversion Bridge for specific topics -->
+  {% if page.data.conversionBridge %}
+    {{ knowledgeToConversion(page.data.topic, page.data.conversionBridge) }}
+  {% endif %}
+  
+  <!-- Navigation between articles - Temporarily disabled -->
+  <!-- 
+  <nav class="article-navigation" aria-label="Navigation entre articles">
+    Navigation will be implemented later with proper collections
+  </nav>
+  -->
+  
+  <!-- Cross-domain breadcrumbs -->
+  <nav class="cross-domain-breadcrumbs" aria-label="Fil d'Ariane cross-domain">
+    <ol class="breadcrumb-list" vocab="https://schema.org/" typeof="BreadcrumbList">
+      <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
+        <a href="https://dazno.de" class="breadcrumb-link commercial-link" 
+           data-utm="breadcrumb_home" property="item" typeof="WebPage">
+          <span property="name">🏠 DazNode</span>
+        </a>
+        <meta property="position" content="1">
+      </li>
+      <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
+        <a href="/" class="breadcrumb-link" property="item" typeof="WebPage">
+          <span property="name">📚 Documentation</span>
+        </a>
+        <meta property="position" content="2">
+      </li>
+      {% if page.data.category %}
+      <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
+        <a href="/{{ page.data.category }}/" class="breadcrumb-link" property="item" typeof="WebPage">
+          <span property="name">{{ page.data.categoryTitle or page.data.category | title }}</span>
+        </a>
+        <meta property="position" content="3">
+      </li>
+      <li class="breadcrumb-item current" aria-current="page" property="itemListElement" typeof="ListItem">
+        <span property="name">{{ title }}</span>
+        <meta property="position" content="4">
+      </li>
+      {% else %}
+      <li class="breadcrumb-item current" aria-current="page" property="itemListElement" typeof="ListItem">
+        <span property="name">{{ title }}</span>
+        <meta property="position" content="3">
+      </li>
+      {% endif %}
+    </ol>
+    
+    <!-- Commercial Context Hint -->
+    {% if page.data.topic %}
+    <div class="breadcrumb-context">
+      <span class="context-icon">💡</span>
+      <span class="context-text">
+        Découvrez nos solutions 
+        <a href="https://dazno.de/solutions/{{ page.data.topic | slug }}" 
+           class="context-link commercial-link" 
+           data-utm="breadcrumb_context_{{ page.data.topic | slug }}">
+          {{ page.data.topic }}
+        </a>
+      </span>
+    </div>
+    {% endif %}
+  </nav>
+</article>
+
+<style>
+.documentation-article {
+  max-width: none;
+}
+
+.article-content {
+  margin-bottom: 3rem;
+}
+
+/* Article Navigation */
+.article-navigation {
+  background: var(--card, #fff);
+  border: 1px solid var(--border, rgba(0,0,0,0.1));
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+}
+
+.nav-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.nav-link {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.nav-link.next {
+  text-align: right;
+  align-items: flex-end;
+}
+
+.nav-direction {
+  font-size: 0.875rem;
+  color: var(--muted-foreground, #64748b);
+  font-weight: 500;
+}
+
+.nav-title {
+  color: var(--foreground);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.nav-title:hover {
+  color: var(--primary, #2563eb);
+  text-decoration: underline;
+}
+
+/* Cross-domain Breadcrumbs */
+.cross-domain-breadcrumbs {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  margin: 1rem 0;
+  font-size: 0.875rem;
+}
+
+.breadcrumb-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.breadcrumb-item {
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumb-item:not(:last-child)::after {
+  content: "›";
+  margin-left: 0.5rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.breadcrumb-link {
+  color: #3b82f6;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.breadcrumb-link:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
+}
+
+.breadcrumb-item.current {
+  color: #64748b;
+  font-weight: 500;
+}
+
+.breadcrumb-context {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(203, 213, 225, 0.5);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+}
+
+.context-icon {
+  opacity: 0.7;
+}
+
+.context-text {
+  color: #64748b;
+}
+
+.context-link {
+  color: #3b82f6;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.context-link:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  .article-navigation {
+    background: #1e293b;
+    border-color: #334155;
+  }
+  
+  .nav-direction {
+    color: #94a3b8;
+  }
+  
+  .nav-title {
+    color: #f1f5f9;
+  }
+  
+  .nav-title:hover {
+    color: #60a5fa;
+  }
+  
+  .cross-domain-breadcrumbs {
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    border-color: #475569;
+  }
+  
+  .breadcrumb-item:not(:last-child)::after {
+    color: #94a3b8;
+  }
+  
+  .breadcrumb-link {
+    color: #60a5fa;
+  }
+  
+  .breadcrumb-link:hover {
+    color: #93c5fd;
+  }
+  
+  .breadcrumb-item.current {
+    color: #94a3b8;
+  }
+  
+  .breadcrumb-context {
+    border-color: rgba(148, 163, 184, 0.3);
+  }
+  
+  .context-text {
+    color: #94a3b8;
+  }
+  
+  .context-link {
+    color: #60a5fa;
+  }
+  
+  .context-link:hover {
+    color: #93c5fd;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .nav-link.next {
+    text-align: left;
+    align-items: flex-start;
+  }
+  
+  .breadcrumb-list {
+    flex-wrap: wrap;
+    gap: 0.25rem;
+  }
+  
+  .breadcrumb-item:not(:last-child)::after {
+    margin-left: 0.25rem;
+  }
+}
+</style>
+
+<script>
+// Auto-track page engagement for commercial conversion
+document.addEventListener('DOMContentLoaded', function() {
+  let engagementStartTime = Date.now();
+  let hasScrolled = false;
+  let maxScrollDepth = 0;
+  
+  // Track scroll depth
+  function trackScrollDepth() {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercent = Math.round((scrollTop / docHeight) * 100);
+    
+    maxScrollDepth = Math.max(maxScrollDepth, scrollPercent);
+    
+    if (scrollPercent > 25 && !hasScrolled) {
+      hasScrolled = true;
+      
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'page_engagement', {
+          event_category: 'documentation',
+          event_label: 'scroll_25_percent',
+          page_path: window.location.pathname,
+          engagement_level: 'medium'
+        });
+      }
+    }
+  }
+  
+  // Track time on page and scroll on page unload
+  window.addEventListener('beforeunload', function() {
+    const timeOnPage = Math.round((Date.now() - engagementStartTime) / 1000);
+    
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'page_engagement_summary', {
+        event_category: 'documentation',
+        time_on_page: timeOnPage,
+        max_scroll_depth: maxScrollDepth,
+        page_path: window.location.pathname,
+        has_commercial_intent: document.querySelectorAll('.commercial-link').length > 0
+      });
+    }
+  });
+  
+  window.addEventListener('scroll', trackScrollDepth);
+});
+</script>

@@ -1,0 +1,526 @@
+<!-- Templates de Liens Contextuels -->
+
+<!-- Link contextuel vers solution commerciale -->
+{% macro contextualLink(text, url, type = "internal", description = "") %}
+  <a href="{{ url }}" 
+     class="contextual-link contextual-link--{{ type }}" 
+     {% if type == "commercial" %}data-utm="contextual_{{ text | slug }}"{% endif %}
+     {% if description %}title="{{ description }}"{% endif %}>
+    {{ text }}
+    {% if type == "commercial" %}
+      <span class="external-icon">↗</span>
+    {% endif %}
+  </a>
+{% endmacro %}
+
+<!-- Technical credibility link -->
+{% macro techLink(text, docUrl, description = "") %}
+  <a href="{{ docUrl }}" 
+     class="contextual-link contextual-link--technical" 
+     title="{{ description or 'Documentation technique détaillée' }}">
+    {{ text }}
+    <span class="tech-icon">📚</span>
+  </a>
+{% endmacro %}
+
+<!-- Solution highlight box -->
+{% macro solutionHighlight(solutionName, description, features = [], ctaUrl = "", ctaText = "En savoir plus") %}
+  <div class="solution-highlight">
+    <div class="solution-header">
+      <h4 class="solution-name">{{ solutionName }}</h4>
+      <p class="solution-description">{{ description }}</p>
+    </div>
+    
+    {% if features.length > 0 %}
+    <ul class="solution-features">
+      {% for feature in features %}
+      <li>✅ {{ feature }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+    
+    {% if ctaUrl %}
+    <div class="solution-cta">
+      <a href="{{ ctaUrl }}" 
+         class="solution-link commercial-link" 
+         data-utm="solution_highlight_{{ solutionName | slug }}">
+        {{ ctaText }}
+      </a>
+    </div>
+    {% endif %}
+  </div>
+{% endmacro %}
+
+<!-- Learn More Module -->
+{% macro learnMoreModule(topics = []) %}
+  {% set defaultTopics = [
+    {
+      title: "Lightning Network",
+      url: "/lightning-network/",
+      description: "Comprendre les fondamentaux",
+      icon: "⚡"
+    },
+    {
+      title: "Bitcoin",
+      url: "/bitcoin/",
+      description: "Bases et optimisations",
+      icon: "₿"
+    },
+    {
+      title: "Guide DazBox",
+      url: "/dazbox/",
+      description: "Configuration complète",
+      icon: "📦"
+    },
+    {
+      title: "API Développeurs",
+      url: "/devs/",
+      description: "Intégration technique",
+      icon: "🔌"
+    }
+  ] %}
+  
+  {% set finalTopics = topics if topics.length > 0 else defaultTopics %}
+  
+  <section class="learn-more-section">
+    <h2>🎓 Approfondissez vos connaissances</h2>
+    <div class="knowledge-grid">
+      {% for topic in finalTopics %}
+      <a href="{{ topic.url }}" class="knowledge-card">
+        <div class="knowledge-icon">{{ topic.icon }}</div>
+        <h3 class="knowledge-title">{{ topic.title }}</h3>
+        <p class="knowledge-description">{{ topic.description }}</p>
+      </a>
+      {% endfor %}
+    </div>
+  </section>
+{% endmacro %}
+
+<!-- Related Commercial Solutions -->
+{% macro relatedSolutions(currentTopic, solutions = []) %}
+  {% set topicSolutions = {
+    "lightning": [
+      { name: "DazBox Lightning", url: "https://dazno.de/dazbox", description: "Nœud Lightning clé en main" },
+      { name: "DazIA Predictions", url: "https://dazno.de/dazia", description: "IA prédictive pour Lightning" }
+    ],
+    "bitcoin": [
+      { name: "DazBox Node", url: "https://dazno.de/dazbox", description: "Node Bitcoin optimisé" },
+      { name: "DazIA Analytics", url: "https://dazno.de/dazia", description: "Analytics Bitcoin avancées" }
+    ],
+    "development": [
+      { name: "API Enterprise", url: "https://dazno.de/api", description: "API pour développeurs" },
+      { name: "DazPay Integration", url: "https://dazno.de/dazpay", description: "SDK paiements Lightning" }
+    ]
+  } %}
+  
+  {% set relevantSolutions = solutions if solutions.length > 0 else topicSolutions[currentTopic] %}
+  
+  {% if relevantSolutions %}
+  <div class="related-solutions">
+    <h3>🚀 Solutions adaptées à votre cas d'usage</h3>
+    <div class="solutions-list">
+      {% for solution in relevantSolutions %}
+      <div class="solution-item">
+        <a href="{{ solution.url }}" 
+           class="solution-item-link commercial-link" 
+           data-utm="related_solution_{{ solution.name | slug }}">
+          <div class="solution-item-name">{{ solution.name }}</div>
+          <div class="solution-item-description">{{ solution.description }}</div>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+{% endmacro %}
+
+<!-- ROI Calculator Link -->
+{% macro roiCalculatorLink(context = "") %}
+  <div class="roi-calculator-promo">
+    <div class="roi-content">
+      <span class="roi-icon">📊</span>
+      <div class="roi-text">
+        <strong>Calculez votre ROI</strong>
+        <p>Estimez les gains de votre infrastructure</p>
+      </div>
+      <a href="https://dazno.de/roi-calculator" 
+         class="roi-link commercial-link" 
+         data-utm="roi_calculator_{{ context }}">
+        Calculer →
+      </a>
+    </div>
+  </div>
+{% endmacro %}
+
+<style>
+/* Contextual Links */
+.contextual-link {
+  color: #3b82f6;
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 1px dotted #3b82f6;
+  transition: all 0.2s ease;
+}
+
+.contextual-link:hover {
+  color: #1d4ed8;
+  border-bottom-style: solid;
+  text-decoration: none;
+}
+
+.contextual-link--commercial {
+  color: #dc2626;
+  border-bottom-color: #dc2626;
+  font-weight: 600;
+}
+
+.contextual-link--commercial:hover {
+  color: #b91c1c;
+  border-bottom-color: #b91c1c;
+}
+
+.contextual-link--technical {
+  color: #059669;
+  border-bottom-color: #059669;
+}
+
+.contextual-link--technical:hover {
+  color: #047857;
+  border-bottom-color: #047857;
+}
+
+.external-icon, .tech-icon {
+  font-size: 0.8em;
+  margin-left: 0.25em;
+  opacity: 0.7;
+}
+
+/* Solution Highlight */
+.solution-highlight {
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  border: 1px solid #f59e0b;
+  border-radius: 10px;
+  padding: 1.25rem;
+  margin: 1.5rem 0;
+}
+
+.solution-header {
+  margin-bottom: 1rem;
+}
+
+.solution-name {
+  margin: 0 0 0.5rem 0;
+  color: #92400e;
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.solution-description {
+  margin: 0;
+  color: #a16207;
+  font-size: 0.9rem;
+}
+
+.solution-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem 0;
+}
+
+.solution-features li {
+  color: #78350f;
+  font-size: 0.875rem;
+  margin-bottom: 0.25rem;
+  padding-left: 0;
+}
+
+.solution-link {
+  background: #f59e0b;
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 0.875rem;
+  transition: background 0.2s ease;
+}
+
+.solution-link:hover {
+  background: #d97706;
+  text-decoration: none;
+  color: white;
+}
+
+/* Learn More Section */
+.learn-more-section {
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+  border: 1px solid #0ea5e9;
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 2rem 0;
+}
+
+.learn-more-section h2 {
+  color: #0c4a6e;
+  margin: 0 0 1.5rem 0;
+  text-align: center;
+}
+
+.knowledge-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.knowledge-card {
+  background: white;
+  border: 1px solid #0ea5e9;
+  border-radius: 8px;
+  padding: 1rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.knowledge-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(14, 165, 233, 0.2);
+  text-decoration: none;
+}
+
+.knowledge-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.knowledge-title {
+  color: #0c4a6e;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 0.25rem 0;
+}
+
+.knowledge-description {
+  color: #0369a1;
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+/* Related Solutions */
+.related-solutions {
+  background: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%);
+  border: 1px solid #a855f7;
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+}
+
+.related-solutions h3 {
+  color: #6b21a8;
+  margin: 0 0 1rem 0;
+}
+
+.solutions-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.solution-item {
+  background: white;
+  border: 1px solid #a855f7;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.solution-item-link {
+  display: block;
+  padding: 1rem;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.solution-item-link:hover {
+  background: #faf5ff;
+  text-decoration: none;
+}
+
+.solution-item-name {
+  color: #6b21a8;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.solution-item-description {
+  color: #9333ea;
+  font-size: 0.875rem;
+}
+
+/* ROI Calculator */
+.roi-calculator-promo {
+  background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+  border: 1px solid #10b981;
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 1.5rem 0;
+}
+
+.roi-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.roi-icon {
+  font-size: 1.5rem;
+  color: #059669;
+}
+
+.roi-text {
+  flex-grow: 1;
+}
+
+.roi-text strong {
+  color: #065f46;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.roi-text p {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #047857;
+}
+
+.roi-link {
+  background: #10b981;
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 0.875rem;
+  transition: background 0.2s ease;
+}
+
+.roi-link:hover {
+  background: #059669;
+  text-decoration: none;
+  color: white;
+}
+
+/* Dark mode adaptations */
+@media (prefers-color-scheme: dark) {
+  .contextual-link {
+    color: #60a5fa;
+    border-bottom-color: #60a5fa;
+  }
+  
+  .contextual-link:hover {
+    color: #93c5fd;
+    border-bottom-color: #93c5fd;
+  }
+  
+  .contextual-link--commercial {
+    color: #f87171;
+    border-bottom-color: #f87171;
+  }
+  
+  .contextual-link--commercial:hover {
+    color: #fca5a5;
+    border-bottom-color: #fca5a5;
+  }
+  
+  .solution-highlight {
+    background: linear-gradient(135deg, #1c1917 0%, #292524 100%);
+    border-color: #a16207;
+  }
+  
+  .solution-name {
+    color: #fbbf24;
+  }
+  
+  .solution-description {
+    color: #d97706;
+  }
+  
+  .learn-more-section {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    border-color: #0ea5e9;
+  }
+  
+  .learn-more-section h2 {
+    color: #0ea5e9;
+  }
+  
+  .knowledge-card {
+    background: #1e293b;
+    border-color: #0ea5e9;
+  }
+  
+  .knowledge-title {
+    color: #0ea5e9;
+  }
+  
+  .knowledge-description {
+    color: #38bdf8;
+  }
+  
+  .related-solutions {
+    background: linear-gradient(135deg, #1c1917 0%, #292524 100%);
+    border-color: #a855f7;
+  }
+  
+  .related-solutions h3 {
+    color: #a855f7;
+  }
+  
+  .solution-item {
+    background: #1e293b;
+    border-color: #a855f7;
+  }
+  
+  .solution-item-link:hover {
+    background: #334155;
+  }
+  
+  .solution-item-name {
+    color: #a855f7;
+  }
+  
+  .solution-item-description {
+    color: #c084fc;
+  }
+  
+  .roi-calculator-promo {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    border-color: #10b981;
+  }
+  
+  .roi-text strong {
+    color: #10b981;
+  }
+  
+  .roi-text p {
+    color: #34d399;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .knowledge-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .solutions-list {
+    grid-template-columns: 1fr;
+  }
+  
+  .roi-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.75rem;
+  }
+}
+</style>
