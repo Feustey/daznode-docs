@@ -1,7 +1,7 @@
 {
   "site": {
     "title": "Daz Documentation",
-    "description": "Documentation complète sur Bitcoin, Lightning Network et la technologie blockchain. Apprenez à utiliser et comprendre les cryptomonnaies simplement avec Daznode.",
+    "description": "Maîtrisez Bitcoin et Lightning Network avec des guides pratiques étape par étape. Documentation experte pour débutants à experts, solutions DazNode incluses.",
     "url": "https://docs.dazno.de",
     "author": "Daznode",
     "twitter": "@daznode",
@@ -13,17 +13,17 @@
     "getting-started": {
       "index": {
         "title": "Guide de Démarrage | Documentation Bitcoin et Blockchain",
-        "description": "Commencez votre voyage dans l'univers Bitcoin et blockchain. Guide complet pour débutants avec des explications simples et pratiques.",
+        "description": "Démarrez en Bitcoin en 5 minutes avec notre guide débutant. Explications simples, étapes pratiques, premiers achats sécurisés garantis.",
         "keywords": "démarrage bitcoin, guide débutant, apprendre bitcoin, blockchain débutant"
       },
       "get-started": {
         "title": "Premiers Pas avec Bitcoin | Guide Pratique",
-        "description": "Guide étape par étape pour débuter avec Bitcoin. Apprenez à créer un portefeuille, acheter et sécuriser vos premiers bitcoins.",
+        "description": "Créez votre premier portefeuille Bitcoin en 3 étapes. Guide pratique sécurisé : achat, stockage, première transaction réussie.",
         "keywords": "débuter bitcoin, wallet bitcoin, acheter bitcoin, sécurité bitcoin"
       },
       "introduction-blockchain": {
         "title": "Introduction à la Blockchain | Technologies Décentralisées",
-        "description": "Les fondamentaux de la technologie blockchain expliqués simplement. Découvrez comment fonctionne cette innovation révolutionnaire.",
+        "description": "Blockchain démystifiée en 10 minutes : fonctionnement, avantages, cas d'usage concrets. Guide visuel pour comprendre l'innovation.",
         "keywords": "blockchain, technologie, décentralisation, cryptographie, consensus"
       },
       "les-blockchains": {
@@ -35,7 +35,7 @@
     "bitcoin": {
       "introduction": {
         "title": "Introduction à Bitcoin | Guide Complet",
-        "description": "Découvrez les fondamentaux de Bitcoin, son fonctionnement et son importance dans l'économie moderne. Guide détaillé pour débutants et experts.",
+        "description": "Bitcoin expliqué simplement : qu'est-ce que c'est, comment ça marche, pourquoi c'est révolutionnaire. Guide complet 2025 mis à jour.",
         "keywords": "bitcoin, crypto-monnaie, blockchain, btc, introduction bitcoin, comprendre bitcoin"
       },
       "minage": {
@@ -57,7 +57,7 @@
     "lightning-network": {
       "basics": {
         "title": "Les Bases du Lightning Network | Second Layer Bitcoin",
-        "description": "Comprendre le Lightning Network, la solution de scalabilité de Bitcoin. Guide complet sur les canaux de paiement et les transactions instantanées.",
+        "description": "Lightning Network : paiements Bitcoin instantanés et économiques. Guide complet canaux, liquidité, ROI jusqu'à +12% annuel.",
         "keywords": "lightning network, ln, canaux de paiement, bitcoin layer 2, scalabilité"
       },
       "getting-started": {

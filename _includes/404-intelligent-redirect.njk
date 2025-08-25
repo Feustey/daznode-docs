@@ -1,0 +1,498 @@
+<!-- 404 Page personnalisée avec redirection intelligente -->
+<div class="error-404-container">
+  <div class="error-hero">
+    <div class="error-icon">🔍</div>
+    <h1>Page non trouvée</h1>
+    <p class="error-subtitle">La page que vous recherchez semble avoir disparu dans la blockchain...</p>
+  </div>
+
+  <div class="intelligent-suggestions" id="intelligent-suggestions">
+    <h2>Suggestions personnalisées :</h2>
+    <div class="suggestions-grid" id="suggestions-grid">
+      <!-- Les suggestions seront générées dynamiquement -->
+    </div>
+  </div>
+
+  <div class="error-actions">
+    <div class="action-card primary-action">
+      <h3>🎯 Trouvez ce que vous cherchez</h3>
+      <div class="search-container-404">
+        <div id="search-404"></div>
+      </div>
+    </div>
+
+    <div class="action-card">
+      <h3>📚 Pages populaires</h3>
+      <ul class="popular-links">
+        <li><a href="/getting-started/">Guide de démarrage Bitcoin</a></li>
+        <li><a href="/lightning-network/">Lightning Network</a></li>
+        <li><a href="/solutions/dazbox/">DazBox - Nœud Lightning</a></li>
+        <li><a href="/glossary/">Glossaire Bitcoin</a></li>
+      </ul>
+    </div>
+
+    <div class="action-card">
+      <h3>🚀 Commencer maintenant</h3>
+      <p>Nouveau dans l'univers Bitcoin ? Commencez par nos guides adaptés à votre profil.</p>
+      <div class="cta-buttons">
+        <a href="/getting-started/" class="cta-btn primary">Guide débutant</a>
+        <a href="/devs/" class="cta-btn secondary">Documentation dev</a>
+      </div>
+    </div>
+
+    <div class="action-card">
+      <h3>🆘 Besoin d'aide ?</h3>
+      <p>Contactez notre équipe si vous ne trouvez pas ce que vous cherchez.</p>
+      <div class="help-options">
+        <a href="https://t.me/+_tiT3od1q_Q0MjI0" class="help-link telegram" target="_blank">
+          <span class="help-icon">💬</span> Support Telegram
+        </a>
+        <a href="https://github.com/Feustey" class="help-link github" target="_blank">
+          <span class="help-icon">🐙</span> GitHub
+        </a>
+        <a href="mailto:support@dazno.de" class="help-link email">
+          <span class="help-icon">📧</span> Email Support
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.error-404-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.error-hero {
+  margin-bottom: 3rem;
+}
+
+.error-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  opacity: 0.8;
+}
+
+.error-hero h1 {
+  font-size: 2.5rem;
+  color: var(--primary, #2563eb);
+  margin: 0 0 1rem 0;
+}
+
+.error-subtitle {
+  font-size: 1.1rem;
+  color: var(--foreground-muted, #666);
+  margin: 0 0 2rem 0;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.intelligent-suggestions {
+  margin-bottom: 3rem;
+  text-align: left;
+}
+
+.intelligent-suggestions h2 {
+  text-align: center;
+  color: var(--heading, #333);
+  margin-bottom: 1.5rem;
+  font-size: 1.4rem;
+}
+
+.suggestions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.suggestion-card {
+  background: var(--card, #fff);
+  border: 2px solid var(--border, #e5e7eb);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+}
+
+.suggestion-card:hover {
+  border-color: var(--primary, #2563eb);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.1);
+  text-decoration: none;
+  color: inherit;
+}
+
+.suggestion-card h4 {
+  margin: 0 0 0.5rem 0;
+  color: var(--heading, #333);
+  font-size: 1.1rem;
+}
+
+.suggestion-card p {
+  margin: 0;
+  color: var(--foreground-muted, #666);
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.suggestion-score {
+  display: inline-block;
+  background: var(--primary, #2563eb);
+  color: white;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.error-actions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  text-align: left;
+}
+
+.action-card {
+  background: var(--card, #fff);
+  border: 1px solid var(--border, #e5e7eb);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.action-card.primary-action {
+  border-color: var(--primary, #2563eb);
+  background: linear-gradient(135deg, #f0f7ff 0%, #e0f2ff 100%);
+}
+
+.action-card h3 {
+  margin: 0 0 1rem 0;
+  color: var(--heading, #333);
+  font-size: 1.1rem;
+}
+
+.search-container-404 {
+  width: 100%;
+}
+
+.popular-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.popular-links li {
+  margin-bottom: 0.75rem;
+}
+
+.popular-links a {
+  color: var(--primary, #2563eb);
+  text-decoration: none;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.popular-links a:before {
+  content: '→';
+  margin-right: 0.5rem;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.popular-links a:hover {
+  border-bottom-color: var(--primary, #2563eb);
+  padding-left: 0.5rem;
+}
+
+.popular-links a:hover:before {
+  opacity: 1;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.cta-btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  text-align: center;
+  transition: all 0.3s ease;
+  display: inline-block;
+  min-width: 120px;
+}
+
+.cta-btn.primary {
+  background: var(--primary, #2563eb);
+  color: white;
+  border: 2px solid var(--primary, #2563eb);
+}
+
+.cta-btn.primary:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+  color: white;
+  text-decoration: none;
+}
+
+.cta-btn.secondary {
+  background: transparent;
+  color: var(--primary, #2563eb);
+  border: 2px solid var(--primary, #2563eb);
+}
+
+.cta-btn.secondary:hover {
+  background: var(--primary, #2563eb);
+  color: white;
+  text-decoration: none;
+}
+
+.help-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.help-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  background: var(--background, #f8f9fa);
+  border: 1px solid var(--border, #e5e7eb);
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--foreground, #333);
+  transition: all 0.2s ease;
+}
+
+.help-link:hover {
+  background: var(--primary, #2563eb);
+  color: white;
+  text-decoration: none;
+  transform: translateX(4px);
+}
+
+.help-icon {
+  font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+  .error-404-container {
+    padding: 1rem;
+  }
+  
+  .error-hero h1 {
+    font-size: 2rem;
+  }
+  
+  .error-icon {
+    font-size: 3rem;
+  }
+  
+  .error-actions {
+    grid-template-columns: 1fr;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+  }
+  
+  .suggestions-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Mode sombre */
+@media (prefers-color-scheme: dark) {
+  .action-card.primary-action {
+    background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+    color: #f8fafc;
+  }
+  
+  .action-card {
+    background: #27272a;
+    border-color: #3f3f46;
+    color: #f4f4f5;
+  }
+  
+  .help-link {
+    background: #3f3f46;
+    border-color: #52525b;
+    color: #f4f4f5;
+  }
+  
+  .suggestion-card {
+    background: #27272a;
+    border-color: #3f3f46;
+    color: #f4f4f5;
+  }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Récupérer l'URL qui a généré la 404
+  const currentUrl = window.location.pathname;
+  const searchParams = new URLSearchParams(window.location.search);
+  
+  // Générer des suggestions intelligentes basées sur l'URL
+  generateIntelligentSuggestions(currentUrl);
+  
+  // Initialiser la recherche PageFind dans la 404
+  if (typeof PagefindUI !== 'undefined') {
+    new PagefindUI({ 
+      element: '#search-404', 
+      showImages: false,
+      translations: {
+        placeholder: 'Rechercher dans la documentation...',
+        clear_search: 'Effacer',
+        load_more: 'Voir plus de résultats',
+        search_label: 'Rechercher',
+        filters_label: 'Filtres',
+        zero_results: 'Aucun résultat pour [SEARCH_TERM]',
+        many_results: '[COUNT] résultats pour [SEARCH_TERM]',
+        one_result: 'Un résultat pour [SEARCH_TERM]',
+        alt_search: 'Aucun résultat pour [SEARCH_TERM]. Affichage des résultats pour [DIFFERENT_TERM] à la place',
+        search_suggestion: 'Aucun résultat pour [SEARCH_TERM]. Essayez une des recherches suivantes :',
+        searching: 'Recherche pour [SEARCH_TERM]...'
+      }
+    });
+  }
+  
+  // Track 404 error
+  if (typeof gtag !== 'undefined') {
+    gtag('event', 'exception', {
+      description: '404 - Page not found: ' + currentUrl,
+      fatal: false,
+      page_location: window.location.href
+    });
+  }
+  
+  if (typeof umami !== 'undefined') {
+    umami.track('404 Error', {
+      url: currentUrl,
+      referrer: document.referrer || 'direct'
+    });
+  }
+});
+
+function generateIntelligentSuggestions(url) {
+  const suggestions = [];
+  
+  // Analyse de l'URL pour générer des suggestions pertinentes
+  const pathSegments = url.split('/').filter(segment => segment.length > 0);
+  
+  // Suggestions basées sur les mots-clés dans l'URL
+  const keywordMappings = {
+    'bitcoin': [
+      { url: '/bitcoin/introduction/', title: 'Introduction à Bitcoin', description: 'Découvrez les fondamentaux de Bitcoin et son fonctionnement.', score: 95 },
+      { url: '/getting-started/bitcoin/', title: 'Débuter avec Bitcoin', description: 'Guide pratique pour vos premiers pas avec Bitcoin.', score: 90 }
+    ],
+    'lightning': [
+      { url: '/lightning-network/', title: 'Lightning Network', description: 'Tout savoir sur le Lightning Network et les paiements instantanés.', score: 98 },
+      { url: '/lightning-network/basics/', title: 'Bases du Lightning Network', description: 'Comprendre les canaux de paiement et la liquidité.', score: 92 }
+    ],
+    'node': [
+      { url: '/solutions/dazbox/', title: 'DazBox - Nœud Lightning', description: 'Solution clé en main pour votre nœud Lightning Network.', score: 95 },
+      { url: '/umbrel/', title: 'Guide Umbrel', description: 'Installer et configurer votre nœud avec Umbrel.', score: 88 }
+    ],
+    'api': [
+      { url: '/devs/api/', title: 'API Documentation', description: 'Documentation complète de l\'API DazNode.', score: 96 },
+      { url: '/devs/examples/', title: 'Exemples de Code', description: 'Exemples pratiques d\'intégration API.', score: 89 }
+    ],
+    'wallet': [
+      { url: '/wallets/', title: 'Guide des Wallets', description: 'Choisir et utiliser les meilleurs wallets Bitcoin.', score: 91 },
+      { url: '/use-data/nostr-wallet-connect/', title: 'Nostr Wallet Connect', description: 'Connecter votre wallet via Nostr Wallet Connect.', score: 85 }
+    ],
+    'getting-started': [
+      { url: '/getting-started/', title: 'Guide de Démarrage', description: 'Commencez votre parcours Bitcoin et blockchain.', score: 97 },
+      { url: '/getting-started/get-started/', title: 'Premiers Pas', description: 'Guide étape par étape pour débuter.', score: 93 }
+    ],
+    'dazbox': [
+      { url: '/solutions/dazbox/presentation/', title: 'Présentation DazBox', description: 'Découvrez la solution DazBox complète.', score: 96 },
+      { url: '/solutions/dazbox/faq/', title: 'FAQ DazBox', description: 'Questions fréquentes sur DazBox.', score: 88 }
+    ]
+  };
+  
+  // Recherche de correspondances
+  pathSegments.forEach(segment => {
+    Object.keys(keywordMappings).forEach(keyword => {
+      if (segment.toLowerCase().includes(keyword) || keyword.includes(segment.toLowerCase())) {
+        keywordMappings[keyword].forEach(suggestion => {
+          // Éviter les doublons
+          if (!suggestions.find(s => s.url === suggestion.url)) {
+            suggestions.push(suggestion);
+          }
+        });
+      }
+    });
+  });
+  
+  // Si aucune suggestion spécifique, ajouter des suggestions générales
+  if (suggestions.length === 0) {
+    suggestions.push(
+      { url: '/getting-started/', title: 'Guide de Démarrage', description: 'Commencez votre parcours Bitcoin et blockchain.', score: 85 },
+      { url: '/lightning-network/', title: 'Lightning Network', description: 'Tout savoir sur les paiements Bitcoin instantanés.', score: 82 },
+      { url: '/solutions/', title: 'Nos Solutions', description: 'Découvrez toutes les solutions DazNode.', score: 78 }
+    );
+  }
+  
+  // Trier par score de pertinence
+  suggestions.sort((a, b) => b.score - a.score);
+  
+  // Limiter à 4 suggestions maximum
+  const topSuggestions = suggestions.slice(0, 4);
+  
+  // Générer le HTML des suggestions
+  const suggestionsGrid = document.getElementById('suggestions-grid');
+  if (suggestionsGrid && topSuggestions.length > 0) {
+    suggestionsGrid.innerHTML = topSuggestions.map(suggestion => `
+      <a href="${suggestion.url}" class="suggestion-card">
+        <span class="suggestion-score">${suggestion.score}% pertinent</span>
+        <h4>${suggestion.title}</h4>
+        <p>${suggestion.description}</p>
+      </a>
+    `).join('');
+    
+    // Track suggestion clicks
+    suggestionsGrid.querySelectorAll('.suggestion-card').forEach(card => {
+      card.addEventListener('click', function() {
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'click', {
+            event_category: '404_suggestion',
+            event_label: this.href,
+            value: 1
+          });
+        }
+        
+        if (typeof umami !== 'undefined') {
+          umami.track('404 Suggestion Click', {
+            suggestion_url: this.href,
+            original_404_url: window.location.pathname
+          });
+        }
+      });
+    });
+  } else {
+    // Masquer la section si pas de suggestions
+    document.getElementById('intelligent-suggestions').style.display = 'none';
+  }
+}
+</script>
