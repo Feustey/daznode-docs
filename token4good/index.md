@@ -1,6 +1,8 @@
 ---
 layout: base.njk
 title: Communauté Token4Good
+description: "Rejoignez Token4Good : communauté Bitcoin engagée, projets open-source, contributions rémunérées en tokens, impact social blockchain."
+keywords: ["token4good", "communauté bitcoin", "contribution open source", "tokens daz", "impact social crypto"]
 ---
 
 # Communauté Token4Good

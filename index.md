@@ -1,7 +1,7 @@
 ---
-layout: default
+layout: dazno-modern.njk
 title: Documentation Daznode - Solutions Lightning Network
-description: Documentation complète des solutions Daznode pour le Lightning Network - DazBox, DazIA et DazPay. Guides, tutoriels et ressources techniques.
+description: Votre guide complet pour maîtriser Lightning Network avec les solutions Daznode. DazBox, DazIA et DazPay pour optimiser votre ROI Bitcoin.
 ---
 
 # Documentation Daznode
@@ -14,41 +14,41 @@ Cette documentation vous guide à travers l'utilisation des solutions Daznode po
 
 ## Nos Solutions
 
-### [DazBox](/dazbox/)
+### [DazBox](/solutions/dazbox/)
 Votre nœud Lightning Network clé en main
-- [Guide d'installation](/solutions/dazbox/installation/)
-- [Maintenance](/solutions/dazbox/maintenance/)
-- [FAQ](/dazbox/faq/)
+- [Présentation](/solutions/dazbox/presentation/)
+- [Performance](/solutions/dazbox/performance/)
+- [FAQ](/solutions/dazbox/faq/)
 - [Commander](https://dazno.de/shop/dazbox)
 
-### [DazIA](/dazia/)
+### [DazIA](/solutions/dazia/)
 L'intelligence artificielle au service de votre nœud
-- [Optimisation](/solutions/dazia/optimization/)
-- [Analyses](/solutions/dazia/predictions/)
+- [Présentation](/solutions/dazia/overview/)
 - [Cas d'usage](/solutions/dazia/use-cases/)
+- [Optimisation](/solutions/dazia/optimization/)
 - [Essai Gratuit](https://dazno.de/signup)
 
-### [DazPay](/dazpay/)
+### [DazPay](/solutions/dazpay/)
 Solution complète de paiement Lightning
-- [Guide Marchands](/solutions/dazpay/merchants/)
+- [Présentation](/solutions/dazpay/overview/)
 - [Intégration](/solutions/dazpay/integration/)
 - [Tarification](/solutions/dazpay/pricing/)
 - [Démarrer](https://dazno.de/register)
 
 ## Ressources Essentielles
 
-- [Guide de démarrage](/premiers-pas/)
-- [Documentation API](https://dazno.de/docs/api)
-- [Statistiques](https://dazno.de/stats)
-- [Blog](https://dazno.de/blog)
-- [Glossaire](/glossaire/)
+- [Guide de démarrage](/getting-started/)
+- [Lightning Network](/lightning-network/)
+- [Bitcoin](/bitcoin/)
+- [Glossaire](/glossary/)
+- [Documentation API](/devs/api/)
 
 ## Support et Communauté
 
 - [Support Technique](https://dazno.de/support)
 - [Forum Communautaire](https://dazno.de/community)
 - [Signaler un Bug](https://dazno.de/bugs)
-- [Contribuer](/token4good/contribuer/)
+- [Contribuer Token4Good](/token4good/)
 
 ## Liens Rapides
 

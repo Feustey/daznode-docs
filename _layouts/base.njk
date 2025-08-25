@@ -407,13 +407,24 @@
     
     <main class="content">
       <div class="content-container" data-pagefind-body>
+        {% include "breadcrumbs.njk" %}
         {% include "contextual-links-enhanced.njk" %}
         <h1 class="page-title">{{ title }}</h1>
         {{ content | safe }}
         {% include "ux-enhancements.njk" %}
+        {% include "commercial-cta-enhanced.njk" %}
       </div>
     </main>
   </div>
+  
+  <!-- Progression de lecture et navigation contextuelle -->
+  {% include "reading-progress.njk" %}
+  
+  <!-- FAQ Structured Data pour Featured Snippets -->
+  {% include "faq-structured-data.njk" %}
+  
+  <!-- Conversion Optimization System -->
+  {% include "conversion-optimization.njk" %}
   
   <footer>
     <div class="footer-container">

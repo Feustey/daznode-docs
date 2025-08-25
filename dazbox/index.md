@@ -1,6 +1,8 @@
 ---
 layout: base.njk
 title: DazBox
+description: "DazBox : nœud Lightning Network clé en main. Configuration simple, paiements Bitcoin instantanés, guide complet installation et cas d'usage."
+keywords: ["dazbox", "nœud lightning clé en main", "hardware bitcoin", "node lightning français", "box bitcoin"]
 ---
 
 # Utilisateurs DazBox

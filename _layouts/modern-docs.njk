@@ -1,0 +1,417 @@
+---
+layout: dazno-modern.njk
+---
+
+<div class="modern-docs-layout">
+  <!-- Table des matières flottante -->
+  <nav class="toc-nav" id="toc-nav" aria-label="Table des matières">
+    <div class="toc-header">
+      <h4>Sur cette page</h4>
+      <button class="toc-toggle" id="toc-toggle" aria-label="Afficher/masquer la table des matières">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6,9 12,15 18,9"></polyline>
+        </svg>
+      </button>
+    </div>
+    <ul class="toc-list" id="toc-list">
+      <!-- Généré par JavaScript -->
+    </ul>
+  </nav>
+
+  <!-- Contenu principal -->
+  <div class="docs-content">
+    {{ content | safe }}
+    
+    <!-- Navigation article précédent/suivant -->
+    <nav class="docs-pagination" aria-label="Navigation entre pages">
+      <div class="pagination-links">
+        <!-- Sera généré par JavaScript selon la section -->
+      </div>
+    </nav>
+    
+    <!-- Feedback section -->
+    <div class="docs-feedback card">
+      <h3>Cette page vous a-t-elle été utile ?</h3>
+      <div class="feedback-actions">
+        <button class="btn btn-ghost feedback-btn" data-feedback="positive">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/>
+          </svg>
+          Oui, utile
+        </button>
+        <button class="btn btn-ghost feedback-btn" data-feedback="negative">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3zm7-13h2.67A2.31 2.31 0 0 1 22 4v7a2.31 2.31 0 0 1-2.33 2H17"/>
+          </svg>
+          Non, pas vraiment
+        </button>
+      </div>
+      <div class="feedback-form" id="feedback-form" style="display: none;">
+        <textarea placeholder="Comment pouvons-nous améliorer cette page ?" rows="3"></textarea>
+        <button class="btn btn-primary">Envoyer le feedback</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Sidebar avec liens rapides -->
+  <aside class="docs-sidebar" aria-label="Liens rapides">
+    <div class="sidebar-section">
+      <h4>Liens rapides</h4>
+      <ul class="quick-links">
+        <li><a href="/getting-started/">🚀 Guide de démarrage</a></li>
+        <li><a href="/lightning-network/">⚡ Lightning Network</a></li>
+        <li><a href="/solutions/dazbox/">🛠️ Configuration DazBox</a></li>
+        <li><a href="/devs/api/">💻 API Documentation</a></li>
+        <li><a href="/glossary/">📖 Glossaire</a></li>
+      </ul>
+    </div>
+    
+    <div class="sidebar-section">
+      <h4>Support</h4>
+      <div class="support-card">
+        <p>Besoin d'aide ? Notre équipe est là pour vous accompagner.</p>
+        <a href="https://t.me/+_tiT3od1q_Q0MjI0" class="btn btn-primary btn-sm" target="_blank">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+          </svg>
+          Rejoindre Telegram
+        </a>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<style>
+.modern-docs-layout {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: var(--dazno-space-3xl);
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: var(--dazno-space-2xl) var(--dazno-space-lg);
+  position: relative;
+}
+
+/* Table des matières */
+.toc-nav {
+  position: sticky;
+  top: 100px;
+  background: var(--dazno-surface);
+  border: 1px solid var(--dazno-border-light);
+  border-radius: var(--dazno-radius-lg);
+  padding: var(--dazno-space-lg);
+  height: fit-content;
+  max-height: calc(100vh - 200px);
+  overflow-y: auto;
+  backdrop-filter: var(--dazno-blur-sm);
+  order: -1;
+}
+
+.toc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--dazno-space-md);
+  padding-bottom: var(--dazno-space-sm);
+  border-bottom: 1px solid var(--dazno-border-light);
+}
+
+.toc-header h4 {
+  margin: 0;
+  font-size: var(--dazno-text-sm);
+  font-weight: 600;
+  color: var(--dazno-text-primary);
+}
+
+.toc-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  color: var(--dazno-text-secondary);
+  cursor: pointer;
+  padding: var(--dazno-space-xs);
+  border-radius: var(--dazno-radius-sm);
+}
+
+.toc-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.toc-list li {
+  margin-bottom: var(--dazno-space-xs);
+}
+
+.toc-list a {
+  display: block;
+  padding: var(--dazno-space-xs) var(--dazno-space-sm);
+  color: var(--dazno-text-secondary);
+  text-decoration: none;
+  font-size: var(--dazno-text-sm);
+  border-radius: var(--dazno-radius-sm);
+  transition: all var(--dazno-transition-fast);
+  border-left: 2px solid transparent;
+}
+
+.toc-list a:hover,
+.toc-list a.active {
+  color: var(--dazno-primary);
+  background: rgba(59, 130, 246, 0.05);
+  border-left-color: var(--dazno-primary);
+}
+
+/* Contenu docs */
+.docs-content {
+  min-width: 0; /* Pour éviter l'overflow */
+}
+
+/* Pagination */
+.docs-pagination {
+  margin-top: var(--dazno-space-4xl);
+  padding-top: var(--dazno-space-2xl);
+  border-top: 1px solid var(--dazno-border-light);
+}
+
+/* Feedback */
+.docs-feedback {
+  text-align: center;
+  margin-top: var(--dazno-space-3xl);
+}
+
+.feedback-actions {
+  display: flex;
+  justify-content: center;
+  gap: var(--dazno-space-md);
+  margin-bottom: var(--dazno-space-lg);
+}
+
+.feedback-btn {
+  min-width: 140px;
+}
+
+.feedback-form textarea {
+  width: 100%;
+  margin-bottom: var(--dazno-space-md);
+  resize: vertical;
+}
+
+/* Sidebar */
+.docs-sidebar {
+  position: sticky;
+  top: 100px;
+  height: fit-content;
+  max-height: calc(100vh - 200px);
+  overflow-y: auto;
+}
+
+.sidebar-section {
+  background: var(--dazno-surface);
+  border: 1px solid var(--dazno-border-light);
+  border-radius: var(--dazno-radius-lg);
+  padding: var(--dazno-space-lg);
+  margin-bottom: var(--dazno-space-lg);
+  backdrop-filter: var(--dazno-blur-sm);
+}
+
+.sidebar-section h4 {
+  margin: 0 0 var(--dazno-space-md) 0;
+  font-size: var(--dazno-text-sm);
+  font-weight: 600;
+  color: var(--dazno-text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.quick-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.quick-links li {
+  margin-bottom: var(--dazno-space-xs);
+}
+
+.quick-links a {
+  display: block;
+  padding: var(--dazno-space-sm);
+  color: var(--dazno-text-secondary);
+  text-decoration: none;
+  font-size: var(--dazno-text-sm);
+  border-radius: var(--dazno-radius-sm);
+  transition: all var(--dazno-transition-fast);
+}
+
+.quick-links a:hover {
+  color: var(--dazno-primary);
+  background: rgba(59, 130, 246, 0.05);
+}
+
+.support-card {
+  text-align: center;
+}
+
+.support-card p {
+  font-size: var(--dazno-text-sm);
+  color: var(--dazno-text-secondary);
+  margin-bottom: var(--dazno-space-md);
+}
+
+.btn-sm {
+  font-size: var(--dazno-text-xs);
+  padding: var(--dazno-space-xs) var(--dazno-space-sm);
+  min-height: 36px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .modern-docs-layout {
+    grid-template-columns: 1fr;
+    gap: var(--dazno-space-2xl);
+  }
+  
+  .docs-sidebar {
+    order: -1;
+    position: static;
+    max-height: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--dazno-space-md);
+  }
+}
+
+@media (max-width: 768px) {
+  .modern-docs-layout {
+    padding: var(--dazno-space-lg) var(--dazno-space-md);
+    gap: var(--dazno-space-lg);
+  }
+  
+  .toc-nav {
+    position: static;
+    margin-bottom: var(--dazno-space-lg);
+  }
+  
+  .toc-toggle {
+    display: block;
+  }
+  
+  .toc-list {
+    display: none;
+  }
+  
+  .toc-nav.expanded .toc-list {
+    display: block;
+    margin-top: var(--dazno-space-md);
+  }
+  
+  .feedback-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .feedback-btn {
+    width: 100%;
+    max-width: 200px;
+  }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Génération automatique de la table des matières
+  function generateTOC() {
+    const headings = document.querySelectorAll('.docs-content h2, .docs-content h3, .docs-content h4');
+    const tocList = document.getElementById('toc-list');
+    
+    if (!tocList || headings.length === 0) return;
+
+    headings.forEach((heading, index) => {
+      // Ajouter un ID si pas déjà présent
+      if (!heading.id) {
+        heading.id = `heading-${index}`;
+      }
+
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      a.href = `#${heading.id}`;
+      a.textContent = heading.textContent;
+      
+      // Ajouter une classe selon le niveau
+      a.className = `toc-${heading.tagName.toLowerCase()}`;
+      
+      li.appendChild(a);
+      tocList.appendChild(li);
+    });
+  }
+
+  // Mise en surbrillance de la section active
+  function highlightActiveSection() {
+    const headings = document.querySelectorAll('.docs-content h2, .docs-content h3, .docs-content h4');
+    const tocLinks = document.querySelectorAll('.toc-list a');
+    
+    let activeIndex = 0;
+    const scrollTop = window.pageYOffset + 100;
+
+    headings.forEach((heading, index) => {
+      if (heading.offsetTop <= scrollTop) {
+        activeIndex = index;
+      }
+    });
+
+    tocLinks.forEach((link, index) => {
+      link.classList.toggle('active', index === activeIndex);
+    });
+  }
+
+  // Toggle TOC sur mobile
+  const tocToggle = document.getElementById('toc-toggle');
+  const tocNav = document.getElementById('toc-nav');
+  
+  if (tocToggle && tocNav) {
+    tocToggle.addEventListener('click', () => {
+      tocNav.classList.toggle('expanded');
+    });
+  }
+
+  // Feedback system
+  const feedbackBtns = document.querySelectorAll('.feedback-btn');
+  const feedbackForm = document.getElementById('feedback-form');
+  
+  feedbackBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const feedback = btn.dataset.feedback;
+      
+      // Analytics
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'page_feedback', {
+          event_category: 'engagement',
+          event_label: feedback,
+          page_path: window.location.pathname
+        });
+      }
+      
+      if (feedback === 'negative' && feedbackForm) {
+        feedbackForm.style.display = 'block';
+      } else {
+        // Afficher un message de remerciement
+        if (window.modernApp) {
+          window.modernApp.showNotification('Merci pour votre feedback !', 'success');
+        }
+      }
+      
+      // Désactiver les boutons
+      feedbackBtns.forEach(b => b.disabled = true);
+    });
+  });
+
+  // Initialiser
+  generateTOC();
+  
+  // Event listeners
+  window.addEventListener('scroll', highlightActiveSection, { passive: true });
+  
+  // Initial highlight
+  highlightActiveSection();
+});
+</script>

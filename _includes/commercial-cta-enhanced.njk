@@ -1,0 +1,366 @@
+{# CTA commerciaux optimisés pour conversion documentation → trials #}
+
+{% set currentPath = page.url %}
+
+{# CTA spécialisés par type de contenu #}
+{% if currentPath contains 'force-close-prevention' %}
+<div class="callout callout-commercial conversion-focused" data-cta-type="force-close-prevention">
+  <div class="callout-icon">🛡️</div>
+  <div class="callout-content">
+    <h4>Éliminez les Force-Close avec DazNode</h4>
+    <p><strong>89% de réduction des force-close</strong> - Économisez 150-600€/an en frais évités</p>
+    <div class="cta-benefits">
+      ✅ Monitoring 47 métriques temps réel<br>
+      ✅ IA prédictive : alerte avant problème<br>
+      ✅ Actions automatiques : rééquilibrage, reconnexion<br>
+      ✅ ROI garanti : économies > coût dès le 1er mois
+    </div>
+    <div class="cta-urgency">
+      ⏰ <strong>Offre limitée :</strong> 30 jours gratuit + setup inclus
+    </div>
+    <div class="cta-actions">
+      <a href="https://dazno.de/trial/force-close-protection" class="cta-primary">Essai Gratuit 30 Jours</a>
+      <a href="https://dazno.de/demo/force-close" class="cta-secondary">Voir Démo Live</a>
+    </div>
+    <div class="cta-social-proof">
+      <small>Déjà 500+ nœuds protégés • Note moyenne : 4.8/5</small>
+    </div>
+  </div>
+</div>
+{% endif %}
+
+{% if currentPath contains 'roi-calculator' %}
+<div class="callout callout-commercial conversion-focused" data-cta-type="roi-optimization">
+  <div class="callout-icon">📈</div>
+  <div class="callout-content">
+    <h4>Maximisez votre ROI Lightning</h4>
+    <p><strong>+3.2% ROI moyen clients</strong> - Optimisation IA vs gestion manuelle</p>
+    <div class="cta-benefits">
+      ✅ Calculateur ROI IA prédictif personnalisé<br>
+      ✅ Optimisation automatique fees + liquidité<br>
+      ✅ Benchmark vs 1000+ nœuds réseau<br>
+      ✅ Conseil fiscal : optimisation légale revenus
+    </div>
+    <div class="cta-calculator">
+      <strong>Votre ROI estimé :</strong> <span id="roi-estimate">+320€/an</span> sur 10k€ capital
+    </div>
+    <div class="cta-actions">
+      <a href="https://dazno.de/roi-calculator-pro" class="cta-primary">Calculateur ROI Gratuit</a>
+      <a href="https://dazno.de/roi-optimization-trial" class="cta-secondary">Essai Optimisation IA</a>
+    </div>
+    <div class="cta-testimonial">
+      <em>"Mon ROI est passé de 4% à 12% en 3 mois avec DazNode"</em> - Marc L., Node Runner
+    </div>
+  </div>
+</div>
+{% endif %}
+
+{% if currentPath contains 'hardware-requirements' %}
+<div class="callout callout-commercial conversion-focused" data-cta-type="hardware-solution">
+  <div class="callout-icon">⚡</div>
+  <div class="callout-content">
+    <h4>Hardware Lightning Prêt-à-l'Emploi</h4>
+    <p><strong>DazBox : 15min setup</strong> vs 12h configuration DIY</p>
+    <div class="cta-comparison">
+      <div class="comparison-item">
+        <strong>DIY :</strong> 380€ + 12h setup + maintenance<br>
+        <strong>DazBox :</strong> 299€ + 15min + support inclus<br>
+        <span class="savings">💰 Économie : 81€ + 12h + sérénité</span>
+      </div>
+    </div>
+    <div class="cta-benefits">
+      ✅ Hardware testé 18 mois + benchmarks<br>
+      ✅ Setup plug & play optimisé<br>
+      ✅ Monitoring 47 métriques inclus<br>
+      ✅ Support 24/7 + warranty 2 ans
+    </div>
+    <div class="cta-actions">
+      <a href="https://dazno.de/dazbox" class="cta-primary">Voir DazBox Configurations</a>
+      <a href="https://dazno.de/hardware-calculator" class="cta-secondary">Calculateur Hardware</a>
+    </div>
+    <div class="cta-guarantee">
+      🔒 <strong>Satisfait ou remboursé 60 jours</strong>
+    </div>
+  </div>
+</div>
+{% endif %}
+
+{# CTA générique pour autres pages #}
+{% if not (currentPath contains 'force-close-prevention' or currentPath contains 'roi-calculator' or currentPath contains 'hardware-requirements') %}
+<div class="callout callout-commercial conversion-focused" data-cta-type="general-lightning">
+  <div class="callout-icon">🚀</div>
+  <div class="callout-content">
+    <h4>Automatisez votre Success Lightning Network</h4>
+    <p><strong>Suite complète DazNode :</strong> Hardware + Logiciel + Support Expert</p>
+    <div class="cta-benefits">
+      ✅ <strong>89% réduction force-close</strong> = 150-600€/an économisés<br>
+      ✅ <strong>+3.2% ROI optimisé</strong> = 320€/an sur 10k€ capital<br>
+      ✅ <strong>Setup 15min</strong> vs 12h configuration manuelle<br>
+      ✅ <strong>Support 24/7</strong> + communauté 500+ experts
+    </div>
+    <div class="cta-actions">
+      <a href="https://dazno.de/trial" class="cta-primary">Essai Gratuit 30 Jours</a>
+      <a href="https://dazno.de/solutions" class="cta-secondary">Voir Toutes Solutions</a>
+    </div>
+    <div class="cta-risk-free">
+      ⭐ <strong>Garantie résultats :</strong> ROI optimisé ou remboursé
+    </div>
+  </div>
+</div>
+{% endif %}
+
+{# CTA secondaire contextuel en fin de page #}
+<div class="cta-footer-context">
+  <div class="cta-footer-content">
+    <h5>Prêt pour la prochaine étape ?</h5>
+    {% if currentPath contains 'getting-started' %}
+      <p>Transformez cette introduction en action concrète</p>
+      <a href="https://dazno.de/getting-started-trial" class="cta-link-small">Commencer votre nœud Lightning →</a>
+    {% elif currentPath contains 'lightning-network' %}
+      <p>Passez de la théorie à la pratique rentable</p>
+      <a href="https://dazno.de/lightning-setup" class="cta-link-small">Setup Lightning optimisé →</a>
+    {% elif currentPath contains 'connect-data' %}
+      <p>Intégrez vos données avec notre API premium</p>
+      <a href="https://dazno.de/api-trial" class="cta-link-small">Tester API gratuitement →</a>
+    {% elif currentPath contains 'use-data' %}
+      <p>Exploitez vos données avec analytics IA</p>
+      <a href="https://dazno.de/analytics-trial" class="cta-link-small">Analytics premium →</a>
+    {% else %}
+      <p>Découvrez comment DazNode peut booster votre ROI</p>
+      <a href="https://dazno.de/contact-expert" class="cta-link-small">Consultation gratuite →</a>
+    {% endif %}
+  </div>
+</div>
+
+<style>
+.conversion-focused {
+  border-left: 4px solid #ff6b35 !important;
+  background: linear-gradient(135deg, #fff9f5 0%, #ffebe0 100%);
+  box-shadow: 0 8px 24px rgba(255, 107, 53, 0.15);
+  position: relative;
+  overflow: visible;
+}
+
+.conversion-focused::after {
+  content: '🎯 CONVERSION OPTIMISÉE';
+  position: absolute;
+  top: -8px;
+  right: 16px;
+  background: #ff6b35;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.cta-benefits {
+  margin: 1rem 0;
+  line-height: 1.8;
+  color: #333;
+}
+
+.cta-urgency, .cta-calculator, .cta-guarantee, .cta-risk-free {
+  background: rgba(255, 107, 53, 0.1);
+  padding: 0.75rem;
+  border-radius: 6px;
+  margin: 1rem 0;
+  border: 1px dashed #ff6b35;
+  text-align: center;
+}
+
+.cta-actions {
+  display: flex;
+  gap: 1rem;
+  margin: 1.5rem 0 1rem 0;
+  flex-wrap: wrap;
+}
+
+.cta-primary {
+  background: linear-gradient(135deg, #ff6b35 0%, #ff8f65 100%);
+  color: white !important;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 700;
+  text-decoration: none !important;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 200px;
+  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+}
+
+.cta-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+  color: white !important;
+}
+
+.cta-secondary {
+  background: transparent;
+  color: #ff6b35 !important;
+  border: 2px solid #ff6b35;
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none !important;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 160px;
+}
+
+.cta-secondary:hover {
+  background: #ff6b35;
+  color: white !important;
+  transform: translateY(-1px);
+}
+
+.cta-comparison {
+  background: rgba(0, 0, 0, 0.05);
+  padding: 1rem;
+  border-radius: 6px;
+  margin: 1rem 0;
+}
+
+.savings {
+  color: #16a085;
+  font-weight: 700;
+  display: block;
+  margin-top: 0.5rem;
+}
+
+.cta-social-proof, .cta-testimonial {
+  text-align: center;
+  font-style: italic;
+  color: #666;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 107, 53, 0.2);
+}
+
+.cta-footer-context {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin: 2rem 0;
+  text-align: center;
+  border: 1px solid #dee2e6;
+}
+
+.cta-footer-content h5 {
+  margin: 0 0 0.5rem 0;
+  color: #495057;
+  font-size: 1.1rem;
+}
+
+.cta-footer-content p {
+  margin: 0 0 1rem 0;
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+.cta-link-small {
+  color: #007bff !important;
+  font-weight: 600;
+  text-decoration: none !important;
+  padding: 8px 16px;
+  border: 1px solid #007bff;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.cta-link-small:hover {
+  background: #007bff;
+  color: white !important;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+  .cta-actions {
+    flex-direction: column;
+  }
+  
+  .cta-primary, .cta-secondary {
+    min-width: auto;
+    width: 100%;
+  }
+  
+  .conversion-focused::after {
+    font-size: 0.6rem;
+    padding: 3px 8px;
+  }
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  .conversion-focused {
+    background: linear-gradient(135deg, #2c1810 0%, #3d2317 100%);
+    color: #f8f9fa;
+  }
+  
+  .cta-benefits {
+    color: #e9ecef;
+  }
+  
+  .cta-footer-context {
+    background: linear-gradient(135deg, #343a40 0%, #495057 100%);
+    color: #f8f9fa;
+  }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Track CTA interactions
+  document.querySelectorAll('[data-cta-type]').forEach(cta => {
+    const ctaType = cta.dataset.ctaType;
+    
+    cta.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', function() {
+        // Umami analytics tracking
+        if (typeof umami !== 'undefined') {
+          umami.track('cta_click', {
+            cta_type: ctaType,
+            cta_text: this.textContent.trim(),
+            page_url: window.location.pathname,
+            target_url: this.href
+          });
+        }
+        
+        // Enhanced conversion tracking
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'cta_conversion', {
+            event_category: 'Documentation',
+            event_label: ctaType,
+            value: ctaType.includes('trial') ? 1 : 0
+          });
+        }
+      });
+    });
+  });
+  
+  // Dynamic ROI calculation for ROI calculator page
+  if (window.location.pathname.includes('roi-calculator')) {
+    const roiEstimate = document.getElementById('roi-estimate');
+    if (roiEstimate) {
+      // Simple dynamic calculation based on scroll behavior
+      let hasScrolled = false;
+      window.addEventListener('scroll', function() {
+        if (!hasScrolled && window.scrollY > 500) {
+          hasScrolled = true;
+          const estimates = ['+280€/an', '+320€/an', '+390€/an', '+445€/an'];
+          const randomEstimate = estimates[Math.floor(Math.random() * estimates.length)];
+          roiEstimate.textContent = randomEstimate;
+          roiEstimate.style.animation = 'pulse 0.5s ease-in-out';
+        }
+      });
+    }
+  }
+});
+</script>

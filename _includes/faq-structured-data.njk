@@ -1,0 +1,111 @@
+{# Données structurées Schema.org pour FAQ - Améliore les featured snippets #}
+
+{% if page.data.faq or content | safe | search('faq-section') %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {% if page.url contains 'lightning-network' %}
+    {
+      "@type": "Question",
+      "name": "Comment prévenir un force-close Lightning Network ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Un force-close peut être prévenu en surveillant 5 métriques clés : Balance des canaux (maintenir 20-80% de liquidité), frais réseau (monitoring temps réel des mempool fees), connectivité peer (vérifier uptime >99%), version LND (maintenir version stable récente), hardware monitoring (CPU <70%, RAM disponible). DazNode automatise ces vérifications avec 89% de réduction des force-close."
+      }
+    },
+    {
+      "@type": "Question", 
+      "name": "Combien coûte un force-close Lightning Network ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Un force-close coûte entre 5-50€ en frais réseau selon la congestion Bitcoin. Le processus prend 144 blocs (24h environ) pour récupérer les fonds. C'est pourquoi la prévention est essentielle pour maintenir la rentabilité de votre nœud Lightning."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quel ROI peut-on attendre d'un node Lightning ?",
+      "acceptedAnswer": {
+        "@type": "Answer", 
+        "text": "Le ROI d'un nœud Lightning dépend de plusieurs facteurs : liquidité déployée (plus vous avez de capital, plus les revenus potentiels), positionnement réseau (connexions avec nodes populaires), et gestion active (rééquilibrage et optimisation). ROI moyen : 3-8% annuel pour un node bien géré."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Combien faut-il pour démarrer un node Lightning ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Budget recommandé pour débuter : Hardware 300-800€ (Raspberry Pi à serveur dédié), Capital Lightning 1,000-10,000€ pour des revenus intéressants, Frais setup 50-200€ en frais Bitcoin pour ouverture canaux. DazBox simplifie le setup avec hardware pré-configuré dès 299€."
+      }
+    }
+    {% endif %}
+    
+    {% if page.url contains 'getting-started/introduction' %}
+    {
+      "@type": "Question",
+      "name": "Bitcoin est-il sûr ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui, Bitcoin est extrêmement sécurisé. La blockchain Bitcoin n'a jamais été compromise depuis 2009. Cependant, la sécurité de vos bitcoins dépend de vos pratiques : utilisez un portefeuille sécurisé et ne partagez jamais vos clés privées."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Combien ça coûte de commencer avec Bitcoin ?",
+      "acceptedAnswer": {
+        "@type": "Answer", 
+        "text": "Vous pouvez commencer avec aussi peu que 10€. Pour un nœud Lightning personnel, comptez : DazBox à partir de 299€ (hardware inclus), Capital Lightning 100-1000€ pour des revenus intéressants, Frais setup 20-50€ en frais Bitcoin."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Le Lightning Network est-il légal ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui, le Lightning Network est légal dans la plupart des pays. C'est simplement une technologie qui améliore Bitcoin, lui-même légal dans la majorité des juridictions."
+      }
+    }
+    {% endif %}
+
+    {% if page.url contains 'connect-data' %}
+    {
+      "@type": "Question",
+      "name": "Comment connecter mon nœud Lightning à mon système existant ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Daznode propose plusieurs méthodes : API REST pour intégrations standards, WebSocket pour données temps réel, et connecteurs tiers (Zapier, Slack, etc.). Authentification JWT sécurisée et documentation complète disponible."
+      }
+    },
+    {
+      "@type": "Question", 
+      "name": "Quels sont les endpoints API disponibles ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Endpoints principaux : /api/v1/node/info (informations du nœud), /api/v1/channels (liste des canaux), /api/v1/transactions (historique), /api/v1/invoices (factures Lightning). Tous sécurisés HTTPS avec tokens JWT."
+      }
+    }
+    {% endif %}
+
+    {% if page.url contains 'use-data' %}
+    {
+      "@type": "Question",
+      "name": "Comment analyser les performances de mon nœud Lightning ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Surveillez les métriques clés : fees collectés par canal, ROI par capital déployé, uptime et disponibilité, force-close prevention. Utilisez Grafana pour visualisations temps réel et DazIA pour optimisation automatique IA."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quelles intégrations business sont possibles ?", 
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Intégrations comptables (Sage, QuickBooks), CRM et e-commerce (Shopify, WooCommerce), analytics clients, et programs de fidélité. Exports automatiques pour conformité fiscale et réconciliation bancaire."
+      }
+    }
+    {% endif %}
+  ]
+}
+</script>
+{% endif %}

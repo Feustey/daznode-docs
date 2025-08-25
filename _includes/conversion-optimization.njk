@@ -1,0 +1,689 @@
+{# Système d'optimisation conversion avancé #}
+
+{# Exit-intent popup pour récupérer les visiteurs qui partent #}
+<div id="exit-intent-modal" class="exit-intent-modal" style="display: none;">
+  <div class="exit-intent-overlay"></div>
+  <div class="exit-intent-content">
+    <button class="exit-intent-close">&times;</button>
+    <div class="exit-intent-body">
+      <h3>Attendez ! Vous partez déjà ? 🤔</h3>
+      <p>Recevez notre <strong>Guide PDF Gratuit</strong> : "Setup Lightning Node Rentable en 30 min"</p>
+      <div class="exit-intent-benefits">
+        ✅ Configuration hardware optimisée<br>
+        ✅ Scripts automation inclus<br>  
+        ✅ Checklist sécurité complète<br>
+        ✅ Bonus : Calculateur ROI Excel
+      </div>
+      <div class="exit-intent-form">
+        <input type="email" placeholder="Votre email pour recevoir le guide" id="exit-email">
+        <button onclick="handleExitIntentSubmit()" class="exit-intent-submit">Télécharger Gratuitement</button>
+      </div>
+      <div class="exit-intent-social-proof">
+        <small>📧 Déjà 2,400+ téléchargements • Pas de spam, désabonnement facile</small>
+      </div>
+    </div>
+  </div>
+</div>
+
+{# Sticky CTA bar qui apparaît après scroll #}
+<div id="sticky-cta-bar" class="sticky-cta-bar" style="display: none;">
+  <div class="sticky-cta-content">
+    <span class="sticky-cta-text">
+      <strong>Prêt à optimiser votre ROI Lightning ?</strong>
+    </span>
+    <div class="sticky-cta-actions">
+      <a href="https://dazno.de/trial" class="sticky-cta-button primary">Essai Gratuit</a>
+      <a href="https://dazno.de/roi-calculator" class="sticky-cta-button secondary">Calculateur ROI</a>
+    </div>
+  </div>
+  <button class="sticky-cta-close" onclick="closeStickyBar()">&times;</button>
+</div>
+
+{# Notification toast pour engagement social #}
+<div id="social-proof-toast" class="social-proof-toast" style="display: none;">
+  <div class="toast-content">
+    <div class="toast-avatar">👤</div>
+    <div class="toast-message">
+      <strong id="toast-name">Marc</strong> vient de calculer son ROI Lightning
+      <div class="toast-time">Il y a <span id="toast-time">2</span> minutes</div>
+    </div>
+  </div>
+</div>
+
+{# Widget de comparaison flottant pour pages produits #}
+{% if page.url contains 'solutions' or page.url contains 'dazbox' %}
+<div id="comparison-widget" class="comparison-widget">
+  <div class="comparison-header">
+    <h4>⚡ Comparaison Rapide</h4>
+    <button onclick="toggleComparisonWidget()" class="comparison-toggle">−</button>
+  </div>
+  <div class="comparison-body">
+    <div class="comparison-item">
+      <strong>DIY Setup</strong><br>
+      380€ + 12h + maintenance<br>
+      <span class="comparison-risk">🔴 Risques techniques</span>
+    </div>
+    <div class="comparison-vs">VS</div>
+    <div class="comparison-item highlight">
+      <strong>DazBox</strong><br>
+      299€ + 15min + support inclus<br>
+      <span class="comparison-benefit">🟢 Garantie résultats</span>
+    </div>
+  </div>
+  <div class="comparison-footer">
+    <a href="https://dazno.de/dazbox-trial" class="comparison-cta">Essayer DazBox</a>
+  </div>
+</div>
+{% endif %}
+
+<style>
+/* Exit Intent Modal */
+.exit-intent-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10000;
+  animation: slideInFromTop 0.5s ease-out;
+}
+
+.exit-intent-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+}
+
+.exit-intent-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.exit-intent-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #666;
+  line-height: 1;
+}
+
+.exit-intent-close:hover {
+  color: #333;
+}
+
+.exit-intent-body h3 {
+  margin: 0 0 1rem 0;
+  color: #333;
+  text-align: center;
+}
+
+.exit-intent-benefits {
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 8px;
+  margin: 1rem 0;
+  line-height: 1.6;
+}
+
+.exit-intent-form {
+  display: flex;
+  gap: 0.5rem;
+  margin: 1.5rem 0;
+}
+
+.exit-intent-form input {
+  flex: 1;
+  padding: 12px;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.exit-intent-form input:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.exit-intent-submit {
+  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+}
+
+.exit-intent-submit:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+}
+
+.exit-intent-social-proof {
+  text-align: center;
+  color: #666;
+}
+
+/* Sticky CTA Bar */
+.sticky-cta-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(135deg, #ff6b35 0%, #ff8f65 100%);
+  color: white;
+  z-index: 1000;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.15);
+  animation: slideInFromBottom 0.5s ease-out;
+}
+
+.sticky-cta-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sticky-cta-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.sticky-cta-button {
+  padding: 8px 16px;
+  border-radius: 6px;
+  text-decoration: none !important;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.sticky-cta-button.primary {
+  background: white;
+  color: #ff6b35 !important;
+}
+
+.sticky-cta-button.primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
+}
+
+.sticky-cta-button.secondary {
+  background: transparent;
+  color: white !important;
+  border: 2px solid white;
+}
+
+.sticky-cta-button.secondary:hover {
+  background: white;
+  color: #ff6b35 !important;
+}
+
+.sticky-cta-close {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 5px;
+  margin-left: 15px;
+}
+
+/* Social Proof Toast */
+.social-proof-toast {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  padding: 16px;
+  z-index: 1000;
+  max-width: 300px;
+  border-left: 4px solid #28a745;
+  animation: slideInFromLeft 0.5s ease-out;
+}
+
+.toast-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.toast-avatar {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #007bff, #28a745);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.toast-message {
+  flex: 1;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.toast-time {
+  font-size: 12px;
+  color: #666;
+  margin-top: 2px;
+}
+
+/* Comparison Widget */
+.comparison-widget {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  max-width: 400px;
+  border: 2px solid #007bff;
+}
+
+.comparison-header {
+  background: #007bff;
+  color: white;
+  padding: 12px 16px;
+  border-radius: 10px 10px 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.comparison-header h4 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.comparison-toggle {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.comparison-body {
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+}
+
+.comparison-item {
+  flex: 1;
+  text-align: center;
+  padding: 12px 8px;
+  border-radius: 8px;
+}
+
+.comparison-item.highlight {
+  background: #e7f3ff;
+  border: 2px solid #007bff;
+}
+
+.comparison-vs {
+  font-weight: 700;
+  color: #666;
+  font-size: 16px;
+}
+
+.comparison-risk {
+  font-size: 12px;
+  color: #dc3545;
+}
+
+.comparison-benefit {
+  font-size: 12px;
+  color: #28a745;
+}
+
+.comparison-footer {
+  padding: 0 16px 16px;
+  text-align: center;
+}
+
+.comparison-cta {
+  background: #007bff;
+  color: white !important;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none !important;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.comparison-cta:hover {
+  background: #0056b3;
+  transform: translateY(-1px);
+}
+
+/* Animations */
+@keyframes slideInFromTop {
+  from { opacity: 0; transform: translateY(-100px) translateX(-50%); }
+  to { opacity: 1; transform: translateY(-50%) translateX(-50%); }
+}
+
+@keyframes slideInFromBottom {
+  from { opacity: 0; transform: translateY(100%); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInFromLeft {
+  from { opacity: 0; transform: translateX(-100%); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .sticky-cta-content {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+  
+  .exit-intent-form {
+    flex-direction: column;
+  }
+  
+  .comparison-widget {
+    right: 10px;
+    bottom: 10px;
+    max-width: calc(100% - 20px);
+  }
+  
+  .comparison-body {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .comparison-vs {
+    transform: rotate(90deg);
+  }
+  
+  .social-proof-toast {
+    left: 10px;
+    right: 10px;
+    max-width: none;
+  }
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  .exit-intent-content {
+    background: #2c2c2c;
+    color: #f8f9fa;
+  }
+  
+  .social-proof-toast, .comparison-widget {
+    background: #2c2c2c;
+    color: #f8f9fa;
+  }
+  
+  .comparison-item.highlight {
+    background: #1e3a5f;
+  }
+}
+</style>
+
+<script>
+let exitIntentShown = false;
+let socialProofTimer;
+let stickyBarShown = false;
+
+document.addEventListener('DOMContentLoaded', function() {
+  initializeConversionOptimization();
+});
+
+function initializeConversionOptimization() {
+  // Exit intent detection
+  document.addEventListener('mouseleave', handleExitIntent);
+  
+  // Scroll-based sticky CTA
+  window.addEventListener('scroll', handleStickyBar);
+  
+  // Social proof notifications
+  startSocialProofNotifications();
+  
+  // Comparison widget for product pages
+  if (window.location.pathname.includes('/solutions/') || window.location.pathname.includes('/dazbox/')) {
+    showComparisonWidget();
+  }
+  
+  // Time-based triggers
+  setTimeout(showTimeBasedCTA, 45000); // After 45 seconds
+}
+
+function handleExitIntent(e) {
+  if (exitIntentShown || e.clientY > 0) return;
+  
+  exitIntentShown = true;
+  document.getElementById('exit-intent-modal').style.display = 'block';
+  
+  // Analytics tracking
+  if (typeof umami !== 'undefined') {
+    umami.track('exit_intent_shown', {
+      page_url: window.location.pathname,
+      time_on_page: Math.round((Date.now() - window.performance.navigation.loadEventStart) / 1000)
+    });
+  }
+}
+
+function handleExitIntentSubmit() {
+  const email = document.getElementById('exit-email').value;
+  
+  if (!email || !email.includes('@')) {
+    alert('Veuillez entrer un email valide');
+    return;
+  }
+  
+  // Track conversion
+  if (typeof umami !== 'undefined') {
+    umami.track('exit_intent_conversion', {
+      email_domain: email.split('@')[1],
+      page_url: window.location.pathname
+    });
+  }
+  
+  // Simulate API call
+  document.querySelector('.exit-intent-submit').innerHTML = 'Envoi en cours...';
+  
+  setTimeout(() => {
+    document.getElementById('exit-intent-modal').style.display = 'none';
+    alert('✅ Guide envoyé ! Vérifiez votre email dans quelques minutes.');
+  }, 2000);
+}
+
+function handleStickyBar() {
+  const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+  
+  if (scrollPercent > 30 && !stickyBarShown) {
+    stickyBarShown = true;
+    document.getElementById('sticky-cta-bar').style.display = 'block';
+    
+    if (typeof umami !== 'undefined') {
+      umami.track('sticky_bar_shown', {
+        scroll_percent: Math.round(scrollPercent),
+        page_url: window.location.pathname
+      });
+    }
+  }
+}
+
+function closeStickyBar() {
+  document.getElementById('sticky-cta-bar').style.display = 'none';
+  
+  if (typeof umami !== 'undefined') {
+    umami.track('sticky_bar_closed', {
+      page_url: window.location.pathname
+    });
+  }
+}
+
+function startSocialProofNotifications() {
+  const names = ['Marc', 'Julie', 'Pierre', 'Sarah', 'Thomas', 'Emma', 'Nicolas', 'Sophie'];
+  const actions = [
+    'vient de calculer son ROI Lightning',
+    'a téléchargé le guide DazBox',
+    'a démarré son essai gratuit',
+    'consulte les specs hardware'
+  ];
+  
+  function showNotification() {
+    const name = names[Math.floor(Math.random() * names.length)];
+    const action = actions[Math.floor(Math.random() * actions.length)];
+    const time = Math.floor(Math.random() * 10) + 1;
+    
+    document.getElementById('toast-name').textContent = name;
+    document.querySelector('#social-proof-toast .toast-message').firstChild.textContent = action;
+    document.getElementById('toast-time').textContent = time;
+    
+    const toast = document.getElementById('social-proof-toast');
+    toast.style.display = 'block';
+    
+    setTimeout(() => {
+      toast.style.display = 'none';
+    }, 4000);
+    
+    if (typeof umami !== 'undefined') {
+      umami.track('social_proof_shown', {
+        notification_type: action,
+        page_url: window.location.pathname
+      });
+    }
+  }
+  
+  // Show first notification after 30 seconds, then every 45-90 seconds
+  setTimeout(() => {
+    showNotification();
+    socialProofTimer = setInterval(showNotification, Math.random() * 45000 + 45000);
+  }, 30000);
+}
+
+function showComparisonWidget() {
+  // Delay to not overwhelm user
+  setTimeout(() => {
+    const widget = document.getElementById('comparison-widget');
+    if (widget) {
+      widget.style.display = 'block';
+      
+      if (typeof umami !== 'undefined') {
+        umami.track('comparison_widget_shown', {
+          page_url: window.location.pathname
+        });
+      }
+    }
+  }, 20000);
+}
+
+function toggleComparisonWidget() {
+  const body = document.querySelector('.comparison-body');
+  const footer = document.querySelector('.comparison-footer');
+  const toggle = document.querySelector('.comparison-toggle');
+  
+  if (body.style.display === 'none') {
+    body.style.display = 'flex';
+    footer.style.display = 'block';
+    toggle.textContent = '−';
+  } else {
+    body.style.display = 'none';
+    footer.style.display = 'none';
+    toggle.textContent = '+';
+  }
+}
+
+function showTimeBasedCTA() {
+  // Show additional CTA after user has been on page for 45 seconds
+  if (document.hidden) return; // Don't show if tab is not active
+  
+  // Only show if user hasn't already converted
+  if (!exitIntentShown && !stickyBarShown) {
+    const timeBasedNotification = document.createElement('div');
+    timeBasedNotification.className = 'time-based-notification';
+    timeBasedNotification.innerHTML = `
+      <div class="time-notification-content">
+        <span>💡 <strong>Besoin d'aide ?</strong> Consultation gratuite disponible</span>
+        <a href="https://dazno.de/contact-expert" class="time-cta-button">Parler à un Expert</a>
+        <button onclick="this.parentElement.parentElement.remove()" class="time-close">×</button>
+      </div>
+    `;
+    
+    timeBasedNotification.style.cssText = `
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: linear-gradient(135deg, #28a745, #20c997);
+      color: white;
+      padding: 16px;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(40, 167, 69, 0.3);
+      z-index: 1000;
+      max-width: 350px;
+      animation: slideInFromRight 0.5s ease-out;
+    `;
+    
+    document.body.appendChild(timeBasedNotification);
+    
+    if (typeof umami !== 'undefined') {
+      umami.track('time_based_cta_shown', {
+        time_on_page: 45,
+        page_url: window.location.pathname
+      });
+    }
+    
+    // Auto-remove after 8 seconds
+    setTimeout(() => {
+      if (timeBasedNotification.parentElement) {
+        timeBasedNotification.remove();
+      }
+    }, 8000);
+  }
+}
+
+// Close modals on click outside
+document.addEventListener('click', function(e) {
+  if (e.target.classList.contains('exit-intent-overlay')) {
+    document.getElementById('exit-intent-modal').style.display = 'none';
+  }
+});
+
+// Close modals on Escape key
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    document.getElementById('exit-intent-modal').style.display = 'none';
+    closeStickyBar();
+  }
+});
+</script>

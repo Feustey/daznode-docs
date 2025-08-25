@@ -52,5 +52,13 @@ Des mises à jour régulières et des fonctionnalités innovantes pour rester à
 
 Prêt à rejoindre la révolution des paiements Bitcoin ? Choisissez la solution adaptée à vos besoins et commencez dès aujourd'hui.
 
-[Comparer nos solutions →](/solutions/comparison/)
-[Contacter un expert →](/contact/) 
+### Guides essentiels
+- **[Introduction Bitcoin/Lightning](/getting-started/introduction/)** : Comprenez les fondamentaux
+- **[Lightning Network détaillé](/lightning-network/)** : Maîtrisez la technologie
+- **[Connecter vos données](/connect-data/)** : Intégrations API avancées
+- **[Utiliser vos données](/use-data/)** : Analytics et optimisation
+
+### Actions immédiates
+- **[Comparer nos solutions](/solutions/comparison/)** : Trouvez la solution adaptée
+- **[Rejoindre Token4Good](/token4good/)** : Participez à la communauté
+- **[Contacter un expert](https://dazno.de/contact)** : Accompagnement personnalisé 

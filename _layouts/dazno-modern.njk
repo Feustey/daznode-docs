@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  
+  <!-- DNS Prefetch et preload pour performance -->
+  <link rel="dns-prefetch" href="//dazno.de">
+  <link rel="preconnect" href="https://dazno.de">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- Métadonnées -->
+  {% set pageMetadata = metadata.pages[page.filePathStem] %}
+  {% set pageTitle = pageMetadata.title or title or metadata.site.title %}
+  {% set pageDescription = pageMetadata.description or description or metadata.site.description %}
+  {% set pageKeywords = pageMetadata.keywords or metadata.site.keywords %}
+  
+  <title>{{ pageTitle }}</title>
+  <meta name="description" content="{{ pageDescription }}">
+  <meta name="keywords" content="{{ pageKeywords }}">
+  <meta name="author" content="{{ metadata.site.author }}">
+  
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ metadata.site.url }}{{ page.url }}">
+  <meta property="og:title" content="{{ pageTitle }}">
+  <meta property="og:description" content="{{ pageDescription }}">
+  <meta property="og:image" content="{{ metadata.site.url }}{{ metadata.site.defaultImage }}">
+  <meta property="og:site_name" content="{{ metadata.site.title }}">
+  <meta property="og:locale" content="fr_FR">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ pageTitle }}">
+  <meta name="twitter:description" content="{{ pageDescription }}">
+  <meta name="twitter:image" content="{{ metadata.site.url }}{{ metadata.site.defaultImage }}">
+  
+  <!-- SEO et indexation -->
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="googlebot" content="index, follow">
+  <meta name="theme-color" content="#3B82F6">
+  <link rel="canonical" href="{{ metadata.site.url }}{{ page.url }}">
+  
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/assets/images/favicon/site.webmanifest">
+  
+  <!-- Critical CSS inline -->
+  <style>
+    /* Critical CSS pour éviter FOUC */
+    html { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; }
+    body { margin: 0; background: #FFFFFF; color: #111827; }
+    .loading { opacity: 0; transition: opacity 0.3s ease; }
+    .loaded { opacity: 1; }
+  </style>
+  
+  <!-- Design System dazno.de -->
+  <link rel="stylesheet" href="/assets/css/dazno-design-system.css">
+  <link rel="stylesheet" href="/assets/css/modern-layout.css">
+  
+  <!-- PageFind pour la recherche -->
+  <link href="/pagefind/pagefind-ui.css" rel="stylesheet" type="text/css">
+  
+  <!-- Autres styles -->
+  <link rel="stylesheet" href="/assets/css/accessibility.css">
+  
+  <!-- Performance: preload des ressources critiques -->
+  <link rel="modulepreload" href="/assets/js/modern-app.js">
+  
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "{{ pageTitle }}",
+      "description": "{{ pageDescription }}",
+      "image": "{{ metadata.site.url }}{{ metadata.site.defaultImage }}",
+      "author": {
+        "@type": "Organization",
+        "name": "{{ metadata.site.author }}",
+        "url": "https://dazno.de"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "DazNode",
+        "url": "https://dazno.de"
+      },
+      "url": "{{ metadata.site.url }}{{ page.url }}",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "{{ metadata.site.url }}{{ page.url }}"
+      }
+    }
+  </script>
+  
+  <!-- Analytics -->
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="10a8a34f-90f7-4786-9471-554f1fe6870e"></script>
+</head>
+
+<body class="loading">
+  <!-- Header moderne style dazno.de -->
+  <header class="header-modern">
+    <div class="header-container">
+      <!-- Logo et branding -->
+      <div class="header-brand">
+        <a href="/" class="brand-link" aria-label="Retour à l'accueil">
+          <img src="/assets/images/logo.png" alt="Daznode" class="brand-logo">
+          <div class="brand-text">
+            <span class="brand-name">Daznode</span>
+            <span class="brand-tagline">Docs</span>
+          </div>
+        </a>
+      </div>
+      
+      <!-- Navigation desktop -->
+      <nav class="header-nav" role="navigation" aria-label="Navigation principale">
+        <ul class="nav-list">
+          <li><a href="/getting-started/" class="nav-link">Démarrer</a></li>
+          <li><a href="/lightning-network/" class="nav-link">Lightning</a></li>
+          <li><a href="/solutions/" class="nav-link">Solutions</a></li>
+          <li><a href="/token4good/" class="nav-link">Token4Good</a></li>
+          <li><a href="/devs/" class="nav-link">API</a></li>
+        </ul>
+      </nav>
+      
+      <!-- Actions header -->
+      <div class="header-actions">
+        <!-- Recherche -->
+        <div class="search-container">
+          <div id="search" class="search-wrapper"></div>
+        </div>
+        
+        <!-- Theme toggle -->
+        <button id="theme-toggle" class="theme-toggle" aria-label="Changer de thème">
+          <svg class="theme-icon-light" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"/>
+            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+          </svg>
+          <svg class="theme-icon-dark" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+          </svg>
+        </button>
+        
+        <!-- Menu mobile -->
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Menu de navigation" aria-expanded="false">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+    
+    <!-- Navigation mobile overlay -->
+    <div class="mobile-nav-overlay" id="mobile-nav-overlay">
+      <nav class="mobile-nav" role="navigation" aria-label="Navigation mobile">
+        <div class="mobile-nav-header">
+          <div class="mobile-brand">
+            <img src="/assets/images/logo.png" alt="Daznode" class="mobile-logo">
+            <span class="mobile-title">Documentation</span>
+          </div>
+          <button class="mobile-close" id="mobile-close" aria-label="Fermer le menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+        
+        <ul class="mobile-nav-list">
+          <li><a href="/getting-started/" class="mobile-nav-link">🚀 Démarrer</a></li>
+          <li><a href="/lightning-network/" class="mobile-nav-link">⚡ Lightning Network</a></li>
+          <li><a href="/solutions/" class="mobile-nav-link">💡 Solutions</a></li>
+          <li><a href="/token4good/" class="mobile-nav-link">🌟 Token4Good</a></li>
+          <li><a href="/devs/" class="mobile-nav-link">💻 API</a></li>
+          <li><a href="/support/" class="mobile-nav-link">🆘 Support</a></li>
+        </ul>
+        
+        <div class="mobile-nav-footer">
+          <a href="https://dazno.de" class="btn btn-primary">Visiter dazno.de</a>
+          <div class="mobile-social">
+            <a href="https://t.me/+_tiT3od1q_Q0MjI0" target="_blank" aria-label="Telegram">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+              </svg>
+            </a>
+            <a href="https://github.com/Token4Good" target="_blank" aria-label="GitHub">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Indicateur de progression de lecture -->
+  <div class="reading-progress-bar" id="reading-progress">
+    <div class="progress-fill"></div>
+  </div>
+
+  <!-- Contenu principal -->
+  <main class="main-content">
+    <!-- Hero section pour la page d'accueil -->
+    {% if page.url == "/" %}
+    <section class="hero-section">
+      <div class="hero-container">
+        <div class="hero-content animate-fade-in-up">
+          <h1 class="hero-title">{{ title or "Documentation Daznode" }}</h1>
+          <p class="hero-description">
+            {{ description or "Votre guide complet pour maîtriser Lightning Network avec les solutions Daznode" }}
+          </p>
+          <div class="hero-actions">
+            <a href="/getting-started/" class="btn btn-primary">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+              </svg>
+              Commencer maintenant
+            </a>
+            <a href="/lightning-network/" class="btn btn-secondary">
+              Découvrir Lightning
+            </a>
+          </div>
+        </div>
+        <div class="hero-visual animate-slide-in-right">
+          <div class="hero-gradient-blob"></div>
+          <div class="hero-stats">
+            <div class="stat-item">
+              <div class="stat-number">89%</div>
+              <div class="stat-label">Réduction force-close</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">3-8%</div>
+              <div class="stat-label">ROI annuel</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">24/7</div>
+              <div class="stat-label">Monitoring</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    {% endif %}
+
+    <!-- Breadcrumbs -->
+    {% if page.url != "/" %}
+    {% include "breadcrumbs.njk" %}
+    {% endif %}
+
+    <!-- Article content -->
+    <article class="content-article" data-pagefind-body>
+      <div class="content-container">
+        {% if page.url != "/" %}
+        <header class="article-header">
+          <h1 class="article-title animate-fade-in-up">{{ title }}</h1>
+          {% if description %}
+          <p class="article-description animate-fade-in-up">{{ description }}</p>
+          {% endif %}
+          <div class="article-meta animate-fade-in-up">
+            <div class="meta-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12,6 12,12 16,14"/>
+              </svg>
+              <span id="reading-time">~5 min de lecture</span>
+            </div>
+            <div class="meta-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                <circle cx="12" cy="12" r="3"/>
+              </svg>
+              <span>Mis à jour récemment</span>
+            </div>
+          </div>
+        </header>
+        {% endif %}
+
+        <div class="article-content animate-fade-in-up">
+          {{ content | safe }}
+        </div>
+        
+        <!-- CTA contextuel -->
+        {% if page.data.topic %}
+        <div class="content-cta card card-gradient animate-scale-in">
+          <h3>Prêt à automatiser {{ page.data.topic }} ?</h3>
+          <p>Découvrez comment nos solutions peuvent optimiser votre expérience Lightning Network.</p>
+          <div class="cta-actions">
+            <a href="https://dazno.de/trial" class="btn btn-primary">Essai gratuit 7 jours</a>
+            <a href="/solutions/" class="btn btn-ghost">Voir les solutions</a>
+          </div>
+        </div>
+        {% endif %}
+        
+        <!-- Navigation article -->
+        <nav class="article-navigation" aria-label="Navigation entre articles">
+          <div class="nav-suggestions">
+            <h3>Continuer votre apprentissage</h3>
+            <div class="suggestion-grid" id="contextual-suggestions">
+              <!-- Généré par JavaScript -->
+            </div>
+          </div>
+        </nav>
+      </div>
+    </article>
+  </main>
+
+  <!-- Footer moderne -->
+  <footer class="footer-modern">
+    <div class="footer-container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <img src="/assets/images/logo.png" alt="Daznode" class="footer-logo">
+          <p class="footer-tagline">
+            Solutions Lightning Network pour optimiser votre ROI Bitcoin
+          </p>
+          <div class="footer-social">
+            <a href="https://t.me/+_tiT3od1q_Q0MjI0" target="_blank" class="social-link">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+            </a>
+            <a href="https://github.com/Token4Good" target="_blank" class="social-link">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            </a>
+          </div>
+        </div>
+        
+        <div class="footer-links">
+          <div class="link-group">
+            <h4>Documentation</h4>
+            <ul>
+              <li><a href="/getting-started/">Démarrage</a></li>
+              <li><a href="/lightning-network/">Lightning Network</a></li>
+              <li><a href="/devs/">API</a></li>
+              <li><a href="/glossary/">Glossaire</a></li>
+            </ul>
+          </div>
+          <div class="link-group">
+            <h4>Solutions</h4>
+            <ul>
+              <li><a href="/solutions/dazbox/">DazBox</a></li>
+              <li><a href="/solutions/dazia/">DazIA</a></li>
+              <li><a href="/solutions/dazpay/">DazPay</a></li>
+              <li><a href="/solutions/comparison/">Comparaison</a></li>
+            </ul>
+          </div>
+          <div class="link-group">
+            <h4>Communauté</h4>
+            <ul>
+              <li><a href="/token4good/">Token4Good</a></li>
+              <li><a href="/support/">Support</a></li>
+              <li><a href="https://dazno.de/contact">Contact</a></li>
+              <li><a href="https://dazno.de/blog">Blog</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; {{ "now" | date("Y") }} <a href="https://dazno.de" target="_blank">Daznode</a>. Tous droits réservés.</p>
+        <div class="footer-legal">
+          <a href="https://dazno.de/privacy">Confidentialité</a>
+          <a href="https://dazno.de/terms">Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bouton scroll to top -->
+  <button class="scroll-to-top" id="scroll-to-top" aria-label="Retour en haut">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="m18 15-6-6-6 6"/>
+    </svg>
+  </button>
+
+  <!-- Scripts -->
+  <script src="/pagefind/pagefind-ui.js"></script>
+  <script>
+    // Initialisation PageFind
+    new PagefindUI({ 
+      element: "#search",
+      showImages: false,
+      translations: {
+        placeholder: "Rechercher...",
+        clear_search: "Effacer",
+        load_more: "Voir plus",
+        search_label: "Rechercher dans la documentation",
+        filters_label: "Filtres",
+        zero_results: "Aucun résultat pour \"[SEARCH_TERM]\"",
+        many_results: "[COUNT] résultats pour \"[SEARCH_TERM]\"",
+        one_result: "1 résultat pour \"[SEARCH_TERM]\"",
+        searching: "Recherche en cours..."
+      }
+    });
+  </script>
+  
+  <script type="module" src="/assets/js/modern-app.js"></script>
+</body>
+</html>

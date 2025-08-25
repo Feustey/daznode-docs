@@ -1,29 +1,9 @@
 ---
-layout: docs-with-cta.njk
-title: "Lightning Network Guide Complet : Setup, Optimisation, ROI | DazNode"
+layout: modern-docs.njk
+title: "Lightning Network Guide Complet : Setup, Optimisation, ROI"
 description: "Maîtrisez Lightning Network : installation node, gestion canaux, optimisation ROI, prévention force-close. Guide expert par DazNode pour paiements Bitcoin instantanés."
 keywords: ["lightning network", "bitcoin", "paiement instantané", "canal lightning", "micropaiement", "crypto", "seconde couche", "tutoriel lightning", "documentation lightning"]
 topic: "Lightning Network"
-category: "lightning-network"
-categoryTitle: "Lightning Network"
-showRoi: true
-solutions:
-  - name: "DazBox Lightning"
-    url: "https://dazno.de/dazbox"
-    description: "Nœud Lightning Network clé en main avec optimisations automatiques"
-  - name: "DazIA Predictions"
-    url: "https://dazno.de/dazia"
-    description: "IA prédictive pour optimiser vos canaux Lightning"
-conversionBridge:
-  - name: "DazBox"
-    url: "https://dazno.de/dazbox"
-    description: "Solution hardware complète"
-  - name: "DazIA"
-    url: "https://dazno.de/dazia"
-    description: "Intelligence artificielle"
-  - name: "Support Expert"
-    url: "https://dazno.de/support"
-    description: "Accompagnement technique"
 ---
 
 # Lightning Network ⚡
@@ -66,6 +46,21 @@ Marie veut acheter son café quotidien chez Bob :
 - Optimisation de vos canaux
 - Gestion de la liquidité
 - Résolution des problèmes courants
+
+### [Prévention Force-Close](/lightning-network/force-close-prevention/) 🛡️
+- Guide expert : éviter les fermetures forcées coûteuses
+- Monitoring proactif et métriques critiques
+- **89% de réduction garantie** avec DazNode
+
+### [Calculateur ROI 2025](/lightning-network/roi-calculator-2025/) 📊
+- Estimez vos revenus Lightning Network
+- Projections personnalisées par capital investi
+- Stratégies d'optimisation rentabilité
+
+### [Hardware Requirements 2025](/lightning-network/hardware-requirements-2025/) ⚡
+- Configurations optimales par budget et usage
+- Benchmarks performance et consommation
+- Guide choix hardware ROI-optimized
 
 ## Avantages concrets 🌟
 
@@ -186,10 +181,23 @@ Marie veut acheter son café quotidien chez Bob :
   </div>
 </div>
 
+## Ressources complémentaires 🔗
+
+### Approfondir votre compréhension
+- **[Introduction Bitcoin](/getting-started/introduction/)** : Les bases avant Lightning
+- **[Bitcoin détaillé](/bitcoin/)** : Comprendre la blockchain sous-jacente
+- **[Solutions Daznode](/solutions/)** : Hardware et logiciels optimisés
+
+### Intégrations techniques
+- **[Connecter vos données](/connect-data/)** : API, WebSocket et intégrations
+- **[Exploiter vos données](/use-data/)** : Analytics et optimisation avancées
+- **[Documentation développeurs](/devs/)** : Guides techniques complets
+
 ## Besoin d'aide ? 💬
 
-- Rejoignez notre [communauté Telegram](https://t.me/+_tiT3od1q_Q0MjI0)
-- Consultez notre [support technique](https://dazno.de/support)
-- Posez vos questions sur notre [forum](https://github.com/Token4Good/daznode-docs/discussions)
+- **[Communauté Token4Good](/token4good/)** : Participez et apprenez ensemble
+- **[Telegram communautaire](https://t.me/+_tiT3od1q_Q0MjI0)** : Échanges en temps réel
+- **[Support technique](https://dazno.de/support)** : Assistance experte
+- **[Forum discussions](https://github.com/Token4Good/daznode-docs/discussions)** : Questions & réponses
 
 > **Conseil pratique :** 💡 Commencez avec un petit montant pour vous familiariser avec le réseau. Testez d'abord avec quelques milliers de satoshis (quelques euros) avant d'utiliser des sommes plus importantes. 

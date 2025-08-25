@@ -1,0 +1,525 @@
+<!-- Indicateur de progression de lecture et navigation contextuelle -->
+<div class="reading-progress-container" role="complementary" aria-label="Progression de lecture">
+  <div class="reading-progress-bar" aria-hidden="true">
+    <div class="reading-progress-fill"></div>
+  </div>
+  
+  <div class="reading-actions">
+    <button class="reading-action-btn" id="scroll-to-top" aria-label="Retour en haut de page" title="Retour en haut">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="m18 15-6-6-6 6"/>
+      </svg>
+    </button>
+    
+    <div class="reading-time" aria-live="polite">
+      <span id="reading-time-text">Temps de lecture: <span id="reading-minutes">~</span> min</span>
+    </div>
+  </div>
+</div>
+
+<!-- Navigation contextuelle intelligente -->
+<div class="contextual-nav" id="contextual-nav" role="navigation" aria-label="Navigation contextuelle">
+  <div class="contextual-nav-content">
+    <h3>Continuer votre apprentissage</h3>
+    <div class="contextual-suggestions" id="contextual-suggestions">
+      <!-- Suggestions dynamiques basées sur la page actuelle -->
+    </div>
+  </div>
+</div>
+
+<style>
+/* Barre de progression de lecture */
+.reading-progress-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: var(--background, #fff);
+  border-bottom: 1px solid var(--border, rgba(0,0,0,0.1));
+  transition: transform 0.3s ease;
+  transform: translateY(-100%);
+}
+
+.reading-progress-container.visible {
+  transform: translateY(0);
+}
+
+.reading-progress-bar {
+  height: 3px;
+  background: var(--muted, #f1f5f9);
+  position: relative;
+  overflow: hidden;
+}
+
+.reading-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary, #2563eb), var(--primary-light, #3b82f6));
+  width: 0%;
+  transition: width 0.2s ease;
+  position: relative;
+}
+
+.reading-progress-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 2px;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 4px rgba(255, 255, 255, 0.6);
+}
+
+.reading-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  background: var(--card, #fff);
+}
+
+.reading-action-btn {
+  background: transparent;
+  border: none;
+  color: var(--muted-foreground, #6b7280);
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reading-action-btn:hover {
+  background: var(--accent, #f1f5f9);
+  color: var(--primary, #2563eb);
+  transform: translateY(-1px);
+}
+
+.reading-time {
+  font-size: 0.875rem;
+  color: var(--muted-foreground, #6b7280);
+  font-weight: 500;
+}
+
+/* Navigation contextuelle */
+.contextual-nav {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  max-width: 320px;
+  background: var(--card, #fff);
+  border: 1px solid var(--border, rgba(0,0,0,0.1));
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 50;
+  transform: translateX(calc(100% + 2rem));
+  transition: transform 0.3s ease;
+}
+
+.contextual-nav.visible {
+  transform: translateX(0);
+}
+
+.contextual-nav-content {
+  padding: 1.5rem;
+}
+
+.contextual-nav h3 {
+  margin: 0 0 1rem 0;
+  font-size: 1rem;
+  color: var(--foreground);
+  font-weight: 600;
+}
+
+.contextual-suggestions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.contextual-suggestion {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  background: var(--accent, #f8fafc);
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--foreground);
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.contextual-suggestion:hover {
+  background: var(--primary-light, #dbeafe);
+  border-color: var(--primary, #2563eb);
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+.contextual-suggestion-icon {
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.contextual-suggestion-content {
+  flex: 1;
+}
+
+.contextual-suggestion-title {
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+  font-size: 0.875rem;
+}
+
+.contextual-suggestion-desc {
+  font-size: 0.75rem;
+  color: var(--muted-foreground, #6b7280);
+  line-height: 1.4;
+}
+
+/* Bouton de fermeture de la navigation contextuelle */
+.contextual-nav-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: transparent;
+  border: none;
+  color: var(--muted-foreground, #6b7280);
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.contextual-nav-close:hover {
+  background: var(--accent, #f1f5f9);
+  color: var(--foreground);
+}
+
+/* Mode sombre */
+@media (prefers-color-scheme: dark) {
+  .reading-progress-container {
+    background: #1e293b;
+    border-color: #334155;
+  }
+  
+  .reading-actions {
+    background: #1e293b;
+  }
+  
+  .reading-progress-bar {
+    background: #334155;
+  }
+  
+  .contextual-nav {
+    background: #1e293b;
+    border-color: #334155;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+  
+  .contextual-suggestion {
+    background: #334155;
+    color: #f1f5f9;
+  }
+  
+  .contextual-suggestion:hover {
+    background: #3730a3;
+    border-color: #4f46e5;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contextual-nav {
+    bottom: 1rem;
+    right: 1rem;
+    left: 1rem;
+    max-width: none;
+    transform: translateY(calc(100% + 2rem));
+  }
+  
+  .contextual-nav.visible {
+    transform: translateY(0);
+  }
+  
+  .reading-progress-container {
+    font-size: 0.8125rem;
+  }
+  
+  .reading-actions {
+    padding: 0.375rem 0.75rem;
+  }
+}
+
+/* Animation des suggestions */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.contextual-suggestion {
+  animation: slideInUp 0.3s ease forwards;
+}
+
+.contextual-suggestion:nth-child(1) { animation-delay: 0.1s; }
+.contextual-suggestion:nth-child(2) { animation-delay: 0.2s; }
+.contextual-suggestion:nth-child(3) { animation-delay: 0.3s; }
+
+/* Masquer sur petits écrans */
+@media (max-width: 480px) {
+  .reading-time {
+    display: none;
+  }
+}
+</style>
+
+<script>
+class ReadingProgressManager {
+  constructor() {
+    this.progressContainer = document.querySelector('.reading-progress-container');
+    this.progressFill = document.querySelector('.reading-progress-fill');
+    this.scrollToTopBtn = document.getElementById('scroll-to-top');
+    this.readingMinutes = document.getElementById('reading-minutes');
+    this.contextualNav = document.getElementById('contextual-nav');
+    this.contextualSuggestions = document.getElementById('contextual-suggestions');
+    
+    this.lastScrollY = window.pageYOffset;
+    this.showThreshold = 200;
+    this.contextualShowThreshold = 0.7; // 70% de lecture
+    
+    this.init();
+  }
+  
+  init() {
+    this.calculateReadingTime();
+    this.generateContextualSuggestions();
+    this.bindEvents();
+    this.updateProgress();
+  }
+  
+  calculateReadingTime() {
+    if (!this.readingMinutes) return;
+    
+    const content = document.querySelector('[data-pagefind-body]');
+    if (!content) return;
+    
+    const text = content.textContent || content.innerText;
+    const wordCount = text.trim().split(/\s+/).length;
+    const averageWPM = 200; // Mots par minute
+    const readingTime = Math.ceil(wordCount / averageWPM);
+    
+    this.readingMinutes.textContent = readingTime;
+  }
+  
+  generateContextualSuggestions() {
+    if (!this.contextualSuggestions) return;
+    
+    const currentPath = window.location.pathname;
+    let suggestions = [];
+    
+    // Suggestions basées sur la page actuelle
+    if (currentPath.includes('/lightning-network/')) {
+      suggestions = [
+        {
+          icon: '⚡',
+          title: 'Optimiser vos canaux',
+          desc: 'Techniques avancées de gestion des canaux Lightning',
+          url: '/lightning-network/channels/'
+        },
+        {
+          icon: '🛠️',
+          title: 'DazBox Setup',
+          desc: 'Configuration automatisée de votre nœud',
+          url: '/solutions/dazbox/presentation/'
+        },
+        {
+          icon: '🎯',
+          title: 'Calculateur ROI',
+          desc: 'Estimez vos revenus Lightning',
+          url: '/technical/tools/roi-calculator/'
+        }
+      ];
+    } else if (currentPath.includes('/bitcoin/')) {
+      suggestions = [
+        {
+          icon: '⚡',
+          title: 'Découvrir Lightning',
+          desc: 'Paiements Bitcoin instantanés et peu coûteux',
+          url: '/lightning-network/'
+        },
+        {
+          icon: '🔒',
+          title: 'Sécurisation',
+          desc: 'Meilleures pratiques de sécurité Bitcoin',
+          url: '/securisation/'
+        },
+        {
+          icon: '👥',
+          title: 'Contribuer T4G',
+          desc: 'Rejoignez notre communauté et gagnez des tokens',
+          url: '/token4good/contribuer/'
+        }
+      ];
+    } else if (currentPath.includes('/solutions/')) {
+      suggestions = [
+        {
+          icon: '📋',
+          title: 'Guide de démarrage',
+          desc: 'Vos premiers pas avec nos solutions',
+          url: '/getting-started/'
+        },
+        {
+          icon: '🔧',
+          title: 'Support technique',
+          desc: 'FAQ et assistance pour nos produits',
+          url: '/support/'
+        },
+        {
+          icon: '💡',
+          title: 'Cas d\'usage',
+          desc: 'Découvrez comment d\'autres utilisent nos solutions',
+          url: '/solutions/comparison/'
+        }
+      ];
+    } else {
+      // Suggestions générales
+      suggestions = [
+        {
+          icon: '🚀',
+          title: 'Quick Start',
+          desc: 'Configuration DazBox en 30 minutes',
+          url: '/quick-start/dazbox-30min/'
+        },
+        {
+          icon: '⚡',
+          title: 'Lightning Network',
+          desc: 'Guide complet du réseau Lightning',
+          url: '/lightning-network/'
+        },
+        {
+          icon: '🌟',
+          title: 'Token4Good',
+          desc: 'Contribuez et gagnez des récompenses',
+          url: '/token4good/'
+        }
+      ];
+    }
+    
+    // Générer le HTML des suggestions
+    this.contextualSuggestions.innerHTML = suggestions.map(suggestion => `
+      <a href="${suggestion.url}" class="contextual-suggestion">
+        <div class="contextual-suggestion-icon">${suggestion.icon}</div>
+        <div class="contextual-suggestion-content">
+          <div class="contextual-suggestion-title">${suggestion.title}</div>
+          <div class="contextual-suggestion-desc">${suggestion.desc}</div>
+        </div>
+      </a>
+    `).join('');
+    
+    // Ajouter le bouton de fermeture
+    const closeBtn = document.createElement('button');
+    closeBtn.className = 'contextual-nav-close';
+    closeBtn.innerHTML = '×';
+    closeBtn.setAttribute('aria-label', 'Fermer les suggestions');
+    closeBtn.addEventListener('click', () => {
+      this.contextualNav.classList.remove('visible');
+    });
+    
+    this.contextualNav.querySelector('.contextual-nav-content').appendChild(closeBtn);
+  }
+  
+  bindEvents() {
+    // Scroll event avec throttling
+    let scrollTimeout;
+    window.addEventListener('scroll', () => {
+      if (scrollTimeout) return;
+      scrollTimeout = setTimeout(() => {
+        this.updateProgress();
+        this.handleScrollDirection();
+        scrollTimeout = null;
+      }, 10);
+    });
+    
+    // Scroll to top
+    if (this.scrollToTopBtn) {
+      this.scrollToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+        
+        // Analytics
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'scroll_to_top', {
+            event_category: 'navigation',
+            event_label: 'reading_progress'
+          });
+        }
+      });
+    }
+  }
+  
+  updateProgress() {
+    const scrollTop = window.pageYOffset;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercent = Math.max(0, Math.min(100, (scrollTop / docHeight) * 100));
+    
+    if (this.progressFill) {
+      this.progressFill.style.width = `${scrollPercent}%`;
+    }
+    
+    // Afficher la barre de progression après le seuil
+    if (this.progressContainer) {
+      if (scrollTop > this.showThreshold) {
+        this.progressContainer.classList.add('visible');
+      } else {
+        this.progressContainer.classList.remove('visible');
+      }
+    }
+    
+    // Afficher les suggestions contextuelles
+    if (this.contextualNav) {
+      if (scrollPercent > this.contextualShowThreshold * 100) {
+        this.contextualNav.classList.add('visible');
+      }
+    }
+  }
+  
+  handleScrollDirection() {
+    const currentScrollY = window.pageYOffset;
+    
+    if (currentScrollY > this.lastScrollY && currentScrollY > this.showThreshold) {
+      // Scroll vers le bas - masquer la barre si nécessaire
+      // (garder visible pour la lisibilité)
+    } else {
+      // Scroll vers le haut - afficher
+    }
+    
+    this.lastScrollY = currentScrollY;
+  }
+}
+
+// Initialisation
+document.addEventListener('DOMContentLoaded', () => {
+  setTimeout(() => {
+    new ReadingProgressManager();
+  }, 500);
+});
+</script>
