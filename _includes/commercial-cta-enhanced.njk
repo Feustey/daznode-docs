@@ -3,7 +3,7 @@
 {% set currentPath = page.url %}
 
 {# CTA spécialisés par type de contenu #}
-{% if currentPath contains 'force-close-prevention' %}
+{% if 'force-close-prevention' in currentPath %}
 <div class="callout callout-commercial conversion-focused" data-cta-type="force-close-prevention">
   <div class="callout-icon">🛡️</div>
   <div class="callout-content">
@@ -29,7 +29,7 @@
 </div>
 {% endif %}
 
-{% if currentPath contains 'roi-calculator' %}
+{% if 'roi-calculator' in currentPath %}
 <div class="callout callout-commercial conversion-focused" data-cta-type="roi-optimization">
   <div class="callout-icon">📈</div>
   <div class="callout-content">
@@ -55,7 +55,7 @@
 </div>
 {% endif %}
 
-{% if currentPath contains 'hardware-requirements' %}
+{% if 'hardware-requirements' in currentPath %}
 <div class="callout callout-commercial conversion-focused" data-cta-type="hardware-solution">
   <div class="callout-icon">⚡</div>
   <div class="callout-content">
@@ -86,7 +86,7 @@
 {% endif %}
 
 {# CTA générique pour autres pages #}
-{% if not (currentPath contains 'force-close-prevention' or currentPath contains 'roi-calculator' or currentPath contains 'hardware-requirements') %}
+{% if not ('force-close-prevention' in currentPath or 'roi-calculator' in currentPath or 'hardware-requirements' in currentPath) %}
 <div class="callout callout-commercial conversion-focused" data-cta-type="general-lightning">
   <div class="callout-icon">🚀</div>
   <div class="callout-content">
@@ -113,16 +113,16 @@
 <div class="cta-footer-context">
   <div class="cta-footer-content">
     <h5>Prêt pour la prochaine étape ?</h5>
-    {% if currentPath contains 'getting-started' %}
+    {% if 'getting-started' in currentPath %}
       <p>Transformez cette introduction en action concrète</p>
       <a href="https://dazno.de/getting-started-trial" class="cta-link-small">Commencer votre nœud Lightning →</a>
-    {% elif currentPath contains 'lightning-network' %}
+    {% elif 'lightning-network' in currentPath %}
       <p>Passez de la théorie à la pratique rentable</p>
       <a href="https://dazno.de/lightning-setup" class="cta-link-small">Setup Lightning optimisé →</a>
-    {% elif currentPath contains 'connect-data' %}
+    {% elif 'connect-data' in currentPath %}
       <p>Intégrez vos données avec notre API premium</p>
       <a href="https://dazno.de/api-trial" class="cta-link-small">Tester API gratuitement →</a>
-    {% elif currentPath contains 'use-data' %}
+    {% elif 'use-data' in currentPath %}
       <p>Exploitez vos données avec analytics IA</p>
       <a href="https://dazno.de/analytics-trial" class="cta-link-small">Analytics premium →</a>
     {% else %}

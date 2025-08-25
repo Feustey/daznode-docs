@@ -1,12 +1,12 @@
 {# Données structurées Schema.org pour FAQ - Améliore les featured snippets #}
 
-{% if page.data.faq or content | safe | search('faq-section') %}
+{% if page.data.faq or ('faq-section' in content) %}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {% if page.url contains 'lightning-network' %}
+    {% if 'lightning-network' in page.url %}
     {
       "@type": "Question",
       "name": "Comment prévenir un force-close Lightning Network ?",
@@ -41,7 +41,7 @@
     }
     {% endif %}
     
-    {% if page.url contains 'getting-started/introduction' %}
+    {% if 'getting-started/introduction' in page.url %}
     {
       "@type": "Question",
       "name": "Bitcoin est-il sûr ?",
@@ -68,7 +68,7 @@
     }
     {% endif %}
 
-    {% if page.url contains 'connect-data' %}
+    {% if 'connect-data' in page.url %}
     {
       "@type": "Question",
       "name": "Comment connecter mon nœud Lightning à mon système existant ?",
@@ -87,7 +87,7 @@
     }
     {% endif %}
 
-    {% if page.url contains 'use-data' %}
+    {% if 'use-data' in page.url %}
     {
       "@type": "Question",
       "name": "Comment analyser les performances de mon nœud Lightning ?",

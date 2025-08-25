@@ -51,7 +51,7 @@
 </div>
 
 {# Widget de comparaison flottant pour pages produits #}
-{% if page.url contains 'solutions' or page.url contains 'dazbox' %}
+{% if 'solutions' in page.url or 'dazbox' in page.url %}
 <div id="comparison-widget" class="comparison-widget">
   <div class="comparison-header">
     <h4>⚡ Comparaison Rapide</h4>
