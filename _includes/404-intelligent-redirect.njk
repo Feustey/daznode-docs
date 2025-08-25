@@ -376,14 +376,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
   
-  // Track 404 error
-  if (typeof gtag !== 'undefined') {
-    gtag('event', 'exception', {
-      description: '404 - Page not found: ' + currentUrl,
-      fatal: false,
-      page_location: window.location.href
-    });
-  }
+  // Track 404 error avec Umami uniquement
   
   if (typeof umami !== 'undefined') {
     umami.track('404 Error', {
@@ -474,14 +467,7 @@ function generateIntelligentSuggestions(url) {
     // Track suggestion clicks
     suggestionsGrid.querySelectorAll('.suggestion-card').forEach(card => {
       card.addEventListener('click', function() {
-        if (typeof gtag !== 'undefined') {
-          gtag('event', 'click', {
-            event_category: '404_suggestion',
-            event_label: this.href,
-            value: 1
-          });
-        }
-        
+        // Track avec Umami uniquement
         if (typeof umami !== 'undefined') {
           umami.track('404 Suggestion Click', {
             suggestion_url: this.href,

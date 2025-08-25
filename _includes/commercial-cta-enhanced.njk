@@ -333,14 +333,8 @@ document.addEventListener('DOMContentLoaded', function() {
           });
         }
         
-        // Enhanced conversion tracking
-        if (typeof gtag !== 'undefined') {
-          gtag('event', 'cta_conversion', {
-            event_category: 'Documentation',
-            event_label: ctaType,
-            value: ctaType.includes('trial') ? 1 : 0
-          });
-        }
+        // Enhanced conversion tracking avec Umami uniquement
+        // Les événements sont déjà trackés par Umami ci-dessus
       });
     });
   });
