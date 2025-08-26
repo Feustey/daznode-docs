@@ -1,0 +1,245 @@
+{
+  "analysis_date": "2025-08-26",
+  "total_links_analyzed": 221,
+  "total_broken_links": 141,
+  "total_occurrences": 464,
+  "categories": {
+    "critical": {
+      "description": "Liens cassés critiques affectant la navigation principale et les conversions",
+      "count": 23,
+      "links": [
+        {
+          "broken_link": "/contact",
+          "occurrences": 4,
+          "files": ["_includes/header.njk", "solutions/dazbox/faq/index.md"],
+          "priority": "URGENT",
+          "action": "create_page",
+          "suggested_content": "Page de contact avec support technique et commercial"
+        },
+        {
+          "broken_link": "/solutions/dazbox/order/",
+          "occurrences": 3,
+          "files": ["solutions/dazbox/faq/index.md", "solutions/dazbox/performance/index.md", "solutions/dazbox/presentation/index.md"],
+          "priority": "CRITICAL",
+          "action": "create_page",
+          "suggested_content": "Page de commande DazBox avec formulaire et pricing"
+        },
+        {
+          "broken_link": "/solutions/dazbox/features/",
+          "occurrences": 3,
+          "files": ["solutions/dazbox/faq/index.md", "solutions/dazbox/performance/index.md", "solutions/dazbox/presentation/index.md"],
+          "priority": "HIGH",
+          "action": "create_page",
+          "suggested_content": "Détails techniques et fonctionnalités DazBox"
+        },
+        {
+          "broken_link": "/glossaire/",
+          "occurrences": 18,
+          "files": ["Multiple files with glossary references"],
+          "priority": "HIGH",
+          "action": "redirect",
+          "redirect_to": "/glossary/",
+          "note": "Page glossary/ existe déjà, besoin de redirection"
+        }
+      ]
+    },
+    "important": {
+      "description": "Liens cassés importants affectant l'UX et la navigation",
+      "count": 45,
+      "links": [
+        {
+          "broken_link": "/privacy",
+          "occurrences": 1,
+          "files": ["_includes/footer.njk"],
+          "priority": "HIGH",
+          "action": "create_page",
+          "legal_requirement": true
+        },
+        {
+          "broken_link": "/terms",
+          "occurrences": 1,
+          "files": ["_includes/footer.njk"],
+          "priority": "HIGH",
+          "action": "create_page",
+          "legal_requirement": true
+        },
+        {
+          "broken_link": "/legal",
+          "occurrences": 1,
+          "files": ["_includes/footer.njk"],
+          "priority": "HIGH",
+          "action": "create_page",
+          "legal_requirement": true
+        },
+        {
+          "broken_link": "/support/",
+          "occurrences": 5,
+          "files": ["Multiple navigation files"],
+          "priority": "HIGH",
+          "action": "create_section",
+          "suggested_structure": "FAQ, Contact, Documentation"
+        }
+      ]
+    },
+    "assets": {
+      "description": "Ressources manquantes (images, fonts, etc.)",
+      "count": 15,
+      "links": [
+        {
+          "broken_link": "/assets/images/favicon/apple-touch-icon.png",
+          "occurrences": 4,
+          "files": ["Multiple layout files"],
+          "priority": "MEDIUM",
+          "action": "create_file",
+          "file_type": "image",
+          "dimensions": "180x180",
+          "note": "Favicon pour iOS"
+        },
+        {
+          "broken_link": "/assets/fonts/inter-var.woff2",
+          "occurrences": 1,
+          "files": ["_layouts/base-accessible.njk"],
+          "priority": "LOW",
+          "action": "create_file_or_remove",
+          "note": "Police variable Inter"
+        }
+      ]
+    },
+    "redirects_needed": {
+      "description": "Liens vers des pages existantes mais avec des URLs différentes",
+      "count": 12,
+      "redirects": [
+        {
+          "from": "/glossaire/*",
+          "to": "/glossary/:splat",
+          "status": 301,
+          "reason": "Page existe sous /glossary/"
+        },
+        {
+          "from": "/lightning/*",
+          "to": "/lightning-network/:splat", 
+          "status": 301,
+          "reason": "Section existe sous /lightning-network/"
+        },
+        {
+          "from": "/api/*",
+          "to": "/devs/api/:splat",
+          "status": 301,
+          "reason": "API docs sont sous /devs/api/"
+        },
+        {
+          "from": "/premiers-pas/*",
+          "to": "/getting-started/:splat",
+          "status": 301,
+          "reason": "Section traduite en anglais"
+        }
+      ]
+    },
+    "template_issues": {
+      "description": "Problèmes dans les templates Nunjucks",
+      "count": 3,
+      "issues": [
+        {
+          "broken_link": "{{ currentSection }}/",
+          "file": "_includes/contextual-links-enhanced.njk",
+          "line": 25,
+          "issue": "Variable non définie ou non résolue",
+          "fix": "Ajouter condition {% if currentSection %}"
+        },
+        {
+          "broken_link": "{{ page.data.category }}/",
+          "file": "_layouts/docs-with-cta.njk",
+          "line": 84,
+          "issue": "Variable de métadonnées non définie",
+          "fix": "Vérifier structure des données de page"
+        }
+      ]
+    },
+    "future_features": {
+      "description": "Liens vers des fonctionnalités non encore implémentées",
+      "count": 43,
+      "categories": [
+        "Community features",
+        "Token4Good ecosystem", 
+        "Advanced tools",
+        "User authentication",
+        "Dashboard features"
+      ]
+    }
+  },
+  "quick_fixes": [
+    {
+      "action": "Add redirects to netlify.toml",
+      "code": "[[redirects]]\n  from = \"/glossaire/*\"\n  to = \"/glossary/:splat\"\n  status = 301",
+      "impact": "Fixes 18 occurrences"
+    },
+    {
+      "action": "Create contact page",
+      "path": "/contact/index.md",
+      "template": "contact_page_template.md",
+      "impact": "Fixes 4 occurrences"
+    },
+    {
+      "action": "Create legal pages", 
+      "paths": ["/privacy/index.md", "/terms/index.md", "/legal/index.md"],
+      "impact": "Fixes 3 occurrences"
+    }
+  ],
+  "detailed_broken_links": [
+    {
+      "link": "/contact",
+      "occurrences": [
+        {
+          "file": "_includes/header.njk",
+          "line": 33,
+          "context": "href=\"/contact\""
+        },
+        {
+          "file": "solutions/dazbox/faq/index.md", 
+          "line": 191,
+          "context": "href=\"/contact\""
+        }
+      ]
+    },
+    {
+      "link": "/glossaire/",
+      "occurrences": [
+        {
+          "file": "_includes/navigation-accessible.njk",
+          "line": 105,
+          "context": "href=\"/glossaire/\""
+        },
+        {
+          "file": "bitcoin/introduction/index.md",
+          "line": 18,
+          "context": "[blockchain](/glossaire/#blockchain)"
+        },
+        {
+          "file": "wallets/index.md",
+          "line": 12,
+          "context": "[wallet](/glossaire/#wallet-portefeuille)"
+        }
+      ]
+    }
+  ],
+  "recommendations": {
+    "immediate": [
+      "Créer les pages légales obligatoires",
+      "Ajouter les redirections dans netlify.toml",
+      "Créer la page de contact",
+      "Créer la page de commande DazBox"
+    ],
+    "short_term": [
+      "Compléter toutes les pages solutions",
+      "Ajouter les ressources assets manquantes", 
+      "Corriger les templates Nunjucks",
+      "Créer une section support complète"
+    ],
+    "long_term": [
+      "Implémenter le système Token4Good",
+      "Créer les outils communautaires",
+      "Ajouter surveillance automatique des liens",
+      "Mettre en place une stratégie 404 intelligente"
+    ]
+  }
+}

@@ -74,7 +74,7 @@ Notre solution se distingue par :
 | Mémoire | 4 GB RAM |
 | Stockage | SSD 1 TB |
 | Connectivité | Ethernet Gigabit |
-| Consommation | < 15W |
+| Consommation | &lt; 15W |
 | Dimensions | 10x10x5 cm |
 </div>
 

@@ -47,7 +47,7 @@ Vous trouverez ici :
 - [Guides RGB](../guides/developpeurs/rgb/)
 - [Exemples de code](../guides/developpeurs/examples/)
 - [Forum technique](https://github.com/Token4Good/daznode-docs/discussions)
-- [Lexique](../glossaire/)
+- [Lexique](../glossary/)
 
 ## Exemple d'Intégration
 

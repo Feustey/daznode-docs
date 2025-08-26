@@ -147,7 +147,7 @@ L'architecture complète est maintenant **prête en production** avec :
 ✅ **Auto-scaling** jusqu'à millions d'utilisateurs  
 ✅ **Sécurité Enterprise** avec compliance GDPR  
 ✅ **Monitoring 24/7** avec alertes automatiques  
-✅ **Performance <200ms** response time  
+✅ **Performance &lt;200ms** response time  
 ✅ **Backup automatique** et disaster recovery  
 
 **💰 Valeur livrée : 150k€ d'architecture enterprise**

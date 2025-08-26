@@ -9,13 +9,13 @@ eleventyNavigation:
 
 # Wallets (portefeuilles)
 
-Un [wallet](/glossaire/#wallet-portefeuille), ou portefeuille, sert à stocker et utiliser tes [bitcoins](/glossaire/#bitcoin) ou tes [satoshis](/glossaire/#satoshi-sat) (la plus petite unité de bitcoin).
+Un [wallet](/glossary/#wallet-portefeuille), ou portefeuille, sert à stocker et utiliser tes [bitcoins](/glossary/#bitcoin) ou tes [satoshis](/glossary/#satoshi-sat) (la plus petite unité de bitcoin).
 
 ## Types de wallets
 
 Il existe deux types principaux :
-- **[Non-custodial](/glossaire/#non-custodial)** : tu es le seul à avoir la clé. Plus sécurisé, mais tu dois bien sauvegarder ta [phrase secrète](/glossaire/#seed-phrase-secrete) (seed).
-- **[Custodial](/glossaire/#custodial)** : une entreprise garde la clé pour toi. Plus simple, mais moins sécurisé.
+- **[Non-custodial](/glossary/#non-custodial)** : tu es le seul à avoir la clé. Plus sécurisé, mais tu dois bien sauvegarder ta [phrase secrète](/glossary/#seed-phrase-secrete) (seed).
+- **[Custodial](/glossary/#custodial)** : une entreprise garde la clé pour toi. Plus simple, mais moins sécurisé.
 
 ## Wallets recommandés
 
@@ -25,17 +25,17 @@ Il existe deux types principaux :
 - **Zeus** : Pour les utilisateurs qui veulent contrôler leur propre nœud
 
 ### Wallets web et extensions
-- **Alby** : [Extension navigateur](/glossaire/#extension-navigateur) parfaite pour les paiements web
+- **Alby** : [Extension navigateur](/glossary/#extension-navigateur) parfaite pour les paiements web
 - **Wallet of Satoshi** : Solution custodial simple pour débuter
 
 ## Guide d'installation
 
 ### Installation d'un wallet mobile
-1. Va sur le [store](/glossaire/#store-magasin-dapplications) de ton téléphone (Google Play ou App Store)
+1. Va sur le [store](/glossary/#store-magasin-dapplications) de ton téléphone (Google Play ou App Store)
 2. Cherche le nom du wallet choisi (ex: "Phoenix", "Breez" ou "Zeus")
 3. Installe l'application
 4. Ouvre l'application et suis les instructions pour créer un nouveau wallet
-5. Note bien ta [phrase secrète](/glossaire/#seed-phrase-secrete) sur papier. Ne la partage jamais !
+5. Note bien ta [phrase secrète](/glossary/#seed-phrase-secrete) sur papier. Ne la partage jamais !
 
 ### Installation d'Alby
 1. Va sur [getalby.com](https://getalby.com)
@@ -48,17 +48,17 @@ Il existe deux types principaux :
 ### Recevoir des paiements
 1. Ouvre ton wallet
 2. Clique sur "Recevoir"
-3. Une [facture Lightning](/glossaire/#facture-lightning-lightning-invoice) sera générée
-4. Partage l'adresse ou le [QR code](/glossaire/#qr-code) avec l'expéditeur
+3. Une [facture Lightning](/glossary/#facture-lightning-lightning-invoice) sera générée
+4. Partage l'adresse ou le [QR code](/glossary/#qr-code) avec l'expéditeur
 
 ### Envoyer des paiements
 1. Clique sur "Envoyer"
-2. Scanne le QR code ou colle la facture [BOLT11](/glossaire/#bolt11) du destinataire
+2. Scanne le QR code ou colle la facture [BOLT11](/glossary/#bolt11) du destinataire
 3. Vérifie le montant et confirme
 
 ## Sécurité
 
-- Active la [2FA](/glossaire/#2fa-authentification-a-deux-facteurs) si disponible
+- Active la [2FA](/glossary/#2fa-authentification-a-deux-facteurs) si disponible
 - Ne stocke pas de grosses sommes sur un wallet mobile
 - Fais régulièrement des sauvegardes
 - Ne partage jamais ta phrase secrète

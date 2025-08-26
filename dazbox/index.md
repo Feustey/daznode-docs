@@ -19,7 +19,7 @@ Vous trouverez ici :
 - [Cas d'usage concrets](../bitcoin/cas-usage/)
 - [FAQ](../dazbox/faq/)
 - [Assistance personnalisée](mailto:support@token4good.org)
-- [Lexique](../glossaire/)
+- [Lexique](../glossary/)
 
 ## Exemple
 Configurer DazBox pour recevoir des paiements Bitcoin en moins de 10 minutes grâce à [ce guide pas à pas](../premiers-pas/get-started/).

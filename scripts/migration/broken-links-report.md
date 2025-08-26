@@ -26,7 +26,7 @@ Généré le: 05/08/2025 15:39:11
 
 ## 5. index.md:44
 - **Texte**: Glossaire
-- **URL**: /glossaire/
+- **URL**: /glossary/
 - **Suggestion**: Peut-être: /premiers-pas/
 
 ## 6. index.md:51
@@ -36,67 +36,67 @@ Généré le: 05/08/2025 15:39:11
 
 ## 7. wallets/index.md:12
 - **Texte**: wallet
-- **URL**: /glossaire/#wallet-portefeuille
+- **URL**: /glossary/#wallet-portefeuille
 - **Suggestion**: Peut-être: /premiers-pas/
 
 ## 8. wallets/index.md:12
 - **Texte**: bitcoins
-- **URL**: /glossaire/#bitcoin
+- **URL**: /glossary/#bitcoin
 - **Suggestion**: Peut-être: /premiers-pas/
 
 ## 9. wallets/index.md:12
 - **Texte**: satoshis
-- **URL**: /glossaire/#satoshi-sat
+- **URL**: /glossary/#satoshi-sat
 - **Suggestion**: Peut-être: /premiers-pas/
 
 ## 10. wallets/index.md:17
 - **Texte**: Non-custodial
-- **URL**: /glossaire/#non-custodial
+- **URL**: /glossary/#non-custodial
 - **Suggestion**: Peut-être: /premiers-pas/
 
 ## 11. wallets/index.md:17
 - **Texte**: phrase secrète
-- **URL**: /glossaire/#seed-phrase-secrete
+- **URL**: /glossary/#seed-phrase-secrete
 - **Suggestion**: Peut-être: /premiers-pas/
 
 ## 12. wallets/index.md:18
 - **Texte**: Custodial
-- **URL**: /glossaire/#custodial
+- **URL**: /glossary/#custodial
 - **Suggestion**: Peut-être: /premiers-pas/
 
 ## 13. wallets/index.md:28
 - **Texte**: Extension navigateur
-- **URL**: /glossaire/#extension-navigateur
+- **URL**: /glossary/#extension-navigateur
 - **Suggestion**: Peut-être: /premiers-pas/
 
 ## 14. wallets/index.md:34
 - **Texte**: store
-- **URL**: /glossaire/#store-magasin-dapplications
+- **URL**: /glossary/#store-magasin-dapplications
 - **Suggestion**: Peut-être: /premiers-pas/
 
 ## 15. wallets/index.md:17
 - **Texte**: phrase secrète
-- **URL**: /glossaire/#seed-phrase-secrete
+- **URL**: /glossary/#seed-phrase-secrete
 - **Suggestion**: Peut-être: /premiers-pas/
 
 ## 16. wallets/index.md:51
 - **Texte**: facture Lightning
-- **URL**: /glossaire/#facture-lightning-lightning-invoice
+- **URL**: /glossary/#facture-lightning-lightning-invoice
 - **Suggestion**: Peut-être: /premiers-pas/
 
 ## 17. wallets/index.md:52
 - **Texte**: QR code
-- **URL**: /glossaire/#qr-code
+- **URL**: /glossary/#qr-code
 - **Suggestion**: Peut-être: /premiers-pas/
 
 ## 18. wallets/index.md:56
 - **Texte**: BOLT11
-- **URL**: /glossaire/#bolt11
+- **URL**: /glossary/#bolt11
 - **Suggestion**: Peut-être: /premiers-pas/
 
 ## 19. wallets/index.md:61
 - **Texte**: 2FA
-- **URL**: /glossaire/#2fa-authentification-a-deux-facteurs
+- **URL**: /glossary/#2fa-authentification-a-deux-facteurs
 - **Suggestion**: Peut-être: /premiers-pas/
 
 ## 20. wallets/index.md:68
@@ -3180,7 +3180,7 @@ fund`
 
 ## 633. connect-data/datastreams/index.md:14
 - **Texte**: capacité totale
-- **URL**: /glossaire/#capacite-totale
+- **URL**: /glossary/#capacite-totale
 - **Suggestion**: Peut-être: /premiers-pas/
 
 ## 634. connect-data/datastreams/index.md:214
@@ -3205,7 +3205,7 @@ fund`
 
 ## 638. bitcoin/index.md:42
 - **Texte**: Glossaire Bitcoin
-- **URL**: /glossaire/
+- **URL**: /glossary/
 - **Suggestion**: Peut-être: /premiers-pas/
 
 ## 639. bitcoin/index.md:43
@@ -3220,7 +3220,7 @@ fund`
 
 ## 641. bitcoin/minage/index.md:16
 - **Texte**: blockchain
-- **URL**: /glossaire/#blockchain
+- **URL**: /glossary/#blockchain
 - **Suggestion**: Peut-être: /premiers-pas/
 
 ## 642. bitcoin/minage/index.md:18
@@ -3230,7 +3230,7 @@ fund`
 
 ## 643. bitcoin/introduction/index.md:18
 - **Texte**: blockchain
-- **URL**: /glossaire/#blockchain
+- **URL**: /glossary/#blockchain
 - **Suggestion**: Peut-être: /premiers-pas/
 
 ## 644. bitcoin/introduction/index.md:22
@@ -3245,7 +3245,7 @@ fund`
 
 ## 646. bitcoin/introduction/index.md:40
 - **Texte**: mining
-- **URL**: /glossaire/#mineur
+- **URL**: /glossary/#mineur
 - **Suggestion**: Peut-être: /premiers-pas/
 
 ## 647. bitcoin/cas-usage/index.md:16

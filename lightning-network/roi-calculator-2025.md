@@ -132,7 +132,7 @@ WalletOfSatoshi (03a...)   # 9.7% ROI moyen
 
 **Loop Out** (on-chain → Lightning)
 - **Coût** : 0.1-0.5% + frais réseau
-- **Quand** : Inbound liquidity <20%
+- **Quand** : Inbound liquidity &lt;20%
 - **Fréquence** : Hebdomadaire
 
 **Submarine Swaps** (Lightning ↔ Lightning)  
@@ -214,7 +214,7 @@ WalletOfSatoshi (03a...)   # 9.7% ROI moyen
 ### Statut Juridique Optimal
 **Particulier** (jusqu'à 5,000€ revenus/an)
 - **Fiscalité** : Plus-values mobilières (30%)
-- **Seuil** : 305€ exemption si cession <5,000€
+- **Seuil** : 305€ exemption si cession &lt;5,000€
 - **Avantage** : Simplicité administrative
 
 **Auto-entrepreneur** (5,000-70,000€ revenus/an)

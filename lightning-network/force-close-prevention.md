@@ -32,13 +32,13 @@ Alice a un canal de 0.1 BTC avec Bob. Suite à une coupure internet, son nœud f
 
 ### 1. Balance et Liquidité des Canaux
 **Problème :** Canaux déséquilibrés (>90% d'un côté)
-**Seuil d'alerte :** <20% ou >80% de capacité
+**Seuil d'alerte :** &lt;20% ou >80% de capacité
 **Action :** Rééquilibrage automatique
 
 ```bash
 # Vérification balance critique
 lncli channelbalance
-# Si outbound <20% OU inbound <20% → ALERT
+# Si outbound &lt;20% OU inbound &lt;20% → ALERT
 ```
 
 **Solution DazNode :** Monitoring 24/7 avec rééquilibrage auto
@@ -61,7 +61,7 @@ lncli channelbalance
 ```bash
 # Check peers connection
 lncli listpeers | grep -c '"sync_type": "ACTIVE"'
-# Si <80% peers actifs → ALERT
+# Si &lt;80% peers actifs → ALERT
 ```
 
 ### 4. Version Logicielle et Compatibilité
@@ -70,9 +70,9 @@ lncli listpeers | grep -c '"sync_type": "ACTIVE"'
 **Action :** Mise à jour planifiée
 
 **Versions critiques à éviter :**
-- LND <0.15.0 (bugs channel state)
-- CLN <0.11.0 (problèmes HTLC)
-- Eclair <0.8.0 (force-close bugs)
+- LND &lt;0.15.0 (bugs channel state)
+- CLN &lt;0.11.0 (problèmes HTLC)
+- Eclair &lt;0.8.0 (force-close bugs)
 
 ### 5. Ressources Système (Hardware)
 **Problème :** Nœud ralenti/planté
@@ -86,7 +86,7 @@ lncli listpeers | grep -c '"sync_type": "ACTIVE"'
 
 ### Alertes Niveau 1 (Préventif)
 - **Peer disconnection** : >15min
-- **Channel imbalance** : <30% liquidité
+- **Channel imbalance** : &lt;30% liquidité
 - **High mempool fees** : >15 sat/vB
 - **System load** : CPU >60%
 
@@ -150,7 +150,7 @@ fi
 #!/bin/bash
 # auto-rebalance.sh
 
-# Get channels with <20% outbound liquidity  
+# Get channels with &lt;20% outbound liquidity  
 UNBALANCED=$(lncli listchannels | jq -r '.channels[] | select(.local_balance / (.capacity | tonumber) < 0.2) | .chan_id')
 
 for CHANNEL in $UNBALANCED; do

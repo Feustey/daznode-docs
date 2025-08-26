@@ -9,3 +9,34 @@
   from = "/*"
   to = "/index.html"
   status = 200 
+# Redirections pour liens cassés - Ajouté automatiquement
+
+[[redirects]]
+  from = "/glossaire/*"
+  to = "/glossary/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/lightning/*" 
+  to = "/lightning-network/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/api/*"
+  to = "/devs/api/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/premiers-pas/*"
+  to = "/getting-started/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/support"
+  to = "/dazbox/faq/"
+  status = 302
+
+[[redirects]]
+  from = "/help"
+  to = "/dazbox/faq/"
+  status = 302

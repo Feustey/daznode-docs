@@ -118,7 +118,7 @@ Marie veut acheter son café quotidien chez Bob :
         <li><strong>Frais réseau</strong> : Monitoring temps réel des mempool fees</li>
         <li><strong>Connectivité peer</strong> : Vérifier uptime >99%</li>
         <li><strong>Version LND</strong> : Maintenir version stable récente</li>
-        <li><strong>Hardware monitoring</strong> : CPU <70%, RAM disponible</li>
+        <li><strong>Hardware monitoring</strong> : CPU &lt;70%, RAM disponible</li>
       </ul>
       <p><strong>💡 DazNode automatise</strong> ces vérifications avec 89% de réduction des force-close.</p>
     </div>

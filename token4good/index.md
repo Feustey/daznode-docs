@@ -22,7 +22,7 @@ Vous trouverez ici :
 - [Guide de contribution](../token4good/contribuer/)
 - [Aide aux débutants](../token4good/aide-debutants/)
 - [Forum communautaire](https://github.com/Token4Good/daznode-docs/discussions)
-- [Lexique](../glossaire/)
+- [Lexique](../glossary/)
 
 ## Exemple
 Proposer une nouvelle idée de projet ou contribuer à la documentation existante via le [guide de contribution](../token4good/contribuer/).

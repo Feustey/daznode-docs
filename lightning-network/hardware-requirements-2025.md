@@ -170,10 +170,10 @@ Le choix du hardware détermine **80% des performances** de votre nœud Lightnin
 ### Connection Requirements
 | Usage Level | Download | Upload | Latency | Uptime |
 |-------------|----------|--------|---------|--------|
-| **Basic** | 25 Mbps | 5 Mbps | <100ms | 95% |
-| **Standard** | 100 Mbps | 25 Mbps | <50ms | 99% |
-| **Professional** | 500 Mbps | 100 Mbps | <20ms | 99.9% |
-| **Enterprise** | 1 Gbps | 500 Mbps | <10ms | 99.95% |
+| **Basic** | 25 Mbps | 5 Mbps | &lt;100ms | 95% |
+| **Standard** | 100 Mbps | 25 Mbps | &lt;50ms | 99% |
+| **Professional** | 500 Mbps | 100 Mbps | &lt;20ms | 99.9% |
+| **Enterprise** | 1 Gbps | 500 Mbps | &lt;10ms | 99.95% |
 
 ### ISP Considerations
 **Fibre Optique** (Recommandé)
@@ -182,7 +182,7 @@ Le choix du hardware détermine **80% des performances** de votre nœud Lightnin
 - **Providers** : Orange, Free, SFR, Bouygues
 
 **ADSL/VDSL** (Acceptable)
-- **Limitation** : Upload souvent <10 Mbps
+- **Limitation** : Upload souvent &lt;10 Mbps
 - **Impact** : Sync lent, propagation blocks retardée
 - **Mitigation** : QoS router, traffic shaping
 
@@ -231,7 +231,7 @@ Le choix du hardware détermine **80% des performances** de votre nœud Lightnin
 | Type | Noise | Cost | Effectiveness |
 |------|-------|------|---------------|
 | **Passive** | 0dB | 50€ | Basic |
-| **Low-RPM Fans** | <20dB | 80€ | Good |
+| **Low-RPM Fans** | &lt;20dB | 80€ | Good |
 | **AIO Liquid** | 25dB | 150€ | Excellent |
 | **Custom Loop** | 15dB | 400€+ | Overkill |
 
@@ -461,7 +461,7 @@ Enterprise Features:
 Le choix hardware détermine le succès de votre nœud Lightning. **Investir dans le bon matériel = économies long terme + performance optimale**.
 
 **Recommandations par budget :**
-- **<500€** : Mini-PC N100 + 2TB NVMe + fibre
+- **&lt;500€** : Mini-PC N100 + 2TB NVMe + fibre
 - **500-1500€** : Ryzen 5 + 32GB + 4TB RAID + UPS  
 - **>1500€** : Configuration enterprise ou DazBox Pro
 

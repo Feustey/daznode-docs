@@ -125,7 +125,7 @@ lncli openchannel2 \
 #### Métriques essentielles 📉
 ```
 1. Taux de réussite des paiements (>95%)
-2. Temps moyen de routage (<500ms)
+2. Temps moyen de routage (&lt;500ms)
 3. Revenu des frais (ROI >1%/mois)
 4. Score de centralité (>0.6)
 ```

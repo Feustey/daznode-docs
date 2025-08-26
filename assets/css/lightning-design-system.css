@@ -1,0 +1,742 @@
+/* =================================================================
+   Lightning Design System - Palette Moderne & Innovation UX
+   ================================================================= */
+
+:root {
+  /* ========== Couleurs Lightning-Inspired ========== */
+  --lightning-purple: #6B46C1;
+  --lightning-purple-hover: #5A38A3;
+  --lightning-purple-light: #9F7FE6;
+  --lightning-yellow: #F59E0B;
+  --lightning-yellow-hover: #DC8A00;
+  --lightning-yellow-light: #FFC947;
+  --lightning-blue: #0EA5E9;
+  --lightning-blue-hover: #0284C7;
+  --lightning-blue-light: #38BDF8;
+  
+  /* ========== Mode Sombre ========== */
+  --dark-bg: #0F172A;
+  --dark-surface: #1E293B;
+  --dark-surface-hover: #334155;
+  --dark-text: #F8FAFC;
+  --dark-text-secondary: #CBD5E1;
+  --dark-border: #475569;
+  
+  /* ========== Mode Clair ========== */
+  --light-bg: #FFFFFF;
+  --light-surface: #F8FAFC;
+  --light-surface-hover: #F1F5F9;
+  --light-text: #0F172A;
+  --light-text-secondary: #64748B;
+  --light-border: #E2E8F0;
+  
+  /* ========== Gradients Lightning ========== */
+  --gradient-lightning: linear-gradient(135deg, var(--lightning-purple) 0%, var(--lightning-blue) 100%);
+  --gradient-success: linear-gradient(135deg, var(--lightning-yellow) 0%, #22C55E 100%);
+  --gradient-energy: linear-gradient(135deg, #F59E0B 0%, #EC4899 50%, #6B46C1 100%);
+  
+  /* ========== Typographie Moderne ========== */
+  --font-heading: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-body: 'Source Sans 3', 'Source Sans Pro', sans-serif;
+  --font-code: 'JetBrains Mono', 'Fira Code', monospace;
+  --font-accent: 'Poppins', 'Inter', sans-serif;
+  
+  /* ========== Spacing System ========== */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+  
+  /* ========== Animations ========== */
+  --transition-fast: 150ms ease-in-out;
+  --transition-base: 250ms ease-in-out;
+  --transition-slow: 350ms ease-in-out;
+  --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* ========== Shadows ========== */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  --shadow-lightning: 0 0 20px rgba(107, 70, 193, 0.3);
+  --shadow-glow: 0 0 40px rgba(245, 158, 11, 0.4);
+}
+
+/* ========== Dark Mode Variables ========== */
+[data-theme="dark"] {
+  --bg-primary: var(--dark-bg);
+  --bg-surface: var(--dark-surface);
+  --bg-surface-hover: var(--dark-surface-hover);
+  --text-primary: var(--dark-text);
+  --text-secondary: var(--dark-text-secondary);
+  --border-color: var(--dark-border);
+}
+
+/* ========== Light Mode Variables ========== */
+[data-theme="light"] {
+  --bg-primary: var(--light-bg);
+  --bg-surface: var(--light-surface);
+  --bg-surface-hover: var(--light-surface-hover);
+  --text-primary: var(--light-text);
+  --text-secondary: var(--light-text-secondary);
+  --border-color: var(--light-border);
+}
+
+/* ========== Base Reset & Typography ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  transition: background var(--transition-base), color var(--transition-base);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: var(--space-md);
+  color: var(--text-primary);
+}
+
+h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
+h2 { font-size: clamp(1.75rem, 4vw, 2.75rem); }
+h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
+h4 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
+h5 { font-size: clamp(1.125rem, 2vw, 1.5rem); }
+h6 { font-size: clamp(1rem, 1.5vw, 1.25rem); }
+
+/* ========== Components: Cards Interactives ========== */
+.card-lightning {
+  background: var(--bg-surface);
+  border-radius: 12px;
+  padding: var(--space-xl);
+  border: 1px solid var(--border-color);
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.card-lightning::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-lightning);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition-base);
+}
+
+.card-lightning:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--lightning-purple);
+}
+
+.card-lightning:hover::before {
+  transform: scaleX(1);
+}
+
+/* ========== Components: Buttons Lightning ========== */
+.btn-lightning {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-sm) var(--space-lg);
+  font-family: var(--font-accent);
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.btn-lightning-primary {
+  background: var(--gradient-lightning);
+  color: white;
+  box-shadow: var(--shadow-md);
+}
+
+.btn-lightning-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-xl), var(--shadow-lightning);
+}
+
+.btn-lightning-secondary {
+  background: transparent;
+  color: var(--lightning-purple);
+  border: 2px solid var(--lightning-purple);
+}
+
+.btn-lightning-secondary:hover {
+  background: var(--lightning-purple);
+  color: white;
+  transform: scale(1.05);
+}
+
+/* ========== Gamification: Progress Bars ========== */
+.progress-container {
+  width: 100%;
+  background: var(--bg-surface);
+  border-radius: 50px;
+  padding: 4px;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 24px;
+  border-radius: 50px;
+  background: var(--gradient-lightning);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: var(--space-sm);
+  transition: width var(--transition-slow) var(--ease-smooth);
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(255,255,255,0.3) 50%, 
+    transparent 100%);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.progress-percentage {
+  color: white;
+  font-weight: 700;
+  font-size: 0.875rem;
+  z-index: 1;
+  position: relative;
+}
+
+/* ========== Gamification: Badges & Achievements ========== */
+.badge-container {
+  display: flex;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+  padding: var(--space-lg);
+}
+
+.achievement-badge {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: all var(--transition-base);
+  cursor: pointer;
+}
+
+.achievement-badge.unlocked {
+  background: var(--gradient-lightning);
+  box-shadow: var(--shadow-lg), var(--shadow-glow);
+  animation: pulse 2s infinite;
+}
+
+.achievement-badge.locked {
+  background: var(--bg-surface);
+  border: 2px dashed var(--border-color);
+  opacity: 0.5;
+}
+
+.achievement-badge:hover {
+  transform: scale(1.1) rotate(5deg);
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.achievement-icon {
+  font-size: 2rem;
+  color: white;
+}
+
+.achievement-tooltip {
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--dark-surface);
+  color: white;
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: 6px;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-fast);
+}
+
+.achievement-badge:hover .achievement-tooltip {
+  opacity: 1;
+}
+
+/* ========== Learning Paths Interactive ========== */
+.learning-path {
+  display: grid;
+  gap: var(--space-lg);
+  margin: var(--space-2xl) 0;
+}
+
+.path-node {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  position: relative;
+}
+
+.path-node::before {
+  content: '';
+  position: absolute;
+  left: 40px;
+  top: 100%;
+  width: 2px;
+  height: calc(var(--space-lg) * 2);
+  background: var(--gradient-lightning);
+  opacity: 0.3;
+}
+
+.path-node:last-child::before {
+  display: none;
+}
+
+.node-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-surface);
+  border: 3px solid var(--border-color);
+  position: relative;
+  transition: all var(--transition-base);
+}
+
+.node-icon.completed {
+  background: var(--gradient-success);
+  border-color: var(--lightning-yellow);
+  box-shadow: var(--shadow-glow);
+}
+
+.node-icon.current {
+  border-color: var(--lightning-purple);
+  animation: pulse-border 2s infinite;
+}
+
+@keyframes pulse-border {
+  0%, 100% { 
+    border-color: var(--lightning-purple);
+    box-shadow: 0 0 0 0 rgba(107, 70, 193, 0.4);
+  }
+  50% { 
+    border-color: var(--lightning-blue);
+    box-shadow: 0 0 0 10px rgba(107, 70, 193, 0);
+  }
+}
+
+.node-content {
+  flex: 1;
+}
+
+.node-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--space-xs);
+}
+
+.node-description {
+  color: var(--text-secondary);
+  margin-bottom: var(--space-sm);
+}
+
+.node-duration {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-xs) var(--space-sm);
+  background: var(--bg-surface);
+  border-radius: 20px;
+  font-size: 0.875rem;
+  color: var(--lightning-purple);
+  font-weight: 600;
+}
+
+/* ========== Interactive Code Blocks ========== */
+.code-block-container {
+  position: relative;
+  margin: var(--space-lg) 0;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--dark-surface);
+}
+
+.code-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-sm) var(--space-md);
+  background: var(--dark-bg);
+  border-bottom: 1px solid var(--dark-border);
+}
+
+.code-language {
+  color: var(--lightning-yellow);
+  font-family: var(--font-code);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.code-actions {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.btn-copy {
+  padding: var(--space-xs) var(--space-sm);
+  background: transparent;
+  border: 1px solid var(--dark-border);
+  border-radius: 6px;
+  color: var(--dark-text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-size: 0.875rem;
+}
+
+.btn-copy:hover {
+  background: var(--lightning-purple);
+  color: white;
+  border-color: var(--lightning-purple);
+}
+
+.btn-copy.copied {
+  background: var(--lightning-yellow);
+  color: var(--dark-bg);
+  border-color: var(--lightning-yellow);
+}
+
+pre {
+  margin: 0;
+  padding: var(--space-md);
+  overflow-x: auto;
+  font-family: var(--font-code);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--dark-text);
+}
+
+/* ========== Quiz & Interactive Elements ========== */
+.quiz-container {
+  background: var(--bg-surface);
+  border-radius: 12px;
+  padding: var(--space-xl);
+  margin: var(--space-2xl) 0;
+}
+
+.quiz-question {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: var(--space-lg);
+  color: var(--text-primary);
+}
+
+.quiz-options {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.quiz-option {
+  padding: var(--space-md);
+  background: var(--bg-primary);
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  position: relative;
+}
+
+.quiz-option:hover {
+  border-color: var(--lightning-purple);
+  transform: translateX(4px);
+}
+
+.quiz-option.selected {
+  border-color: var(--lightning-blue);
+  background: linear-gradient(135deg, 
+    rgba(14, 165, 233, 0.1) 0%, 
+    rgba(107, 70, 193, 0.1) 100%);
+}
+
+.quiz-option.correct {
+  border-color: #22C55E;
+  background: linear-gradient(135deg, 
+    rgba(34, 197, 94, 0.1) 0%, 
+    rgba(245, 158, 11, 0.1) 100%);
+}
+
+.quiz-option.incorrect {
+  border-color: #EF4444;
+  background: rgba(239, 68, 68, 0.1);
+}
+
+/* ========== Mobile-First Navigation ========== */
+.mobile-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--bg-surface);
+  border-top: 1px solid var(--border-color);
+  z-index: 100;
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-nav {
+    display: flex;
+    justify-content: space-around;
+    padding: var(--space-sm) 0;
+  }
+}
+
+.nav-item-mobile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-xs) var(--space-sm);
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.nav-item-mobile.active {
+  color: var(--lightning-purple);
+}
+
+.nav-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.nav-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* ========== Floating Action Button ========== */
+.fab {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--gradient-lightning);
+  box-shadow: var(--shadow-xl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  z-index: 90;
+}
+
+.fab:hover {
+  transform: scale(1.1);
+  box-shadow: var(--shadow-xl), var(--shadow-glow);
+}
+
+.fab:active {
+  transform: scale(0.95);
+}
+
+.fab-icon {
+  width: 24px;
+  height: 24px;
+  color: white;
+}
+
+/* ========== Animations: Lightning Effects ========== */
+.lightning-strike {
+  position: fixed;
+  top: 0;
+  width: 2px;
+  height: 100vh;
+  background: linear-gradient(to bottom, 
+    transparent 0%, 
+    var(--lightning-yellow) 20%, 
+    white 50%, 
+    var(--lightning-yellow) 80%, 
+    transparent 100%);
+  opacity: 0;
+  animation: lightning 3s infinite;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+@keyframes lightning {
+  0%, 100% { 
+    opacity: 0; 
+    transform: translateX(0);
+  }
+  10% { 
+    opacity: 1; 
+    transform: translateX(100vw);
+  }
+  11% { 
+    opacity: 0;
+  }
+  20% { 
+    opacity: 1; 
+    transform: translateX(50vw);
+  }
+  21% { 
+    opacity: 0;
+  }
+}
+
+/* ========== Accessibility Features ========== */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--lightning-purple);
+  color: white;
+  padding: var(--space-sm) var(--space-md);
+  text-decoration: none;
+  border-radius: 0 0 8px 0;
+  z-index: 1001;
+  transition: top var(--transition-fast);
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Focus states for keyboard navigation */
+*:focus-visible {
+  outline: 3px solid var(--lightning-purple);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ========== Loading States ========== */
+.skeleton {
+  background: linear-gradient(90deg, 
+    var(--bg-surface) 0%, 
+    var(--bg-surface-hover) 50%, 
+    var(--bg-surface) 100%);
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s ease-in-out infinite;
+  border-radius: 8px;
+}
+
+@keyframes skeleton-loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ========== Responsive Typography ========== */
+@media (max-width: 768px) {
+  html { font-size: 14px; }
+  
+  .card-lightning {
+    padding: var(--space-lg);
+  }
+  
+  .learning-path {
+    gap: var(--space-md);
+  }
+  
+  .path-node {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .path-node::before {
+    display: none;
+  }
+}
+
+/* ========== Print Styles ========== */
+@media print {
+  .mobile-nav,
+  .fab,
+  .quiz-container,
+  .code-actions {
+    display: none !important;
+  }
+  
+  body {
+    font-size: 12pt;
+    color: black;
+    background: white;
+  }
+  
+  .card-lightning {
+    page-break-inside: avoid;
+    border: 1px solid #ddd;
+  }
+}
+
+/* ========== Performance Optimizations ========== */
+.gpu-accelerated {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+.lazy-load {
+  opacity: 0;
+  transition: opacity var(--transition-slow);
+}
+
+.lazy-load.loaded {
+  opacity: 1;
+}

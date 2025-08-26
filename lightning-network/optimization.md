@@ -136,7 +136,7 @@ Notre IA prédit les besoins de liquidité **6 heures à l'avance** :
 #### Métriques Critiques Surveillées
 1. **Santé des Canaux**
    - Uptime peers : >99.5%
-   - Latency moyenne : <50ms
+   - Latency moyenne : &lt;50ms
    - Success rate : >98%
 
 2. **Performance Financière**

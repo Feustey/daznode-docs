@@ -103,7 +103,7 @@ const channels = await analytics.getChannelPerformance();
 ### Étape 3 : Configuration des alertes
 **Seuils recommandés :**
 - **Force-close risk** : Alerte si probabilité >20%
-- **Liquidity low** : Notification si <10% de capacité disponible
+- **Liquidity low** : Notification si &lt;10% de capacité disponible
 - **Peer offline** : Alert si déconnexion >1h
 - **Revenue drop** : Notification si baisse >30% sur 7 jours
 
