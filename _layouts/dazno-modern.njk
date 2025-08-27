@@ -4,11 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   
-  <!-- DNS Prefetch et preload pour performance -->
+  <!-- DNS Prefetch et Preconnect pour performance -->
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://docs.dazno.de">
   <link rel="dns-prefetch" href="//dazno.de">
   <link rel="preconnect" href="https://dazno.de">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   
   <!-- Métadonnées -->
   {% set pageMetadata = metadata.pages[page.filePathStem] %}
@@ -29,6 +32,7 @@
   <meta property="og:image" content="{{ metadata.site.url }}{{ metadata.site.defaultImage }}">
   <meta property="og:site_name" content="{{ metadata.site.title }}">
   <meta property="og:locale" content="fr_FR">
+  <meta property="og:locale:alternate" content="en_US">
   
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
@@ -42,19 +46,22 @@
   <meta name="theme-color" content="#3B82F6">
   <link rel="canonical" href="{{ metadata.site.url }}{{ page.url }}">
   
+  <!-- Balises hreflang pour SEO international -->
+  <link rel="alternate" hreflang="fr" href="{{ metadata.site.url }}{{ page.url }}">
+  <link rel="alternate" hreflang="x-default" href="{{ metadata.site.url }}{{ page.url }}">
+  
+  <!-- Security Headers -->
+  {% include "security-headers.njk" %}
+  
   <!-- Favicons -->
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon/favicon-16x16.png">
   <link rel="manifest" href="/assets/images/favicon/site.webmanifest">
   
-  <!-- Critical CSS inline -->
+  <!-- Critical CSS inline pour performance optimale -->
   <style>
-    /* Critical CSS pour éviter FOUC */
-    html { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; }
-    body { margin: 0; background: #FFFFFF; color: #111827; }
-    .loading { opacity: 0; transition: opacity 0.3s ease; }
-    .loaded { opacity: 1; }
+    {% include "../assets/css/critical.css" %}
   </style>
   
   <!-- Design System dazno.de -->
@@ -95,6 +102,9 @@
       }
     }
   </script>
+  
+  <!-- Google Search Console Verification -->
+  <meta name="google-site-verification" content="AFeYQ0g4-0LfK8spRRi8vsjDYsARq3j8EVsW6Er0cLg" />
   
   <!-- Analytics -->
   <script defer src="https://cloud.umami.is/script.js" data-website-id="10a8a34f-90f7-4786-9471-554f1fe6870e"></script>
@@ -397,5 +407,6 @@
   </script>
   
   <script type="module" src="/assets/js/modern-app.js"></script>
+  <script defer src="/assets/js/link-security.js"></script>
 </body>
 </html>

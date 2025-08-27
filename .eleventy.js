@@ -16,10 +16,125 @@ module.exports = function(eleventyConfig) {
     return `<script type="application/ld+json">${JSON.stringify(schema)}</script>`;
   });
 
+  // Shortcode pour FAQ Schema
+  eleventyConfig.addShortcode("faqSchema", function(faqs) {
+    const faqSchema = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": faqs.map(faq => ({
+        "@type": "Question",
+        "name": faq.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": faq.answer
+        }
+      }))
+    };
+    return `<script type="application/ld+json">${JSON.stringify(faqSchema)}</script>`;
+  });
+
+  // Shortcode pour HowTo Schema
+  eleventyConfig.addShortcode("howToSchema", function(title, description, steps, totalTime) {
+    const howToSchema = {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": title,
+      "description": description,
+      "totalTime": totalTime || "PT30M",
+      "step": steps.map((step, index) => ({
+        "@type": "HowToStep",
+        "position": index + 1,
+        "name": step.name,
+        "text": step.text,
+        "url": step.url || "",
+        "image": step.image || ""
+      }))
+    };
+    return `<script type="application/ld+json">${JSON.stringify(howToSchema)}</script>`;
+  });
+
+  // Shortcode pour Article Schema enrichi
+  eleventyConfig.addShortcode("articleSchema", function(data) {
+    const articleSchema = {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": data.title,
+      "description": data.description,
+      "author": {
+        "@type": "Person",
+        "name": data.author || "DazNode Team"
+      },
+      "datePublished": data.date,
+      "dateModified": data.modified || data.date,
+      "publisher": {
+        "@type": "Organization",
+        "name": "DazNode Documentation",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://docs.dazno.de/assets/images/logo.png"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": data.url
+      }
+    };
+    return `<script type="application/ld+json">${JSON.stringify(articleSchema)}</script>`;
+  });
+
+  // Shortcode pour images optimisées avec lazy loading et formats modernes
+  eleventyConfig.addShortcode("image", function(src, alt, sizes, loading = "lazy") {
+    const path = require('path');
+    const basename = path.basename(src, path.extname(src));
+    const dir = path.dirname(src);
+    
+    // Générer les chemins pour WebP et AVIF
+    const webpSrc = `${dir}/${basename}.webp`;
+    const avifSrc = `${dir}/${basename}.avif`;
+    
+    // Calculer les dimensions par défaut si non fournies
+    const defaultSizes = sizes || "(max-width: 768px) 100vw, 50vw";
+    
+    return `<picture>
+      <source type="image/avif" srcset="${avifSrc}" sizes="${defaultSizes}">
+      <source type="image/webp" srcset="${webpSrc}" sizes="${defaultSizes}">
+      <img src="${src}" alt="${alt}" loading="${loading}" decoding="async" sizes="${defaultSizes}">
+    </picture>`;
+  });
+
+  // Shortcode pour images responsive avec dimensions
+  eleventyConfig.addShortcode("responsiveImage", function(src, alt, width, height, loading = "lazy") {
+    const path = require('path');
+    const basename = path.basename(src, path.extname(src));
+    const dir = path.dirname(src);
+    
+    // Générer srcset pour différentes résolutions
+    const srcset1x = src;
+    const srcset2x = `${dir}/${basename}@2x${path.extname(src)}`;
+    const srcset3x = `${dir}/${basename}@3x${path.extname(src)}`;
+    
+    // Formats modernes
+    const webpSrcset = `${dir}/${basename}.webp 1x, ${dir}/${basename}@2x.webp 2x`;
+    const avifSrcset = `${dir}/${basename}.avif 1x, ${dir}/${basename}@2x.avif 2x`;
+    
+    return `<picture>
+      <source type="image/avif" srcset="${avifSrcset}">
+      <source type="image/webp" srcset="${webpSrcset}">
+      <img 
+        src="${srcset1x}" 
+        srcset="${srcset1x} 1x, ${srcset2x} 2x, ${srcset3x} 3x"
+        alt="${alt}" 
+        width="${width}" 
+        height="${height}" 
+        loading="${loading}" 
+        decoding="async"
+      >
+    </picture>`;
+  });
+
   // Copie les dossiers d'assets statiques vers le répertoire de sortie
   eleventyConfig.addPassthroughCopy("assets");
   eleventyConfig.addPassthroughCopy("robots.txt");
-  eleventyConfig.addPassthroughCopy("sitemap.xml");
 
   // Configuration Markdown
   const markdownLibrary = markdownIt({
@@ -28,9 +143,11 @@ module.exports = function(eleventyConfig) {
     linkify: true
   })
   .use(markdownItAnchor, {
-    permalink: true,
+    permalink: markdownItAnchor.permalink.headerLink(),
     permalinkClass: "direct-link",
-    permalinkSymbol: "#"
+    permalinkSymbol: "#",
+    permalinkBefore: false,
+    permalinkSpace: false
   })
   .use(markdownItAttrs);
 
@@ -60,6 +177,10 @@ module.exports = function(eleventyConfig) {
     
     if (format === "yyyy") {
       return date.getFullYear();
+    }
+    
+    if (format === "yyyy-MM-dd") {
+      return date.toISOString().split('T')[0];
     }
     
     // Formats supplémentaires peuvent être ajoutés ici si nécessaire

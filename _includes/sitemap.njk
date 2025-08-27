@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{%- for page in collections.all %}
+  {%- if page.url and not page.data.excludeFromSitemap and not (page.url.startsWith("/node-v20") or page.url.startsWith("/docs/") or page.url.startsWith("/scripts/") or page.url.startsWith("/Import/") or page.url.includes("/README/") or page.url.includes("DEPLOYMENT") or page.url.includes("BROKEN_LINKS") or page.url.includes("GitBook")) %}
+  <url>
+    <loc>{{ metadata.site.url }}{{ page.url }}</loc>
+    <changefreq>{% if page.url == "/" %}weekly{% elif page.url.includes("getting-started") or page.url.includes("bitcoin") or page.url.includes("lightning-network") %}weekly{% else %}monthly{% endif %}</changefreq>
+    <priority>{% if page.url == "/" %}1.0{% elif page.url.includes("getting-started") or page.url.includes("bitcoin") or page.url.includes("lightning-network") or page.url.includes("solutions") %}0.9{% elif page.url.includes("devs") or page.url.includes("rag") %}0.8{% else %}0.7{% endif %}</priority>
+    {%- if page.date %}
+    <lastmod>{{ page.date | date("yyyy-MM-dd") }}</lastmod>
+    {%- endif %}
+  </url>
+  {%- endif %}
+{%- endfor %}
+</urlset>
