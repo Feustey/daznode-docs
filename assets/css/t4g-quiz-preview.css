@@ -1,0 +1,404 @@
+/* =================================================================
+   T4G Quiz Preview Components
+   Sections d'aperçu des quiz dans les pages de contenu
+   ================================================================= */
+
+/* ========== Quiz Section Container ========== */
+.t4g-quiz-section {
+  margin: 32px 0;
+  padding: 24px;
+  background: rgba(139, 92, 246, 0.05);
+  border: 2px solid rgba(139, 92, 246, 0.2);
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+.t4g-quiz-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--t4g-gradient);
+}
+
+/* ========== Quiz Preview Card ========== */
+.quiz-preview {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+
+.quiz-preview.lightning-theme {
+  background: rgba(14, 165, 233, 0.05);
+  border-radius: 12px;
+  padding: 16px;
+  border: 1px solid rgba(14, 165, 233, 0.2);
+}
+
+.quiz-info {
+  flex: 1;
+}
+
+.quiz-info h4 {
+  margin: 0 0 12px 0;
+  color: var(--t4g-primary);
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.lightning-theme .quiz-info h4 {
+  color: var(--lightning-blue);
+}
+
+/* ========== Quiz Stats ========== */
+.quiz-stats {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.quiz-stats .difficulty {
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.quiz-stats .difficulty.beginner {
+  background: rgba(34, 197, 94, 0.2);
+  color: #22C55E;
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.quiz-stats .difficulty.intermediate {
+  background: rgba(245, 158, 11, 0.2);
+  color: var(--t4g-gold);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.quiz-stats .difficulty.advanced {
+  background: rgba(239, 68, 68, 0.2);
+  color: #EF4444;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.questions-count,
+.estimated-time {
+  font-size: 0.85rem;
+  color: var(--dark-text-secondary);
+  padding: 4px 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ========== T4G Rewards Preview ========== */
+.t4g-rewards-preview {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.base-reward {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--t4g-gold);
+  padding: 6px 12px;
+  background: rgba(245, 158, 11, 0.15);
+  border-radius: 8px;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.perfect-bonus {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--t4g-accent);
+  padding: 4px 8px;
+  background: rgba(236, 72, 153, 0.15);
+  border-radius: 6px;
+  border: 1px solid rgba(236, 72, 153, 0.3);
+}
+
+/* ========== Quiz Start Button ========== */
+.quiz-preview .start-quiz-btn {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px 24px;
+  background: var(--t4g-gradient);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.quiz-preview .start-quiz-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.quiz-preview .start-quiz-btn:hover::before {
+  left: 100%;
+}
+
+.quiz-preview .start-quiz-btn:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 12px 35px rgba(139, 92, 246, 0.4);
+}
+
+.quiz-preview .start-quiz-btn:active {
+  transform: translateY(-1px) scale(1.01);
+}
+
+/* Lightning theme button */
+.lightning-theme .start-quiz-btn {
+  background: linear-gradient(135deg, var(--lightning-blue) 0%, var(--lightning-purple) 100%);
+}
+
+.lightning-theme .start-quiz-btn:hover {
+  box-shadow: 0 12px 35px rgba(14, 165, 233, 0.4);
+}
+
+/* ========== Progress Indicators ========== */
+.quiz-progress-indicator {
+  margin-top: 16px;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.progress-text {
+  font-size: 0.8rem;
+  color: var(--dark-text-secondary);
+  text-align: center;
+}
+
+.progress-bar-mini {
+  width: 100%;
+  height: 4px;
+  background: var(--dark-bg);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-top: 8px;
+}
+
+.progress-fill-mini {
+  height: 100%;
+  background: var(--t4g-gradient);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+/* ========== Achievement Previews ========== */
+.quiz-achievements-preview {
+  margin-top: 16px;
+  padding: 12px 16px;
+  background: rgba(16, 185, 129, 0.05);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  border-radius: 8px;
+}
+
+.achievements-title {
+  font-size: 0.8rem;
+  color: var(--t4g-success);
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.achievement-mini {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.75rem;
+  color: var(--dark-text-secondary);
+  margin-right: 12px;
+}
+
+.achievement-mini .achievement-icon {
+  font-size: 0.9rem;
+}
+
+/* ========== Hover Effects ========== */
+.t4g-quiz-section:hover {
+  border-color: rgba(139, 92, 246, 0.4);
+  box-shadow: 0 8px 32px rgba(139, 92, 246, 0.15);
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+}
+
+.lightning-theme:hover {
+  border-color: rgba(14, 165, 233, 0.4);
+  box-shadow: 0 8px 32px rgba(14, 165, 233, 0.15);
+}
+
+/* ========== Animations ========== */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(139, 92, 246, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(139, 92, 246, 0.6);
+  }
+}
+
+.quiz-preview .start-quiz-btn:focus {
+  outline: none;
+  animation: pulseGlow 2s infinite;
+}
+
+/* ========== Completed Quiz State ========== */
+.quiz-preview.completed {
+  opacity: 0.8;
+}
+
+.quiz-preview.completed .start-quiz-btn {
+  background: rgba(34, 197, 94, 0.8);
+  cursor: default;
+}
+
+.quiz-preview.completed .start-quiz-btn::after {
+  content: '✓ Terminé';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.9rem;
+  background: rgba(0,0,0,0.7);
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.quiz-completed-badge {
+  position: absolute;
+  top: -8px;
+  right: 16px;
+  background: #22C55E;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 10px;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+/* ========== Module Progress Integration ========== */
+.module-progress-with-quiz {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+  padding: 16px;
+  background: rgba(139, 92, 246, 0.03);
+  border-radius: 12px;
+  border: 1px solid rgba(139, 92, 246, 0.15);
+}
+
+.module-completion-info {
+  flex: 1;
+}
+
+.completion-status {
+  font-size: 0.85rem;
+  color: var(--dark-text-secondary);
+  margin-bottom: 4px;
+}
+
+.completion-percentage {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--t4g-primary);
+}
+
+.quiz-unlock-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: var(--dark-text-secondary);
+}
+
+.quiz-unlock-status.unlocked {
+  color: var(--t4g-success);
+}
+
+.quiz-unlock-status.locked {
+  color: #EF4444;
+}
+
+/* ========== Responsive Design ========== */
+@media (max-width: 768px) {
+  .quiz-preview {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+
+  .quiz-preview .start-quiz-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .quiz-stats {
+    gap: 8px;
+  }
+
+  .t4g-rewards-preview {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .t4g-quiz-section {
+    padding: 16px;
+    margin: 20px 0;
+  }
+
+  .quiz-info h4 {
+    font-size: 1.1rem;
+  }
+
+  .module-progress-with-quiz {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .quiz-stats {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .quiz-preview .start-quiz-btn {
+    padding: 14px 20px;
+    font-size: 0.9rem;
+  }
+
+  .base-reward,
+  .perfect-bonus {
+    font-size: 0.8rem;
+    padding: 4px 8px;
+  }
+}

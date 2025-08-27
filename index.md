@@ -10,6 +10,9 @@ description: Votre guide complet pour maîtriser Lightning Network avec les solu
 
 **Découvrez, Apprenez, Optimisez** - De l'apprentissage Bitcoin aux solutions professionnelles, tout l'écosystème Lightning Network en un seul endroit.
 
+<!-- T4G Rewards Widget -->
+{% include "t4g-rewards-widget.njk" %}
+
 ### 🎯 **Choisissez votre parcours d'apprentissage :**
 
 <div class="journey-selector">

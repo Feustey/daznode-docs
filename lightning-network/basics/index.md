@@ -11,6 +11,28 @@ title: "Les fondamentaux du Lightning Network"
 
 Le Lightning Network est comme un réseau de métro ultra-rapide construit au-dessus de l'autoroute Bitcoin. Il permet d'effectuer des millions de transactions instantanées et quasi-gratuites, sans congestionner la blockchain principale.
 
+## Testez vos connaissances Lightning ! ⚡
+
+<div class="t4g-quiz-section">
+  <div class="quiz-preview lightning-theme">
+    <div class="quiz-info">
+      <h4>⚡ Quiz : Lightning Network Basics</h4>
+      <div class="quiz-stats">
+        <span class="difficulty intermediate">Intermédiaire</span>
+        <span class="questions-count">2 questions</span>
+        <span class="estimated-time">~3 min</span>
+      </div>
+      <div class="t4g-rewards-preview">
+        <span class="base-reward">💎 15 T4G</span>
+        <span class="perfect-bonus">+10 T4G si parfait</span>
+      </div>
+    </div>
+    <button class="start-quiz-btn" data-quiz-id="lightning-basics">
+      Commencer le Quiz
+    </button>
+  </div>
+</div>
+
 ## Architecture technique 🏗️
 
 ### Vue d'ensemble 🌐

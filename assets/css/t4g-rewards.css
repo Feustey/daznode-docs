@@ -1,0 +1,1027 @@
+/* =================================================================
+   T4G Rewards Widget & Dashboard Styles
+   Système complet Learn-to-Earn avec Token4Good
+   ================================================================= */
+
+/* ========== T4G Widget Principal ========== */
+.t4g-widget {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 320px;
+  background: var(--dark-surface);
+  border: 1px solid var(--t4g-primary);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 10px 40px rgba(139, 92, 246, 0.2);
+  z-index: 1000;
+  transform: translateX(100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.t4g-widget.show {
+  transform: translateX(0);
+}
+
+.t4g-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.t4g-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.t4g-icon {
+  font-size: 1.5rem;
+  filter: drop-shadow(0 0 8px var(--t4g-primary));
+}
+
+.t4g-title {
+  font-family: var(--font-accent);
+  font-weight: 700;
+  font-size: 1.1rem;
+  background: var(--t4g-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.t4g-balance {
+  text-align: right;
+}
+
+.balance-label {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--dark-text-secondary);
+  margin-bottom: 2px;
+}
+
+.t4g-balance-amount {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--t4g-gold);
+}
+
+.balance-updated {
+  animation: balanceGlow 1s ease;
+}
+
+@keyframes balanceGlow {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); color: var(--t4g-accent); }
+}
+
+/* ========== Progress Section ========== */
+.t4g-progress-section {
+  margin-bottom: 16px;
+  padding: 16px;
+  background: rgba(139, 92, 246, 0.05);
+  border-radius: 12px;
+  border: 1px solid rgba(139, 92, 246, 0.1);
+}
+
+.user-level-display {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.level-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.level-label {
+  font-size: 0.75rem;
+  color: var(--dark-text-secondary);
+}
+
+.level-number {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--t4g-gold);
+}
+
+.xp-progress-bar {
+  flex: 1;
+  background: var(--dark-bg);
+  border-radius: 20px;
+  height: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.xp-fill {
+  height: 100%;
+  background: var(--t4g-gradient);
+  border-radius: 20px;
+  transition: width 0.5s ease;
+  position: relative;
+}
+
+.xp-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.xp-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: white;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}
+
+.streak-display {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: rgba(245, 158, 11, 0.1);
+  border-radius: 8px;
+  border: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+.streak-fire {
+  font-size: 1.2rem;
+  animation: flicker 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+.streak-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.streak-days {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--lightning-yellow);
+}
+
+.streak-label {
+  font-size: 0.75rem;
+  color: var(--dark-text-secondary);
+}
+
+/* ========== Opportunities Section ========== */
+.t4g-opportunities {
+  margin-bottom: 16px;
+}
+
+.t4g-opportunities h4 {
+  margin: 0 0 12px 0;
+  font-size: 0.9rem;
+  color: var(--dark-text);
+}
+
+.opportunity-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.opportunity-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 12px;
+  background: rgba(16, 185, 129, 0.1);
+  border-radius: 8px;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.opportunity-item:hover {
+  background: rgba(16, 185, 129, 0.15);
+  transform: translateY(-1px);
+}
+
+.opportunity-text {
+  font-size: 0.85rem;
+  color: var(--dark-text);
+}
+
+.opportunity-reward {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--t4g-gold);
+}
+
+/* ========== Quick Stats ========== */
+.quick-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 4px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.stat-value {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--t4g-secondary);
+  margin-bottom: 2px;
+}
+
+.stat-label {
+  font-size: 0.7rem;
+  color: var(--dark-text-secondary);
+  text-align: center;
+}
+
+/* ========== Actions Buttons ========== */
+.t4g-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.t4g-btn {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.t4g-btn.primary {
+  background: var(--t4g-gradient);
+  color: white;
+}
+
+.t4g-btn.primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+}
+
+.t4g-btn.secondary {
+  background: rgba(139, 92, 246, 0.1);
+  color: var(--t4g-primary);
+  border: 1px solid var(--t4g-primary);
+}
+
+.t4g-btn.secondary:hover {
+  background: rgba(139, 92, 246, 0.2);
+}
+
+/* ========== T4G Dashboard Modal ========== */
+.t4g-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.t4g-modal.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content {
+  background: var(--dark-surface);
+  border-radius: 20px;
+  width: 90vw;
+  max-width: 1000px;
+  max-height: 90vh;
+  overflow: hidden;
+  border: 1px solid var(--t4g-primary);
+  box-shadow: 0 20px 60px rgba(139, 92, 246, 0.3);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 32px;
+  border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+  background: rgba(139, 92, 246, 0.05);
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-family: var(--font-accent);
+  background: var(--t4g-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--dark-text-secondary);
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.close-btn:hover {
+  color: var(--t4g-accent);
+}
+
+/* ========== Dashboard Tabs ========== */
+.dashboard-tabs {
+  display: flex;
+  padding: 0 32px;
+  background: rgba(139, 92, 246, 0.02);
+  border-bottom: 1px solid rgba(139, 92, 246, 0.1);
+}
+
+.tab-btn {
+  padding: 16px 24px;
+  background: none;
+  border: none;
+  color: var(--dark-text-secondary);
+  font-weight: 500;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.tab-btn.active {
+  color: var(--t4g-primary);
+  border-bottom-color: var(--t4g-primary);
+}
+
+.tab-btn:hover {
+  color: var(--t4g-secondary);
+}
+
+/* ========== Tab Content ========== */
+.tab-content {
+  display: none;
+  padding: 32px;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.tab-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.tab-content::-webkit-scrollbar-track {
+  background: var(--dark-bg);
+}
+
+.tab-content::-webkit-scrollbar-thumb {
+  background: var(--t4g-primary);
+  border-radius: 3px;
+}
+
+/* ========== Overview Grid ========== */
+.overview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.overview-card {
+  background: rgba(139, 92, 246, 0.05);
+  border: 1px solid rgba(139, 92, 246, 0.1);
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.overview-card h3 {
+  margin: 0 0 16px 0;
+  color: var(--t4g-primary);
+  font-size: 1.1rem;
+}
+
+.wallet-info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.balance-display,
+.staking-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+}
+
+.balance-amount,
+.staking-amount {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--t4g-gold);
+}
+
+.balance-label,
+.staking-label {
+  font-size: 0.85rem;
+  color: var(--dark-text-secondary);
+  margin-top: 4px;
+}
+
+/* ========== Achievements Grid ========== */
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.achievement-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.achievement-badge.unlocked {
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid var(--t4g-success);
+}
+
+.achievement-badge.locked {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  opacity: 0.6;
+}
+
+.achievement-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(139, 92, 246, 0.2);
+}
+
+.achievement-icon {
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+.achievement-name {
+  font-size: 0.8rem;
+  text-align: center;
+  color: var(--dark-text);
+  margin-bottom: 4px;
+}
+
+.achievement-xp {
+  font-size: 0.7rem;
+  color: var(--t4g-gold);
+  font-weight: 600;
+}
+
+/* ========== Leaderboard ========== */
+.leaderboard-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.leaderboard-entry {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.2s ease;
+}
+
+.leaderboard-entry:hover {
+  background: rgba(139, 92, 246, 0.1);
+  border-color: var(--t4g-primary);
+}
+
+.leaderboard-entry.current-user {
+  background: rgba(236, 72, 153, 0.1);
+  border-color: var(--t4g-accent);
+}
+
+.rank {
+  font-size: 1.1rem;
+  font-weight: 700;
+  min-width: 60px;
+}
+
+.user-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.username {
+  font-weight: 600;
+  color: var(--dark-text);
+}
+
+.speciality {
+  font-size: 0.85rem;
+  color: var(--dark-text-secondary);
+}
+
+.score {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.t4g-amount {
+  font-weight: 700;
+  color: var(--t4g-gold);
+}
+
+.impact-score {
+  font-size: 0.85rem;
+  color: var(--t4g-secondary);
+}
+
+/* ========== Staking Section ========== */
+.staking-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.staking-plan {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 24px;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.staking-plan:hover {
+  border-color: var(--t4g-primary);
+  box-shadow: 0 8px 32px rgba(139, 92, 246, 0.2);
+}
+
+.staking-plan.recommended {
+  border-color: var(--t4g-accent);
+  background: rgba(236, 72, 153, 0.05);
+}
+
+.staking-plan.premium {
+  border-color: var(--t4g-gold);
+  background: rgba(245, 158, 11, 0.05);
+}
+
+.recommended-badge {
+  position: absolute;
+  top: -8px;
+  right: 16px;
+  background: var(--t4g-accent);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.plan-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.plan-header h4 {
+  margin: 0;
+  color: var(--dark-text);
+}
+
+.apy-rate {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--t4g-gold);
+}
+
+.plan-benefits {
+  margin-bottom: 20px;
+}
+
+.plan-benefits ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.plan-benefits li {
+  padding: 4px 0;
+  color: var(--dark-text-secondary);
+  font-size: 0.85rem;
+}
+
+.stake-btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.stake-btn {
+  background: rgba(139, 92, 246, 0.1);
+  color: var(--t4g-primary);
+  border: 1px solid var(--t4g-primary);
+}
+
+.stake-btn.primary {
+  background: var(--t4g-gradient);
+  color: white;
+  border: none;
+}
+
+.stake-btn.premium {
+  background: linear-gradient(135deg, var(--t4g-gold) 0%, var(--t4g-accent) 100%);
+  color: white;
+  border: none;
+}
+
+.stake-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+}
+
+/* ========== T4G Notifications ========== */
+.t4g-reward-notification {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  background: var(--t4g-gradient);
+  color: white;
+  padding: 16px 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(139, 92, 246, 0.4);
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  z-index: 10001;
+  min-width: 280px;
+}
+
+.t4g-reward-notification.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.t4g-reward-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.t4g-reward-content .t4g-icon {
+  font-size: 2rem;
+  animation: bounce 1s infinite;
+}
+
+.reward-details {
+  flex: 1;
+}
+
+.reward-amount {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.reward-action {
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+.reward-multiplier {
+  font-size: 0.75rem;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 2px 6px;
+  border-radius: 6px;
+  margin-top: 4px;
+  display: inline-block;
+}
+
+.nft-mint-notification {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--dark-surface);
+  border: 2px solid var(--t4g-gold);
+  border-radius: 16px;
+  padding: 32px;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(245, 158, 11, 0.4);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s ease;
+  z-index: 10002;
+}
+
+.nft-mint-notification.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.nft-content .nft-icon {
+  font-size: 4rem;
+  margin-bottom: 16px;
+  animation: rotate 2s linear infinite;
+}
+
+.nft-content h3 {
+  color: var(--t4g-gold);
+  margin-bottom: 8px;
+}
+
+.nft-content h4 {
+  color: var(--dark-text);
+  margin-bottom: 16px;
+}
+
+.nft-tradeable {
+  font-size: 0.85rem;
+  color: var(--t4g-secondary);
+  margin-top: 12px;
+}
+
+/* ========== Community Notifications ========== */
+.community-notification {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: var(--dark-surface);
+  border: 1px solid var(--t4g-secondary);
+  border-radius: 12px;
+  padding: 16px;
+  max-width: 400px;
+  box-shadow: 0 8px 32px rgba(167, 139, 250, 0.2);
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 0.4s ease;
+  z-index: 10003;
+}
+
+.community-notification.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.community-content {
+  display: flex;
+  gap: 12px;
+}
+
+.community-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.community-message strong {
+  color: var(--t4g-secondary);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.community-message p {
+  margin: 0;
+  color: var(--dark-text-secondary);
+  font-size: 0.9rem;
+}
+
+.potential-reward {
+  margin-top: 8px;
+  padding: 6px 10px;
+  background: rgba(245, 158, 11, 0.1);
+  border-radius: 6px;
+  font-size: 0.8rem;
+  color: var(--t4g-gold);
+}
+
+/* ========== Responsive Design ========== */
+@media (max-width: 768px) {
+  .t4g-widget {
+    width: calc(100vw - 32px);
+    right: 16px;
+    left: 16px;
+    top: 16px;
+    max-height: calc(100vh - 32px);
+    overflow-y: auto;
+    transform: translateY(-100%);
+  }
+  
+  .t4g-widget.show {
+    transform: translateY(0);
+  }
+
+  .modal-content {
+    width: calc(100vw - 32px);
+    margin: 16px;
+    max-height: calc(100vh - 32px);
+    border-radius: 16px;
+  }
+
+  .modal-header {
+    padding: 16px 20px;
+    position: sticky;
+    top: 0;
+    background: var(--dark-surface);
+    z-index: 1;
+  }
+  
+  .close-btn {
+    min-width: 44px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    transition: background-color 0.2s;
+  }
+  
+  .close-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .tab-content {
+    padding: 20px 16px;
+  }
+
+  .overview-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .staking-options {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .achievements-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 12px;
+  }
+  
+  .t4g-actions .t4g-btn {
+    min-height: 48px;
+    font-size: 1rem;
+  }
+  
+  .leaderboard-entry {
+    padding: 12px;
+    flex-wrap: wrap;
+  }
+  
+  .user-info {
+    min-width: 0;
+  }
+  
+  .username {
+    font-size: 0.9rem;
+  }
+  
+  .speciality {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .quick-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+  
+  .stat-item {
+    padding: 12px 8px;
+    min-height: 60px;
+  }
+
+  .dashboard-tabs {
+    overflow-x: auto;
+    padding: 0 16px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  
+  .dashboard-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tab-btn {
+    white-space: nowrap;
+    padding: 12px 16px;
+    min-width: 80px;
+    font-size: 0.9rem;
+  }
+  
+  .t4g-widget {
+    padding: 16px;
+    top: 8px;
+    width: calc(100vw - 16px);
+    right: 8px;
+    left: 8px;
+  }
+  
+  .modal-content {
+    margin: 8px;
+    width: calc(100vw - 16px);
+  }
+  
+  .modal-header h2 {
+    font-size: 1.2rem;
+  }
+  
+  .tab-content {
+    padding: 16px 12px;
+  }
+  
+  .overview-card {
+    padding: 16px;
+  }
+  
+  .achievement-badge {
+    padding: 12px;
+  }
+  
+  .achievement-icon {
+    font-size: 1.5rem;
+  }
+  
+  .staking-plan {
+    padding: 16px;
+  }
+}
+
+/* Optimisation pour masquer le widget sur très petits écrans si nécessaire */
+@media (max-width: 320px) {
+  .t4g-widget:not(.force-show) {
+    display: none;
+  }
+  
+  /* Afficher seulement si l'utilisateur force l'affichage */
+  .t4g-widget.force-show {
+    width: calc(100vw - 8px);
+    right: 4px;
+    left: 4px;
+    top: 4px;
+    padding: 12px;
+  }
+}

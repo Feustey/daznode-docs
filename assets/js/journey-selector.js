@@ -166,10 +166,11 @@ class JourneySelector {
         right: 0;
         bottom: 0;
         background: rgba(0,0,0,0.8);
+        backdrop-filter: blur(4px);
         display: flex;
         align-items: center;
         justify-content: center;
-        z-index: 1000;
+        z-index: 9999;
         opacity: 0;
         visibility: hidden;
         transition: all var(--transition-base);
@@ -180,15 +181,23 @@ class JourneySelector {
         visibility: visible;
       }
 
+      .journey-popup.show .journey-popup-content {
+        transform: scale(1);
+      }
+
       .journey-popup-content {
         background: var(--bg-surface);
         border-radius: 16px;
         padding: var(--space-2xl);
         max-width: 600px;
-        width: 90vw;
-        max-height: 80vh;
+        width: min(90vw, 600px);
+        max-height: min(85vh, 700px);
         overflow-y: auto;
         position: relative;
+        box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+        transform: scale(0.9);
+        transition: transform var(--transition-base);
+        margin: auto;
       }
 
       .popup-close {
@@ -253,15 +262,57 @@ class JourneySelector {
       @media (max-width: 768px) {
         .journey-selector {
           grid-template-columns: 1fr;
+          gap: var(--space-md);
+          margin: var(--space-lg) 0;
         }
         
         .community-grid {
           grid-template-columns: 1fr;
+          gap: var(--space-md);
+        }
+        
+        .journey-popup {
+          padding: var(--space-sm);
+          align-items: flex-start;
+          padding-top: 5vh;
         }
         
         .journey-popup-content {
           padding: var(--space-lg);
-          margin: var(--space-md);
+          margin: 0;
+          width: calc(100vw - 2rem);
+          max-height: calc(90vh - 2rem);
+          border-radius: 12px;
+          max-width: none;
+        }
+        
+        .journey-actions {
+          flex-direction: column;
+          gap: var(--space-sm);
+        }
+        
+        .journey-actions button {
+          width: 100%;
+          min-height: 48px;
+          font-size: 1rem;
+        }
+        
+        .popup-close {
+          top: var(--space-sm);
+          right: var(--space-sm);
+          width: 44px;
+          height: 44px;
+          font-size: 1.25rem;
+        }
+        
+        .roadmap-step {
+          flex-direction: column;
+          align-items: flex-start;
+          text-align: left;
+        }
+        
+        .step-number {
+          margin-bottom: var(--space-xs);
         }
       }
       </style>
@@ -296,7 +347,20 @@ class JourneySelector {
     const popup = this.createJourneyPopup(journeyData);
     
     document.body.appendChild(popup);
-    setTimeout(() => popup.classList.add('show'), 100);
+    document.body.style.overflow = 'hidden';
+    
+    // Optimisation mobile - scroll vers le top
+    if (window.innerWidth <= 768) {
+      window.scrollTo(0, 0);
+    }
+    
+    // Améliorer l'animation d'entrée
+    requestAnimationFrame(() => {
+      popup.classList.add('show');
+    });
+    
+    // Focus trap
+    this.setupFocusTrap(popup);
     
     // Analytics
     this.trackJourneySelection(journeyType);
@@ -439,6 +503,7 @@ class JourneySelector {
     const popup = document.querySelector('.journey-popup');
     if (popup) {
       popup.classList.remove('show');
+      document.body.style.overflow = ''; // Restore scroll
       setTimeout(() => popup.remove(), 300);
     }
   }
@@ -475,6 +540,35 @@ class JourneySelector {
     if (window.gamification) {
       window.gamification.addXP(10, `Parcours ${journeyType} sélectionné`);
     }
+  }
+
+  setupFocusTrap(popup) {
+    const focusableElements = popup.querySelectorAll(
+      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+    );
+    const firstElement = focusableElements[0];
+    const lastElement = focusableElements[focusableElements.length - 1];
+
+    // Focus sur le premier élément
+    if (firstElement) {
+      firstElement.focus();
+    }
+
+    popup.addEventListener('keydown', (e) => {
+      if (e.key === 'Tab') {
+        if (e.shiftKey) {
+          if (document.activeElement === firstElement) {
+            e.preventDefault();
+            lastElement.focus();
+          }
+        } else {
+          if (document.activeElement === lastElement) {
+            e.preventDefault();
+            firstElement.focus();
+          }
+        }
+      }
+    });
   }
 }
 

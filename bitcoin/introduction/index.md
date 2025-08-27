@@ -23,6 +23,28 @@ Quelques mois plus tard, le 3 janvier 2009, le premier bloc de la [blockchain](/
 
 Cette naissance marque le début d'une révolution : pour la première fois, une monnaie entièrement numérique peut fonctionner sans autorité centrale ni intermédiaire de confiance.
 
+## Testez vos connaissances ! 🧠
+
+<div class="t4g-quiz-section">
+  <div class="quiz-preview">
+    <div class="quiz-info">
+      <h4>🎯 Quiz : Bitcoin Fundamentals</h4>
+      <div class="quiz-stats">
+        <span class="difficulty beginner">Débutant</span>
+        <span class="questions-count">3 questions</span>
+        <span class="estimated-time">~2 min</span>
+      </div>
+      <div class="t4g-rewards-preview">
+        <span class="base-reward">💎 10 T4G</span>
+        <span class="perfect-bonus">+5 T4G si parfait</span>
+      </div>
+    </div>
+    <button class="start-quiz-btn" data-quiz-id="bitcoin-basics">
+      Commencer le Quiz
+    </button>
+  </div>
+</div>
+
 ## Le Livre Blanc 📄
 
 Le document fondateur de Bitcoin (whitepaper) présente une solution au problème de la **double dépense** dans les systèmes de paiement électroniques. En seulement 9 pages, Satoshi Nakamoto expose les principes techniques permettant de créer un système monétaire décentralisé, sécurisé et résistant à la censure.
@@ -76,7 +98,7 @@ Le document fondateur de Bitcoin (whitepaper) présente une solution au problèm
 ## Ressources pour Approfondir 📚
 
 ### Documentation Officielle
-- [Le Livre Blanc en français](https://bitcoin.fr/le-livre-blanc/)
+- [Livre Blanc Bitcoin](https://bitcoin.org/bitcoin.pdf)
 - [Documentation technique](https://developer.bitcoin.org/)
 - [Guide du développeur](https://bitcoin.org/fr/developer-guide)
 

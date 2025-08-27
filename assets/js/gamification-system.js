@@ -1,12 +1,13 @@
 /**
- * Lightning Learning Gamification System
- * Système complet de gamification avec XP, badges, achievements et progression
+ * Lightning Learning Gamification System avec T4G Integration
+ * Système complet Learn-to-Earn avec tokens T4G, badges NFT et récompenses
  */
 
 class GamificationSystem {
   constructor() {
     this.user = this.loadUserData() || this.createNewUser();
     this.achievements = this.loadAchievements();
+    this.t4gAPI = new T4GIntegration();
     this.init();
   }
 
@@ -24,13 +25,28 @@ class GamificationSystem {
       lastActive: new Date().toISOString(),
       completedModules: [],
       currentPath: null,
+      // T4G Integration
+      t4gBalance: 0,
+      t4gTotal: 0,
+      stakingBalance: 0,
+      nftBadges: [],
+      lightningWallet: null,
+      reputationScore: 0,
+      // Enhanced stats for T4G rewards
       stats: {
         modulesCompleted: 0,
         quizzesCompleted: 0,
         perfectQuizzes: 0,
         totalTimeSpent: 0,
         nodesOptimized: 0,
-        roiImprovement: 0
+        roiImprovement: 0,
+        // T4G specific stats
+        questionsAnswered: 0,
+        tutorialsCreated: 0,
+        mentoringSessionsGiven: 0,
+        communityContributions: 0,
+        bugReportsSubmitted: 0,
+        codeContributions: 0
       }
     };
   }
@@ -211,6 +227,9 @@ class GamificationSystem {
     const bonusXP = Math.floor((score / 100) * 50);
     this.addXP(baseXP + bonusXP, `Module "${moduleId}" complété`);
 
+    // T4G Rewards Integration
+    this.awardT4GForModule(moduleId, score);
+
     // Check for path completion
     this.checkPathProgress();
     
@@ -236,6 +255,9 @@ class GamificationSystem {
     } else {
       this.addXP(50, 'Quiz complété');
     }
+
+    // T4G Rewards Integration
+    this.awardT4GForQuiz(quizId, score);
 
     this.checkAchievements();
     this.saveUserData();
@@ -611,6 +633,85 @@ class GamificationSystem {
       this.user.soundsMuted = !this.user.soundsMuted;
       this.saveUserData();
     });
+  }
+
+  // T4G Reward Methods
+  async awardT4GForModule(moduleId, score) {
+    const baseAmount = this.t4gAPI.rewardRates.learning.moduleCompletion;
+    const metadata = {
+      moduleId: moduleId,
+      score: score,
+      difficulty: this.getModuleDifficulty(moduleId),
+      streakDays: this.user.streakDays,
+      isPremium: this.user.isPremium || false,
+      isEarlyAdopter: this.isEarlyAdopter()
+    };
+
+    await this.t4gAPI.awardT4G('module-completion', baseAmount, metadata);
+    this.user.t4gBalance += baseAmount;
+    this.user.t4gTotal += baseAmount;
+  }
+
+  async awardT4GForQuiz(quizId, score) {
+    const baseAmount = this.t4gAPI.rewardRates.learning.quizCompletion;
+    const metadata = {
+      quizId: quizId,
+      score: score,
+      streakDays: this.user.streakDays,
+      isPerfect: score === 100
+    };
+
+    await this.t4gAPI.awardT4G('quiz-completion', baseAmount, metadata);
+    this.user.t4gBalance += baseAmount;
+    this.user.t4gTotal += baseAmount;
+  }
+
+  async awardT4GForContribution(contributionType, metadata = {}) {
+    const rates = this.t4gAPI.rewardRates.community;
+    let baseAmount = 0;
+
+    switch (contributionType) {
+      case 'question-answer':
+        baseAmount = rates.questionAnswer;
+        if (metadata.isBestAnswer) baseAmount = rates.bestAnswer;
+        break;
+      case 'tutorial-created':
+        baseAmount = rates.tutorialCreated;
+        if (metadata.isPopular) baseAmount = rates.tutorialPopular;
+        break;
+      case 'mentoring-session':
+        baseAmount = rates.mentoringSession;
+        if (metadata.nps > 8) baseAmount = rates.mentoringExcellent;
+        break;
+      case 'bug-report':
+        baseAmount = rates.bugReport;
+        break;
+      case 'translation':
+        baseAmount = rates.translation;
+        if (metadata.isRareLanguage) baseAmount = rates.translationRare;
+        break;
+    }
+
+    if (baseAmount > 0) {
+      await this.t4gAPI.awardT4G(contributionType, baseAmount, metadata);
+      this.user.t4gBalance += baseAmount;
+      this.user.t4gTotal += baseAmount;
+    }
+  }
+
+  getModuleDifficulty(moduleId) {
+    // Détermine la difficulté du module pour les multiplicateurs
+    if (moduleId.includes('basics') || moduleId.includes('intro')) return 'beginner';
+    if (moduleId.includes('advanced') || moduleId.includes('expert')) return 'advanced';
+    if (moduleId.includes('optimization') || moduleId.includes('roi')) return 'expert';
+    return 'intermediate';
+  }
+
+  isEarlyAdopter() {
+    // Vérifie si l'utilisateur est un early adopter (Genesis Mining)
+    const createdAt = new Date(this.user.createdAt || Date.now());
+    const genesisEndDate = new Date('2024-12-31'); // À ajuster selon le lancement
+    return createdAt <= genesisEndDate;
   }
 
   // Public API for other scripts

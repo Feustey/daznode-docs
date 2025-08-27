@@ -1,0 +1,382 @@
+<!-- T4G Rewards Widget - Affichage des récompenses Token4Good en temps réel -->
+<div class="t4g-widget" id="t4g-rewards-widget">
+  <div class="t4g-header">
+    <div class="t4g-logo">
+      <span class="t4g-icon">💎</span>
+      <span class="t4g-title">Lightning Central</span>
+    </div>
+    <div class="t4g-balance" id="main-t4g-balance">
+      <span class="balance-label">Solde T4G</span>
+      <span class="t4g-balance-amount" id="user-t4g-balance">0</span>
+    </div>
+  </div>
+
+  <div class="t4g-progress-section">
+    <div class="user-level-display">
+      <div class="level-info">
+        <span class="level-label">Niveau</span>
+        <span class="level-number" id="user-level">1</span>
+      </div>
+      <div class="xp-progress-bar">
+        <div class="xp-fill" id="xp-progress" style="width: 0%"></div>
+        <span class="xp-text" id="xp-text">0 / 100 XP</span>
+      </div>
+    </div>
+
+    <div class="streak-display">
+      <div class="streak-fire">🔥</div>
+      <div class="streak-info">
+        <span class="streak-days" id="streak-days">0</span>
+        <span class="streak-label">jours de suite</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="t4g-opportunities">
+    <h4>🎯 Opportunités T4G</h4>
+    <div class="opportunity-list" id="t4g-opportunities">
+      <!-- Populated by JavaScript -->
+    </div>
+  </div>
+
+  <div class="quick-stats">
+    <div class="stat-item">
+      <span class="stat-value" id="stat-modules">0</span>
+      <span class="stat-label">Modules</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-value" id="stat-quizzes">0</span>
+      <span class="stat-label">Quiz</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-value" id="stat-perfect">0</span>
+      <span class="stat-label">Parfaits</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-value" id="stat-roi">0%</span>
+      <span class="stat-label">ROI</span>
+    </div>
+  </div>
+
+  <div class="t4g-actions">
+    <button class="t4g-btn primary" onclick="showT4GDashboard()">
+      📊 Dashboard Complet
+    </button>
+    <button class="t4g-btn secondary" onclick="showStakingOptions()">
+      💰 Staking T4G
+    </button>
+  </div>
+</div>
+
+<!-- Modal Dashboard T4G -->
+<div class="t4g-modal" id="t4g-dashboard-modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2>⚡ Lightning Central Dashboard</h2>
+      <button class="close-btn" onclick="closeT4GDashboard()">&times;</button>
+    </div>
+
+    <div class="dashboard-tabs">
+      <button class="tab-btn active" data-tab="overview">Vue d'ensemble</button>
+      <button class="tab-btn" data-tab="achievements">Achievements</button>
+      <button class="tab-btn" data-tab="leaderboard">Classement</button>
+      <button class="tab-btn" data-tab="staking">Staking</button>
+    </div>
+
+    <div class="tab-content active" id="tab-overview">
+      <div class="overview-grid">
+        <div class="overview-card">
+          <h3>💎 Portefeuille T4G</h3>
+          <div class="wallet-info">
+            <div class="balance-display">
+              <span class="balance-amount" id="total-t4g-balance">0</span>
+              <span class="balance-label">T4G disponibles</span>
+            </div>
+            <div class="staking-display">
+              <span class="staking-amount" id="staked-t4g-balance">0</span>
+              <span class="staking-label">T4G en staking</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="overview-card">
+          <h3>📈 Progression</h3>
+          <div class="progress-details">
+            <div class="path-progress" id="current-path-progress">
+              <div class="path-name">Aucun parcours actif</div>
+              <div class="path-progress-bar">
+                <div class="progress-fill" style="width: 0%"></div>
+                <span class="progress-text">0%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="overview-card">
+          <h3>🏆 Achievements</h3>
+          <div class="achievements-preview" id="recent-achievements">
+            <!-- Populated by JavaScript -->
+          </div>
+        </div>
+
+        <div class="overview-card">
+          <h3>💡 Prochaines Actions</h3>
+          <div class="recommended-actions" id="recommended-actions">
+            <!-- Populated by JavaScript -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-content" id="tab-achievements">
+      <div class="achievements-section">
+        <div class="achievements-grid" id="achievements-grid">
+          <!-- Populated by JavaScript -->
+        </div>
+        <div class="nft-badges-section">
+          <h3>🏅 Badges NFT</h3>
+          <div class="nft-grid" id="nft-badges-grid">
+            <!-- Populated by JavaScript -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-content" id="tab-leaderboard">
+      <div class="leaderboard-section">
+        <h3>🥇 Classement Communautaire</h3>
+        <div class="leaderboard-list" id="t4g-leaderboard">
+          <!-- Populated by JavaScript -->
+        </div>
+        <div class="user-rank-display" id="user-rank-info">
+          <!-- User's current rank -->
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-content" id="tab-staking">
+      <div class="staking-section">
+        <h3>💰 Staking T4G</h3>
+        <div class="staking-options">
+          <div class="staking-plan" data-duration="30">
+            <div class="plan-header">
+              <h4>Plan 30 jours</h4>
+              <span class="apy-rate">5% APY</span>
+            </div>
+            <div class="plan-benefits">
+              <ul>
+                <li>✓ Accès prioritaire nouveaux modules</li>
+                <li>✓ Support prioritaire</li>
+              </ul>
+            </div>
+            <button class="stake-btn" onclick="initiateStaking(30)">Staker</button>
+          </div>
+
+          <div class="staking-plan recommended" data-duration="90">
+            <div class="plan-header">
+              <h4>Plan 90 jours</h4>
+              <span class="apy-rate">8% APY</span>
+              <span class="recommended-badge">Recommandé</span>
+            </div>
+            <div class="plan-benefits">
+              <ul>
+                <li>✓ Feedback direct développeurs</li>
+                <li>✓ Beta access nouvelles features</li>
+                <li>✓ NFT badge exclusif</li>
+              </ul>
+            </div>
+            <button class="stake-btn primary" onclick="initiateStaking(90)">Staker</button>
+          </div>
+
+          <div class="staking-plan premium" data-duration="365">
+            <div class="plan-header">
+              <h4>Plan 1 an</h4>
+              <span class="apy-rate">15% APY</span>
+            </div>
+            <div class="plan-benefits">
+              <ul>
+                <li>✓ Co-design roadmap produit</li>
+                <li>✓ Gouvernance DAO access</li>
+                <li>✓ NFT collection exclusive</li>
+                <li>✓ Revenus partenariats</li>
+              </ul>
+            </div>
+            <button class="stake-btn premium" onclick="initiateStaking(365)">Staker</button>
+          </div>
+        </div>
+
+        <div class="current-stakes" id="user-stakes">
+          <h4>Vos Stakes Actifs</h4>
+          <!-- Populated by JavaScript -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Container pour notifications -->
+<div id="t4g-notifications-container"></div>
+
+<script>
+// Widget T4G Integration
+function showT4GDashboard() {
+  const modal = document.getElementById('t4g-dashboard-modal');
+  modal.classList.add('show');
+  loadDashboardData();
+}
+
+function closeT4GDashboard() {
+  const modal = document.getElementById('t4g-dashboard-modal');
+  modal.classList.remove('show');
+}
+
+function showStakingOptions() {
+  showT4GDashboard();
+  switchTab('staking');
+}
+
+function switchTab(tabName) {
+  // Hide all tabs
+  document.querySelectorAll('.tab-content').forEach(tab => {
+    tab.classList.remove('active');
+  });
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.classList.remove('active');
+  });
+
+  // Show selected tab
+  document.getElementById(`tab-${tabName}`).classList.add('active');
+  document.querySelector(`[data-tab="${tabName}"]`).classList.add('active');
+}
+
+function loadDashboardData() {
+  if (window.gamification) {
+    const user = window.gamification.getUser();
+    
+    // Update balance displays
+    document.getElementById('total-t4g-balance').textContent = user.t4gBalance?.toLocaleString() || '0';
+    document.getElementById('staked-t4g-balance').textContent = user.stakingBalance?.toLocaleString() || '0';
+    
+    // Update recommended actions
+    updateRecommendedActions(user);
+    
+    // Update achievements grid
+    updateAchievementsGrid(user);
+    
+    // Load leaderboard
+    loadLeaderboard();
+  }
+}
+
+function updateRecommendedActions(user) {
+  const actionsContainer = document.getElementById('recommended-actions');
+  const actions = [
+    {
+      text: 'Finir le quiz "Channel Management"',
+      reward: '15 T4G',
+      action: () => navigateToQuiz('channel-management')
+    },
+    {
+      text: 'Répondre à une question communauté',
+      reward: '25 T4G',
+      action: () => window.open('https://t4g.dazno.de/questions', '_blank')
+    },
+    {
+      text: 'Participer au challenge mensuel',
+      reward: '500 T4G',
+      action: () => window.open('https://t4g.dazno.de/challenges', '_blank')
+    }
+  ];
+
+  actionsContainer.innerHTML = actions.map(action => `
+    <div class="action-item" onclick="executeAction('${action.action}')">
+      <div class="action-text">${action.text}</div>
+      <div class="action-reward">💎 ${action.reward}</div>
+    </div>
+  `).join('');
+}
+
+function updateAchievementsGrid(user) {
+  if (window.gamification) {
+    const achievements = window.gamification.achievements;
+    const grid = document.getElementById('achievements-grid');
+    
+    grid.innerHTML = achievements.map(achievement => {
+      const unlocked = user.achievements?.includes(achievement.id);
+      return `
+        <div class="achievement-badge ${unlocked ? 'unlocked' : 'locked'}" 
+             title="${achievement.description}">
+          <div class="achievement-icon">${achievement.icon}</div>
+          <div class="achievement-name">${achievement.name}</div>
+          <div class="achievement-xp">+${achievement.xp} XP</div>
+        </div>
+      `;
+    }).join('');
+  }
+}
+
+function loadLeaderboard() {
+  // Simulated leaderboard data - in real implementation, fetch from T4G API
+  const leaderboard = [
+    { username: 'LightningMaster', t4gTotal: 12450, speciality: 'Node Operator', impactScore: 9.8 },
+    { username: 'BitcoinEdu', t4gTotal: 8920, speciality: 'Pédagogie', impactScore: 9.6 },
+    { username: 'DevLN_Pro', t4gTotal: 7335, speciality: 'Développement', impactScore: 9.4 },
+    { username: 'T4G_Rookie', t4gTotal: 5240, speciality: 'Community', impactScore: 8.8 },
+    { username: 'Lightning_Learner', t4gTotal: 4180, speciality: 'Student', impactScore: 8.5 }
+  ];
+
+  const leaderboardContainer = document.getElementById('t4g-leaderboard');
+  leaderboardContainer.innerHTML = leaderboard.map((user, index) => {
+    const rankEmoji = index === 0 ? '🥇' : index === 1 ? '🥈' : index === 2 ? '🥉' : '';
+    return `
+      <div class="leaderboard-entry">
+        <div class="rank">${rankEmoji} ${index + 1}</div>
+        <div class="user-info">
+          <span class="username">${user.username}</span>
+          <span class="speciality">${user.speciality}</span>
+        </div>
+        <div class="score">
+          <span class="t4g-amount">${user.t4gTotal.toLocaleString()} T4G</span>
+          <span class="impact-score">${user.impactScore}/10</span>
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+async function initiateStaking(duration) {
+  const amount = prompt(`Combien de T4G souhaitez-vous staker pour ${duration} jours ?`);
+  if (amount && !isNaN(amount) && parseInt(amount) > 0) {
+    try {
+      if (window.t4gAPI) {
+        const result = await window.t4gAPI.stakingRewards(parseInt(amount), duration);
+        if (result.success) {
+          alert(`Staking de ${amount} T4G pour ${duration} jours confirmé !`);
+          loadDashboardData();
+        } else {
+          alert(`Erreur lors du staking: ${result.error}`);
+        }
+      }
+    } catch (error) {
+      alert(`Erreur: ${error.message}`);
+    }
+  }
+}
+
+// Tab switching
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const tabName = btn.dataset.tab;
+      switchTab(tabName);
+    });
+  });
+
+  // Close modal when clicking outside
+  document.getElementById('t4g-dashboard-modal').addEventListener('click', (e) => {
+    if (e.target === e.currentTarget) {
+      closeT4GDashboard();
+    }
+  });
+});
+</script>

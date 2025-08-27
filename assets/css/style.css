@@ -344,54 +344,49 @@ footer {
   }
   
   .sidebar {
-    position: fixed;
-    width: 80vw;
-    left: -80vw;
-    transition: left 0.3s;
-    height: auto;
-    border-right: none;
-    border-bottom: 1px solid var(--color-border);
-    padding-bottom: 16px;
-  }
-  
-  .sidebar.open {
-    left: 0;
+    display: none; /* Cache la sidebar legacy sur mobile */
   }
   
   .content {
     margin-left: 0 !important;
     width: 100% !important;
-    padding: 16px 8px !important;
+    padding: 16px !important;
   }
   
   .content-container {
     max-width: 100% !important;
-    padding: 0 !important;
+    padding: 0 16px !important;
   }
   
+  /* Header mobile optimisé */
   .header-container {
     position: relative;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
     width: 100%;
-    padding-left: 48px; /* pour laisser la place au burger */
+    padding: 0 16px;
   }
   
   .logo-container {
-    margin-bottom: 8px;
+    margin-bottom: 0;
   }
   
+  .logo-container h1 {
+    font-size: 1.2rem;
+  }
+  
+  /* Masque les éléments desktop */
   .search-container {
     display: none !important;
   }
   
   .toggle-sidebar-button {
-    display: none; /* On masque le bouton sur mobile */
+    display: none !important;
   }
   
   .sidebar-collapsed .sidebar {
-    width: 100%;
+    display: none;
   }
   
   .sidebar-collapsed .content {
@@ -399,25 +394,37 @@ footer {
     width: 100%;
   }
   
-  .logo-container h1 {
-    font-size: 1.2rem;
+  /* Cards responsive */
+  .cards {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin: 24px 0;
   }
   
-  .search-input {
-    width: 140px;
+  .card {
+    margin-bottom: 16px;
   }
   
-  /* Ajout d'un bouton menu mobile */
-  .mobile-menu-button {
-    display: block;
-    position: absolute;
-    left: 12px;
-    top: 12px;
-    z-index: 200;
+  /* Typography mobile */
+  h1 { font-size: 1.75rem; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.25rem; }
+  
+  p, ul, ol {
+    margin-bottom: 1.5rem;
+    max-width: none;
   }
   
-  .mobile-menu-button {
-    z-index: var(--z-menu) !important;
+  /* Blockquote mobile */
+  blockquote {
+    margin: 1.5rem 0;
+    padding: 1rem 1.5rem;
+  }
+  
+  /* Code blocks mobile */
+  pre {
+    overflow-x: auto;
+    font-size: 14px;
   }
 }
 
