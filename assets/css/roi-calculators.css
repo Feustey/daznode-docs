@@ -1,0 +1,592 @@
+/* ROI Calculators Styling - DazNode Documentation */
+
+.roi-calculator, .node-roi-calculator, .mining-roi-calculator, .portfolio-calculator {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border: 2px solid #dee2e6;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.roi-calculator h3, .node-roi-calculator h3, .mining-roi-calculator h3, .portfolio-calculator h3 {
+    color: #f7931a;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+/* Input Styling */
+.calculator-inputs, .mining-inputs, .portfolio-inputs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.input-group label {
+    font-weight: 600;
+    color: #495057;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.input-group input, .input-group select {
+    padding: 0.75rem;
+    border: 2px solid #ced4da;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+    background: white;
+}
+
+.input-group input:focus, .input-group select:focus {
+    outline: none;
+    border-color: #f7931a;
+    box-shadow: 0 0 0 3px rgba(247, 147, 26, 0.1);
+}
+
+.input-group small {
+    color: #6c757d;
+    font-size: 0.8rem;
+    font-style: italic;
+}
+
+/* Calculator Tabs */
+.calculator-tabs {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid #dee2e6;
+}
+
+.tab-btn {
+    padding: 0.75rem 1.5rem;
+    background: transparent;
+    border: none;
+    border-bottom: 3px solid transparent;
+    cursor: pointer;
+    font-weight: 600;
+    color: #6c757d;
+    transition: all 0.2s ease;
+}
+
+.tab-btn.active {
+    color: #f7931a;
+    border-bottom-color: #f7931a;
+}
+
+.tab-btn:hover {
+    color: #f7931a;
+    background: rgba(247, 147, 26, 0.1);
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Button Styling */
+.calculate-btn, .cta-button, .export-btn {
+    background: linear-gradient(135deg, #f7931a 0%, #ff8c00 100%);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(247, 147, 26, 0.3);
+}
+
+.calculate-btn:hover, .cta-button:hover, .export-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(247, 147, 26, 0.4);
+}
+
+.calculate-btn {
+    width: 100%;
+    grid-column: 1 / -1;
+    margin-top: 1rem;
+}
+
+/* Results Section */
+.results-section {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    margin-top: 2rem;
+    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid #f7931a;
+}
+
+.results-section h4 {
+    color: #f7931a;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+/* Results Grid */
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.result-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #dee2e6;
+}
+
+.result-label {
+    font-size: 0.9rem;
+    color: #6c757d;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.5rem;
+}
+
+.result-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #495057;
+}
+
+.result-value.roi-highlight {
+    font-size: 2rem;
+}
+
+/* ROI Color Coding */
+.roi-excellent { color: #28a745; }
+.roi-good { color: #17a2b8; }
+.roi-moderate { color: #ffc107; }
+.roi-poor { color: #dc3545; }
+
+/* Chart Container */
+.roi-chart-container {
+    margin: 2rem 0;
+    padding: 1rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.export-btn {
+    background: linear-gradient(135deg, #6c757d 0%, #495057 100%);
+    box-shadow: 0 4px 8px rgba(108, 117, 125, 0.3);
+}
+
+/* Node ROI Specific Styling */
+.results-comprehensive {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.result-category {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 1.5rem;
+    border: 1px solid #dee2e6;
+}
+
+.result-category h5 {
+    color: #f7931a;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.revenue-item {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #495057;
+}
+
+.revenue-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.revenue-amount {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #28a745;
+}
+
+.revenue-roi {
+    font-size: 0.9rem;
+    color: #6c757d;
+    font-style: italic;
+}
+
+.result-total {
+    grid-column: 1 / -1;
+    background: linear-gradient(135deg, #f7931a 0%, #ff8c00 100%);
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+.roi-total {
+    font-size: 3rem;
+    font-weight: 900;
+    margin-top: 0.5rem;
+}
+
+/* Strategy Recommendations */
+.strategy-recommendations {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 2px solid #dee2e6;
+}
+
+.strategy-recommendations h5 {
+    color: #f7931a;
+    margin-bottom: 1rem;
+}
+
+.recommendation {
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border-radius: 8px;
+    border-left: 4px solid;
+}
+
+.recommendation.excellent {
+    background: rgba(40, 167, 69, 0.1);
+    border-left-color: #28a745;
+}
+
+.recommendation.good {
+    background: rgba(23, 162, 184, 0.1);
+    border-left-color: #17a2b8;
+}
+
+.recommendation.moderate {
+    background: rgba(255, 193, 7, 0.1);
+    border-left-color: #ffc107;
+}
+
+.recommendation.poor {
+    background: rgba(220, 53, 69, 0.1);
+    border-left-color: #dc3545;
+}
+
+.recommendation.capital, .recommendation.scaling {
+    background: rgba(108, 117, 125, 0.1);
+    border-left-color: #6c757d;
+}
+
+/* Mining ROI Specific Styling */
+.mining-metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.metric-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.metric-card h5 {
+    color: #6c757d;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.5rem;
+}
+
+.metric-value {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #495057;
+}
+
+.mining-projections {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.mining-projections h5 {
+    color: #f7931a;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.difficulty-impact {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #dee2e6;
+}
+
+.difficulty-impact h5 {
+    color: #f7931a;
+    margin-bottom: 1rem;
+}
+
+.difficulty-scenarios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.scenario {
+    padding: 1rem;
+    border-radius: 6px;
+    border: 1px solid;
+    font-size: 0.9rem;
+}
+
+.scenario.conservative {
+    background: rgba(40, 167, 69, 0.1);
+    border-color: #28a745;
+}
+
+.scenario.realistic {
+    background: rgba(255, 193, 7, 0.1);
+    border-color: #ffc107;
+}
+
+.scenario.aggressive {
+    background: rgba(220, 53, 69, 0.1);
+    border-color: #dc3545;
+}
+
+/* Portfolio Calculator Styling */
+.allocation-chart-container {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+    padding: 1rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.allocation-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.allocation-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 6px;
+    border: 1px solid #dee2e6;
+}
+
+.allocation-label {
+    font-weight: 600;
+    color: #6c757d;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+.allocation-value {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #f7931a;
+}
+
+.risk-analysis {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid #f7931a;
+}
+
+.risk-analysis h5 {
+    color: #f7931a;
+    margin-bottom: 1rem;
+}
+
+.risk-breakdown {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.risk-item {
+    padding: 0.75rem;
+    background: #f8f9fa;
+    border-radius: 6px;
+    border-left: 3px solid #dee2e6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .calculator-inputs, .mining-inputs, .portfolio-inputs {
+        grid-template-columns: 1fr;
+    }
+    
+    .results-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .results-comprehensive {
+        grid-template-columns: 1fr;
+    }
+    
+    .mining-metrics {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+    }
+    
+    .calculator-tabs {
+        flex-direction: column;
+    }
+    
+    .tab-btn {
+        text-align: left;
+        border-bottom: none;
+        border-left: 3px solid transparent;
+    }
+    
+    .tab-btn.active {
+        border-left-color: #f7931a;
+        border-bottom-color: transparent;
+    }
+    
+    .difficulty-scenarios {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .roi-calculator, .node-roi-calculator, .mining-roi-calculator, .portfolio-calculator {
+        padding: 1rem;
+    }
+    
+    .result-value.roi-highlight {
+        font-size: 1.5rem;
+    }
+    
+    .roi-total {
+        font-size: 2rem;
+    }
+    
+    .mining-metrics {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Loading and Animation States */
+.calculating {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.calculating .calculate-btn {
+    background: #6c757d;
+    cursor: not-allowed;
+}
+
+.calculating .calculate-btn::after {
+    content: ' ⏳';
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .roi-calculator, .node-roi-calculator, .mining-roi-calculator, .portfolio-calculator {
+        background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+        border-color: #4a5568;
+        color: #e2e8f0;
+    }
+    
+    .results-section {
+        background: #2d3748;
+        border-left-color: #f7931a;
+    }
+    
+    .input-group input, .input-group select {
+        background: #2d3748;
+        border-color: #4a5568;
+        color: #e2e8f0;
+    }
+    
+    .result-item, .metric-card, .allocation-item, .risk-item {
+        background: #4a5568;
+        border-color: #718096;
+        color: #e2e8f0;
+    }
+    
+    .result-label, .allocation-label {
+        color: #a0aec0;
+    }
+}
+
+/* Print styles */
+@media print {
+    .calculate-btn, .action-buttons, .calculator-tabs {
+        display: none;
+    }
+    
+    .roi-calculator, .node-roi-calculator, .mining-roi-calculator, .portfolio-calculator {
+        box-shadow: none;
+        border: 1px solid #000;
+    }
+    
+    .results-section {
+        break-inside: avoid;
+    }
+}

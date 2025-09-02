@@ -52,10 +52,25 @@ Marie veut acheter son café quotidien chez Bob :
 - Monitoring proactif et métriques critiques
 - **89% de réduction garantie** avec DazNode
 
-### [Calculateur ROI 2025](/lightning-network/roi-calculator-2025/) 📊
-- Estimez vos revenus Lightning Network
-- Projections personnalisées par capital investi
-- Stratégies d'optimisation rentabilité
+### [Lightning Business ROI](/lightning-network/business-roi/) 💼
+- **Framework business complet** : TCBO, métriques executives, ROI calculator
+- **Secteurs d'activité** : E-commerce, SaaS, retail - business cases détaillés
+- **Guidance CFO** : Frameworks de décision, audit business, compliance
+
+### [Profitabilité Lightning](/lightning-network/profitability/) 📊
+- **Stratégies ROI 2025** : Routing passif à yield farming avancé (8-25% ROI)
+- **Optimisation automatisée** : AI-powered rebalancing, predictive analytics
+- **Risk-adjusted returns** : Conservative vs optimistic models
+
+### [Lightning Development](/lightning-network/development/) 👨‍💻
+- **APIs & BOLT Specifications** : LND/CLN APIs, BOLT standards, RGB integration
+- **Testing & Debugging** : Regtest setup, simulation frameworks, production deployment
+- **Advanced Development** : LNURL, streaming payments, RGB smart contracts
+
+### [Lightning Enterprise](/lightning-network/enterprise/) 🏢  
+- **Zero-Trust Architecture** : HSM integration, multi-sig enterprise, compliance MiCA
+- **SLA & Monitoring** : 99.99% uptime, enterprise observability, disaster recovery
+- **Regulatory Framework** : AML/KYC, data protection, audit requirements
 
 ### [Hardware Requirements 2025](/lightning-network/hardware-requirements-2025/) ⚡
 - Configurations optimales par budget et usage
@@ -185,12 +200,14 @@ Marie veut acheter son café quotidien chez Bob :
 
 ### Approfondir votre compréhension
 - **[Introduction Bitcoin](/getting-started/introduction/)** : Les bases avant Lightning
-- **[Bitcoin détaillé](/bitcoin/)** : Comprendre la blockchain sous-jacente
+- **[Bitcoin Économie](/bitcoin/economie/)** : École autrichienne, modèles d'évaluation, cycles
+- **[Sécurité Bitcoin & Lightning](/security-privacy/)** : Protection complète et confidentialité
 - **[Solutions Daznode](/solutions/)** : Hardware et logiciels optimisés
 
 ### Intégrations techniques
-- **[Connecter vos données](/connect-data/)** : API, WebSocket et intégrations
-- **[Exploiter vos données](/use-data/)** : Analytics et optimisation avancées
+- **[Lightning Development](/lightning-network/development/)** : APIs, BOLT specs, RGB development
+- **[Lightning Enterprise](/lightning-network/enterprise/)** : Architecture industrielle, compliance
+- **[DeFi Bitcoin](/bitcoin/defi-bitcoin/)** : Lightning DeFi, yield farming, stablecoins
 - **[Documentation développeurs](/devs/)** : Guides techniques complets
 
 ## Besoin d'aide ? 💬

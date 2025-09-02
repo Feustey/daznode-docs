@@ -77,7 +77,64 @@
       ]
     },
     {
-      "title": "📚 Ressources",
+      "title": "💼 Business & ROI",
+      "url": "/lightning-network/business-roi/",
+      "icon": "chart",
+      "description": "Guides business et rentabilité",
+      "children": [
+        {
+          "title": "Lightning Business ROI",
+          "url": "/lightning-network/business-roi/",
+          "description": "Framework business et TCBO Lightning",
+          "featured": true
+        },
+        {
+          "title": "Profitabilité Lightning",
+          "url": "/lightning-network/profitability/",
+          "description": "Stratégies ROI et optimisation 2025"
+        },
+        {
+          "title": "Économie Bitcoin",
+          "url": "/bitcoin/economie/",
+          "description": "École autrichienne, modèles d'évaluation"
+        },
+        {
+          "title": "Mining ROI & Infrastructure",
+          "url": "/bitcoin/mining-roi/",
+          "description": "Rentabilité mining, optimisation énergétique"
+        },
+        {
+          "title": "DeFi Bitcoin",
+          "url": "/bitcoin/defi-bitcoin/",
+          "description": "Lightning DeFi, yield farming, stablecoins"
+        }
+      ]
+    },
+    {
+      "title": "🔐 Sécurité & Confidentialité",
+      "url": "/security-privacy/",
+      "icon": "shield",
+      "description": "Protection et confidentialité avancée",
+      "children": [
+        {
+          "title": "Sécurité Bitcoin & Lightning",
+          "url": "/security-privacy/",
+          "description": "Guide complet sécurité et confidentialité"
+        },
+        {
+          "title": "Configuration nœud privé",
+          "url": "/security-privacy/#configuration-noeud-privé",
+          "description": "Setup Tor, VPN et anonymisation"
+        },
+        {
+          "title": "Hardware Wallets",
+          "url": "/security-privacy/#gestion-sécurisée-des-clés",
+          "description": "Multi-sig et gestion clés sécurisée"
+        }
+      ]
+    },
+    {
+      "title": "📚 Ressources Techniques",
       "url": "/lightning-network/",
       "icon": "book",
       "description": "Documentation technique et références",
@@ -88,9 +145,19 @@
           "description": "Guide complet du Lightning Network"
         },
         {
-          "title": "Bitcoin",
+          "title": "Lightning Development",
+          "url": "/lightning-network/development/",
+          "description": "APIs, BOLT specs, RGB integration"
+        },
+        {
+          "title": "Lightning Enterprise",
+          "url": "/lightning-network/enterprise/",
+          "description": "Architecture industrielle, compliance"
+        },
+        {
+          "title": "Bitcoin Fondamentaux",
           "url": "/bitcoin/",
-          "description": "Fondamentaux et concepts avancés"
+          "description": "Concepts de base et avancés"
         },
         {
           "title": "RGB Protocol",
@@ -124,10 +191,47 @@
       ]
     },
     {
-      "title": "Ressources",
+      "title": "Ressources Business",
       "items": [
         {
-          "title": "Documentation",
+          "title": "Lightning Business ROI",
+          "url": "/lightning-network/business-roi/"
+        },
+        {
+          "title": "Profitabilité Lightning",
+          "url": "/lightning-network/profitability/"
+        },
+        {
+          "title": "Économie Bitcoin",
+          "url": "/bitcoin/economie/"
+        },
+        {
+          "title": "Sécurité & Privacy",
+          "url": "/security-privacy/"
+        },
+        {
+          "title": "Mining ROI",
+          "url": "/bitcoin/mining-roi/"
+        },
+        {
+          "title": "DeFi Bitcoin",
+          "url": "/bitcoin/defi-bitcoin/"
+        },
+        {
+          "title": "Lightning Development",
+          "url": "/lightning-network/development/"
+        },
+        {
+          "title": "Lightning Enterprise",
+          "url": "/lightning-network/enterprise/"
+        }
+      ]
+    },
+    {
+      "title": "Documentation",
+      "items": [
+        {
+          "title": "Guides Techniques",
           "url": "/"
         },
         {

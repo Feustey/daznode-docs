@@ -18,6 +18,9 @@ Bitcoin est une révolution monétaire qui transforme notre façon de penser et 
 
 ## Sections du Guide
 
+### [Économie Bitcoin](/bitcoin/economie/) 📈
+**Nouveauté 2025** : École Autrichienne et Bitcoin, modèles d'évaluation (Stock-to-Flow, NVT, MVRV), cycles de marché, stratégies DCA optimisées
+
 ### [Introduction à Bitcoin](/bitcoin/introduction/) 📚
 Découvre l'histoire de Bitcoin, son créateur mystérieux Satoshi Nakamoto, et les principes fondamentaux qui le rendent unique.
 
@@ -41,12 +44,14 @@ Apprends à créer et animer une communauté Bitcoin dans ta région pour favori
 ### Approfondir vos connaissances
 - **[Introduction générale](/getting-started/introduction/)** : Vos premiers pas dans l'univers Bitcoin
 - **[Lightning Network](/lightning-network/)** : Passez aux paiements instantanés Bitcoin
+- **[Lightning Business ROI](/lightning-network/business-roi/)** : Frameworks business et rentabilité
+- **[Sécurité & Confidentialité](/security-privacy/)** : Protection complète Bitcoin et Lightning
 - **[Glossaire complet](/glossary/)** : Tous les termes techniques expliqués
-- **[Sécurisation](/securisation/)** : Protégez vos bitcoins efficacement
 
-### Solutions pratiques
+### Solutions avancées
+- **[Mining ROI & Infrastructure](/bitcoin/mining-roi/)** : Rentabilité mining, optimisation énergétique
+- **[DeFi Bitcoin](/bitcoin/defi-bitcoin/)** : Lightning DeFi, yield farming, stablecoins natifs
 - **[DazBox](/dazbox/)** : Votre nœud Bitcoin/Lightning clé en main
 - **[Connecter vos données](/connect-data/)** : Intégrez Bitcoin à vos systèmes
-- **[Exploiter vos données](/use-data/)** : Analytics et optimisation avancées
 
 > "Bitcoin est plus qu'une monnaie numérique, c'est une technologie qui redéfinit la notion même d'argent pour l'ère numérique." 
